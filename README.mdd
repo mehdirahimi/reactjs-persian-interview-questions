@@ -4864,7 +4864,7 @@
 
 188. ### تفاوت‌های React Native و React چیا هستن؟
 
-     **React** یه کتابخونه جاواسکریپتی هست که , supporting both front end web and being run on the server, for building user interfaces and web applications.
+     **React** یه کتابخونه جاواسکریپتی هست که از اجرای اون روی frontend و اجرای اون روی سرور برای تولید رابط کاربری و برنامه‌های تحت وب پشتیبانی می‌کنه.
 
      **React Native** یه فریم‌ورک موبایل هست که کدها رو به کامپوننت‌های native روی موبایل compile می‌کنه و بهمون این اجازه رو میده که برنامه‌های موبایلی(iOS, Android, and Windows) رو با استفاده از جاواسکریپت بسازیم که از ری‌اکت برای تولید کامپوننت استفاده می‌کنه.
 
@@ -4872,13 +4872,13 @@
 
 189. ### چطوری میشه برنامه React Native رو تست کرد؟
 
-     React Native can be tested only in mobile simulators like iOS and Android. You can run the app in your mobile using expo app (https://expo.io) Where it syncs using QR code, your mobile and computer should be in same wireless network.
+     ReactNative میتونه توی شبیه‌سازهای سیستم‌عامل‌های موبایلی مثل iOS و Android تست کرد. می‌تونیم برنامه‌های خودمون رو توی برنامه expo(https://expo.io) توی گوشی خودمون هم ببینیم که با استفاده از QR-code میتونه یه برنامه روی کامپیوتر و گوشی sync کنه، البته باید هر دوی این دستگاه‌ها تو یه شبکه وایرلس باشه.
 
      **[فهرست](#فهرست)**
 
 190. ### چطوری میشه توی React Native لاگ کرد؟
 
-     You can use `console.log`, `console.warn`, etc. As of React Native v0.29 you can simply run the following to see logs in the console:
+     میتونیم از `console.log`، `console.warn` و غیره استفاده کرد. از نسخه ReactNative 0.29 می‌تونیم خیلی ساده کدهای زیر رو اجرا کنیم که لاگ رو توی خروجی ببینیم:
 
      <span align="left" dir="ltr">
 
@@ -4893,51 +4893,51 @@
 
 191. ### چطوری میشه React Native رو دیباگ کرد؟
 
-     Follow the below steps to debug React Native app:
+     برای دیباگ کردن برنامه ری‌اکت native گام‌های زیر رو طی می‌کنیم:
 
-     1. Run your application in the iOS simulator.
-     2. Press `Command + D` and a webpage should open up at `http://localhost:8081/debugger-ui`.
-     3. Enable _Pause On Caught Exceptions_ for a better debugging experience.
-     4. Press `Command + Option + I` to open the Chrome Developer tools, or open it via `View` -> `Developer` -> `Developer Tools`.
-     5. You should now be able to debug as you normally would.
+     1. برنامه رو توی  شبیه‌ساز iOS اجرا می‌کنیم.
+     2. دکمه‌های `Command + D` رو فشار میدیم و یه صفحه وب توی آدرس `http://localhost:8081/debugger-ui` اجرا میشه.
+     3. چک‌باکس On Caught Exceptions_ رو برای یه دیباگ بهتر فعال می‌کنیم.
+     4. دکمه‌های `Command + Option + I` رو برای اجرای developer-tools کروم فشار میدیم یا از طریق منوهای `View` و `Developer` و `DeveloperTools` باز می‌کنیم‌ـش.
+     5. حالا میتونیم برنامه مورد نظر خودمون رو به راحتی تست کنیم.
 
-## React supported libraries & Integration
+## کتابخونه‌های پشتیبانی شده ری‌اکتی و Integrationهاش
 
 192.  ### کتابخونه reselect چیه و چطوری کار می‌کنه؟
 
-      _Reselect_ is a **selector library** (for Redux) which uses _memoization_ concept. It was originally written to compute derived data from Redux-like applications state, but it can't be tied to any architecture or library.
+      _Reselect_ یه کتابخونه **selector** برای ریداکس هست که از مفهوم _memoization_ استفاده می‌کنه. این کتابخونه به صورت اولیه نوشته شده بوده که داده‌های هر برنامه Redux-like یا شبیه ریداکس رو پردازش کنه، ولی نتونسته با هیچ برنامه یا کتابخونه دیگه‌ای گره بخوره.
 
-      Reselect keeps a copy of the last inputs/outputs of the last call, and recomputes the result only if one of the inputs changes. If the the same inputs are provided twice in a row, Reselect returns the cached output. It's memoization and cache are fully customizable.
+      Reselect یه کپی از آخرین inputs/outputs از هر فراخوانی رو نگهداری می‌کنه و فقط زمانی اونو دوباره محاسبه می‌کنه که تغییراتی توی ورودی رخ داده باشه. اگه همون ورودی‌ها دوبار استفاده بشن، Reselect مقدار cache شده رو برمیگردونه. memoization و cacheای که استفاده میشه تا حد زیادی قابل شخصی سازیه.
 
       **[فهرست](#فهرست)**
 
 193.  ### Flow چیه؟
 
-      _Flow_ is a _static type checker_ designed to find type errors in JavaScript. Flow types can express much more fine-grained distinctions than traditional type systems. For example, Flow helps you catch errors involving `null`, unlike most type systems.
+      _Flow_ یه  _static type checker_ هستش که طراحی شده تا خطاهای مربوط به نوع‌ها رو توی جاواسکریپت پیدا کنیم. نوع‌های flow می‌تونه خیلی ریزبینانه‌تر از رویکردهای سنتی بررسی نوع عمل کنه. برای مثال، Flow بهمون کمک میکنه که خطاهای مربوط به دریافت `null` توی برنامه رو کنترل کنیم که توی روش‌های سنتی غیرممکنه تقریبا.
 
       **[فهرست](#فهرست)**
 
 194.  ### تفاوت‌های Flow و PropTypes چیا هستن؟
 
-      Flow is a _static analysis tool_ (static checker) which uses a superset of the language, allowing you to add type annotations to all of your code and catch an entire class of bugs at compile time. PropTypes is a _basic type checker_ (runtime checker) which has been patched onto React. It can't check anything other than the types of the props being passed to a given component. If you want more flexible typechecking for your entire project Flow/TypeScript are appropriate choices.
+      Flow یه _ابزار تجزیه و تحلیل استاتیک_ (static-checker) هستش که از ویژگی‌های بالاتر از زبان استفاده می‌کنه و بهمون کمک میکنه که به بخش‌های مختلف برنامه نوع اضافه کنیم و خطاهایی که مرتبط با بررسی نوع‌ها هست رو موقع compile ازشون جلوگیری کنیم. PropTypes یه _روش بررسی نوع ساده_ (موقع runtime) هست که روی ری‌اکت اضافه شده. به غیر از نوع‌هایی که به کامپوننت موردنظر به عنوان prop داده شده رو نمی‌تونه بررسی کنه. پس اگه دنبال یه روش برای بررسی نوع منعطف هستیم که توی کل پروژه عمل کنه Flow یا TypeScript روش‌های بهتری هستن.
 
       **[فهرست](#فهرست)**
 
 195.  ### چطوری از آیکون‌های font-awesome توی ری‌اکت استفاده کنیم؟
 
-      The below steps followed to include Font Awesome in React:
+      گام‌های زیر برای استفاده از font-awesome توی ری‌اکت باید طی بشه:
 
-      1. Install `font-awesome`:
+      1. پکیج `font-awesome` رو نصب می‌کنیم:
 
       <span align="left" dir="ltr">
 
       ```console
-      $ npm install --save font-awesome
+      npm install --save font-awesome
       ```
 
       </span>
 
-      2. Import `font-awesome` in your `index.js` file:
+      2. `font-awesome` رو توی فایل `index.js` بارگذاری می‌کنیم:
 
       <span align="left" dir="ltr">
 
@@ -4947,7 +4947,7 @@
 
       </span>
 
-      3. Add Font Awesome classes in `className`:
+      3. از کلاس این فونت توی `className`های موردنظر استفاده می‌کنیم:
 
       <span align="left" dir="ltr">
 
@@ -4963,25 +4963,25 @@
 
 196.  ### React Dev Tools چیه؟
 
-      _React Developer Tools_ let you inspect the component hierarchy, including component props and state. It exists both as a browser extension (for Chrome and Firefox), and as a standalone app (works with other environments including Safari, IE, and React Native).
+      _ReactDeveloperTools_ بهمون اجازه اینو میده که سلسله مراتب کامپوننت‌های برنامه رو بررسی کنیم و شامل prop و state هم میشه. این مورد به دو روش افزونه (برای Chrome و Firefox) و یه برنامه جانبی مستقل (که با سافاری و مرورگرهای دیگه هم کار می‌کنه) در دسترسه.
 
-      The official extensions available for different browsers or environments.
+      پس سه مورد رو می‌تونیم در نظر بگیریم:
 
-      1. **Chrome extension**
-      2. **Firefox extension**
-      3. **Standalone app** (Safari, React Native, etc)
+      1. **افزونه Chrome**
+      2. **افزونه Firefox**
+      3. **برنامه مستقل** (Safari ،ReactNative و ...)
 
       **[فهرست](#فهرست)**
 
 197.  ### چرا توی کروم devtools برای فایل‌های local لود نمیشه؟
 
-      If you opened a local HTML file in your browser (`file://...`) then you must first open _Chrome Extensions_ and check `Allow access to file URLs`.
+      اگه یه فایل محلی HTML رو توی مرورگر باز کنیم (`file://...`) بعدش لازمه که _ChromeExtensions_ یا همون افزونه‌های کروم رو باز کنیم و چک‌‌باکس `Allow access to file URLs` رو فعال کنیم.
 
       **[فهرست](#فهرست)**
 
 198.  ### چطوری از Polymer توی React استفاده کنیم؟
 
-      1. Create a Polymer element:
+      1. یه element برای Polymer ایجاد می‌کنیم :
 
       <span align="left" dir="ltr">
 
@@ -4997,7 +4997,7 @@
 
       </span>
 
-      2. Create the Polymer component HTML tag by importing it in a HTML document, e.g. import it in the `index.html` of your React application:
+      2. کامپوننت Polymer رو با تگ‌های HTML ایجاد می‌کنیم و توی داکیومنت html بارگذاری می‌کنیم، برای مثال اونو توی `index.html` برنامه بارگذاری کنیم:
 
       <span align="left" dir="ltr">
 
@@ -5010,7 +5010,7 @@
 
       </span>
 
-      3. Use that element in the JSX file:
+      3. از اون element توی فایل JSX استفاده می‌کنیم:
 
       <span align="left" dir="ltr">
 
@@ -5032,12 +5032,12 @@
 
 199.  ### مزایای React نسبت به Vue.js چیا هستن؟
 
-      React has the following advantages over Vue.js:
+      ری‌اکت مزایای زیر رو نسبت به Vue.js داره:
 
-      1. Gives more flexibility in large apps developing.
-      2. Easier to test.
-      3. Suitable for mobile apps creating.
-      4. More information and solutions available.
+      1. انعطاف پذیری بیشتری رو توی توسعه برنامه‌های بزرگ بهمون میده.
+      2. تست کردنش راحت‌تره.
+      3. برای تولید برنامه‌های موبایلی هم مناسبه.
+      4. اطلاعات و راهکارهای مختلفی براش توی دسترسه.
 
 			**نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
 
@@ -5054,6 +5054,7 @@
      | In React, data flows only in one way and hence debugging is easy                            | In Angular, data flows both way i.e it has two-way data binding between children and parent and hence debugging is often difficult |
 
 		 **نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
+
 **[فهرست](#فهرست)**
 
 201. ### چرا تب React در DevTools نشان داده نمی‌شود؟
