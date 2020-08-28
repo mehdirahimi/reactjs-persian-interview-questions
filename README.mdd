@@ -2543,20 +2543,20 @@
 
 91. ### تفاوت‌های فراخوانی super() و super(props) توی کلاس کامپوننت‌های ری‌اکت چیه؟
 
-    When you want to access `this.props` in `constructor()` then you should pass props to `super()` method.
+    اگه بخوایم به `this.props` توی `constructor` دسترسی پیدا کنیم باید propها رو از طریق متد ‍‍‍`super` پاس بدیم.
 
-    Using `super(props)`:
+    استفاده از `super(props)`:
 
     <span align="left" dir="ltr">
 
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super(props);
-        console.log(this.props); // { name: 'John', ... }
+        super(props)
+        console.log(this.props) // { name: 'John', ... }
       }
     }
-    ```
+     ```
 
      </span>
 
@@ -2567,35 +2567,33 @@
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super();
-        console.log(this.props); // undefined
+        super()
+        console.log(this.props) // undefined
       }
     }
-    ```
+     ```
 
      </span>
 
-    Outside `constructor()` both will display same value for `this.props`.
+    بیرون از `constructor` هردو متد مقادیر یکسانی رو برای `this.props` نشون میدن.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 92. ### چطوری توی JSX حلقه یا همون لوپ رو داشته باشیم؟
 
-    You can simply use `Array.prototype.map` with ES6 _arrow function_ syntax. For example, the `items` array of objects is mapped into an array of components:
+    خیلی ساده میتونیم از ‍‍`Array.prototype.map` با سینتکس *arrow function* ES6 استفاده کنیم، برای مثال ارایه ای از آیتم های یه آبجکت توی آرایه ای از کامپوننت ها نوشته میشه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <tbody>
-      {items.map((item) => (
-        <SomeComponent key={item.id} name={item.name} />
-      ))}
+      {items.map(item => <SomeComponent key={item.id} name={item.name} />)}
     </tbody>
-    ```
+     ```
 
      </span>
 
-    You can't iterate using `for` loop:
+    نمی‌تونیم با استفاده از حلقه `for` تکرار رو انجام بدیم:
 
     <span align="left" dir="ltr">
 
@@ -2605,92 +2603,92 @@
         <SomeComponent key={items[i].id} name={items[i].name} />
       }
     </tbody>
-    ```
+     ```
 
      </span>
 
-    This is because JSX tags are transpiled into _function calls_, and you can't use statements inside expressions. This may change thanks to `do` expressions which are _stage 1 proposal_.
+    به خاطر اینکه تگ های JSX داخل *function calls* تبدیل میشن ما نمی تونیم از statement ها داخل عبارات استفاده کنیم.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 93. ### توی attributeها چطوری به prop دسترسی داشته باشیم؟
 
-    React (or JSX) doesn't support variable interpolation inside an attribute value. The below representation won't work:
+    ری اکت یا JSX داخل یه attribute درون یابی متفیر رو پشتیبانی نمیکنه.
+    مثال زیر کار نمیکنه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <img className="image" src="images/{this.props.image}" />
-    ```
+    <img className='image' src='images/{this.props.image}' />
+     ```
 
      </span>
 
-    But you can put any JS expression inside curly braces as the entire attribute value. So the below expression works:
+    اما ما می تونیم هر عبارت js رو داخل کرلی براکس به عنوان مقدار کلی attribute قرار بدیم.
+    عیارت زیر کار میکنه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <img className="image" src={"images/" + this.props.image} />
-    ```
+    <img className='image' src={'images/' + this.props.image} />
+     ```
 
      </span>
 
-    Using _template strings_ will also work:
+    با استفاده از *template strings* هم کار میکنه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <img className="image" src={`images/${this.props.image}`} />
-    ```
+    <img className='image' src={`images/${this.props.image}`} />
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 94. ### چطوری یه PropType برای ‌آرایه‌ای از objectها با shape داشته باشیم؟
 
-    If you want to pass an array of objects to a component with a particular shape then use `React.PropTypes.shape()` as an argument to `React.PropTypes.arrayOf()`.
+    اگه بخوایم آرایه ای از آبجکت ها رو به یه کامپوننت با شکل خاصی پاس بدیم، از `React.PropTypes.shape` به عنوان یه آرگومان برای `React.PropTypes.arrayOf` استفاده میکنیم.
 
     <span align="left" dir="ltr">
 
     ```javascript
     ReactComponent.propTypes = {
-      arrayWithShape: React.PropTypes.arrayOf(
-        React.PropTypes.shape({
-          color: React.PropTypes.string.isRequired,
-          fontSize: React.PropTypes.number.isRequired,
-        })
-      ).isRequired,
-    };
-    ```
+      arrayWithShape: React.PropTypes.arrayOf(React.PropTypes.shape({
+        color: React.PropTypes.string.isRequired,
+        fontSize: React.PropTypes.number.isRequired
+      })).isRequired
+    }
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 95. ### چطوری classهای یه المنت رو به صورت شرطی رندر کنیم؟
 
-    You shouldn't use curly braces inside quotes because it is going to be evaluated as a string.
+    نباید از کرلی براکس داخل '' استفاده کنیم چون به عنوان یه رشته در نظر گرفته میشه.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <div className="btn-panel {this.props.visible ? 'show' : 'hidden'}">
-    ```
+     ```
 
      </span>
 
-    Instead you need to move curly braces outside (don't forget to include spaces between class names):
+    به جاش می تونیم کرلی براکس رو به بیرون انتقال بدیم. (فراموش نکنیم که از space بین className ها استفاده کنیم.)
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <div className={'btn-panel ' + (this.props.visible ? 'show' : 'hidden')}>
-    ```
+     ```
 
      </span>
 
-    _Template strings_ will also work:
+    با استفاده از *Template strings* هم کار میکنه:
 
     <span align="left" dir="ltr">
 
@@ -2700,68 +2698,65 @@
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 96. ### تفاوت‌های React و ReactDOM چیه؟
 
-    The `react` package contains `React.createElement()`, `React.Component`, `React.Children`, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The `react-dom` package contains `ReactDOM.render()`, and in `react-dom/server` we have _server-side rendering_ support with `ReactDOMServer.renderToString()` and `ReactDOMServer.renderToStaticMarkup()`.
+    بسته ری اکت شامل `React.createElement`، `React.Component`، `React.Children` و helperهای دیگه که مربوطه به کلاس کامپوننت‌ها و المنت‌ها هستش. می‌تونیم اینا رو به عنوان isomorphic یا universal helpers که واسه ساختن کامپوننت ها نیاز داریم, در نظر بگیریم. بسته ‍‍`react-dom` شامل `ReactDOM.render` میشه و داخل `react-dom/server` میتونیم با استفاده از متد های `ReactDOMServer.renderToString()` و `ReactDOMServer.renderToStaticMarkup` *server-side rendering* رو پشتیبانی کنیم.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 97. ### چرا ReactDOM رو از React جدا کردن؟
 
-    The React team worked on extracting all DOM-related features into a separate library called _ReactDOM_. React v0.14 is the first release in which the libraries are split. By looking at some of the packages, `react-native`, `react-art`, `react-canvas`, and `react-three`, it has become clear that the beauty and essence of React has nothing to do with browsers or the DOM. To build more environments that React can render to, React team planned to split the main React package into two: `react` and `react-dom`. This paves the way to writing components that can be shared between the web version of React and React Native.
+    تیم ری اکت سعی کرده تمام ویژگی های مرتبط با DOM رو جدا کنه و اونو تی یه کتابخونه جدا به اسم *ReactDom* قرار بده. ری اک ورژن ۱۴ اولین نسخه ایه که توی اون کتابخونه ها از هم جدا میشن. با نگاهی به بعضی از بسته های ری اکت مثل `react-native`، `react-art`، `react-canvas` و `react-three` مشخص میشه که زیبایی و جوهر ری اکت هیچ ربطی به مرورگر ها یا DOM نداره. برای ساختن محیط های بیشتری که ری اکت بتونه رندر بشه، تیم ری اکت قصد داره بسته اصلی ری اکت رو به دو بخش تقسیم کنه: `react` و ‍‍`react-dom`.
+    از این طریق میشه کامپوننت هایی نوشت که بین ری اکت وب و ری اکت نیتیو قابل اشتراک باشه.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 98. ### چطوری از label تو ری‌اکت استفاده کنیم؟
 
-    If you try to render a `<label>` element bound to a text input using the standard `for` attribute, then it produces HTML missing that attribute and prints a warning to the console.
+    اگه سعی کنیم که با استفاده از for attribute یه عنصر `<label>` متصل به یه متن رو رندر کنیم، اون وقت ویژگی HTML بودن رو از دست میده و یه خطا توی کنسول بهمون نشون میده.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <label for={'user'}>{'User'}</label>
     <input type={'text'} id={'user'} />
-    ```
+     ```
 
      </span>
 
-    Since `for` is a reserved keyword in JavaScript, use `htmlFor` instead.
+    از اونجایی که `for` یه کلمه کلیدی رزرو شده توی جاوااسکریپته، به جاش باید از `htmlFor` استفاده کنیم.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <label htmlFor={'user'}>{'User'}</label>
     <input type={'text'} id={'user'} />
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 99. ### چطوری می‌تونیم چندتا object از استایل‌های درون خطی رو با هم ترکیب کنیم؟
 
-    You can use _spread operator_ in regular React:
+    میتونیم از *spread operator* در ری اکت استفاده کنیم:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <button style={{ ...styles.panel.button, ...styles.panel.submitButton }}>
-      {"Submit"}
-    </button>
+    <button style={{...styles.panel.button, ...styles.panel.submitButton}}>{'Submit'}</button>
     ```
 
     </span>
 
-    If you're using React Native then you can use the array notation:
+    اگه داریم از ریکت نیتیو استفاده میکنیم میتونیم از نماد آرایه استفاده کنیم:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <button style={[styles.panel.button, styles.panel.submitButton]}>
-      {"Submit"}
-    </button>
+    <button style={[styles.panel.button, styles.panel.submitButton]}>{'Submit'}</button>
     ```
 
     </span>
@@ -2770,7 +2765,7 @@
 
 100.  ### چطوری با resize شدن مرورگر یه ویو رو ری‌رندر کنیم؟
 
-      می تونید به رخداد `resize` توی `componentDidMount()` گوش کنیم و ابعاد(`width` و `height`) رو تغییر بدین. البته حواستون باشه که این listener رو باید توی متد `componentWillUnmount()` حذفش کنیم.
+      می تونید به رخداد `resize` توی `componentDidMount` گوش کنیم و ابعاد(`width` و `height`) رو تغییر بدین. البته حواستون باشه که این listener رو باید توی متد `componentWillUnmount` حذفش کنیم.
 
       <span align="left" dir="ltr">
 
