@@ -890,7 +890,7 @@
 
 21. ### forward ref چیه؟
 
-    _Ref forwarding_ is a feature that lets some components take a _ref_ they receive, and pass it further down to a child.
+    *Ref forwarding* ویژگی ایه که به بعضی از کامپوننت ها این اجازه رو میده *ref* دریافت شده رو به کامپوننت فرزند انتقال بدن.
 
     <span align="left" dir="ltr">
 
@@ -903,42 +903,42 @@
 
     // Create ref to the DOM button:
     const ref = React.createRef();
-    <ButtonElement ref={ref}>{"Forward Ref"}</ButtonElement>;
-    ```
+    <ButtonElement ref={ref}>{'Forward Ref'}</ButtonElement>
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 22. ### بین callback refs و تابع findDOMNode کدوم رو ترجیح میدی؟
 
-    It is preferred to use _callback refs_ over `findDOMNode()` API. Because `findDOMNode()` prevents certain improvements in React in the future.
+    ترجیح داده میشه که از *callback refs* به جای `findDOMNode()` استفاده کنیم، چون `findDOMNode()` از پیشرفت های خاص ری اکت در آینده جلوگیری میکنه.
 
-    The **legacy** approach of using `findDOMNode`:
+    رویکرد **legacy** استفاده از `findDOMNode`:
 
     <span align="left" dir="ltr">
 
     ```javascript
     class MyComponent extends Component {
       componentDidMount() {
-        findDOMNode(this).scrollIntoView();
+        findDOMNode(this).scrollIntoView()
       }
 
       render() {
-        return <div></div>;
+        return <div></div>
       }
     }
-    ```
+     ```
 
      </span>
 
-    The recommended approach is:
+    رویکرد توصیه شده:
 
     <span align="left" dir="ltr">
 
     ```javascript
     class MyComponent extends Component {
-      constructor(props) {
+      constructor(props){
         super(props);
         this.node = createRef();
       }
@@ -947,93 +947,95 @@
       }
 
       render() {
-        return <div ref={this.node} />;
+        return <div ref={this.node} />
       }
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 23. ### چرا Refهای متنی منقضی محسوب می‌شوند؟
 
-    If you worked with React before, you might be familiar with an older API where the `ref` attribute is a string, like `ref={'textInput'}`, and the DOM node is accessed as `this.refs.textInput`. We advise against it because _string refs have below issues_, and are considered legacy. String refs were **removed in React v16**.
+    اگه قبلا با ری اکت کار کرده باشین، ممکنه با یه API قدیمی تر آشنا باشین که توی اون ویژگی ref یه رشته ست، مثل `ref={'textInput'}` و گره DOM به عنوان `this.refs.textInput` قابل دسترسیه.  We advise against it because *string refs have below issues*, and are considered legacy. String refs were **removed in React v16**.
 
-    1. They _force React to keep track of currently executing component_. This is problematic because it makes react module stateful, and thus causes weird errors when react module is duplicated in the bundle.
-    2. They are _not composable_ — if a library puts a ref on the passed child, the user can't put another ref on it. Callback refs are perfectly composable.
-    3. They _don't work with static analysis_ like Flow. Flow can't guess the magic that framework does to make the string ref appear on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.
-    4. It doesn't work as most people would expect with the "render callback" pattern (e.g. <DataGrid renderRow={this.renderRow} />)
+    1. اونا ری اکت رو وادار میکنن که عناصر در حال اجرا رو پیگیری کنه. این مساله یکم مشکل سازه چون باعث میشه خطاهای عجیب و غریب وقتی که ماژول ری اکت توی باندل کپی میشه ایجاد بشه.
+    2. *قابل انعطاف* نیستن - اگه یه کتابخونه یه ref رو روی فرزند انتقال داده شده قرار بده، کاربر نمیتونه یه ref دیگه ای رو روی اون قرار بده.
+    ref های برگشتی کاملا ترکیب شده هستن.
+    3. They *don't work with static analysis* like Flow. Flow can't guess the magic that framework does to make the string ref appear on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.
+    4. اون طور که اکثر مردم از الگوی "render callback" انتظار دارند کار نمی کند (e.g. <DataGrid renderRow={this.renderRow} />)
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    class MyComponent extends Component {
-      renderRow = (index) => {
-        // This won't work. Ref will get attached to DataTable rather than MyComponent:
-        return <input ref={"input-" + index} />;
+       class MyComponent extends Component {
+         renderRow = (index) => {
+           // This won't work. Ref will get attached to DataTable rather than MyComponent:
+           return <input ref={'input-' + index} />;
 
-        // This would work though! Callback refs are awesome.
-        return <input ref={(input) => (this["input-" + index] = input)} />;
-      };
+           // This would work though! Callback refs are awesome.
+           return <input ref={input => this['input-' + index] = input} />;
+         }
 
-      render() {
-        return <DataTable data={this.props.data} renderRow={this.renderRow} />;
-      }
-    }
-    ```
+         render() {
+           return <DataTable data={this.props.data} renderRow={this.renderRow} />
+         }
+       }
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 24. ### Virtual DOM چیه؟
 
-    The _Virtual DOM_ (VDOM) is an in-memory representation of _Real DOM_. The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called _reconciliation_.
+    The *Virtual DOM* (VDOM) is an in-memory representation of *Real DOM*. The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called *reconciliation*.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 25. ### Virtual DOM چطوری کار می‌کنه؟
 
-    The _Virtual DOM_ works in three simple steps.
+    *Virtual DOM* توی سه مرحله ساده کار میکنه.
 
-    1. Whenever any underlying data changes, the entire UI is re-rendered in Virtual DOM representation.
+    1. هر زمان که داده های اساسی تغییر میکنه، کل رابط کاربری توس DOM مجازی مجددا رندر میشه.
 
-       ![vdom](images/vdom1.png)
+        ![vdom](images/vdom1.png)
 
-    2. Then the difference between the previous DOM representation and the new one is calculated.
+    2. تفاوت بین DOM قبلی و جدید محاسبه میشه.
 
-       ![vdom2](images/vdom2.png)
+        ![vdom2](images/vdom2.png)
 
-    3. Once the calculations are done, the real DOM will be updated with only the things that have actually changed.
+    3. بعد از انجام محاسبات ، DOM واقعی فقط با مواردی که واقعاً تغییر کردن به روز میشه.
 
-       ![vdom3](images/vdom3.png)
+        ![vdom3](images/vdom3.png)
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 26. ### تفاوت بین Shadow DOM و Virtual DOM چیه؟
 
-    The _Shadow DOM_ is a browser technology designed primarily for scoping variables and CSS in _web components_. The _Virtual DOM_ is a concept implemented by libraries in JavaScript on top of browser APIs.
+    *shadow DOM* یه تکنولوژی مرورگره که در درجه اول برای تعیین متغیر ها و css در*کامپوننت وب* طراحی شده. *virtual DOM* مفهومیه که توسط کتابخونه ها در جاوااسکریپت در API های مرورگر اجرا شده.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 27. ### React Fiber چیه؟
 
-    Fiber is the new _reconciliation_ engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
+    Fiber is the new *reconciliation* engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 28. ### هدف اصلی React Fiber چیه؟
 
-    The goal of _React Fiber_ is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
+    The goal of *React Fiber* is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 29. ### کامپوننت‌های کنترل شده چی هستن؟
 
-    A component that controls the input elements within the forms on subsequent user input is called **Controlled Component**, i.e, every state mutation will have an associated handler function.
+    کامپوننتی که عناصر ورودی رو توی فرم های ورودی کاربر کنترل میکنه به عنوان کامپوننت کنترل شده شناخته میشه، هر جهش state یه تابع نگهدارنده مرتبط داره.
 
-    For example, to write all the names in uppercase letters, we use handleChange as below,
+
+    به عنوان مثال، برای نوشتن تمام اسم ها با حروف بزرگ، باید از handleChange مثل زیر استفاده کنیم:
 
     <span align="left" dir="ltr">
 
@@ -1041,38 +1043,38 @@
     handleChange(event) {
       this.setState({value: event.target.value.toUpperCase()})
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 30. ### کامپوننت‌های کنترل نشده چی هستن؟
 
-    The **Uncontrolled Components** are the ones that store their own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+    *کامپوننت های کنترل نشده* کامپوننت هایی هستند که state های خودشون رو به صورت داخلی ذخیره می کنند و ما می تونیم با استفاده از یک ref از DOM پرس و جو کنیم تا در صورت نیاز مقدار فعلی اونو پیدا کنیم. این یکم شبیه HTML سنتیه.
 
-    In the below UserProfile component, the `name` input is accessed using ref.
+    در کامپوننت UserProfile زیر، ورودی `name` با استفاده از ref قابل دسترسیه.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     class UserProfile extends React.Component {
       constructor(props) {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.input = React.createRef();
+        super(props)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.input = React.createRef()
       }
 
       handleSubmit(event) {
-        alert("A name was submitted: " + this.input.current.value);
-        event.preventDefault();
+        alert('A name was submitted: ' + this.input.current.value)
+        event.preventDefault()
       }
 
       render() {
         return (
           <form onSubmit={this.handleSubmit}>
             <label>
-              {"Name:"}
+              {'Name:'}
               <input type="text" ref={this.input} />
             </label>
             <input type="submit" value="Submit" />
@@ -1080,103 +1082,106 @@
         );
       }
     }
-    ```
+     ```
 
      </span>
 
-    In most cases, it's recommend to use controlled components to implement forms.
+    در بیشتر موارد، توصیه میشه که از کامپوننت های کنترل شده برای پیاده سازی فرم ها استفاده کنیم.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 31. ### تفاوت‌های بین createElement و cloneElement چیا هستن؟
 
-    JSX elements will be transpiled to `React.createElement()` functions to create React elements which are going to be used for the object representation of UI. Whereas `cloneElement` is used to clone an element and pass it new props.
+    عناصر JSX به توابع `React.createElement` تبدیل میشن تا عناصر ری اکتی بسازن که برای نمایش شی UI استفاده میشن. درحالی که `cloneElement` برای کلون کردن یه عنصر و فرستادنش به عنوان prop جدید استفاده میشه.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 32. ### مفهوم lift state up یا مدیریت state در لول بالاتر رو توضیح میدی؟
 
-    When several components need to share the same changing data then it is recommended to _lift the shared state up_ to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
+    When several components need to share the same changing data then it is recommended to *lift the shared state up* to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 33. ### فازهای مختلف از lifecycle کامپوننت چیا هستن؟
 
-    The component lifecycle has three distinct lifecycle phases:
+    چرخه حیات کامپوننت سه مرحله داره:
 
-    1. **Mounting:** The component is ready to mount in the browser DOM. This phase covers initialization from `constructor()`, `getDerivedStateFromProps()`, `render()`, and `componentDidMount()` lifecycle methods.
+    1. **Mounting:** کامپوننت آماده نصب در DOM مرورگر هستش. این مرحله مقداردهی اولیه از متدهای lifecycle `constructor`، ‍‍`getDerivedStateFromProps`، ‍‍`render` و `componentDidMount` رو پوشش میده.
 
-    2. **Updating:** In this phase, the component get updated in two ways, sending the new props and updating the state either from `setState()` or `forceUpdate()`. This phase covers `getDerivedStateFromProps()`, `shouldComponentUpdate()`, `render()`, `getSnapshotBeforeUpdate()` and `componentDidUpdate()` lifecycle methods.
+    2. **Updating:** در این مرحله، کامپوننت از دو طریق به روزرسانی میشه، ارسال prop های جدید و به روزرسانی state از طریق `setState` یا `forceUpdate`. این مرحله متد های `getDerivedStateFromProps`، `shouldComponentUpdate`، `render`، `getSnapshotBeforeUpdate` و `componentDidUpdate` رو پوشش میده.
 
-    3. **Unmounting:** In this last phase, the component is not needed and get unmounted from the browser DOM. This phase includes `componentWillUnmount()` lifecycle method.
+    3. **Unmounting:** در مرحله آخر کامپوننت مورد نیاز نیست و از DOM مرورگر حذف میشه. این مرحله فقط شامل متد ‍‍`componentWillUnmount` میشه.
 
     It's worth mentioning that React internally has a concept of phases when applying changes to the DOM. They are separated as follows
 
-    1. **Render** The component will render without any side-effects. This applies for Pure components and in this phase, React can pause, abort, or restart the render.
+    1. **Render** کامپوننت بدون هیچ سایدافکتی رندر میشه. این فقط در مورد کامپوننت های خالص صدق میکنه و در این مرحله، ری اکت میتونه رندر رو متوقف، حذف یا restart کنه.
 
-    2. **Pre-commit** Before the component actually applies the changes to the DOM, there is a moment that allows React to read from the DOM through the `getSnapshotBeforeUpdate()`.
+    2. **Pre-commit** قبل از اینکه کامپوننت تغییرات رو روی DOM‌ اعمال کنه، لحظه ای وجود داره که به ری اکت اجازه میده از DOM داخل متد `getSnappshotBeforeUpdate` بخونه.
 
-    3. **Commit** React works with the DOM and executes the final lifecycles respectively `componentDidMount()` for mounting, `componentDidUpdate()` for updating, and `componentWillUnmount()` for unmounting.
+    3. **Commit** ری اکت با DOM کار میکنه و lifecycle های آخر رو به ترتیب اجرا میکنه، ‍‍`componentDidMount` برای نصب، `componentDidUpdate` برای به روزرسانی و `componentWillUnmount` برای غیرفعال کردن.
 
-    React 16.3+ Phases (or an [interactive version](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/))
 
-    ![phases 16.3+](images/phases16.3.jpg)
+    مراحل ری اکت ۱۶.۳ (یا [نسخه تعاملی](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/))
 
-    Before React 16.3
+    ![فازهای 16.3+](images/phases16.3.jpg)
 
-    ![phases 16.2](images/phases.png)
+    قبل از ورژن ۱۶.۳
 
-    **[فهرست](#فهرست)**
+    ![فازهای 16.2](images/phases.png)
+
+     **[فهرست](#فهرست)**
 
 34. ### متدهای lifecycle کامپوننت چیا هستن؟
 
-    React 16.3+
+    ری اکت ۱۶.۳
 
-    - **getDerivedStateFromProps:** Invoked right before calling `render()` and is invoked on _every_ render. This exists for rare use cases where you need derived state. Worth reading [if you need derived state](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
-    - **componentDidMount:** Executed after first rendering and here all AJAX requests, DOM or state updates, and set up event listeners should occur.
-    - **shouldComponentUpdate:** Determines if the component will be updated or not. By default it returns `true`. If you are sure that the component doesn't need to render after state or props are updated, you can return false value. It is a great place to improve performance as it allows you to prevent a re-render if component receives new prop.
-    - **getSnapshotBeforeUpdate:** Executed right before rendered output is committed to the DOM. Any value returned by this will be passed into `componentDidUpdate()`. This is useful to capture information from the DOM i.e. scroll position.
-    - **componentDidUpdate:** Mostly it is used to update the DOM in response to prop or state changes. This will not fire if `shouldComponentUpdate()` returns `false`.
-    - **componentWillUnmount** It will be used to cancel any outgoing network requests, or remove all event listeners associated with the component.
+    - **getDerivedStateFromProps:** درست قبل از اینکه Render() اجرا بشه فراخوانی میشه و در *هر بار* render فراخوانی میشه.
+    برای موارد نادری که نیاز داریم از state مشتق بگیریم این متد استفاده میشه. بهتره که اینو بخونید [اگه نیاز داشتین که از state مشتق بگیرین] (https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
+    - **componentDidMount:** بعد از اولین رندر اجرا میشه و همه درخواست های AJAX، DOM یا بروزرسانی state و تنظیمات event listeners اجرا میشه.
+    - **shouldComponentUpdate:** تعیین میکنه که کامپوننت به روز بشه یا نه. به طور پیش فرض مقدار `true` رو برمیگردونه. اگه مطمئن باشیم که کامپوننت بعد از اینکه state یا props به روزرسانی میشه نیازی به رندر شدن نداره، میتونیم مقدار `false` رو برگردونیم. اینجا جای خوبی برای بهبود عملکرده چون این امکان رو بهمون میده که اگه کامپوننت prop جدید میگیره از render مجدد جلوگیری کنیم.
+    - **getSnapshotBeforeUpdate:** درست قبل از رندر مجدد خروجی به DOM اجرا میشه. هر مقداری که توسط این متد برگشت داده میشه به متد `componentDidUpdate` انتقال داده میشه. برای گرفتن اطلاعات از موقعیت اسکرول DOM مفیده.
+    - **componentDidUpdate:** بیشتر برای به روزرسانی DOM در پاسخ به تغییرات state‌ یا Prop استفاده میشه. این متد زمانی که `shouldComponentUpdate()` مقدار `false` رو برگردونه قابل استفاده ست.
+    - **componentWillUnmount** این متد برای کنسل کردن همه درخواست های شبکه خروجی یا حذف همه event listener های مرتبط با کامپوننت استفاده میشه.
 
-    Before 16.3
+    قبل ورژن ۱۶.۳
 
-    - **componentWillMount:** Executed before rendering and is used for App level configuration in your root component.
-    - **componentDidMount:** Executed after first rendering and here all AJAX requests, DOM or state updates, and set up event listeners should occur.
+    - **componentWillMount:** قبل از رندر اجرا میشه و برای پیکربندی سطح برنامه توی کامپوننت ریشه استفاده میشه.
+    - **componentDidMount:**  بعد از اولین رندر اجرا میشه و همه درخواست های AJAX، DOM یا بروزرسانی state و تنظیمات event listeners اجرا میشه.
     - **componentWillReceiveProps:** Executed when particular prop updates to trigger state transitions.
-    - **shouldComponentUpdate:** Determines if the component will be updated or not. By default it returns `true`. If you are sure that the component doesn't need to render after state or props are updated, you can return false value. It is a great place to improve performance as it allows you to prevent a re-render if component receives new prop.
-    - **componentWillUpdate:** Executed before re-rendering the component when there are props & state changes confirmed by `shouldComponentUpdate()` which returns true.
-    - **componentDidUpdate:** Mostly it is used to update the DOM in response to prop or state changes.
-    - **componentWillUnmount:** It will be used to cancel any outgoing network requests, or remove all event listeners associated with the component.
+    - **shouldComponentUpdate:** تعیین میکنه که کامپوننت به روز بشه یا نه. به طور پیش فرض مقدار `true` رو برمیگردونه. اگه مطمئن باشیم که کامپوننت بعد از اینکه state یا props به روزرسانی میشه نیازی به رندر شدن نداره، میتونیم مقدار `false` رو برگردونیم. اینجا جای خوبی برای بهبود عملکرده چون این امکان رو بهمون میده که اگه کامپوننت prop جدید میگیره از render مجدد جلوگیری کنیم.
+    - **componentWillUpdate:** قبل از رندر مجدد کامپوننت وقتی که تغییرات state و props توسط ‍‍‍‍`shouldComponentUpdate()` مقدار ‍‍`true` رو برگردونده باشه اجرا میشه.
+    - **componentDidUpdate:** بیشتر برای به روزرسانی DOM در پاسخ به تغییرات state‌ یا Prop استفاده میشه. این متد زمانی که `shouldComponentUpdate()` مقدار `false` رو برگردونه قابل استفاده ست.
+    - **componentWillUnmount** این متد برای کنسل کردن همه درخواست های شبکه خروجی یا حذف همه event listener های مرتبط با کامپوننت استفاده میشه.
 
-      **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 35. ### کامپوننت‌های Higher-Order چی هستن؟
 
-    A _higher-order component_ (_HOC_) is a function that takes a component and returns a new component. Basically, it's a pattern that is derived from React's compositional nature.
+    *کامپوننت با اولویت بالا* (*HOC*) تابعیه که یه کامپوننت میگیره و یه کامپوننت جدید برمیگردونه. اصولا این الگوییه که از ماهیت تلفیقی ری اکت گرفته شده.
 
-    We call them **pure components** because they can accept any dynamically provided child component but they won't modify or copy any behavior from their input components.
+    ما اینا رو به عنوان کامپوننت های خالص میشناسیم چون میتونن هر کدوم از کامپوننت های فرزندشون رو که به صورت پویا ارائه  شدن بپذیرن ولی هیچ کدوم از رفتارهای کامپوننت های ورودی خودشون رو تغییر نمیدن.
 
     <span align="left" dir="ltr">
 
     ```javascript
-    const EnhancedComponent = higherOrderComponent(WrappedComponent);
-    ```
+    const EnhancedComponent = higherOrderComponent(WrappedComponent)
+     ```
 
      </span>
 
-    HOC can be used for many use cases:
+    HOC خیلی جاها میتونه استفاده بشه:
 
-    1. Code reuse, logic and bootstrap abstraction.
+    1. استفاده مجدد از کد، منطق و مفهوم bootstrap.
     2. Render hijacking.
-    3. State abstraction and manipulation.
+    3. مفهوم state و manipulation.
     4. Props manipulation.
 
-    **[فهرست](#فهرست)**
+
+     **[فهرست](#فهرست)**
 
 36. ### چطوری می‌تونیم props proxy برای کامپوننت‌های HOC ایجاد کنیم؟
 
-    You can add/edit props passed to the component using _props proxy_ pattern like this:
+    میتونیم prop های انتقال داده شده به کامپوننت رو با استفاده از الگوی *props proxy* اضافه یا ویرایش کنیم:
 
     <span align="left" dir="ltr">
 
@@ -1185,70 +1190,70 @@
       return class Test extends Component {
         render() {
           const newProps = {
-            title: "New Header",
+            title: 'New Header',
             footer: false,
             showFeatureX: false,
-            showFeatureY: true,
-          };
+            showFeatureY: true
+          }
 
-          return <WrappedComponent {...this.props} {...newProps} />;
+          return <WrappedComponent {...this.props} {...newProps} />
         }
-      };
+      }
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 37. ### context چیه؟
 
-    _Context_ provides a way to pass data through the component tree without having to pass props down manually at every level. For example, authenticated user, locale preference, UI theme need to be accessed in the application by many components.
+    *Context* روشی رو برای انتقال داده ها بین کامپوننت ها فراهم میکنه بدون اینکه بخوایم توی هر سطح به صورت دستی داده ها رو منتقل کنیم. به عنوان مثال، معتبر بودن کاربر، locale preference، UI theme مواردی هستن که توی خیلی از کامپوننت ها باید در دسترس باشن.
 
     <span align="left" dir="ltr">
 
     ```javascript
-    const { Provider, Consumer } = React.createContext(defaultValue);
-    ```
+    const {Provider, Consumer} = React.createContext(defaultValue)
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 38. ### children prop چیه؟
 
-    _Children_ is a prop (`this.prop.children`) that allow you to pass components as data to other components, just like any other prop you use. Component tree put between component's opening and closing tag will be passed to that component as `children` prop.
+    *children* یه (`this.prop.children`) prop هستش که بهمون اجازه میده کامپوننت ها رو به عنوان داده به کامپوننت های دیگه انقال بدیم، درست مثل prop های دیگه ای که استفاده میکنیم. درخت کامپوننت که بین تگ باز و بسته کامپوننت ها قرار داره به اون کامپوننت به عنوان prop `children` پاس داده میشه.
 
-    There are a number of methods available in the React API to work with this prop. These include `React.Children.map`, `React.Children.forEach`, `React.Children.count`, `React.Children.only`, `React.Children.toArray`.
-    A simple usage of children prop looks as below,
+    تعدادی متد در دسترس توی react API برای کار بااین prop ها وجود داره که شامل  `React.Children.map`، `React.Children.forEach`، `React.Children.count`، `React.Children.only`، `React.Children.toArray` هستش.
+    یه مثال ساده از استفاده از children prop این پایین نوشته شده.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     const MyDiv = React.createClass({
-      render: function () {
-        return <div>{this.props.children}</div>;
-      },
-    });
+      render: function() {
+        return <div>{this.props.children}</div>
+      }
+    })
 
     ReactDOM.render(
       <MyDiv>
-        <span>{"Hello"}</span>
-        <span>{"World"}</span>
+        <span>{'Hello'}</span>
+        <span>{'World'}</span>
       </MyDiv>,
       node
-    );
-    ```
+    )
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 39. ### چطوری میشه تو React کامنت نوشت؟
 
-    The comments in React/JSX are similar to JavaScript Multiline comments but are wrapped in curly braces.
+    کامنت ها توی React/JSX شبیه به جاوااسکریپت هستن اما کامنت های چند خطی توی آکولاد قرار میگیرن.
 
-    **Single-line comments:**
+    **کامنت های تک خطی:**
 
     <span align="left" dir="ltr">
 
@@ -1257,11 +1262,11 @@
       {/* Single-line comments(In vanilla JavaScript, the single-line comments are represented by double slash(//)) */}
       {`Welcome ${user}, let's play React`}
     </div>
-    ```
+     ```
 
      </span>
 
-    **Multi-line comments:**
+    **کامنت های چند خطی:**
 
     <span align="left" dir="ltr">
 
@@ -1271,69 +1276,69 @@
        one line */}
       {`Welcome ${user}, let's play React`}
     </div>
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 40. ### چرا توی کامپوننت‌های کلاس باید توی constructor تابع super رو با مقدار props صدا بزنیم؟
 
-    A child class constructor cannot make use of `this` reference until `super()` method has been called. The same applies for ES6 sub-classes as well. The main reason of passing props parameter to `super()` call is to access `this.props` in your child constructors.
+    کلاس constructor تا زمانی که متد `super()` صدا زده نشده نمیتونه از `this` استفاده کنه. همین مورد در رابطه با کلاس های فرعی ES6 هم صدق میکنه. دلیل اصلی انتقال پارامتر های props به متد فراخوان `super` دسترسی داشتن به `this.props` توی constructor هستش.
 
-    **Passing props:**
+    **با پاس دادن props:**
 
     <span align="left" dir="ltr">
 
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super(props);
+        super(props)
 
-        console.log(this.props); // prints { name: 'John', age: 42 }
+        console.log(this.props) // prints { name: 'John', age: 42 }
       }
     }
-    ```
+     ```
 
      </span>
 
-    **Not passing props:**
+    **بدون پاس داده شدن props:**
 
     <span align="left" dir="ltr">
 
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super();
+        super()
 
-        console.log(this.props); // prints undefined
+        console.log(this.props) // prints undefined
 
         // but props parameter is still available
-        console.log(props); // prints { name: 'John', age: 42 }
+        console.log(props) // prints { name: 'John', age: 42 }
       }
 
       render() {
         // no difference outside constructor
-        console.log(this.props); // prints { name: 'John', age: 42 }
+        console.log(this.props) // prints { name: 'John', age: 42 }
       }
     }
-    ```
+     ```
 
      </span>
 
-    The above code snippets reveals that `this.props` is different only within the constructor. It would be the same outside the constructor.
+    کد بالا نشون میده که `this.props` فقط توی constructor متفاوته، بیرون از constructor میتونه مثل همه.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 41. ### reconciliation چیه؟
 
-    When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called _reconciliation_.
+    وقتی state‌ یا props یه کامپوننت تغییر میکنه، ری اکت با مقایسه عنصر تازه return شده و نمونه render شده قبلی تصمیم میگیره که به روزرسانی DOM واقعا ضروریه یا نه. وقتی این دو مقدار با هم برابر نباشه، ری اکت به روزرسانی DOM‌رو انجام میده. به این فرایند *reconciliation* میگیم.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 42. ### چطوری با یه اسم داینامیک set state کنیم؟
 
-    If you are using ES6 or the Babel transpiler to transform your JSX code then you can accomplish this with _computed property names_.
+    اگر برای تبدیل کد JSX از ES6 یا babel استفاده میکنین میتونین این کارو با *computed property names* انجام بدین.
 
     <span align="left" dir="ltr">
 
@@ -1341,15 +1346,15 @@
     handleInputChange(event) {
       this.setState({ [event.target.id]: event.target.value })
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 43. ### یه اشتباه رایج برای مدیریت توابع eventها که باعث میشه با هر رندر توابع مجدد ساخته بشن چی هستش؟
 
-    You need to make sure that function is not being called while passing the function as a parameter.
+    باید مطمئن باشیم که موقع انتقال یه تابع به عنوان پارامتر تابع صدا زده نمیشه.
 
     <span align="left" dir="ltr">
 
@@ -1358,11 +1363,11 @@
       // Wrong: handleClick is called instead of passed as a reference!
       return <button onClick={this.handleClick()}>{'Click Me'}</button>
     }
-    ```
+     ```
 
      </span>
 
-    Instead, pass the function itself without parenthesis:
+    در عوض تابع رو بدون پرانتز انقال بدین:
 
     <span align="left" dir="ltr">
 
@@ -1371,16 +1376,16 @@
       // Correct: handleClick is passed as a reference!
       return <button onClick={this.handleClick}>{'Click Me'}</button>
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 44. ### تابع lazy که برای lazy load استفاده میشه رو می‌تونیم به صورت name export خروجی بگیریم؟
 
-    No, currently `React.lazy` function supports default exports only. If you would like to import modules which are named exports, you can create an intermediate module that reexports it as the default. It also ensures that tree shaking keeps working and don’t pull unused components.
-    Let's take a component file which exports multiple named components,
+    نه، تابع `React.lazy` در حال حاضر فقط خروجی پیش فرض رو پشتیبانی میکنه. اگه بخوایم ماژول هایی رو import کنیم که به اونا exports گفته میشه، می تونیم یه ماژول واسطه تعریف کنیم که اونا رو به عنوان پیش فرض مجددا تعریف میکنه. همچنین تضمین میکنه که tree shaking همچنان به کار خودش ادامه میده و کامپوننت های استفاده نشده رو نمیگیره.
+    بیاین یه کامپوننتی بنویسیم که چندین کامپوننت رو به عنوان خروجی ارائه میده.
 
     <span align="left" dir="ltr">
 
@@ -1391,7 +1396,8 @@
     ```
 
     </span>
-    and reexport `MoreComponents.js` components in an intermediate file `IntermediateComponent.js`
+
+    و کامپوننت `MoreComponents.js` رو در فایل واسطه `IntermediateComponent.js` مجددا به عنوان خروجی تعریف کنیم.
 
     <span align="left" dir="ltr">
 
@@ -1401,21 +1407,21 @@
     ```
 
     </span>
-    Now you can import the module using lazy function as below,
+    حالا می تونیم ماژول رو با استفاده از تابع lazy مثل زیر import کنیم.
     <span align="left" dir="ltr">
 
     ```javascript
-    import React, { lazy } from "react";
+    import React, { lazy } from 'react';
     const SomeComponent = lazy(() => import("./IntermediateComponent.js"));
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 45. ### چرا ری‌اکت از className بجای class استفاده می‌کنه؟
 
-    `class` is a keyword in JavaScript, and JSX is an extension of JavaScript. That's the principal reason why React uses `className` instead of `class`. Pass a string as the `className` prop.
+    `class` یه کلمه کلیدی توی جاوااسکریپته و JSX پسوند جاوااسکریپته. دلیل اصلی اتفاده ری اکت از `className` به جای `class` همینه. یه رشته رو به عنوان prop `className` انتقال میدیم.
 
     <span align="left" dir="ltr">
 
@@ -1423,15 +1429,15 @@
     render() {
       return <span className={'menu navigation-menu'}>{'Menu'}</span>
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 46. ### fragmentها چی هستن؟
 
-    It's common pattern in React which is used for a component to return multiple elements. _Fragments_ let you group a list of children without adding extra nodes to the DOM.
+    یه الگوی رایج توی ری اکت وجود داره که برای کامپوننتی استفاده میشه که چندین عنصر رو برمیگردونن. *Fragment* ها این امکان رو فراهم میکنن که بتونیم لیستی از فرزندان رو بدون اضافه کردن نود های اضافی به DOM گروه بندی کنیم.
 
     <span align="left" dir="ltr">
 
@@ -1445,11 +1451,11 @@
         </React.Fragment>
       )
     }
-    ```
+     ```
 
      </span>
 
-    There is also a _shorter syntax_, but it's not supported in many tools:
+    همچنین یه *shorter syntax* وجود داره اما توی خیلی از ابزار ها پشتیبانی نمیشه:
 
     <span align="left" dir="ltr">
 
@@ -1463,68 +1469,69 @@
         </>
       )
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 47. ### چرا fragmentها از تگ‌های div بهترن؟
 
-    1. Fragments are a bit faster and use less memory by not creating an extra DOM node. This only has a real benefit on very large and deep trees.
-    2. Some CSS mechanisms like _Flexbox_ and _CSS Grid_ have a special parent-child relationships, and adding divs in the middle makes it hard to keep the desired layout.
-    3. The DOM Inspector is less cluttered.
+    1. Fragment ها یه کم سریعترن و با ایجاد نکردن DOM node اضافی حافظه کمتری استفاده میکنن. این فقط یه مزیت واقعی روی درخت های بزرگ و عمیق داره.
+    بعضی از مکانیسم های CSS مثل *Flexbox* و *CSS Grid* روابط والد و فرزندی خاصی دارند و اضافه کردن div در وسط ، حفظ طرح مورد نظرمون را دشوار میکنه.
+    3. DOM Inspector بهم ریختگی کمتری داره.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 48. ### توی ری‌اکت portal‌ها چیکار می‌کنن؟
 
-    _Portal_ is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+    *Portal* روشی توصیه شده برای رندر کردن فرزند توی DOM هستش و خارج از سلسله مراتب DOM از کامپوننت والد وجود داره.
 
     <span align="left" dir="ltr">
 
     ```javascript
-    ReactDOM.createPortal(child, container);
-    ```
+    ReactDOM.createPortal(child, container)
+     ```
 
      </span>
 
-    The first argument is any render-able React child, such as an element, string, or fragment. The second argument is a DOM element.
+    اولین آرگومان یه فرزند قابل رندر شدن هستش، مثل عنصر، رشته، یا fragment. آرگومان دوم عنصر DOM هستش.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 49. ### کامپوننت stateless چیه؟
 
-    If the behaviour is independent of its state then it can be a stateless component. You can use either a function or a class for creating stateless components. But unless you need to use a lifecycle hook in your components, you should go for function components. There are a lot of benefits if you decide to use function components here; they are easy to write, understand, and test, a little faster, and you can avoid the `this` keyword altogether.
+    اگه رفتار یه کامپوننت مستقل از state اون کامپوننت باشه بهش کامپوننت stateless میگیم. می تونیم از یه تابع یا یه کلاس برای ساخت کامپوننت های stateless استفاده کنیم، اما تا زمانی که ما نیاز داریم از هوک چرخه عمر توی کامپوننت هامون استفاده کنیم باید سراغ کامپوننت های تابع بریم. اگه بخوایم اینجا از کامپوننت های تابع استفاده کنیم فواید زیادی داره، راحت نوشته میشه، فهمیده میشه، تست میشه، سریعتره و میتونیم از کلمه کلیدی ‍`this` هم استفاده نکنیم.
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 50. ### کامپوننت stateful چیه؟
 
-    اگه رفتار یه کامپوننتی به _state_ اون کامپوننت وابسته باشه، می‌تونیم بهش عنوان یه کامپوننت statefull رو بدیم.
-    مثلا به _کلاس کامپوننت ها_ پایین یه نگاهی بندازین:
+    اگه رفتار یه کامپوننتی به *state* اون کامپوننت وابسته باشه، به عنوان کامپوننت statefull .شناخته میشه.
+
+    این کامپوننت ها همیشه جز *کلاس کامپوننت ها* هستند و شامل یه state هستند که توی `constructor`  یه مقدار اولیه بهش میدیم.
 
     <span align="left" dir="ltr">
 
     ```javascript
     class App extends Component {
       constructor(props) {
-        super(props);
-        this.state = { count: 0 };
+        super(props)
+        this.state = { count: 0 }
       }
 
       render() {
         // ...
       }
     }
-    ```
+     ```
 
-    </span>
+     </span>
 
-    **نسخه 16.8 ری‌اکت:**
-    هوک‌ها این امکان رو بهمون میدن که بدون نوشتن کلاس ها بتونیم از state و ویژگی‌های دیگه ری‌اکت استفاده کنیم.
+    **ورژن 16.8 ری اکت:**
+    هوک ها این امکان رو بهمون میدن که بدون نوشتن کلاس ها بتونیم از state و ویژگی های دیگه ری اکت استفاده کنیم.
 
-    _کامپوننت‌های Equivalent Functional_
+    *کامپوننت های Equivalent Functional*
 
     <span align="left" dir="ltr">
 
@@ -1538,11 +1545,11 @@
         // JSX
       )
     }
-    ```
+     ```
 
      </span>
 
-    **[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 51. ### چطوری prop‌های کامپوننت رو اعتبارسنجی کنیم؟
 
