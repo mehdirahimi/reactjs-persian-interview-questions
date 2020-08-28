@@ -474,7 +474,7 @@
 
       </span>
 
-    ۲. **Class Components:** شما میتونید از class که در ES6 به جاوااسکریپت اضافه شده برای این کار استفاده کنیم. کامپوننت مثال قبلی رو اگه بخواییم با class پیاده سازی کنیم اینجوری میشه:
+    ۲. **Class Components:** شما میتونید از class که در ES6 به جاواسکریپت اضافه شده برای این کار استفاده کنیم. کامپوننت مثال قبلی رو اگه بخواییم با class پیاده سازی کنیم اینجوری میشه:
 
      <span align="left" dir="ltr">
 
@@ -613,7 +613,7 @@
 
      </span>
 
-    **نکته مهم:** شما میتونید در سازنده کلاس یا در ورژن جدید جاوااسکریپت به عنوان فیلد کلاس هر چیزی رو به شی state خودتون assign کنید.
+    **نکته مهم:** شما میتونید در سازنده کلاس یا در ورژن جدید جاواسکریپت به عنوان فیلد کلاس هر چیزی رو به شی state خودتون assign کنید.
 
     **[فهرست](#فهرست)**
 
@@ -863,33 +863,22 @@
 
      </span>
 
-    2. اگه از نسخه ۱۶.۸ به بالاتر هم استفاده می‌کنید که یه هوک به اسم useRef هست که . For example, the search bar component's input element accessed as follows,
+    2. اگه از نسخه ۱۶.۸ به بالاتر هم استفاده می‌کنیم که یه هوک به اسم useRef هست و می‌تونیم به سادگی توی کامپوننت‌های تابعی ازش استفاده کنیم. مثل:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    class SearchBar extends Component {
-      constructor(props) {
-        super(props);
-        this.txtSearch = null;
-        this.state = { term: "" };
-        this.setInputSearchRef = (e) => {
-          this.txtSearch = e;
-        };
-      }
-      onInputChange(event) {
-        this.setState({ term: this.txtSearch.value });
-      }
-      render() {
-        return (
-          <input
-            value={this.state.term}
-            onChange={this.onInputChange.bind(this)}
-            ref={this.setInputSearchRef}
-          />
-        );
-      }
-    }
+    const RenderCounter = () => {
+      const counter = useRef(0);
+
+      // Since the ref value is updated in the render phase,
+      // the value can be incremented more than once
+      counter.current = counter.current + 1;
+
+      return (
+        <h1>{`The component has been re-rendered ${counter} times`}</h1>
+      );
+    };
     ```
 
      </span>
@@ -1624,9 +1613,9 @@
 
 54. ### error boundaryها توی ری‌اکت نسخه 16 چیکار می‌کنن؟
 
-    _Error boundaries_ are components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.
+    _Error boundaryها_ یا به اصطلاح تحت الفظی مرزهای خطا کامپوننت‌هایی هستن که خطاهای جاواسکریپت رو هرجایی توی درخت فرزنداش رخ داده باشن catch میکنن و خطای موردنظر رو log میکنن و علاوه براین می‌تونن یه UI به اصطلاح fallback رو بجای کامپوننت crash شده نشون بدن.
 
-    A class component becomes an error boundary if it defines a new lifecycle method called `componentDidCatch(error, info)` or `static getDerivedStateFromError() `:
+    توی یه کلاس کامپوننت با گذاشتن متد `componentDidCatch(error, info)` یا `static getDerivedStateFromError` می‌تونیم یه boundary برای زمانی که خطایی رخ میده درست کنیم. مثل:
 
     <span align="left" dir="ltr">
 
@@ -1659,7 +1648,7 @@
 
      </span>
 
-    After that use it as a regular component:
+    بعدشم میشه ازش مثل یه کامپوننت عادی استفاده کرد:
 
     <span align="left" dir="ltr">
 
@@ -1670,6 +1659,8 @@
     ```
 
      </span>
+
+     **نکته** : از این ویژگی توی کامپوننت‌های functional نمیشه استفاده کرد و در حقیقت احتمالا نیازی هم بهش ندارین، چون اکثر مواقع برای کل برنامه یه error boundary تعریف می‌کنیم که می‌تونه `try..catch` باشه.
 
     **[فهرست](#فهرست)**
 
@@ -1701,7 +1692,7 @@
 
 58. ### کاربرد متد render از پکیج react-dom چیه؟
 
-    This method is used to render a React element into the DOM in the supplied container and return a reference to the component. If the React element was previously rendered into container, it will perform an update on it and only mutate the DOM as necessary to reflect the latest changes.
+    این متد برای رندرکردن کامپوننت پاس داده شده، توی یه المنت DOM که به عنوان container پاس داده شده استفاده میشه و یه رفرنس به کامپوننت برمی‌گردونه. اگه کامپوننت ری‌اکت قبلا توی container مورد نظر رندر شده باشه با یه update فقط DOMهایی که نیاز به به روز شدن دارن رو رندر می‌کنه.
 
     <span align="left" dir="ltr">
 
@@ -1711,7 +1702,7 @@
 
     </span>
 
-    If the optional callback is provided, it will be executed after the component is rendered or updated.
+    اگه پارامتر سوم که یه callback هست پاس داده بشه، هر موقع که رندر یا به‌روزرسانی انجام بشه اون تابع هم اجرا میشه.
 
     **[فهرست](#فهرست)**
 
@@ -1722,7 +1713,7 @@
     1. `renderToString()`
     2. `renderToStaticMarkup()`
 
-    For example, you generally run a Node-based web server like Express, Hapi, or Koa, and you call `renderToString` to render your root component to a string, which you then send as response.
+    برای مثال ممکنه یه سرور روی node بسازین که ممکنه Express، Hapi یا Koa باشه و متد `renderToString` رو برای تبدیل کردن کامپوننت root به html اجرا کنید و نتیجه بدست اومده رو به عنوان response به کلاینت پاس بدین.
 
     <span align="left" dir="ltr">
 
@@ -1771,7 +1762,7 @@
 
 61. ### چطوری توی ری‌اکت استایل‌دهی می‌کنیم؟
 
-    The `style` attribute accepts a JavaScript object with camelCased properties rather than a CSS string. This is consistent with the DOM style JavaScript property, is more efficient, and prevents XSS security holes.
+    attribute پیش‌فزض مورد استفاده برای استایل‌دهی `style` هستش که یه object جاواسکریپت رو به عنوان مقدار قبول می‌کنه که همه propertyهای اون بجای css عادی camelCase هستن. این روش با استایل‌دهی عادی توی جاواسکریپت یه کم متفاوته و بهینه‌تر و امن‌تره، چون جلوی حفره‌های امنیتی مثل XSS رو میگیره.
 
     <span align="left" dir="ltr">
 
@@ -1788,7 +1779,6 @@
 
      </span>
 
-    Style keys are camelCased in order to be consistent with accessing the properties on DOM nodes in JavaScript (e.g. `node.style.backgroundImage`).
 
     **[فهرست](#فهرست)**
 
@@ -2053,7 +2043,7 @@
 
 72. ### چطوری حالت production رو برای ری‌اکت فعال کنیم؟
 
-    You should use Webpack's `DefinePlugin` method to set `NODE_ENV` to `production`, by which it strip out things like propType validation and extra warnings. Apart from this, if you minify the code, for example, Uglify's dead-code elimination to strip out development only code and comments, it will drastically reduce the size of your bundle.
+    میشه از پلاگین `DefinePlugin` که روی وب‌پک قابل استفاده هست استفاده کرد و مقدار `NODE_ENV` رو روی `production` ست کرد، با اینکار خطاهای اضافی یا اعتبارسنجی propTypeها روی پروداکشن غیرفعال میشه جدای این موارد، کدهای نوشته شده بهینه‌سازی میشن و مثلا کدهای بلااستفاده اینا حذف میشن و درنتیجه سرعت بهتری رو می‌توته به برنامه بده چون سایز bundle ایجاد شده کوچیکتر خواهد بود.
 
     **[فهرست](#فهرست)**
 
@@ -2198,27 +2188,27 @@
     ترتیب _توصیه شده_ متد ها از _mounting_ تا _render stage_:
 
     1. متد های `static`
-    2. `constructor`
-    3. `getChildContext`
-    4. `componentWillMount`
-    5. `componentDidMount`
-    6. `componentWillReceiveProps`
-    7. `shouldComponentUpdate`
-    8. `componentWillUpdate`
-    9. `componentDidUpdate`
-    10. `componentWillUnmount`
+    2. متد `constructor`
+    3. متد `getChildContext`
+    4. متد `componentWillMount`
+    5. متد `componentDidMount`
+    6. متد `componentWillReceiveProps`
+    7. متد `shouldComponentUpdate`
+    8. متد `componentWillUpdate`
+    9. متد `componentDidUpdate`
+    10. متد `componentWillUnmount`
     11. event handlerها مثل `onClickSubmit` یا `onChangeDescription`
     12. متد‌های دریافت کننده برای رندر مثل `getSelectReason` یا `getFooterContent`
     13. متد‌های رندر اختیاری مثل `renderNavigation` یا `renderProfilePicture`
-    14. `render`
+    14. متد `render`
 
     **[فهرست](#فهرست)**
 
 81. ### کامپوننت تعویض کننده یا switching چیه؟
 
-    A _switching component_ is a component that renders one of many components. We need to use object to map prop values to components.
+    یه کامپوننت _switcher_ کامپوننتی‌ـه که یکی از چندتا کامپوننت موردنظر رو رندر می‌کنه. لازمه که برای تصمیم گیری بین کامپوننت‌ها از object جاواسکریپتی استفاده کنیم.
 
-    For example, a switching component to display different pages based on `page` prop:
+    برای مثال، کدپایین با بررسی prop موردنظر `page` بین صفحات مختلف سويیچ می‌کنه:
 
     <span align="left" dir="ltr">
 
@@ -2345,7 +2335,19 @@
 
 85. ### چرا isMounted آنتی پترن هست و روش بهتر انجامش چیه؟
 
-    The primary use case for `isMounted()` is to avoid calling `setState()` after a component has been unmounted, because it will emit a warning.
+    کاربرد اصلی متد `isMounted` برای جلوگیری از فراخوانی `setState` بعد از unmount شدن کامپوننت هستش چونکه باعث ایجاد یه خطا میشه.
+		خطاش یه چیزی مثل اینه:
+
+    <span align="left" dir="ltr">
+
+    ```bash
+		Warning: Can only update a mounted or mounting component. This usually means you called setState, replaceState, or forceUpdate on an unmounted component. This is a no-op.
+		```
+
+		</span>
+
+		توی کلاس کامپوننت‌ها هم این شکلی بعضا جلوشو می‌گرفتن:
+
 
     <span align="left" dir="ltr">
 
@@ -2357,9 +2359,23 @@
 
      </span>
 
-    Checking `isMounted()` before calling `setState()` does eliminate the warning, but it also defeats the purpose of the warning. Using `isMounted()` is a code smell because the only reason you would check is because you think you might be holding a reference after the component has unmounted.
+		 دلیل اینکه این روش توصیه نمیشه اینه که خطایی رو که ری‌اکت بهمون میداد رو داره دور میزنه و حلش نمی‌کنه. بهتره setState رو جایی انجام بدیم که توی مواقعی که کامپوننت‌ mount نیست اجرا نشه.
+     البته توی نسخه‌های جدید ری‌اکت این کار رو خیلی ساده‌تر میشه انجام داد و فقط کافیه یه هوکی بنویسیم که یه ref رو مقداردهی می‌کنه و بعد با بررسی اون ref میشه فهمید که کامپوننت mount شده یا نه، مثلا:
 
-    An optimal solution would be to find places where `setState()` might be called after a component has unmounted, and fix them. Such situations most commonly occur due to callbacks, when a component is waiting for some data and gets unmounted before the data arrives. Ideally, any callbacks should be canceled in `componentWillUnmount()`, prior to unmounting.
+    <span align="left" dir="ltr">
+
+    ```javascript
+    export const useIsMounted = () => {
+      const componentIsMounted = useRef(true)
+      useEffect(() => () => { componentIsMounted.current = false }, [])
+      return componentIsMounted;
+    }
+    ```
+
+     </span>
+
+     یا حتی یه پکیجی ساخته شده به اسم `ismounted` که می‌تونه بهمون کمک کنه که متوجه بشیم کامپوننت mount  شده یا نه. ولی حواسمون باشه که ازش درست استفاده کنیم.
+
 
     **[فهرست](#فهرست)**
 
@@ -4547,9 +4563,9 @@
 
 171. ### هدف از constantها تا typeها توی ریداکس چیه؟
 
-     Constants allows you to easily find all usages of that specific functionality across the project when you use an IDE. It also prevents you from introducing silly bugs caused by typos – in which case, you will get a `ReferenceError` immediately.
+     Constantها یا موارد ثابت بهتون این اجازه رو میدن که کارکرد یه عملکرد مشخص رو به سادگی توی پروژه پیدا کنید. البته از خطاهای ساده‌ای که ممکنه براتون پیش بیاد هم جلوگیری می‌کنه. مثل خطاهای مربوط به type یا `ReferenceError`ها که ممکنه خیلی راحت رخ بدن.
 
-     Normally we will save them in a single file (`constants.js` or `actionTypes.js`).
+     اکثرا مقادیر ثابت constant رو توی یه فایل مثل (`constants.js` یا `actionTypes.js`) قرار می‌دیم.
 
      <span align="left" dir="ltr">
 
@@ -4564,11 +4580,11 @@
 
      </span>
 
-     In Redux you use them in two places:
+     توی ریداکس از این مقادیر دوتا جا استفاده میشه:
 
-     1. **During action creation:**
+     1. **موقع ساخت action:**
 
-        Let's take `actions.js`:
+        مثلا فرض می‌کنیم `actions.js`:
 
      <span align="left" dir="ltr">
 
@@ -4582,9 +4598,9 @@
 
      </span>
 
-     2. **In reducers:**
+     2. **توی reducerها:**
 
-        Let's create `reducer.js`:
+        مثلا یه فایل به اسم `reducer.js` رو در نظر بگیرین:
 
      <span align="left" dir="ltr">
 
@@ -4613,7 +4629,7 @@
 
 172. ### روش‌های مختلف برای نوشتن mapDispatchToProps چیه؟
 
-     There are a few ways of binding _action creators_ to `dispatch()` in `mapDispatchToProps()`. Below are the possible options:
+     چندین روش برای bind کردن _action_ به متد `dispatch` توی `mapDispatchToProps` هستش که پایین بررسی‌شون می‌کنیم:
 
      <span align="left" dir="ltr">
 
@@ -4643,13 +4659,13 @@
 
      </span>
 
-     The third option is just a shorthand for the first one.
+     روش سوم خلاصه شده روش اوله که معمولا توصیه میشه.
 
      **[فهرست](#فهرست)**
 
 173. ### کاربرد پارامتر ownProps توی mapStateToProps و mapDispatchToProps چیه؟
 
-     If the `ownProps` parameter is specified, React Redux will pass the props that were passed to the component into your _connect_ functions. So, if you use a connected component:
+     اگه پارامتر `ownProps` ارائه شده باشه, ReactRedux پارامترهایی که به کامپوننت پاس داده شدن رو به تابع _connect_ پاس میده. پس اگه یه کامپوننت connect شده مثل کد زیر داشته باشین:
 
      <span align="left" dir="ltr">
 
@@ -4661,7 +4677,7 @@
 
      </span>
 
-     The `ownProps` inside your `mapStateToProps()` and `mapDispatchToProps()` functions will be an object:
+     پارامتر `ownProps` توی `mapStateToProps` و `mapDispatchToProps` یه object رو خواهد داشت که مقدار زیر رو داره:
 
      <span align="left" dir="ltr">
 
@@ -4673,29 +4689,29 @@
 
      </span>
 
-     You can use this object to decide what to return from those functions.
+     می‌تونیم از این مقدار استفاده کنیم تا در مورد مقدار بازگشتی تصمیم بگیریم.
 
      **[فهرست](#فهرست)**
 
 174. ### ساختار پوشه‌بندی ریشه ریداکس اکثرا چطوریه؟
 
-     Most of the applications has several top-level directories as below:
+     اکثر برنامه‌های ریداکسی یه ساختاری مثل این دارند:
 
-     1. **Components**: Used for _dumb_ components unaware of Redux.
-     2. **Containers**: Used for _smart_ components connected to Redux.
-     3. **Actions**: Used for all action creators, where file names correspond to part of the app.
-     4. **Reducers**: Used for all reducers, where files name correspond to state key.
-     5. **Store**: Used for store initialization.
+     1. **Components**: که برای کامپوننت‌های _dumb_ یا فقط نمایشی که به ریداکس وصل نیستند استفاده می‌شود.
+     2. **Containers**: که برای کامپوننت‌های _smart_ که به ریداکس وصل هستند.
+     3. **Actions**: که برای همه actionها استفاده میشه و هر فایل به بخشی از عملکرد برنامه تعلق داره.
+     4. **Reducers**: که برای همه reducerها استفاده میشه و هر فایل به یه state توی store تعلق داره.
+     5. **Store**: که برای ساختن store استفاده میشه.
 
-     This structure works well for small and medium size apps.
+     این ساختار برای یه برنامه کوچک تا بزرگ کاربرد داره. البته اون بخشی ازش که کامپوننت‌های dumb و smart یا همون container و component رو بر طبق وصل شدنشون به ریداکس جدا می‌کردیم تقریبا منقصی محسوب میشه.
 
      **[فهرست](#فهرست)**
 
 175. ### redux-saga جیه؟
 
-     `redux-saga` is a library that aims to make side effects (asynchronous things like data fetching and impure things like accessing the browser cache) in React/Redux applications easier and better.
+     `redux-saga` یه کتابخونه هست که تمرکز اصلیش برای ایجاد side-effectهاست (چیزهای asynchronous مثل fetch کردن داده و غیرشفاف مثل دسترسی به کش مرورگر) که توی برنامه‌های React/Redux با این روش ساده‌تر و بهتر انجام میشه.
 
-     It is available in NPM:
+     پکیج ریداکس ساگا روی NPM هست:
 
      <span align="left" dir="ltr">
 
@@ -4709,15 +4725,15 @@
 
 176. ### مدل ذهنی redux-saga چطوریه؟
 
-     _Saga_ مثل یه thread جداگانه برای برنامه عمل می‌کنه, that's solely responsible for side effects. `redux-saga` is a redux _middleware_, which means this thread can be started, paused and cancelled from the main application with normal Redux actions, it has access to the full Redux application state and it can dispatch Redux actions as well.
+     _Saga_ مثل یه thread جداگانه برای برنامه عمل می‌کنه و فقط برای مدیریت ساید افکت کارایی داره. `redux-saga` یه _میان‌افزار_ برای ریداکس هستش، که به معنی اینه که می‌تونه به صورت اتوماتیک توسط actionهای ریداکس شروع بشه، متوقف بشه و یا کار خاصی انجام بده. این میان‌افزار به کل store ریداکس و actionهایی که کار می‌کنن دسترسی داره و می‌تونه هر action دیگه‌ای رو dispatch کنه.
 
      **[فهرست](#فهرست)**
 
 177. ### تفاوت افکت‌های call و put توی redux-saga چی هست؟
 
-     Both `call()` and `put()` are effect creator functions. `call()` function is used to create effect description, which instructs middleware to call the promise. `put()` function creates an effect, which instructs middleware to dispatch an action to the store.
+     هر دوی افکت‌های `call` و `put` سازنده‌های افکت هستن. تابع `call` برای ایجاد توضیح افکت استفاده میشه که به میان‌افزار دستور میده منتظر call بمونه. تابع `put` یه افکت ایجاد می‌کنه، که به store میگه یه action خاص رو فقط اجرا کنه.
 
-     Let's take example of how these effects work for fetching particular user data.
+     بزارین یه مثال در مورد عملکرد این دوتا افکت برای دریافت داده یه کاربر بزنیم.
 
      <span align="left" dir="ltr">
 
@@ -4741,37 +4757,37 @@
 
 178. ### Redux Thunk چیه؟
 
-     _Redux Thunk_ middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods `dispatch()` and `getState()` as parameters.
+     میان افزار _Redux Thunk_ بهمون این اجازه رو میده که actionهایی رو بسازیم که به‌جای action عادی تابع‌ برگردونن  thunk می‌تونه به عنوان یه ایجاد کننده delay برای dispatch کردن یه action استفاده کنیم، یا حتی با بررسی یه شرط خاص یه action رو dispatch کنیم. تابعی که توی action استفاده میشه و `dispatch` و `getState` رو به عنوان پارامتر ورودی می‌گیره.
 
      **[فهرست](#فهرست)**
 
 179. ### تفاوت‌های redux-saga و redux-thunk جیا هستن؟
 
-     Both _Redux Thunk_ and _Redux Saga_ take care of dealing with side effects. In most of the scenarios, Thunk uses _Promises_ to deal with them, whereas Saga uses _Generators_. Thunk is simple to use and Promises are familiar to many developers, Sagas/Generators are more powerful but you will need to learn them. But both middleware can coexist, so you can start with Thunks and introduce Sagas when/if you need them.
+     هر دوی _ReduxThunk_ و _ReduxSaga_ می‌تونن مدیریت ساید افکت‌ها رو به دست بگیرن. توی اکثر سناریوها، Thunk از _Promise_ استفاده می‌کنه، درحالیکه Saga از _Generatorها_ استفاده میکنه. Thunk تقریبا ساده‌تره و promise رو تقریبا همه دولوپرها باهاش آشنا هستن، Sagas/Generators خیلی قوی‌تر هستن و می‌تونن کاربردی‌تر باشن ولی خب لازمه که یاد بگیرینش. هردوی میان‌افزارها می‌تونن خیلی مفید باشن و شما می‌تونین با Thunks شروع کنین و اگه جایی دیدین نیازمندی‌تون رو برآورده نمی‌کنه سراغ Sagas برید.
 
      **[فهرست](#فهرست)**
 
 180. ### Redux DevTools چیه؟
 
-     _Redux DevTools_ is a live-editing time travel environment for Redux with hot reloading, action replay, and customizable UI. If you don't want to bother with installing Redux DevTools and integrating it into your project, consider using Redux DevTools Extension for Chrome and Firefox.
+     _ReduxDevTools_ یه محیط برای مشاهده در لحظه تغییرات ریداکس فراهم می‌کنه و قابلیت اجرای مجدد action و یه رابط‌ کاربری قابل شخصی‌سازی رو فراهم می‌کنه. اگه نمی‌خوایین پکیج ReduxDevTools رو نصب کنید می‌تونین از افزونه ReduxDevTools برای Chrome و Firefox استفاده کنین.
 
      **[فهرست](#فهرست)**
 
 181. ### ویژگی‌های Redux DevTools چیا هستن؟
 
-     1. Lets you inspect every state and action payload.
-     2. Lets you go back in time by _cancelling_ actions.
-     3. If you change the reducer code, each _staged_ action will be re-evaluated.
-     4. If the reducers throw, you will see during which action this happened, and what the error was.
-     5. With `persistState()` store enhancer, you can persist debug sessions across page reloads.
+     1. بهتون اجازه میده که اطلاعات هر state و payload پاس داده شده به action رو مشاهده کنین.
+     2. بهتون اجازه میده که actionهای اجرا شده رو _لغو_ کنید.
+     3. اگه یه تغییری روی کدهای reducer بدین، هر actionای که _stage_ شده رو مجدد ارزیابی می‌کنه.
+     4. اگه یه reducers یه خطایی بده، میشه متوجه شد که در طی انجام شدن کدوم action این اتفاق افتاده و خطا چی بوده.
+     5. با `persistState` می‌تونین دیباگ روی موقع reloadهای مختلف ذخیره کنید.
 
      **[فهرست](#فهرست)**
 
 182. ### سلکتورهای ریداکس چی هستن و چرا باید ازشون استفاده کنیم؟
 
-     _Selectors_ are functions that take Redux state as an argument and return some data to pass to the component.
+     _Selector_ یه سری تابع هستن که state ریداکس رو به عنوان یه پارامتر دریافت می‌کنه و یه سری داده که میخواییم رو به کامپوننت پاس میده.
 
-     For example, to get user details from the state:
+     برای مثال، دریافت اطلاعات کاربر از ریداکس با selector زیر فراهم میشه:
 
      <span align="left" dir="ltr">
 
@@ -4785,23 +4801,23 @@
 
 183. ### Redux Form چیه؟
 
-     _Redux Form_ works with React and Redux to enable a form in React to use Redux to store all of its state. Redux Form can be used with raw HTML5 inputs, but it also works very well with common UI frameworks like Material UI, React Widgets and React Bootstrap.
+     _ReduxForm_ با ری‌اکت و ریداکس کار می‌کنه تا همه اطلاعات فرم‌ها رو توی state ریداکس مدیریت کنیم. ReduxForm می‌تونه با inputهای خام HTML5 هم کار کنه، ولی با فریم‌ورک‌های معروف UI مثل Material، ReactWidgets و ReactBootstrap کار کنه.
 
      **[فهرست](#فهرست)**
 
 184. ### اصلی‌ترین ویژگی‌های Redux Form چیه؟
 
-     1. Field values persistence via Redux store.
-     2. Validation (sync/async) and submission.
-     3. Formatting, parsing and normalization of field values.
+     1. ماندگاری مقادیر فیلدهای فرم توی ریداکس.
+     2. اعتبارسنجی (sync/async) و ثبت فرم.
+     3. فرمت کردن، تجزینه و نرمالسازی مقادیر فیلدها.
 
      **[فهرست](#فهرست)**
 
 185. ### چطوری میشه چندتا middleware به ریداکس اضافه کرد؟
 
-     You can use `applyMiddleware()`.
+     می‌تونیم از `applyMiddleware` استفاده کنیم.
 
-     For example, you can add `redux-thunk` and `logger` passing them as arguments to `applyMiddleware()`:
+     برای مثال میشه از `redux-thunk` و `logger` به عنوان پارامترهای `applyMiddleware` استفاده کنیم:
 
      <span align="left" dir="ltr">
 
@@ -4819,7 +4835,7 @@
 
 186. ### چطوری میشه توی ریداکس initial state تعریف کرد؟
 
-     You need to pass initial state as second argument to createStore:
+     لازم داریم که state اولیه رو به عنوان پارامتر دوم به createStore پاس بدیم:
 
      <span align="left" dir="ltr">
 
@@ -4842,15 +4858,15 @@
 
 187. ### تفاوت‌های Relay با Redux چیا هستن؟
 
-     Relay is similar to Redux in that they both use a single store. The main difference is that relay only manages state originated from the server, and all access to the state is used via _GraphQL_ queries (for reading data) and mutations (for changing data). Relay caches the data for you and optimizes data fetching for you, by fetching only changed data and nothing more.
+     Relay و Redux توی این مورد که دوتاشونم از یه store استفاده می‌کنن شبیه بهم هستن. تفاوت اصلی این دو اینه که relay فقط stateهایی رو مدیریت می‌کنه که از سرور تاثیر گرفتن و همه دسترسی‌هایی که به state مربوطه رو با کوئری‌های _GraphQL_(برای خوندن داده‌ها) و mutationها (برای تغییرات داده) انجام میده. Relay داده‌ها برای شما رو cache می‌کنه و گرفتن داده از سرور رو برای شما بهینه می‌کنه. چون فقط تغییرات رو دریافت میکرد و نه چیز دیگه‌ای.
 
 ## React Native
 
 188. ### تفاوت‌های React Native و React چیا هستن؟
 
-     **React** is a JavaScript library, supporting both front end web and being run on the server, for building user interfaces and web applications.
+     **React** یه کتابخونه جاواسکریپتی هست که , supporting both front end web and being run on the server, for building user interfaces and web applications.
 
-     **React Native** is a mobile framework that compiles to native app components, allowing you to build native mobile applications (iOS, Android, and Windows) in JavaScript that allows you to use React to build your components, and implements React under the hood.
+     **React Native** یه فریم‌ورک موبایل هست که کدها رو به کامپوننت‌های native روی موبایل compile می‌کنه و بهمون این اجازه رو میده که برنامه‌های موبایلی(iOS, Android, and Windows) رو با استفاده از جاواسکریپت بسازیم که از ری‌اکت برای تولید کامپوننت استفاده می‌کنه.
 
      **[فهرست](#فهرست)**
 
@@ -4994,7 +5010,7 @@
 
       </span>
 
-          3. Use that element in the JSX file:
+      3. Use that element in the JSX file:
 
       <span align="left" dir="ltr">
 
@@ -5023,7 +5039,8 @@
       3. Suitable for mobile apps creating.
       4. More information and solutions available.
 
-**نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
+			**نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
+
 **[فهرست](#فهرست)**
 
 200. ### تفاوت‌های React و Angular چیا هستن؟
@@ -5036,7 +5053,7 @@
      | React Native, which is a React type to build mobile applications are faster and more stable | Ionic, Angular's mobile native app is relatively less stable and slower                                                            |
      | In React, data flows only in one way and hence debugging is easy                            | In Angular, data flows both way i.e it has two-way data binding between children and parent and hence debugging is often difficult |
 
-**نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
+		 **نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
 **[فهرست](#فهرست)**
 
 201. ### چرا تب React در DevTools نشان داده نمی‌شود؟
@@ -7642,7 +7659,7 @@
      if (this.state.liked) {
        return <blueLike />;
      } else {
-       return <greyLidke />;
+       return <greyLike />;
      }
      ```
 
