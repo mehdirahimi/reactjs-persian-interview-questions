@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/bin/node /Users/macbook/.config/yarn/global/node_modules/.bin/yarn
+
+PATH: 
+  /Users/macbook/.yarn/bin:/Users/macbook/.config/yarn/global/node_modules/.bin:/Users/macbook/.cargo/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/macbook/Library/Python/2.7/bin:/opt/X11/bin:/Users/macbook/Desktop/github/reactjs-persian-interview-questions/node_modules/.bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.18.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/macbook/Desktop/github/reactjs-persian-interview-questions/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /Users/macbook/.config/yarn/global/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/macbook/.config/yarn/global/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/macbook/.config/yarn/global/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
