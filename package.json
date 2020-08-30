@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "cp book.html index.html && gh-pages -d / -r https://$GH_TOKEN@github.com/Mariotek/reactjs-persian-interview-questions",
+    "deploy": "rm -rf docs && mkdir docs && cp book.html docs/index.html && cp CNAME docs/CNAME && gh-pages -d docs -r https://$GH_TOKEN@github.com/Mariotek/reactjs-persian-interview-questions",
     "test": "echo \"Will write tests soon ....\""
   },
   "repository": {
