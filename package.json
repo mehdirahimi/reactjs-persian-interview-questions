@@ -1,0 +1,22 @@
+{
+  "name": "reactjs-persian-interview-questions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "cp book.html index.html && gh-pages -r https://$GH_TOKEN@github.com/Mariotek/reactjs-persian-interview-questions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mariotek/reactjs-persian-interview-questions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mariotek/reactjs-persian-interview-questions/issues"
+  },
+  "homepage": "https://github.com/Mariotek/reactjs-persian-interview-questions#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
