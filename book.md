@@ -1,4 +1,9 @@
 ---
+title: "مجموعه سوالات استخدامی ری‌اکت react.js"
+author: JafarRezaei
+date: August 30, 2020
+export_on_save:
+  html: true
 puppeteer:
   landscape: false
   printBackground: true
