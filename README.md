@@ -1,8 +1,24 @@
+---
+puppeteer:
+  landscape: false
+  printBackground: true
+  timeout: 3000
+  width: "170mm"
+  height: "240mm"
+  margin: { top: '50px', bottom: '55px', right: '40px', left: '40px'}
+  displayHeaderFooter: true
+  headerTemplate: '<div />'
+  footerTemplate: '<div style="width: 297mm;text-align: center;font-size: 10px;font-family: BYekan;direction:rtl;position: relative; bottom: -15px">
+    <span style="position: relative; top:50px"><span class="pageNumber"></span></span>
+    <img style="width:100px;float:right;display: inline-block" src="data:image/png;base64,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" /><img src="data:image/png;base64,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" style="float:left;width: 100px;display: inline-block" />
+  </div>'
+---
+
 <div dir="rtl">
 
 # مجموعه سوالات استخدامی ری‌اکت
 
-> اگه خوشتون اومد به گیت‌هابمون :star: بدین. اگر هم قصد مشارکت داشتید خیلی خوشحال می‌شیم :)
+> اگه خوشتون اومد به گیت‌هابمون مراجعه کنین و بهمون :star: بدین. اگر هم قصد مشارکت داشتید خیلی خوشحال می‌شیم :)
 
 ## دانلود کتاب به فرمت‌های PDF/Epub
 
@@ -48,7 +64,7 @@
 | 33   | [فازهای مختلف از lifecycle کامپوننت چیا هستن؟](#فازهای-مختلف-از-lifecycle-کامپوننت-چیا-هستن)                                                                                                             |
 | 34   | [متدهای lifecycle کامپوننت چیا هستن؟](#متدهای-lifecycle-کامپوننت-چیا-هستن)                                                                                                                               |
 | 35   | [کامپوننت‌های Higher-Order چی هستن؟](#کامپوننتهای-Higher-Order-چی-هستن)                                                                                                                                  |
-| 36   | [چطوری می‌تونیم props proxy برای کامپوننت‌های HOC ایجاد کنیم؟](#چطوری-میتونیم-props-proxy-برای-کامپوننتهای-HOC-ایجاد-کنیم)                                                                               |
+| 36   | [چطوری می‌تونیم props proxy برای کامپوننت‌های HOC ایجاد کنیم؟](#چطوری-می‌تونیم-props-proxy-برای-کامپوننتهای-HOC-ایجاد-کنیم)                                                                               |
 | 37   | [context چیه؟](#context-چیه)                                                                                                                                                                             |
 | 38   | [children prop چیه؟](#children-prop-چیه)                                                                                                                                                                 |
 | 39   | [چطوری میشه تو React کامنت نوشت؟](#چطوری-میشه-تو-React-کامنت-نوشت)                                                                                                                                       |
@@ -56,7 +72,7 @@
 | 41   | [reconciliation چیه؟](#reconciliation-چیه)                                                                                                                                                               |
 | 42   | [چطوری با یه اسم داینامیک set state کنیم؟](#چطوری-با-یه-اسم-داینامیک-set-state-کنیم)                                                                                                                     |
 | 43   | [یه اشتباه رایج برای مدیریت توابع eventها که باعث میشه با هر رندر توابع مجدد ساخته بشن چی هستش؟](#یه-اشتباه-رایج-برای-مدیریت-توابع-eventها-که-باعث-میشه-با-هر-رندر-توابع-مجدد-ساخته-بشن-چی-هستش)         |
-| 44   | [تابع lazy که برای lazy load استفاده میشه رو می‌تونیم به صورت name export خروجی بگیریم؟](#تابع-lazy-که-برای-lazy-load-استفاده-میشه-رو-میتونیم-به-صورت-name-export-خروجی-بگیریم)                          |
+| 44   | [تابع lazy که برای lazy load استفاده میشه رو می‌تونیم به صورت name export خروجی بگیریم؟](#تابع-lazy-که-برای-lazy-load-استفاده-میشه-رو-می‌تونیم-به-صورت-name-export-خروجی-بگیریم)                          |
 | 45   | [چرا ری‌اکت از className بجای class استفاده می‌کنه؟](#چرا-ریاکت-از-className-بجای-class-استفاده-میکنه)                                                                                                   |
 | 46   | [fragmentها چی هستن؟](#fragmentها-چی-هستن)                                                                                                                                                               |
 | 47   | [چرا fragmentها از تگ‌های div بهترن؟](#چرا-fragmentها-از-تگهای-div-بهترن)                                                                                                                                |
@@ -102,7 +118,7 @@
 | 87   | [چرا باید اسم کامپوننت با حرف بزرگ شروع بشه؟](#چرا-باید-اسم-کامپوننت-با-حرف-بزرگ-شروع-بشه)                                                                                                               |
 | 88   | [آیا propهای custom توی ری‌اکت پشتیبانی میشن؟](#آیا-propهای-custom-توی-ریاکت-پشتیبانی-میشن)                                                                                                              |
 | 89   | [تفاوت‌های constructor و getInitialState چیه؟](#تفاوتهای-constructor-و-getInitialState-چیه)                                                                                                              |
-| 90   | [می‌تونیم یه کامپوننت رو بدون setState ری‌رندر کنیم؟](#میتونیم-یه-کامپوننت-رو-بدون-setState-ریرندر-کنیم)                                                                                                 |
+| 90   | [می‌تونیم یه کامپوننت رو بدون setState ری‌رندر کنیم؟](#می‌تونیم-یه-کامپوننت-رو-بدون-setState-ریرندر-کنیم)                                                                                                 |
 | 91   | [تفاوت‌های فراخوانی super(-) و super(props) توی کلاس کامپوننت‌های ری‌اکت چیه؟](#تفاوتهای-فراخوانی-super-و-superprops-توی-کلاس-کامپوننتهای-ریاکت-چیه)                                                     |
 | 92   | [چطوری توی JSX حلقه یا همون لوپ رو داشته باشیم؟](#چطوری-توی-JSX-حلقه-یا-همون-لوپ-رو-داشته-باشیم)                                                                                                         |
 | 93   | [توی attributeها چطوری به prop دسترسی داشته باشیم؟](#توی-attributeها-چطوری-به-prop-دسترسی-داشته-باشیم)                                                                                                   |
@@ -111,25 +127,25 @@
 | 96   | [تفاوت‌های React و ReactDOM چیه؟](#تفاوتهای-React-و-ReactDOM-چیه)                                                                                                                                        |
 | 97   | [چرا ReactDOM رو از React جدا کردن؟](#چرا-ReactDOM-رو-از-React-جدا-کردن)                                                                                                                                 |
 | 98   | [چطوری از label تو ری‌اکت استفاده کنیم؟](#چطوری-از-label-تو-ریاکت-استفاده-کنیم)                                                                                                                          |
-| 99   | [چطوری می‌تونیم چندتا object از استایل‌های درون خطی رو با هم ترکیب کنیم؟](#چطوری-میتونیم-چندتا-object-از-استایلهای-درون-خطی-رو-با-هم-ترکیب-کنیم)                                                         |
+| 99   | [چطوری می‌تونیم چندتا object از استایل‌های درون خطی رو با هم ترکیب کنیم؟](#چطوری-می‌تونیم-چندتا-object-از-استایلهای-درون-خطی-رو-با-هم-ترکیب-کنیم)                                                         |
 | 100  | [چطوری با resize شدن مرورگر یه ویو رو ری‌رندر کنیم؟](#چطوری-با-resize-شدن-مرورگر-یه-ویو-رو-ریرندر-کنیم)                                                                                                  |
 | 101  | [تفاوت متدهای setState و replaceState چیه؟](#تفاوت-متدهای-setState-و-replaceState-چیه)                                                                                                                   |
 | 102  | [چطوری به تغییرات state گوش بدیم؟](#چطوری-به-تغییرات-state-گوش-بدیم)                                                                                                                                     |
 | 103  | [روش توصیه شده برای حذف یک عنصر از آرایه توی state چیه؟](#روش-توصیه-شده-برای-حذف-یک-عنصر-از-آرایه-توی-state-چیه)                                                                                         |
 | 104  | [امکانش هست که ری‌اکت رو بدون رندر کردن HTML استفاده کنیم؟](#امکانش-هست-که-ریاکت-رو-بدون-رندر-کردن-HTML-استفاده-کنیم)                                                                                    |
 | 105  | [چطوری میشه با ری‌اکت یه JSON به شکل beautify شده نشون داد؟](#چطوری-میشه-با-ریاکت-یه-JSON-به-شکل-beautify-شده-نشون-داد)                                                                                  |
-| 106  | [چرا نمی‌تونیم prop رو آپدیت کنیم؟](#چرا-نمیتونیم-prop-رو-آپدیت-کنیم)                                                                                                                                    |
-| 107  | [چطوری می‌تونیم موقع لود صفحه روی یه input فوکوس کنیم؟](#چطوری-میتونیم-موقع-لود-صفحه-روی-یه-input-فوکوس-کنیم)                                                                                            |
+| 106  | [چرا نمی‌تونیم prop رو آپدیت کنیم؟](#چرا-نمی‌تونیم-prop-رو-آپدیت-کنیم)                                                                                                                                    |
+| 107  | [چطوری می‌تونیم موقع لود صفحه روی یه input فوکوس کنیم؟](#چطوری-می‌تونیم-موقع-لود-صفحه-روی-یه-input-فوکوس-کنیم)                                                                                            |
 | 108  | [روش‌های ممکن برای آپدیت کردن object توی state چیا هستن؟](#روشهای-ممکن-برای-آپدیت-کردن-object-توی-state-چیا-هستن)                                                                                        |
 | 109  | [چرا توابع به جای object در setState ترجیح داده می‌شوند؟](#چرا-توابع-به-جای-object-در-setState-ترجیح-داده-میشوند)                                                                                        |
-| 110  | [چطوری می‌‌تونیم نسخه ری‌اکت جاری رو توی محیط اجرایی بفهمیم؟](#چطوری-میتونیم-نسخه-ریاکت-جاری-رو-توی-محیط-اجرایی-بفهمیم)                                                                                  |
+| 110  | [چطوری می‌‌تونیم نسخه ری‌اکت جاری رو توی محیط اجرایی بفهمیم؟](#چطوری-می‌تونیم-نسخه-ریاکت-جاری-رو-توی-محیط-اجرایی-بفهمیم)                                                                                  |
 | 111  | [روش‌های لود کردن polyfill توی CRA چیا هستن؟](#روشهای-لود-کردن-polyfill-توی-CRA-چیا-هستن)                                                                                                                |
 | 112  | [توی CRA چطوری از https به‌جای http استفاده کنیم؟](#توی-CRA-چطوری-از-https-بهجای-http-استفاده-کنیم)                                                                                                      |
 | 113  | [توی CRA چطوری میشه از مسیر‌های طولانی برای ایمپورت جلوگیری کرد؟](#توی-CRA-چطوری-میشه-از-مسیرهای-طولانی-برای-ایمپورت-جلوگیری-کرد)                                                                        |
 | 114  | [چطوری میشه Google Analytics رو به react-router اضافه کرد؟](#چطوری-میشه-Google-Analytics-رو-به-react-router-اضافه-کرد)                                                                                   |
 | 115  | [چطوری یه کامپوننت رو هر ثانیه به روز کنیم؟](#چطوری-یه-کامپوننت-رو-هر-ثانیه-به-روز-کنیم)                                                                                                                 |
 | 116  | [برای استایل‌دهی‌های درون خطی چطوری باید پیشوند‌های مخصوص مرورگرها رو اضافه کرد؟](#برای-استایلدهیهای-درون-خطی-چطوری-باید-پیشوندهای-مخصوص-مرورگرها-رو-اضافه-کرد)                                          |
-| 117  | [چطوری کامپوننت‌های ری‌اکت رو با es6 می‌تونیم import و export کنیم؟](#چطوری-کامپوننتهای-ریاکت-رو-با-es6-میتونیم-import-و-export-کنیم)                                                                    |
+| 117  | [چطوری کامپوننت‌های ری‌اکت رو با es6 می‌تونیم import و export کنیم؟](#چطوری-کامپوننتهای-ریاکت-رو-با-es6-می‌تونیم-import-و-export-کنیم)                                                                    |
 | 118  | [استثنایی که برای نام‌گذاری کامپوننت اجازه استفاده از حرف کوچک رو میده چیه؟](#استثنایی-که-برای-نامگذاری-کامپوننت-اجازه-استفاده-از-حرف-کوچک-رو-میده-چیه)                                                  |
 | 119  | [چرا تابع سازنده کلاس کامپوننت یکبار صدا زده میشه؟](#چرا-تابع-سازنده-کلاس-کامپوننت-یکبار-صدا-زده-میشه)                                                                                                   |
 | 120  | [توی ری‌اکت چطوری مقدار ثابت تعریف کنیم؟](#توی-ریاکت-چطوری-مقدار-ثابت-تعریف-کنیم)                                                                                                                        |
@@ -173,7 +189,7 @@
 | 154  | [مبانی اصلی ریداکس چیا هستن؟](#مبانی-اصلی-ریداکس-چیا-هستن)                                                                                                                                               |
 | 155  | [کاستی‌های redux نسبت به flux چیا هستن؟](#کاستیهای-redux-نسبت-به-flux-چیا-هستن)                                                                                                                          |
 | 156  | [تفاوت‌های mapStateToProps و mapDispatchToProps چی هست؟](#تفاوتهای-mapStateToProps-و-mapDispatchToProps-چی-هست)                                                                                          |
-| 157  | [توی ریدیوسر می‌تونیم یه actionی رو dispatch کنیم؟](#توی-ریدیوسر-میتونیم-یه-actionی-رو-dispatch-کنیم)                                                                                                    |
+| 157  | [توی ریدیوسر می‌تونیم یه actionی رو dispatch کنیم؟](#توی-ریدیوسر-می‌تونیم-یه-actionی-رو-dispatch-کنیم)                                                                                                    |
 | 158  | [چطوری میشه خارج از کامپوننت میشه store ریداکس دسترسی داشت؟](#چطوری-میشه-خارج-از-کامپوننت-میشه-store-ریداکس-دسترسی-داشت)                                                                                 |
 | 159  | [اشکالات پترن MVW چیا هستن؟](#اشکالات-پترن-MVW-چیا-هستن)                                                                                                                                                 |
 | 160  | [تشابهی بین Redux و RxJS هست؟](#تشابهی-بین-Redux-و-RxJS-هست)                                                                                                                                             |
@@ -233,7 +249,7 @@
 | 211  | [برای استفاده از Redux به ابزار build خاصی احتیاج داریم؟](#برای-استفاده-از-Redux-به-ابزار-build-خاصی-احتیاج-داریم)                                                                                       |
 | 212  | [مقادیر پیش‌فرض ریداکس فرم چطوری تغییرات رو از state می‌گیرن؟](#مقادیر-پیشفرض-ریداکس-فرم-چطوری-تغییرات-رو-از-state-میگیرن)                                                                               |
 | 213  | [توی PropTypeهای ری‌اکت چطوری میشه برای یه prop چند نوع داده مجاز مشخص کرد؟](#توی-PropTypeهای-ریاکت-چطوری-میشه-برای-یه-prop-چند-نوع-داده-مجاز-مشخص-کرد)                                                  |
-| 214  | [می‌تونیم فایل svg رو به عنوان کامپوننت import کنیم؟](#میتونیم-فایل-svg-رو-به-عنوان-کامپوننت-import-کنیم)                                                                                                |
+| 214  | [می‌تونیم فایل svg رو به عنوان کامپوننت import کنیم؟](#می‌تونیم-فایل-svg-رو-به-عنوان-کامپوننت-import-کنیم)                                                                                                |
 | 215  | [چرا استفاده از توابع ref callback درون خطی توصیه نمیشه؟](#چرا-استفاده-از-توابع-ref-callback-درون-خطی-توصیه-نمیشه)                                                                                       |
 | 216  | [render hijacking توی ری‌اکت چیه؟](#render-hijacking-توی-ریاکت-چیه)                                                                                                                                      |
 | 217  | [پیاده‌سازی factory یا سازنده HOC چطوریه؟](#پیادهسازی-factory-یا-سازنده-HOC-چطوریه)                                                                                                                      |
@@ -284,34 +300,34 @@
 | 262  | [چطوری elementهای رندر شده رو آپدیت کنیم؟](#چطوری-elementهای-رندر-شده-رو-آپدیت-کنیم)                                                                                                                     |
 | 263  | [چرا propها read only هستن؟](#چرا-propها-read-only-هستن)                                                                                                                                                 |
 | 264  | [چرا میگیم تابع setState از طریق merge کردن state را مدیریت می‌کنه؟](#چرا-میگیم-تابع-setState-از-طریق-merge-کردن-state-را-مدیریت-میکند)                                                                  |
-| 265  | [چطوری می‌تونیم به متد event handler پارامتر پاس بدیم؟](#چطوری-میتونیم-به-متد-event-handler-پارامتر-پاس-بدیم)                                                                                            |
+| 265  | [چطوری می‌تونیم به متد event handler پارامتر پاس بدیم؟](#چطوری-می‌تونیم-به-متد-event-handler-پارامتر-پاس-بدیم)                                                                                            |
 | 266  | [چطوری از رندر مجدد کامپوننت‌ها جلوگیری کنیم؟](#چطوری-از-رندر-مجدد-کامپوننتها-جلوگیری-کنیم)                                                                                                              |
 | 267  | [شرایطی که بدون مشکل پرفورمنس بتونیم از ایندکس به عنوان key استفاده کنیم چی هست؟](#شرایطی-که-بدون-مشکل-پرفورمنس-بتونیم-از-ایندکس-به-عنوان-key-استفاده-کنیم-چی-هست)                                       |
 | 268  | [keyهای ری‌اکت باید به صورت عمومی منحصر بفرد باشن؟](#keyهای-ریاکت-باید-به-صورت-عمومی-منحصر-بفرد-باشن)                                                                                                    |
 | 269  | [گزینه‌های محبوب برای مدیریت فرم‌ها توی ری‌اکت چیا هستن؟](#گزینههای-محبوب-برای-مدیریت-فرما-توی-ریاکت-چیا-هستن)                                                                                           |
 | 270  | [مزایای کتابخانه فرمیک نبست به redux form چیه؟](#مزایای-کتابخانه-فرمیک-نبست-به-redux-form-چیه)                                                                                                           |
 | 271  | [چرا اجباری برای استفاده از ارث‌بری توی ری‌اکت نیست؟ مزیتی داره؟](#چرا-اجباری-برای-استفاده-از-ارثبری-توی-ریاکت-نیست-مزیتی-داره)                                                                          |
-| 272  | [می‌تونیم از web components توی برنامه ری‌اکت استفاده کنیم؟](#میتونیم-از-web-components-توی-برنامه-ریاکت-استفاده-کنیم)                                                                                   |
+| 272  | [می‌تونیم از web components توی برنامه ری‌اکت استفاده کنیم؟](#می‌تونیم-از-web-components-توی-برنامه-ریاکت-استفاده-کنیم)                                                                                   |
 | 273  | [dynamic import چیه؟](#dynamic-import-چیه)                                                                                                                                                               |
 | 274  | [loadable componentها چی هستن؟](#loadable-componentها-چی-هستن)                                                                                                                                           |
 | 275  | [کامپوننت suspense چیه؟](#کامپوننت-suspense-چیه)                                                                                                                                                         |
-| 276  | [چطوری به ازای route می‌تونیم code splitting داشته باشیم؟](#چطوری-به-ازای-route-میتونیم-code-splitting-داشته-باشیم)                                                                                      |
+| 276  | [چطوری به ازای route می‌تونیم code splitting داشته باشیم؟](#چطوری-به-ازای-route-می‌تونیم-code-splitting-داشته-باشیم)                                                                                      |
 | 277  | [یه مثال از نحوه استفاده از context میزنی؟](#یه-مثال-از-نحوه-استفاده-از-context-میزنی)                                                                                                                   |
 | 278  | [هدف از مقدار پیش‌فرض توی context چیه؟](#هدف-از-مقدار-پیشفرض-توی-context-چیه)                                                                                                                            |
 | 279  | [چظوری از contextType استفاده می‌کنین؟](#چظوری-از-contextType-استفاده-میکنین)                                                                                                                            |
 | 280  | [consumer چیه؟](#consumer-چیه)                                                                                                                                                                           |
 | 281  | [چطوری مسائل مربوط به پرفورمنس با context رو حل می‌کنین؟](#چطوری-مسائل-مربوط-به-پرفورمنس-با-context-رو-حل-میکنین)                                                                                        |
 | 282  | [هدف از forward ref توی HOCها چیه؟](#هدف-از-forward-ref-توی-HOCها-چیه)                                                                                                                                   |
-| 283  | [توی کامپوننت‌ها می‌تونیم پراپ ref داشته باشیم؟](#توی-کامپوننتها-میتونیم-پراپ-ref-داشته-باشیم)                                                                                                           |
+| 283  | [توی کامپوننت‌ها می‌تونیم پراپ ref داشته باشیم؟](#توی-کامپوننتها-می‌تونیم-پراپ-ref-داشته-باشیم)                                                                                                           |
 | 284  | [چرا در هنگام استفاده از ForwardRefها نیاز به احتیاط بیشتری در استفاده از کتابخانه های جانبی داریم؟](#چرا-در-هنگام-استفاده-از-ForwardRefها-نیاز-به-احتیاط-بیشتری-در-استفاده-از-کتابخانه-های-جانبی-داریم) |
 | 285  | [چطوری بدون استفاده از ES6 کلاس کامپوننت بسازیم؟](#چطوری-بدون-استفاده-از-ES6-کلاس-کامپوننت-بسازیم)                                                                                                       |
 | 286  | [استفاده از ری‌اکت بدون JSX ممکن است؟](#استفاده-از-ریاکت-بدون-JSX-ممکن-است)                                                                                                                              |
 | 287  | [الگوریتم‌های diffing ری‌اکت چی هستن؟](#الگوریتمهای-diffing-ریاکت-چی-هستن)                                                                                                                               |
-| 288  | [قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستند؟](#قوانینی-که-توسط-الگوریتمهای-diffing-پوشش-داده-میشوند-کدام-هستند)                                                                   |
+| 288  | [قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستن؟](#قوانینی-که-توسط-الگوریتمهای-diffing-پوشش-داده-میشوند-کدام-هستن)                                                                   |
 | 289  | [چه موقعی نیاز هست که از refها استفاده کنیم؟](#چه-موقعی-نیاز-هست-که-از-refها-استفاده-کنیم)                                                                                                               |
 | 290  | [برای استفاده از render propها لازمه که اسم prop رو render بزاریم؟](#برای-استفاده-از-render-propها-لازمه-که-اسم-prop-رو-render-بزاریم)                                                                   |
 | 291  | [مشکل استفاده از render props با pure componentها چیه؟](#مشکل-استفاده-از-render-props-با-pure-componentها-چیه)                                                                                           |
-| 292  | [چطوری با استفاده از render props می‌تونیم HOC ایجاد کنیم؟](#چطوری-با-استفاده-از-render-props-میتونیم-HOC-ایجاد-کنیم)                                                                                    |
+| 292  | [چطوری با استفاده از render props می‌تونیم HOC ایجاد کنیم؟](#چطوری-با-استفاده-از-render-props-می‌تونیم-HOC-ایجاد-کنیم)                                                                                    |
 | 293  | [تکنیک windowing چیه؟](#تکنیک-windowing-چیه)                                                                                                                                                             |
 | 294  | [توی JSX یه مقدار falsy رو چطوری چاپ کنیم؟](#توی-JSX-یه-مقدار-falsy-رو-چطوری-چاپ-کنیم)                                                                                                                   |
 | 295  | [یه مورد استفاده معمول از portals مثال میزنی؟](#یه-مورد-استفاده-معمول-از-portals-مثال-میزنی)                                                                                                             |
@@ -345,6 +361,9 @@
 | 323  | [تفاوت‌های Imperative و Declarative توی ری‌اکت چیه؟](#تفاوتهای-Imperative-و-Declarative-توی-ریاکت-چیه)                                                                                                   |
 | 324  | [مزایای استفاده از تایپ اسکریپت با ری‌اکت چیه؟](#مزایای-استفاده-از-تایپ-اسکریپت-با-ریاکت-چیه)                                                                                                            |
 
+
+
+
 ## Core React
 
 1.  ### ری‌اکت چیه؟
@@ -357,10 +376,10 @@
 
     اصلی‌ترین ویژگی‌های ری‌اکت اینا هستن:
 
-    - از **VirtualDOM** به جای RealDOM استفاده میکنه چون هزینه تغییرات RealDOM زیاده(یعنی پیدا کردن DOM Element و حذف یا به روز رسانی با سرعت کمتری انجام میشه)
-    - از **SSR(server side rendering)** پشتیبانی میکنه
-    - از جریان داده ها یا data binding به صورت **یک طرفه (unidirectional)** پیروی میکنه
-    - برای توسعه view از UI کامپوننت‌های ‌**reusable/composable** استفاده میکنه
+    - از **VirtualDOM** به جای RealDOM استفاده‌می‌کنه چون هزینه تغییرات RealDOM زیاده(یعنی پیدا کردن DOM Element و حذف یا به روز رسانی با سرعت کمتری انجام میشه)
+    - از **SSR(server side rendering)** پشتیبانی‌می‌کنه
+    - از جریان داده ها یا data binding به صورت **یک طرفه (unidirectional)** پیروی‌می‌کنه
+    - برای توسعه view از UI کامپوننت‌های ‌**reusable/composable** استفاده‌می‌کنه
 
     **[فهرست](#فهرست)**
 
@@ -402,7 +421,7 @@
 
      </span>
 
-    تابع `React.createElement` که توی قطعه کد بالا میبینید یه object شبیه به این برمیگردونه:
+    تابع `React.createElement` که توی قطعه کد بالا میبینید یه object شبیه به این برمی‌گردونه:
 
     <span align="left" dir="ltr">
 
@@ -418,7 +437,7 @@
 
      </span>
 
-    و آخرش هم با استفاده از `ReactDOM.render` میتونیم توی DOM , Render کنیم
+    و آخرش هم با استفاده از `ReactDOM.render` می‌تونیم توی DOM , Render کنیم
 
     <span align="left" dir="ltr">
 
@@ -428,7 +447,7 @@
 
      </span>
 
-    درحالیکه یه **component** میتونه به روشهای مختلفی ساخته بشه. میتونه یه class باشه با یه متد `render`. یا حتی به عنوان یه جایگزین ساده‌تر به صورت یک تابع تعریف بشه. در هر دو حالت کامپوننت ساخته شده props رو به عنوان ورودی دریافت میکنه و یه خروجی رو به صورت یه JSX tree برمیگردونه. به مثال زیر دقت کنیم که چطور با استفاده از یه تابع و JSX یک کامپوننت ساخته میشه:
+    درحالیکه یه **component** میتونه به روشهای مختلفی ساخته بشه. میتونه یه class باشه با یه متد `render`. یا حتی به عنوان یه جایگزین ساده‌تر به صورت یک تابع تعریف بشه. در هر دو حالت کامپوننت ساخته شده props رو به عنوان ورودی دریافت‌می‌کنه و یه خروجی رو به صورت یه JSX tree برمی‌گردونه. به مثال زیر دقت کنیم که چطور با استفاده از یه تابع و JSX یک کامپوننت ساخته میشه:
 
     <span align="left" dir="ltr">
 
@@ -462,7 +481,7 @@
 5.  ### تو ری‌اکت چطوری کامپوننت می‌سازیم؟
 
     تو سوال قبل یه اشاره کوچیک کردیم که دوتا راه برای ساختن کامپوننت وجود داره.
-    ۱. **Function Components**: این ساده‌ترین راه برای ساختن یه کامپوننته. یه _Pure Javascript Function_ رو در نظر بگیرید که Props که خودش یه object هست رو به عنوان پارامتر ورودی میگیره و یه React Element به عنوان خروجی برمیگردونه مثل همین مثال پایین:
+    ۱. **Function Components**: این ساده‌ترین راه برای ساختن یه کامپوننته. یه _Pure Javascript Function_ رو در نظر بگیرید که Props که خودش یه object هست رو به عنوان پارامتر ورودی میگیره و یه React Element به عنوان خروجی برمی‌گردونه مثل همین مثال پایین:
 
      <span align="left" dir="ltr">
 
@@ -501,14 +520,14 @@
 
 7.  ### Pure Components چیه؟
 
-    _`React.PureComponent`_ دقیقا مثل _`React.Component`_ میمونه فقط تنها تفاوتی که داره اینه که برخلاف _`Component`_ خودش به صورت خودکار متد _`shouldComponentUpdate`_ رو هندل میکنه.
-    وقتی که props یا state در کامپوننت تغییر میکنه، _`PureComponent`_ یه مقایسه سطحی روی props و state انجام میده (shallow comparison) در حالیکه _Component_ این مقایسه رو به صورت خودکار انجام نمیده و به طور پیش‌فرض کامپوننت هربار که `shouldCompnentUpdate` فراخوانی بشه re-render میشه. بنابراین توی Component باید این متد override بشه.
+    _`React.PureComponent`_ دقیقا مثل _`React.Component`_ میمونه فقط تنها تفاوتی که داره اینه که برخلاف _`Component`_ خودش به صورت خودکار متد _`shouldComponentUpdate`_ رو هندل‌می‌کنه.
+    وقتی که props یا state در کامپوننت تغییر‌می‌کنه، _`PureComponent`_ یه مقایسه سطحی روی props و state انجام میده (shallow comparison) در حالیکه _Component_ این مقایسه رو به صورت خودکار انجام نمیده و به طور پیش‌فرض کامپوننت هربار که `shouldCompnentUpdate` فراخوانی بشه re-render میشه. بنابراین توی Component باید این متد override بشه.
 
     **[فهرست](#فهرست)**
 
 8.  ### state تو ری‌اکت چیکار می‌کنه؟
 
-    _State_ در هر کامپوننت یه آبجکته که یه سری اطلاعات که در طول عمر کامپوننت ما ممکنه تغییر کنه رو در خودش ذخیره میکنه. ما باید تمام تلاشمون رو بکنیم که state‌مون در ساده ترین حالت ممکن باشه و تاجایی که میتونیم تعداد کامپوننت هایی که stateful هستن رو کاهش بدیم. به عنوان مثال بیایید یه کامپوننت User رو که یه state داره بسازیم:
+    _State_ در هر کامپوننت یه آبجکته که یه سری اطلاعات که در طول عمر کامپوننت ما ممکنه تغییر کنه رو در خودش ذخیره‌می‌کنه. ما باید تمام تلاشمون رو بکنیم که state‌مون در ساده ترین حالت ممکن باشه و تاجایی که می‌تونیم تعداد کامپوننت‌هایی که stateful هستن رو کاهش بدیم. به عنوان مثال بیایید یه کامپوننت User رو که یه state داره بسازیم:
 
      <span align="left" dir="ltr">
 
@@ -596,7 +615,7 @@
     ```
 
      </span>
-    به جای اینکه مستقیما state رو آپدیت کنیم میتونیم از متد setState  در Class Component  و از useState  در Function Components  استفاده کنیم. این متدها یک آپدیت در شی state رو برنامه ریزی و مدیریت میکنن و وقتی تغییر انجام شد کامپوننت شما re-render خواهد شد.
+    به جای اینکه مستقیما state رو آپدیت کنیم می‌تونیم از متد setState  در Class Component  و از useState  در Function Components  استفاده کنیم. این متدها یک آپدیت در شی state رو برنامه ریزی و مدیریت میکنن و وقتی تغییر انجام شد کامپوننت شما re-render خواهد شد.
 
     <span align="left" dir="ltr">
 
@@ -875,22 +894,17 @@
       // the value can be incremented more than once
       counter.current = counter.current + 1;
 
-      return (
-        <h1>{`The component has been re-rendered ${counter} times`}</h1>
-      );
+      return <h1>{`The component has been re-rendered ${counter} times`}</h1>;
     };
     ```
 
      </span>
 
-    You can also use _refs_ in function components using **closures**.
-    **Note**: You can also use inline ref callbacks even though it is not a recommended approach
-
     **[فهرست](#فهرست)**
 
 21. ### forward ref چیه؟
 
-    *Ref forwarding* ویژگی ایه که به بعضی از کامپوننت ها این اجازه رو میده *ref* دریافت شده رو به کامپوننت فرزند انتقال بدن.
+    _Ref forwarding_ ویژگی ایه که به بعضی از کامپوننت ها این اجازه رو میده _ref_ دریافت شده رو به کامپوننت فرزند انتقال بدن.
 
     <span align="left" dir="ltr">
 
@@ -903,16 +917,16 @@
 
     // Create ref to the DOM button:
     const ref = React.createRef();
-    <ButtonElement ref={ref}>{'Forward Ref'}</ButtonElement>
-     ```
+    <ButtonElement ref={ref}>{"Forward Ref"}</ButtonElement>;
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 22. ### بین callback refs و تابع findDOMNode کدوم رو ترجیح میدی؟
 
-    ترجیح داده میشه که از *callback refs* به جای `findDOMNode()` استفاده کنیم، چون `findDOMNode()` از پیشرفت های خاص ری اکت در آینده جلوگیری میکنه.
+    ترجیح داده میشه که از _callback refs_ به جای `findDOMNode` استفاده کنیم، چون `findDOMNode` از پیشرفت های خاص ری‌اکت در آینده جلوگیری‌می‌کنه.
 
     رویکرد **legacy** استفاده از `findDOMNode`:
 
@@ -921,14 +935,14 @@
     ```javascript
     class MyComponent extends Component {
       componentDidMount() {
-        findDOMNode(this).scrollIntoView()
+        findDOMNode(this).scrollIntoView();
       }
 
       render() {
-        return <div></div>
+        return <div></div>;
       }
     }
-     ```
+    ```
 
      </span>
 
@@ -938,7 +952,7 @@
 
     ```javascript
     class MyComponent extends Component {
-      constructor(props){
+      constructor(props) {
         super(props);
         this.node = createRef();
       }
@@ -947,93 +961,92 @@
       }
 
       render() {
-        return <div ref={this.node} />
+        return <div ref={this.node} />;
       }
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 23. ### چرا Refهای متنی منقضی محسوب می‌شوند؟
 
-    اگه قبلا با ری اکت کار کرده باشین، ممکنه با یه API قدیمی تر آشنا باشین که توی اون ویژگی ref یه رشته ست، مثل `ref={'textInput'}` و گره DOM به عنوان `this.refs.textInput` قابل دسترسیه.  We advise against it because *string refs have below issues*, and are considered legacy. String refs were **removed in React v16**.
+    اگه قبلا با ری‌اکت کار کرده باشین، ممکنه با یه API قدیمی تر آشنا باشین که توی اون ویژگی ref یه رشته ست، مثل `ref={'textInput'}` و گره DOM به عنوان `this.refs.textInput` قابل دسترسیه. We advise against it because _string refs have below issues_, and are considered legacy. String refs were **removed in React v16**.
 
-    1. اونا ری اکت رو وادار میکنن که عناصر در حال اجرا رو پیگیری کنه. این مساله یکم مشکل سازه چون باعث میشه خطاهای عجیب و غریب وقتی که ماژول ری اکت توی باندل کپی میشه ایجاد بشه.
-    2. *قابل انعطاف* نیستن - اگه یه کتابخونه یه ref رو روی فرزند انتقال داده شده قرار بده، کاربر نمیتونه یه ref دیگه ای رو روی اون قرار بده.
-    ref های برگشتی کاملا ترکیب شده هستن.
-    3. They *don't work with static analysis* like Flow. Flow can't guess the magic that framework does to make the string ref appear on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.
-    4. اون طور که اکثر مردم از الگوی "render callback" انتظار دارند کار نمی کند (e.g. <DataGrid renderRow={this.renderRow} />)
+    1. اونا ری‌اکت رو وادار میکنن که عناصر در حال اجرا رو پیگیری کنه. این مساله یکم مشکل سازه چون باعث میشه خطاهای عجیب و غریب وقتی که ماژول ری‌اکت توی باندل کپی میشه ایجاد بشه.
+    2. _قابل انعطاف_ نیستن - اگه یه کتابخونه یه ref رو روی فرزند انتقال داده شده قرار بده، کاربر نمیتونه یه ref دیگه‌ای رو روی اون قرار بده.
+       ref های برگشتی کاملا ترکیب شده هستن.
+    3. با یه _آنالیزگر استاتیک_ مثل Flow کار نمی‌کنن. در حقیقت Flow نمی‌تونه حدس بزنه که فریم‌ورک چه کاری روی برا `this.refs`، مثل نوع داده اون(که ممکنه متفاوت باشه ). refهای callbackدار بیشتر با آنالیزگرها سازگارترن.
+    4. اون طور که اکثر مردم از الگوی "render callback" انتظار دارند کار نمی کند (برای مثال `<DataGrid renderRow={this.renderRow} />`)
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-       class MyComponent extends Component {
-         renderRow = (index) => {
-           // This won't work. Ref will get attached to DataTable rather than MyComponent:
-           return <input ref={'input-' + index} />;
+    class MyComponent extends Component {
+      renderRow = (index) => {
+        // This won't work. Ref will get attached to DataTable rather than MyComponent:
+        return <input ref={"input-" + index} />;
 
-           // This would work though! Callback refs are awesome.
-           return <input ref={input => this['input-' + index] = input} />;
-         }
+        // This would work though! Callback refs are awesome.
+        return <input ref={(input) => (this["input-" + index] = input)} />;
+      };
 
-         render() {
-           return <DataTable data={this.props.data} renderRow={this.renderRow} />
-         }
-       }
-     ```
+      render() {
+        return <DataTable data={this.props.data} renderRow={this.renderRow} />;
+      }
+    }
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 24. ### Virtual DOM چیه؟
 
-    The *Virtual DOM* (VDOM) is an in-memory representation of *Real DOM*. The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called *reconciliation*.
+    _Virtual DOM_ (VDOM) یه نماینده  in-memory از _DOM واقعی_ هستش. این نماینده از رابط کاربری توی حافظه رم نگهداری میشه و همواره با DOM "واقعی" همگام سازی(sync) میشه. این گام بین تابع رندر و نمایش elementها روی صفحه رخ میده و به مجموعه اتفاقاتی که برای مدیریت این موارد انجام میشه _reconciliation_ میگن.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 25. ### Virtual DOM چطوری کار می‌کنه؟
 
-    *Virtual DOM* توی سه مرحله ساده کار میکنه.
+    _Virtual DOM_ توی سه مرحله ساده کار ‌می‌کنه.
 
-    1. هر زمان که داده های اساسی تغییر میکنه، کل رابط کاربری توس DOM مجازی مجددا رندر میشه.
+    1. هر زمان که داده های اساسی تغییر ‌می‌کنه، کل رابط کاربری توسط DOM مجازی مجددا رندر میشه.
 
-        ![vdom](images/vdom1.png)
+       ![vdom](images/vdom1.png)
 
     2. تفاوت بین DOM قبلی و جدید محاسبه میشه.
 
-        ![vdom2](images/vdom2.png)
+       ![vdom2](images/vdom2.png)
 
     3. بعد از انجام محاسبات ، DOM واقعی فقط با مواردی که واقعاً تغییر کردن به روز میشه.
 
-        ![vdom3](images/vdom3.png)
+       ![vdom3](images/vdom3.png)
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 26. ### تفاوت بین Shadow DOM و Virtual DOM چیه؟
 
-    *shadow DOM* یه تکنولوژی مرورگره که در درجه اول برای تعیین متغیر ها و css در*کامپوننت وب* طراحی شده. *virtual DOM* مفهومیه که توسط کتابخونه ها در جاوااسکریپت در API های مرورگر اجرا شده.
+    _shadow DOM_ یه تکنولوژی مرورگره که در درجه اول برای تعیین متغیر ها و css در*کامپوننت وب* طراحی شده بود. _virtual DOM_ مفهومیه که توسط کتابخونه ها در جاواسکریپت در APIهای مرورگر اجرا شده.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 27. ### React Fiber چیه؟
 
-    Fiber is the new *reconciliation* engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
+    Fiber موتور جدید برای عملیات _reconciliation_ هست یا میشه گفت که پیاده‌سازی مجدد الگوریتم هسته ری‌اکت نسخه ۱۶ هست. هدف پیاده‌سازی ReactFiber برای بهبود کارکرد توی ناحیه‌هایی مثل انیمیشن، layout، کار با gestureها، قابلیت اینکه عملیات در حال اجرا رو متوقف، قطع یا مجددا فعال کنیم و همینطوری اولویت‌بندی بروزسانی‌های لازم توی DOM رو شامل می‌شد.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 28. ### هدف اصلی React Fiber چیه؟
 
-    The goal of *React Fiber* is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
+    هدف پیاده‌سازی ReactFiber برای بهبود کارکرد توی ناحیه‌هایی مثل انیمیشن، layout، کار با gestureها بود. میشه گفت مهم‌ترین ویژگی **incremental-rendering** بوده که قابلیت بخش‌بندی(chunk کردن) عملیات اجرایی و متوقف و اجرا کردن اون توی فریم‌های مختلف هست.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 29. ### کامپوننت‌های کنترل شده چی هستن؟
 
-    کامپوننتی که عناصر ورودی رو توی فرم های ورودی کاربر کنترل میکنه به عنوان کامپوننت کنترل شده شناخته میشه، هر جهش state یه تابع نگهدارنده مرتبط داره.
-
+    کامپوننتی که عناصر ورودی رو توی فرم های ورودی کاربر کنترل‌می‌کنه به عنوان کامپوننت کنترل شده شناخته میشه، هر جهش state یه تابع نگهدارنده مرتبط داره.
 
     به عنوان مثال، برای نوشتن تمام اسم ها با حروف بزرگ، باید از handleChange مثل زیر استفاده کنیم:
 
@@ -1043,15 +1056,15 @@
     handleChange(event) {
       this.setState({value: event.target.value.toUpperCase()})
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 30. ### کامپوننت‌های کنترل نشده چی هستن؟
 
-    *کامپوننت های کنترل نشده* کامپوننت هایی هستند که state های خودشون رو به صورت داخلی ذخیره می کنند و ما می تونیم با استفاده از یک ref از DOM پرس و جو کنیم تا در صورت نیاز مقدار فعلی اونو پیدا کنیم. این یکم شبیه HTML سنتیه.
+    _کامپوننت های کنترل نشده_ کامپوننت‌هایی هستن که state های خودشون رو به صورت داخلی ذخیره می کنند و ما می تونیم با استفاده از یک ref از DOM پرس و جو کنیم تا در صورت نیاز مقدار فعلی اونو پیدا کنیم. این یکم شبیه HTML سنتیه.
 
     در کامپوننت UserProfile زیر، ورودی `name` با استفاده از ref قابل دسترسیه.
 
@@ -1060,21 +1073,21 @@
     ```jsx harmony
     class UserProfile extends React.Component {
       constructor(props) {
-        super(props)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.input = React.createRef()
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();
       }
 
       handleSubmit(event) {
-        alert('A name was submitted: ' + this.input.current.value)
-        event.preventDefault()
+        alert("A name was submitted: " + this.input.current.value);
+        event.preventDefault();
       }
 
       render() {
         return (
           <form onSubmit={this.handleSubmit}>
             <label>
-              {'Name:'}
+              {"Name:"}
               <input type="text" ref={this.input} />
             </label>
             <input type="submit" value="Submit" />
@@ -1082,25 +1095,25 @@
         );
       }
     }
-     ```
+    ```
 
      </span>
 
     در بیشتر موارد، توصیه میشه که از کامپوننت های کنترل شده برای پیاده سازی فرم ها استفاده کنیم.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 31. ### تفاوت‌های بین createElement و cloneElement چیا هستن؟
 
-    عناصر JSX به توابع `React.createElement` تبدیل میشن تا عناصر ری اکتی بسازن که برای نمایش شی UI استفاده میشن. درحالی که `cloneElement` برای کلون کردن یه عنصر و فرستادنش به عنوان prop جدید استفاده میشه.
+    عناصر JSX به توابع `React.createElement` تبدیل میشن تا عناصر ری‌اکتی بسازن که برای نمایش شی UI استفاده میشن. درحالی که `cloneElement` برای کلون کردن یه عنصر و فرستادنش به عنوان prop جدید استفاده میشه.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 32. ### مفهوم lift state up یا مدیریت state در لول بالاتر رو توضیح میدی؟
 
-    When several components need to share the same changing data then it is recommended to *lift the shared state up* to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
+    وقتی که کامپوننت‌های مختلف نیاز به یه داده خاص دارن که بین اونا مشترکه بهتره _state مشترک_ رو تا حد امکان به نزدیک‌ترین کامپوننت بالایی‌شون انتقال بدیم. این مورد به این معنیه که اگه دو کامپوننت فرزند داریم که یه state مشخص رو دارن مدیریت می‌کنن توی خودشون، اون state رو می‌بریم توی کامپوننت والد و بجای مدیریت یه state توی دوتا کامپوننت، از یه جا و توی کامپوننت والد اون رو مدیریت می‌کنیم.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 33. ### فازهای مختلف از lifecycle کامپوننت چیا هستن؟
 
@@ -1112,16 +1125,15 @@
 
     3. **Unmounting:** در مرحله آخر کامپوننت مورد نیاز نیست و از DOM مرورگر حذف میشه. این مرحله فقط شامل متد ‍‍`componentWillUnmount` میشه.
 
-    It's worth mentioning that React internally has a concept of phases when applying changes to the DOM. They are separated as follows
+    البته بهتره اینجا این نکته رو بگیم که ری‌اکت برای به روز کردن DOM یه سری فازبندی‌هایی داره که خود اون مرحله رو توی سه تا فاز انجام میده. این پایین به این فازبندی‌ها اشاره می‌کنیم.
 
-    1. **Render** کامپوننت بدون هیچ سایدافکتی رندر میشه. این فقط در مورد کامپوننت های خالص صدق میکنه و در این مرحله، ری اکت میتونه رندر رو متوقف، حذف یا restart کنه.
+    1. **Render** کامپوننت بدون هیچ سایدافکتی رندر میشه. این فقط در مورد کامپوننت های خالص صدق‌می‌کنه و در این مرحله، ری‌اکت میتونه رندر رو متوقف، حذف یا restart کنه.
 
-    2. **Pre-commit** قبل از اینکه کامپوننت تغییرات رو روی DOM‌ اعمال کنه، لحظه ای وجود داره که به ری اکت اجازه میده از DOM داخل متد `getSnappshotBeforeUpdate` بخونه.
+    2. **Pre-commit** قبل از اینکه کامپوننت تغییرات رو روی DOM‌ اعمال کنه، لحظه‌ای وجود داره که به ری‌اکت اجازه میده از DOM داخل متد `getSnappshotBeforeUpdate` بخونه.
 
-    3. **Commit** ری اکت با DOM کار میکنه و lifecycle های آخر رو به ترتیب اجرا میکنه، ‍‍`componentDidMount` برای نصب، `componentDidUpdate` برای به روزرسانی و `componentWillUnmount` برای غیرفعال کردن.
+    3. **Commit** ری‌اکت با DOM کار‌می‌کنه و lifecycle های آخر رو به ترتیب اجرا‌می‌کنه، ‍‍`componentDidMount` برای نصب، `componentDidUpdate` برای به روزرسانی و `componentWillUnmount` برای غیرفعال کردن.
 
-
-    مراحل ری اکت ۱۶.۳ (یا [نسخه تعاملی](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/))
+    مراحل ری‌اکت ۱۶.۳ (یا [نسخه تعاملی](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/))
 
     ![فازهای 16.3+](images/phases16.3.jpg)
 
@@ -1129,43 +1141,43 @@
 
     ![فازهای 16.2](images/phases.png)
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 34. ### متدهای lifecycle کامپوننت چیا هستن؟
 
-    ری اکت ۱۶.۳
+    ری‌اکت ۱۶.۳
 
-    - **getDerivedStateFromProps:** درست قبل از اینکه Render() اجرا بشه فراخوانی میشه و در *هر بار* render فراخوانی میشه.
-    برای موارد نادری که نیاز داریم از state مشتق بگیریم این متد استفاده میشه. بهتره که اینو بخونید [اگه نیاز داشتین که از state مشتق بگیرین] (https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
+    - **getDerivedStateFromProps:** درست قبل از اینکه Render اجرا بشه فراخوانی میشه و در _هر بار_ render فراخوانی میشه.
+      برای موارد نادری که نیاز داریم از state مشتق بگیریم این متد استفاده میشه. بهتره که اینو بخونید [اگه نیاز داشتین که از state مشتق بگیرین] (https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
     - **componentDidMount:** بعد از اولین رندر اجرا میشه و همه درخواست های AJAX، DOM یا بروزرسانی state و تنظیمات event listeners اجرا میشه.
-    - **shouldComponentUpdate:** تعیین میکنه که کامپوننت به روز بشه یا نه. به طور پیش فرض مقدار `true` رو برمیگردونه. اگه مطمئن باشیم که کامپوننت بعد از اینکه state یا props به روزرسانی میشه نیازی به رندر شدن نداره، میتونیم مقدار `false` رو برگردونیم. اینجا جای خوبی برای بهبود عملکرده چون این امکان رو بهمون میده که اگه کامپوننت prop جدید میگیره از render مجدد جلوگیری کنیم.
+    - **shouldComponentUpdate:** تعیین‌می‌کنه که کامپوننت به روز بشه یا نه. به طور پیش فرض مقدار `true` رو برمی‌گردونه. اگه مطمئن باشیم که کامپوننت بعد از اینکه state یا props به روزرسانی میشه نیازی به رندر شدن نداره، می‌تونیم مقدار `false` رو برگردونیم. اینجا جای خوبی برای بهبود عملکرده چون این امکان رو بهمون میده که اگه کامپوننت prop جدید میگیره از render مجدد جلوگیری کنیم.
     - **getSnapshotBeforeUpdate:** درست قبل از رندر مجدد خروجی به DOM اجرا میشه. هر مقداری که توسط این متد برگشت داده میشه به متد `componentDidUpdate` انتقال داده میشه. برای گرفتن اطلاعات از موقعیت اسکرول DOM مفیده.
-    - **componentDidUpdate:** بیشتر برای به روزرسانی DOM در پاسخ به تغییرات state‌ یا Prop استفاده میشه. این متد زمانی که `shouldComponentUpdate()` مقدار `false` رو برگردونه قابل استفاده ست.
+    - **componentDidUpdate:** بیشتر برای به روزرسانی DOM در پاسخ به تغییرات state‌ یا Prop استفاده میشه. این متد زمانی که `shouldComponentUpdate` مقدار `false` رو برگردونه قابل استفاده ست.
     - **componentWillUnmount** این متد برای کنسل کردن همه درخواست های شبکه خروجی یا حذف همه event listener های مرتبط با کامپوننت استفاده میشه.
 
     قبل ورژن ۱۶.۳
 
     - **componentWillMount:** قبل از رندر اجرا میشه و برای پیکربندی سطح برنامه توی کامپوننت ریشه استفاده میشه.
-    - **componentDidMount:**  بعد از اولین رندر اجرا میشه و همه درخواست های AJAX، DOM یا بروزرسانی state و تنظیمات event listeners اجرا میشه.
+    - **componentDidMount:** بعد از اولین رندر اجرا میشه و همه درخواست های AJAX، DOM یا بروزرسانی state و تنظیمات event listeners اجرا میشه.
     - **componentWillReceiveProps:** Executed when particular prop updates to trigger state transitions.
-    - **shouldComponentUpdate:** تعیین میکنه که کامپوننت به روز بشه یا نه. به طور پیش فرض مقدار `true` رو برمیگردونه. اگه مطمئن باشیم که کامپوننت بعد از اینکه state یا props به روزرسانی میشه نیازی به رندر شدن نداره، میتونیم مقدار `false` رو برگردونیم. اینجا جای خوبی برای بهبود عملکرده چون این امکان رو بهمون میده که اگه کامپوننت prop جدید میگیره از render مجدد جلوگیری کنیم.
-    - **componentWillUpdate:** قبل از رندر مجدد کامپوننت وقتی که تغییرات state و props توسط ‍‍‍‍`shouldComponentUpdate()` مقدار ‍‍`true` رو برگردونده باشه اجرا میشه.
-    - **componentDidUpdate:** بیشتر برای به روزرسانی DOM در پاسخ به تغییرات state‌ یا Prop استفاده میشه. این متد زمانی که `shouldComponentUpdate()` مقدار `false` رو برگردونه قابل استفاده ست.
+    - **shouldComponentUpdate:** تعیین‌می‌کنه که کامپوننت به روز بشه یا نه. به طور پیش فرض مقدار `true` رو برمی‌گردونه. اگه مطمئن باشیم که کامپوننت بعد از اینکه state یا props به روزرسانی میشه نیازی به رندر شدن نداره، می‌تونیم مقدار `false` رو برگردونیم. اینجا جای خوبی برای بهبود عملکرده چون این امکان رو بهمون میده که اگه کامپوننت prop جدید میگیره از render مجدد جلوگیری کنیم.
+    - **componentWillUpdate:** قبل از رندر مجدد کامپوننت وقتی که تغییرات state و props توسط ‍‍‍‍`shouldComponentUpdate` مقدار ‍‍`true` رو برگردونده باشه اجرا میشه.
+    - **componentDidUpdate:** بیشتر برای به روزرسانی DOM در پاسخ به تغییرات state‌ یا Prop استفاده میشه. این متد زمانی که `shouldComponentUpdate` مقدار `false` رو برگردونه قابل استفاده ست.
     - **componentWillUnmount** این متد برای کنسل کردن همه درخواست های شبکه خروجی یا حذف همه event listener های مرتبط با کامپوننت استفاده میشه.
 
-     **[فهرست](#فهرست)**
+      **[فهرست](#فهرست)**
 
 35. ### کامپوننت‌های Higher-Order چی هستن؟
 
-    *کامپوننت با اولویت بالا* (*HOC*) تابعیه که یه کامپوننت میگیره و یه کامپوننت جدید برمیگردونه. اصولا این الگوییه که از ماهیت تلفیقی ری اکت گرفته شده.
+    _کامپوننت با اولویت بالا_ (_HOC_) تابعیه که یه کامپوننت میگیره و یه کامپوننت جدید برمی‌گردونه. اصولا این الگوییه که از ماهیت تلفیقی ری‌اکت گرفته شده.
 
-    ما اینا رو به عنوان کامپوننت های خالص میشناسیم چون میتونن هر کدوم از کامپوننت های فرزندشون رو که به صورت پویا ارائه  شدن بپذیرن ولی هیچ کدوم از رفتارهای کامپوننت های ورودی خودشون رو تغییر نمیدن.
+    ما اینا رو به عنوان کامپوننت های خالص میشناسیم چون میتونن هر کدوم از کامپوننت های فرزندشون رو که به صورت پویا ارائه شدن بپذیرن ولی هیچ کدوم از رفتارهای کامپوننت های ورودی خودشون رو تغییر نمیدن.
 
     <span align="left" dir="ltr">
 
     ```javascript
-    const EnhancedComponent = higherOrderComponent(WrappedComponent)
-     ```
+    const EnhancedComponent = higherOrderComponent(WrappedComponent);
+    ```
 
      </span>
 
@@ -1176,12 +1188,11 @@
     3. مفهوم state و manipulation.
     4. Props manipulation.
 
-
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 36. ### چطوری می‌تونیم props proxy برای کامپوننت‌های HOC ایجاد کنیم؟
 
-    میتونیم prop های انتقال داده شده به کامپوننت رو با استفاده از الگوی *props proxy* اضافه یا ویرایش کنیم:
+    می‌تونیم prop های انتقال داده شده به کامپوننت رو با استفاده از الگوی _props proxy_ اضافه یا ویرایش کنیم:
 
     <span align="left" dir="ltr">
 
@@ -1190,68 +1201,68 @@
       return class Test extends Component {
         render() {
           const newProps = {
-            title: 'New Header',
+            title: "New Header",
             footer: false,
             showFeatureX: false,
-            showFeatureY: true
-          }
+            showFeatureY: true,
+          };
 
-          return <WrappedComponent {...this.props} {...newProps} />
+          return <WrappedComponent {...this.props} {...newProps} />;
         }
-      }
+      };
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 37. ### context چیه؟
 
-    *Context* روشی رو برای انتقال داده ها بین کامپوننت ها فراهم میکنه بدون اینکه بخوایم توی هر سطح به صورت دستی داده ها رو منتقل کنیم. به عنوان مثال، معتبر بودن کاربر، locale preference، UI theme مواردی هستن که توی خیلی از کامپوننت ها باید در دسترس باشن.
+    _Context_ روشی رو برای انتقال داده ها بین کامپوننت ها فراهم‌می‌کنه بدون اینکه بخوایم توی هر سطح به صورت دستی داده ها رو منتقل کنیم. به عنوان مثال، معتبر بودن کاربر، locale preference، UI theme مواردی هستن که توی خیلی از کامپوننت ها باید در دسترس باشن.
 
     <span align="left" dir="ltr">
 
     ```javascript
-    const {Provider, Consumer} = React.createContext(defaultValue)
-     ```
+    const { Provider, Consumer } = React.createContext(defaultValue);
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 38. ### children prop چیه؟
 
-    *children* یه (`this.prop.children`) prop هستش که بهمون اجازه میده کامپوننت ها رو به عنوان داده به کامپوننت های دیگه انقال بدیم، درست مثل prop های دیگه ای که استفاده میکنیم. درخت کامپوننت که بین تگ باز و بسته کامپوننت ها قرار داره به اون کامپوننت به عنوان prop `children` پاس داده میشه.
+    _children_ یه (`this.prop.children`) prop هستش که بهمون اجازه میده کامپوننت ها رو به عنوان داده به کامپوننت های دیگه انقال بدیم، درست مثل prop های دیگه‌ای که استفاده میکنیم. درخت کامپوننت که بین تگ باز و بسته کامپوننت ها قرار داره به اون کامپوننت به عنوان prop `children` پاس داده میشه.
 
-    تعدادی متد در دسترس توی react API برای کار بااین prop ها وجود داره که شامل  `React.Children.map`، `React.Children.forEach`، `React.Children.count`، `React.Children.only`، `React.Children.toArray` هستش.
+    تعدادی متد در دسترس توی react API برای کار بااین prop ها وجود داره که شامل `React.Children.map`، `React.Children.forEach`، `React.Children.count`، `React.Children.only`، `React.Children.toArray` هستش.
     یه مثال ساده از استفاده از children prop این پایین نوشته شده.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     const MyDiv = React.createClass({
-      render: function() {
-        return <div>{this.props.children}</div>
-      }
-    })
+      render: function () {
+        return <div>{this.props.children}</div>;
+      },
+    });
 
     ReactDOM.render(
       <MyDiv>
-        <span>{'Hello'}</span>
-        <span>{'World'}</span>
+        <span>{"Hello"}</span>
+        <span>{"World"}</span>
       </MyDiv>,
       node
-    )
-     ```
+    );
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 39. ### چطوری میشه تو React کامنت نوشت؟
 
-    کامنت ها توی React/JSX شبیه به جاوااسکریپت هستن اما کامنت های چند خطی توی آکولاد قرار میگیرن.
+    کامنت ها توی React/JSX شبیه به جاواسکریپت هستن اما کامنت های چند خطی توی آکولاد قرار میگیرن.
 
     **کامنت های تک خطی:**
 
@@ -1262,7 +1273,7 @@
       {/* Single-line comments(In vanilla JavaScript, the single-line comments are represented by double slash(//)) */}
       {`Welcome ${user}, let's play React`}
     </div>
-     ```
+    ```
 
      </span>
 
@@ -1276,15 +1287,15 @@
        one line */}
       {`Welcome ${user}, let's play React`}
     </div>
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 40. ### چرا توی کامپوننت‌های کلاس باید توی constructor تابع super رو با مقدار props صدا بزنیم؟
 
-    کلاس constructor تا زمانی که متد `super()` صدا زده نشده نمیتونه از `this` استفاده کنه. همین مورد در رابطه با کلاس های فرعی ES6 هم صدق میکنه. دلیل اصلی انتقال پارامتر های props به متد فراخوان `super` دسترسی داشتن به `this.props` توی constructor هستش.
+    کلاس constructor تا زمانی که متد `super` صدا زده نشده نمیتونه از `this` استفاده کنه. همین مورد در رابطه با کلاس های فرعی ES6 هم صدق‌می‌کنه. دلیل اصلی انتقال پارامتر های props به متد فراخوان `super` دسترسی داشتن به `this.props` توی constructor هستش.
 
     **با پاس دادن props:**
 
@@ -1293,12 +1304,12 @@
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super(props)
+        super(props);
 
-        console.log(this.props) // prints { name: 'John', age: 42 }
+        console.log(this.props); // prints { name: 'John', age: 42 }
       }
     }
-     ```
+    ```
 
      </span>
 
@@ -1309,36 +1320,36 @@
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super()
+        super();
 
-        console.log(this.props) // prints undefined
+        console.log(this.props); // prints undefined
 
         // but props parameter is still available
-        console.log(props) // prints { name: 'John', age: 42 }
+        console.log(props); // prints { name: 'John', age: 42 }
       }
 
       render() {
         // no difference outside constructor
-        console.log(this.props) // prints { name: 'John', age: 42 }
+        console.log(this.props); // prints { name: 'John', age: 42 }
       }
     }
-     ```
+    ```
 
      </span>
 
     کد بالا نشون میده که `this.props` فقط توی constructor متفاوته، بیرون از constructor میتونه مثل همه.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 41. ### reconciliation چیه؟
 
-    وقتی state‌ یا props یه کامپوننت تغییر میکنه، ری اکت با مقایسه عنصر تازه return شده و نمونه render شده قبلی تصمیم میگیره که به روزرسانی DOM واقعا ضروریه یا نه. وقتی این دو مقدار با هم برابر نباشه، ری اکت به روزرسانی DOM‌رو انجام میده. به این فرایند *reconciliation* میگیم.
+    وقتی state‌ یا props یه کامپوننت تغییر‌می‌کنه، ری‌اکت با مقایسه عنصر تازه return شده و نمونه render شده قبلی تصمیم میگیره که به روزرسانی DOM واقعا ضروریه یا نه. وقتی این دو مقدار با هم برابر نباشه، ری‌اکت به روزرسانی DOM‌رو انجام میده. به این فرایند _reconciliation_ میگیم.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 42. ### چطوری با یه اسم داینامیک set state کنیم؟
 
-    اگر برای تبدیل کد JSX از ES6 یا babel استفاده میکنین میتونین این کارو با *computed property names* انجام بدین.
+    اگر برای تبدیل کد JSX از ES6 یا babel استفاده میکنین میتونین این کارو با _computed property names_ انجام بدین.
 
     <span align="left" dir="ltr">
 
@@ -1346,11 +1357,11 @@
     handleInputChange(event) {
       this.setState({ [event.target.id]: event.target.value })
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 43. ### یه اشتباه رایج برای مدیریت توابع eventها که باعث میشه با هر رندر توابع مجدد ساخته بشن چی هستش؟
 
@@ -1363,7 +1374,7 @@
       // Wrong: handleClick is called instead of passed as a reference!
       return <button onClick={this.handleClick()}>{'Click Me'}</button>
     }
-     ```
+    ```
 
      </span>
 
@@ -1376,15 +1387,15 @@
       // Correct: handleClick is passed as a reference!
       return <button onClick={this.handleClick}>{'Click Me'}</button>
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 44. ### تابع lazy که برای lazy load استفاده میشه رو می‌تونیم به صورت name export خروجی بگیریم؟
 
-    نه، تابع `React.lazy` در حال حاضر فقط خروجی پیش فرض رو پشتیبانی میکنه. اگه بخوایم ماژول هایی رو import کنیم که به اونا exports گفته میشه، می تونیم یه ماژول واسطه تعریف کنیم که اونا رو به عنوان پیش فرض مجددا تعریف میکنه. همچنین تضمین میکنه که tree shaking همچنان به کار خودش ادامه میده و کامپوننت های استفاده نشده رو نمیگیره.
+    نه، تابع `React.lazy` در حال حاضر فقط خروجی پیش فرض رو پشتیبانی‌می‌کنه. اگه بخوایم ماژول‌هایی رو import کنیم که به اونا exports گفته میشه، می تونیم یه ماژول واسطه تعریف کنیم که اونا رو به عنوان پیش فرض مجددا تعریف‌می‌کنه. همچنین تضمین‌می‌کنه که tree shaking همچنان به کار خودش ادامه میده و کامپوننت های استفاده نشده رو نمیگیره.
     بیاین یه کامپوننتی بنویسیم که چندین کامپوننت رو به عنوان خروجی ارائه میده.
 
     <span align="left" dir="ltr">
@@ -1411,17 +1422,17 @@
     <span align="left" dir="ltr">
 
     ```javascript
-    import React, { lazy } from 'react';
+    import React, { lazy } from "react";
     const SomeComponent = lazy(() => import("./IntermediateComponent.js"));
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 45. ### چرا ری‌اکت از className بجای class استفاده می‌کنه؟
 
-    `class` یه کلمه کلیدی توی جاوااسکریپته و JSX پسوند جاوااسکریپته. دلیل اصلی اتفاده ری اکت از `className` به جای `class` همینه. یه رشته رو به عنوان prop `className` انتقال میدیم.
+    `class` یه کلمه کلیدی توی جاواسکریپته و JSX پسوند جاواسکریپته. دلیل اصلی اتفاده ری‌اکت از `className` به جای `class` همینه. یه رشته رو به عنوان prop `className` انتقال میدیم.
 
     <span align="left" dir="ltr">
 
@@ -1429,15 +1440,15 @@
     render() {
       return <span className={'menu navigation-menu'}>{'Menu'}</span>
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 46. ### fragmentها چی هستن؟
 
-    یه الگوی رایج توی ری اکت وجود داره که برای کامپوننتی استفاده میشه که چندین عنصر رو برمیگردونن. *Fragment* ها این امکان رو فراهم میکنن که بتونیم لیستی از فرزندان رو بدون اضافه کردن نود های اضافی به DOM گروه بندی کنیم.
+    یه الگوی رایج توی ری‌اکت وجود داره که برای کامپوننتی استفاده میشه که چندین عنصر رو برمیگردونن. _Fragment_ ها این امکان رو فراهم میکنن که بتونیم لیستی از فرزندان رو بدون اضافه کردن نود های اضافی به DOM گروه بندی کنیم.
 
     <span align="left" dir="ltr">
 
@@ -1451,11 +1462,11 @@
         </React.Fragment>
       )
     }
-     ```
+    ```
 
      </span>
 
-    همچنین یه *shorter syntax* وجود داره اما توی خیلی از ابزار ها پشتیبانی نمیشه:
+    همچنین یه _shorter syntax_ وجود داره اما توی خیلی از ابزار ها پشتیبانی نمیشه:
 
     <span align="left" dir="ltr">
 
@@ -1469,69 +1480,69 @@
         </>
       )
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 47. ### چرا fragmentها از تگ‌های div بهترن؟
 
     1. Fragment ها یه کم سریعترن و با ایجاد نکردن DOM node اضافی حافظه کمتری استفاده میکنن. این فقط یه مزیت واقعی روی درخت های بزرگ و عمیق داره.
-    بعضی از مکانیسم های CSS مثل *Flexbox* و *CSS Grid* روابط والد و فرزندی خاصی دارند و اضافه کردن div در وسط ، حفظ طرح مورد نظرمون را دشوار میکنه.
-    3. DOM Inspector بهم ریختگی کمتری داره.
+       بعضی از مکانیسم های CSS مثل _Flexbox_ و _CSS Grid_ روابط والد و فرزندی خاصی دارند و اضافه کردن div در وسط ، حفظ طرح مورد نظرمون را دشوار‌می‌کنه.
+    2. DOM Inspector بهم ریختگی کمتری داره.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 48. ### توی ری‌اکت portal‌ها چیکار می‌کنن؟
 
-    *Portal* روشی توصیه شده برای رندر کردن فرزند توی DOM هستش و خارج از سلسله مراتب DOM از کامپوننت والد وجود داره.
+    _Portal_ روشی توصیه شده برای رندر کردن فرزند توی DOM هستش و خارج از سلسله مراتب DOM از کامپوننت والد وجود داره.
 
     <span align="left" dir="ltr">
 
     ```javascript
-    ReactDOM.createPortal(child, container)
-     ```
+    ReactDOM.createPortal(child, container);
+    ```
 
      </span>
 
     اولین آرگومان یه فرزند قابل رندر شدن هستش، مثل عنصر، رشته، یا fragment. آرگومان دوم عنصر DOM هستش.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 49. ### کامپوننت stateless چیه؟
 
-    اگه رفتار یه کامپوننت مستقل از state اون کامپوننت باشه بهش کامپوننت stateless میگیم. می تونیم از یه تابع یا یه کلاس برای ساخت کامپوننت های stateless استفاده کنیم، اما تا زمانی که ما نیاز داریم از هوک چرخه عمر توی کامپوننت هامون استفاده کنیم باید سراغ کامپوننت های تابع بریم. اگه بخوایم اینجا از کامپوننت های تابع استفاده کنیم فواید زیادی داره، راحت نوشته میشه، فهمیده میشه، تست میشه، سریعتره و میتونیم از کلمه کلیدی ‍`this` هم استفاده نکنیم.
+    اگه رفتار یه کامپوننت مستقل از state اون کامپوننت باشه بهش کامپوننت stateless میگیم. می تونیم از یه تابع یا یه کلاس برای ساخت کامپوننت های stateless استفاده کنیم، اما تا زمانی که ما نیاز داریم از هوک چرخه عمر توی کامپوننت هامون استفاده کنیم باید سراغ کامپوننت های تابع بریم. اگه بخوایم اینجا از کامپوننت های تابع استفاده کنیم فواید زیادی داره، راحت نوشته میشه، فهمیده میشه، تست میشه، سریعتره و می‌تونیم از کلمه کلیدی ‍`this` هم استفاده نکنیم.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 50. ### کامپوننت stateful چیه؟
 
-    اگه رفتار یه کامپوننتی به *state* اون کامپوننت وابسته باشه، به عنوان کامپوننت statefull .شناخته میشه.
+    اگه رفتار یه کامپوننتی به _state_ اون کامپوننت وابسته باشه، به عنوان کامپوننت statefull .شناخته میشه.
 
-    این کامپوننت ها همیشه جز *کلاس کامپوننت ها* هستند و شامل یه state هستند که توی `constructor`  یه مقدار اولیه بهش میدیم.
+    این کامپوننت ها همیشه جز _کلاس کامپوننت ها_ هستن و شامل یه state هستن که توی `constructor` یه مقدار اولیه بهش میدیم.
 
     <span align="left" dir="ltr">
 
     ```javascript
     class App extends Component {
       constructor(props) {
-        super(props)
-        this.state = { count: 0 }
+        super(props);
+        this.state = { count: 0 };
       }
 
       render() {
         // ...
       }
     }
-     ```
+    ```
 
      </span>
 
-    **ورژن 16.8 ری اکت:**
-    هوک ها این امکان رو بهمون میدن که بدون نوشتن کلاس ها بتونیم از state و ویژگی های دیگه ری اکت استفاده کنیم.
+    **ورژن 16.8 ری‌اکت:**
+    هوک ها این امکان رو بهمون میدن که بدون نوشتن کلاس ها بتونیم از state و ویژگی های دیگه ری‌اکت استفاده کنیم.
 
-    *کامپوننت های Equivalent Functional*
+    _کامپوننت های Equivalent Functional_
 
     <span align="left" dir="ltr">
 
@@ -1545,11 +1556,11 @@
         // JSX
       )
     }
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 51. ### چطوری prop‌های کامپوننت رو اعتبارسنجی کنیم؟
 
@@ -1613,7 +1624,7 @@
     1. ری‌اکت یک کتابخونه برای ساخت لایه view هستش نه یک فریمورک کامل.
     2. وجود یک منحنی یادگیری(سختی یادگیری) برای کسانی که به تازگی می خوان برنامه نویسی وب رو یاد بگیرن.
     3. یکپارچه‌سازی ری‌اکت در فریمورک‌های مبتنی بر MVC به یه کانفیگ اضافه‌ای نیاز داره.
-    4. پیچیدگی کد با inline templating و JSX افزایش پیدا میکنه.
+    4. پیچیدگی کد با inline templating و JSX افزایش پیدا‌می‌کنه.
     5. خیلی کامپوننت‌های کوچیک یا boilerplateهای کوچیک براش ساخته شدن و ممکنه کمی گیج کننده باشه.
 
     **[فهرست](#فهرست)**
@@ -1667,7 +1678,7 @@
 
      </span>
 
-     **نکته** : از این ویژگی توی کامپوننت‌های functional نمیشه استفاده کرد و در حقیقت احتمالا نیازی هم بهش ندارین، چون اکثر مواقع برای کل برنامه یه error boundary تعریف می‌کنیم که می‌تونه `try..catch` باشه.
+    **نکته** : از این ویژگی توی کامپوننت‌های functional نمیشه استفاده کرد و در حقیقت احتمالا نیازی هم بهش ندارین، چون اکثر مواقع برای کل برنامه یه error boundary تعریف می‌کنیم که می‌تونه `try..catch` باشه.
 
     **[فهرست](#فهرست)**
 
@@ -1680,14 +1691,14 @@
 
 56. ### روش‌های پیشنهادی برای type checking چیه؟
 
-    به طور معمول ما از کتابخانه propTypes ها (در ورژن ۱۵.۵ ری‌اکت `‍Rect.propTypes` به پکیج `react-types` انتقال پیدا کرده) برای چک کردن نوع prop در برنامه‌های ری‌اکت استفاده می‌کنیم . برای برنامه ایی با کد‌های بیشتر توصیه میشه از _static type checker_ هایی مثل flow یا typeScript استفاده بشه که چک کردن رو در زمان کامپایل انجام میده ویژگی‌های مثل auto-completion ‌رو ارائه میده.
+    به طور معمول ما از کتابخانه propTypes ها (در ورژن ۱۵.۵ ری‌اکت `‍Rect.propTypes` به پکیج `react-types` انتقال پیدا کرده) برای چک کردن نوع prop در برنامه‌های ری‌اکت استفاده می‌کنیم . برای برنامه ایی با کد‌های بیشتر توصیه میشه از _static type checker_‌هایی مثل flow یا typeScript استفاده بشه که چک کردن رو در زمان کامپایل انجام میده ویژگی‌های مثل auto-completion ‌رو ارائه میده.
 
     **[فهرست](#فهرست)**
 
 57. ### کاربرد پکیج react-dom چیه؟
 
     پکیج `react-dom` متدهای DOM-specific یا مخصوص DOM رو ارائه میده که میتونه توی سطوح بالای برنامه شما استفاده بشه.
-    اکثر کامپوننت ها نیازی به استفاده از این ماژول‌ها ندارن. تعدادی از متد‌های این پکیج این‌ها هستند :
+    اکثر کامپوننت ها نیازی به استفاده از این ماژول‌ها ندارن. تعدادی از متد‌های این پکیج این‌ها هستن :
 
     1. متد `render`
     2. متد `hydrate`
@@ -1786,7 +1797,6 @@
 
      </span>
 
-
     **[فهرست](#فهرست)**
 
 62. ### تفاوت eventهای ری‌اکت چیه؟
@@ -1807,7 +1817,7 @@
 64. ### تاثیر استفاده از ایندکس به عنوان key چیه؟
 
     key ها باید پایدار، قابل پیش بینی و منحصر به فرد باشن تا ری‌اکت بتونه المان‌ها رو قابل رهگیری کنه.
-    تو کد زیر key هر عنصر براساس ترتیبی که توی لیست داره مقدار قرار می گیره و به داده هایی که میگیرن ربطی نداره. این کار بهینه سازی هایی که می‌تونه توسط ری‌اکت انجام بشه رو محدود میکنه.
+    تو کد زیر key هر عنصر براساس ترتیبی که توی لیست داره مقدار قرار می گیره و به داده‌هایی که میگیرن ربطی نداره. این کار بهینه سازی‌هایی که می‌تونه توسط ری‌اکت انجام بشه رو محدود‌می‌کنه.
 
     <span align="left" dir="ltr">
 
@@ -1876,7 +1886,7 @@
 
      </span>
 
-    استفاده از prop ها توی متد render مقدار رو به روز رسانی میکنه :
+    استفاده از prop ها توی متد render مقدار رو به روز رسانی‌می‌کنه :
 
     <span align="left" dir="ltr">
 
@@ -1902,7 +1912,7 @@
 
 67. ### چطوری کامپوننت رو با بررسی یه شرط رندر می‌کنیم؟
 
-    بعضی وقتا ما می خوایم کامپوننت‌های مختلفی رو بسته به بعضی state ها رندر کنیم. JSX مقدار `false` یا `undefined` رو رندر نمیکنه، بنابراین ما میتونیم از _short-circuiting_ شرطی برای رندر کردن بخش مشخصی از کامپوننتتون استفاده کنیم در صورتی که اون شرط مقدار true رو برگردونده باشه.
+    بعضی وقتا ما می خوایم کامپوننت‌های مختلفی رو بسته به بعضی state ها رندر کنیم. JSX مقدار `false` یا `undefined` رو رندر نمیکنه، بنابراین ما می‌تونیم از _short-circuiting_ شرطی برای رندر کردن بخش مشخصی از کامپوننتتون استفاده کنیم در صورتی که اون شرط مقدار true رو برگردونده باشه.
 
     <span align="left" dir="ltr">
 
@@ -1936,7 +1946,7 @@
 
 68. ### چرا وقتی propها رو روی یه DOM Elemnt می‌آییم spread می‌کنیم باید مراقب باشیم؟
 
-    وقتی ما prop هارو spread می‌کنیم این کارو با ریسک اضافه کردن اتریبیوت‌های HTML انجام میدیم که این کار خوبی نیست، به جای این کار میتونیم از ...rest استفاده کنیم که فقط prop‌های مورد نیاز رو اضافه میکنه.
+    وقتی ما prop هارو spread می‌کنیم این کارو با ریسک اضافه کردن اتریبیوت‌های HTML انجام میدیم که این کار خوبی نیست، به جای این کار می‌تونیم از ...rest استفاده کنیم که فقط prop‌های مورد نیاز رو اضافه‌می‌کنه.
 
     <span align="left" dir="ltr">
 
@@ -1986,13 +1996,13 @@
 
      </span>
 
-    **نکته:** Decoratorها ویژگی هایی هستن که در حال حاضر به ES7 اضافه نشدن، ولی توی پیشنهاد _stage 2_ هستن.
+    **نکته:** Decoratorها ویژگی‌هایی هستن که در حال حاضر به ES7 اضافه نشدن، ولی توی پیشنهاد _stage 2_ هستن.
 
     **[فهرست](#فهرست)**
 
 70. ### چطوری یه کامپوننت رو memoize می‌کنیم؟
 
-    در حال حاظر کتابخانه هایی وجود داره که memoize هستن و میتونن توی کامپوننت‌های تابع استفاده بشن، به عنوان مثال کتابخونه `moize` میتونه یه کامپوننت رو توی بقیه کامپوننت ها memoize کنه.
+    در حال حاظر کتابخانه‌هایی وجود داره که memoize هستن و میتونن توی کامپوننت‌های تابع استفاده بشن، به عنوان مثال کتابخونه `moize` میتونه یه کامپوننت رو توی بقیه کامپوننت ها memoize کنه.
 
     <span align="left" dir="ltr">
 
@@ -2012,7 +2022,7 @@
 
     </span>
 
-    **به روز رسانی:** توی ورژن 16.6.0 ری‌اکت ،`React.memo` رو داریم که کارش اینه که یه کامپوننت با الویت بالاتر فراهم میکنه که کامپوننت رو تا زمانی که prop ها تغییر کنن memoize میکنه. برای استفاده ازش کافیه زمان ساخت کامپوننت از React.memo استفاده کنیم.
+    **به روز رسانی:** توی ورژن 16.6.0 ری‌اکت ،`React.memo` رو داریم که کارش اینه که یه کامپوننت با الویت بالاتر فراهم‌می‌کنه که کامپوننت رو تا زمانی که prop ها تغییر کنن memoize‌می‌کنه. برای استفاده ازش کافیه زمان ساخت کامپوننت از React.memo استفاده کنیم.
 
     <span align="left" dir="ltr">
 
@@ -2081,7 +2091,7 @@
 
     1. React، JSX، ES6 و روند پشتیبانی syntax.
     2. Language extras beyond ES6 like the object spread operator.
-    3. Autoprefixed CSS، بنابراین نیازی به -webkit- یا پیشوند‌های دیگه ای نداریم.
+    3. Autoprefixed CSS، بنابراین نیازی به -webkit- یا پیشوند‌های دیگه‌ای نداریم.
     4. یه اجرا کننده تست تعاملی با پشتیبانی داخلی برای coveraage reporting.
     5. یه سرور live development که اشتباهات معمول رو بهمون هشدار میده.
     6. یه بیلد اسکریپت برای باندل کردن css، js و تصاویر برای production همراه با hash ها و sourcemap ها.
@@ -2090,7 +2100,7 @@
 
 74. ### ترتیب اجرا شدن متد‌های life cycle چطوریه؟
 
-    وقتی یه نمونه ای از کامپوننت ساخته میشه و داخل DOM اضافه میشه، متد‌های lifecycle به ترتیب زیر صدا زده میشن.
+    وقتی یه نمونه‌ای از کامپوننت ساخته میشه و داخل DOM اضافه میشه، متد‌های lifecycle به ترتیب زیر صدا زده میشن.
 
     1. متد `constructor`
     2. متد `static getDerivedStateFromProps`
@@ -2287,7 +2297,7 @@
 83. ### حالت strict توی ری‌اکت چیکار می‌کنه؟
 
     `React.StrictMode` یه کامپوننت مفید برای هایلایت کردن مشکلات احتمالی توی برنامه ست.
-    `<StrictMode>` درست مثل ‍‍`<Fragment>` هیچ المان DOM اضافه ای رو رندر نمی‌کنه، بلکه warning ها و additional checks رو برای فرزندان اون کامپوننت فعال میکنه.
+    `<StrictMode>` درست مثل ‍‍`<Fragment>` هیچ المان DOM اضافه‌ای رو رندر نمی‌کنه، بلکه warning ها و additional checks رو برای فرزندان اون کامپوننت فعال‌می‌کنه.
     این کار فقط در حالت _development_ فعال میشه.
 
     <span align="left" dir="ltr">
@@ -2319,7 +2329,7 @@
 
 84. ### Mixin‌های ری‌اکت چی هستن؟
 
-    _Mixin_ ها روشی برای جدا کردن کامپوننت هایی با عملکرد مشترک هستن.
+    _Mixin_ ها روشی برای جدا کردن کامپوننت‌هایی با عملکرد مشترک هستن.
     Mixin ها _نباید استفاده بشن_ و میتونن با _کامپوننت‌های با اولویت بالا(HOC)_ یا _decorator_ ها جایگزین بشن.
 
     یکی از بیشترین کاربرد‌های mixin ها `PureRenderMixin` هستش. ممکنه تو بعضی از کامپوننت ها برای جلوگیری از re-render‌های غیر ضروری وقتی prop ها و state با مقادیر قبلی شون برابر هستن از این mixin ها استفاده کنیم:
@@ -2343,17 +2353,17 @@
 85. ### چرا isMounted آنتی پترن هست و روش بهتر انجامش چیه؟
 
     کاربرد اصلی متد `isMounted` برای جلوگیری از فراخوانی `setState` بعد از unmount شدن کامپوننت هستش چونکه باعث ایجاد یه خطا میشه.
-		خطاش یه چیزی مثل اینه:
+    خطاش یه چیزی مثل اینه:
 
     <span align="left" dir="ltr">
 
-    ```bash
-		Warning: Can only update a mounted or mounting component. This usually means you called setState, replaceState, or forceUpdate on an unmounted component. This is a no-op.
-		```
+    ````bash
+    	Warning: Can only update a mounted or mounting component. This usually means you called setState, replaceState, or forceUpdate on an unmounted component. This is a no-op.
+    	```
 
-		</span>
+    	</span>
 
-		توی کلاس کامپوننت‌ها هم این شکلی بعضا جلوشو می‌گرفتن:
+    	توی کلاس کامپوننت‌ها هم این شکلی بعضا جلوشو می‌گرفتن:
 
 
     <span align="left" dir="ltr">
@@ -2362,27 +2372,32 @@
     if (this.isMounted()) {
       this.setState({...})
     }
-    ```
+    ````
 
      </span>
 
-		 دلیل اینکه این روش توصیه نمیشه اینه که خطایی رو که ری‌اکت بهمون میداد رو داره دور میزنه و حلش نمی‌کنه. بهتره setState رو جایی انجام بدیم که توی مواقعی که کامپوننت‌ mount نیست اجرا نشه.
-     البته توی نسخه‌های جدید ری‌اکت این کار رو خیلی ساده‌تر میشه انجام داد و فقط کافیه یه هوکی بنویسیم که یه ref رو مقداردهی می‌کنه و بعد با بررسی اون ref میشه فهمید که کامپوننت mount شده یا نه، مثلا:
+         دلیل اینکه این روش توصیه نمیشه اینه که خطایی رو که ری‌اکت بهمون میداد رو داره دور میزنه و حلش نمی‌کنه. بهتره setState رو جایی انجام بدیم که توی مواقعی که کامپوننت‌ mount نیست اجرا نشه.
+
+    البته توی نسخه‌های جدید ری‌اکت این کار رو خیلی ساده‌تر میشه انجام داد و فقط کافیه یه هوکی بنویسیم که یه ref رو مقداردهی می‌کنه و بعد با بررسی اون ref میشه فهمید که کامپوننت mount شده یا نه، مثلا:
 
     <span align="left" dir="ltr">
 
     ```javascript
     export const useIsMounted = () => {
-      const componentIsMounted = useRef(true)
-      useEffect(() => () => { componentIsMounted.current = false }, [])
+      const componentIsMounted = useRef(true);
+      useEffect(
+        () => () => {
+          componentIsMounted.current = false;
+        },
+        []
+      );
       return componentIsMounted;
-    }
+    };
     ```
 
      </span>
 
-     یا حتی یه پکیجی ساخته شده به اسم `ismounted` که می‌تونه بهمون کمک کنه که متوجه بشیم کامپوننت mount  شده یا نه. ولی حواسمون باشه که ازش درست استفاده کنیم.
-
+    یا حتی یه پکیجی ساخته شده به اسم `ismounted` که می‌تونه بهمون کمک کنه که متوجه بشیم کامپوننت mount شده یا نه. ولی حواسمون باشه که ازش درست استفاده کنیم.
 
     **[فهرست](#فهرست)**
 
@@ -2390,9 +2405,9 @@
 
     _pointer Event_ ها یه روش واحدی رو برای هندل کردن همه ی ایونت‌های ورودی ارائه میدن.
     در زمان‌های قدیم ما از موس استفاده میکردیم و برای هندل کردن ایونت‌های مربوط به اون از event listener ها استفاده میکردیم ولی امروزه دستگاه‌های زیادی داریم که با داشتن موس ارتباطی ندارن، مثل قلم ها یا گوشی‌های صفحه لمسی.
-    باید یادمون باشه که این ایونت ها فقط تو مرورگر هایی کار میکنن که مشخصه _Pointer Events_ رو پشتیبانی میکنن.
+    باید یادمون باشه که این ایونت ها فقط تو مرورگر‌هایی کار میکنن که مشخصه _Pointer Events_ رو پشتیبانی میکنن.
 
-    ایونت‌های زیر در _React DOM_ در دسترس هستند:
+    ایونت‌های زیر در _React DOM_ در دسترس هستن:
 
     1. `onPointerDown`
     2. `onPointerMove`
@@ -2420,7 +2435,7 @@
     ```
 
      </span>
-    می تونیم کلاس کامپوننت هایی که با حرف کوچیک شروع میشن رو هم تعریف کنیم ولی وقتی داریم ایمپورت می‌کنیم باید شامل حروف بزرگ هم باشن:
+    می تونیم کلاس کامپوننت‌هایی که با حرف کوچیک شروع میشن رو هم تعریف کنیم ولی وقتی داریم ایمپورت می‌کنیم باید شامل حروف بزرگ هم باشن:
 
     <span align="left" dir="ltr">
 
@@ -2436,7 +2451,7 @@
 
      </span>
 
-    وقتی داریم تو یه فایل دیگه ای ایمپورت می‌کنیم باید با حرف بزرگ شروع بشه:
+    وقتی داریم تو یه فایل دیگه‌ای ایمپورت می‌کنیم باید با حرف بزرگ شروع بشه:
 
     <span align="left" dir="ltr">
 
@@ -2470,7 +2485,7 @@
 
      </span>
 
-    در ری‌اکت ورژن 16 هر attribute ناشناخته ای توی DOM از بین میره:
+    در ری‌اکت ورژن 16 هر attribute ناشناخته‌ای توی DOM از بین میره:
 
     <span align="left" dir="ltr">
 
@@ -2527,7 +2542,7 @@
 
 90. ### می‌تونیم یه کامپوننت رو بدون setState ری‌رندر کنیم؟
 
-    در حالت پیش فرض، وقتی state یا prop کامپوننت تغییر میکنه، کامپوننت دوباره رندر میشه. اگه متد `render` به داده‌های دیگه ای وابسته باشه، می تونیم با فراخوانی متد `forceUpdate` به ری‌اکت بگیم که این کامپوننت نیازه که دوباره رندر بشه.
+    در حالت پیش فرض، وقتی state یا prop کامپوننت تغییر‌می‌کنه، کامپوننت دوباره رندر میشه. اگه متد `render` به داده‌های دیگه‌ای وابسته باشه، می تونیم با فراخوانی متد `forceUpdate` به ری‌اکت بگیم که این کامپوننت نیازه که دوباره رندر بشه.
 
     <span align="left" dir="ltr">
 
@@ -2552,44 +2567,46 @@
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super(props)
-        console.log(this.props) // { name: 'John', ... }
+        super(props);
+        console.log(this.props); // { name: 'John', ... }
       }
     }
-     ```
+    ```
 
      </span>
 
-    Using `super()`:
+    استفاده از `super`:
 
     <span align="left" dir="ltr">
 
     ```javascript
     class MyComponent extends React.Component {
       constructor(props) {
-        super()
-        console.log(this.props) // undefined
+        super();
+        console.log(this.props); // undefined
       }
     }
-     ```
+    ```
 
      </span>
 
     بیرون از `constructor` هردو متد مقادیر یکسانی رو برای `this.props` نشون میدن.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 92. ### چطوری توی JSX حلقه یا همون لوپ رو داشته باشیم؟
 
-    خیلی ساده میتونیم از ‍‍`Array.prototype.map` با سینتکس *arrow function* ES6 استفاده کنیم، برای مثال ارایه ای از آیتم های یه آبجکت توی آرایه ای از کامپوننت ها نوشته میشه:
+    خیلی ساده می‌تونیم از ‍‍`Array.prototype.map` با سینتکس _arrow function_ ES6 استفاده کنیم، برای مثال آرایه‌ای از آیتم های یه آبجکت توی آرایه‌ای از کامپوننت ها نوشته میشه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <tbody>
-      {items.map(item => <SomeComponent key={item.id} name={item.name} />)}
+      {items.map((item) => (
+        <SomeComponent key={item.id} name={item.name} />
+      ))}
     </tbody>
-     ```
+    ```
 
      </span>
 
@@ -2603,68 +2620,70 @@
         <SomeComponent key={items[i].id} name={items[i].name} />
       }
     </tbody>
-     ```
+    ```
 
      </span>
 
-    به خاطر اینکه تگ های JSX داخل *function calls* تبدیل میشن ما نمی تونیم از statement ها داخل عبارات استفاده کنیم.
+    به خاطر اینکه تگ های JSX داخل _function calls_ تبدیل میشن ما نمی تونیم از statement ها داخل عبارات استفاده کنیم.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 93. ### توی attributeها چطوری به prop دسترسی داشته باشیم؟
 
-    ری اکت یا JSX داخل یه attribute درون یابی متفیر رو پشتیبانی نمیکنه.
+    ری‌اکت یا JSX داخل یه attribute درون یابی متفیر رو پشتیبانی نمیکنه.
     مثال زیر کار نمیکنه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <img className='image' src='images/{this.props.image}' />
-     ```
+    <img className="image" src="images/{this.props.image}" />
+    ```
 
      </span>
 
     اما ما می تونیم هر عبارت js رو داخل کرلی براکس به عنوان مقدار کلی attribute قرار بدیم.
-    عیارت زیر کار میکنه:
+    عیارت زیر کار‌می‌کنه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <img className='image' src={'images/' + this.props.image} />
-     ```
+    <img className="image" src={"images/" + this.props.image} />
+    ```
 
      </span>
 
-    با استفاده از *template strings* هم کار میکنه:
+    با استفاده از _template strings_ هم کار‌می‌کنه:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <img className='image' src={`images/${this.props.image}`} />
-     ```
+    <img className="image" src={`images/${this.props.image}`} />
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 94. ### چطوری یه PropType برای ‌آرایه‌ای از objectها با shape داشته باشیم؟
 
-    اگه بخوایم آرایه ای از آبجکت ها رو به یه کامپوننت با شکل خاصی پاس بدیم، از `React.PropTypes.shape` به عنوان یه آرگومان برای `React.PropTypes.arrayOf` استفاده میکنیم.
+    اگه بخوایم آرایه‌ای از آبجکت ها رو به یه کامپوننت با شکل خاصی پاس بدیم، از `React.PropTypes.shape` به عنوان یه آرگومان برای `React.PropTypes.arrayOf` استفاده میکنیم.
 
     <span align="left" dir="ltr">
 
     ```javascript
     ReactComponent.propTypes = {
-      arrayWithShape: React.PropTypes.arrayOf(React.PropTypes.shape({
-        color: React.PropTypes.string.isRequired,
-        fontSize: React.PropTypes.number.isRequired
-      })).isRequired
-    }
-     ```
+      arrayWithShape: React.PropTypes.arrayOf(
+        React.PropTypes.shape({
+          color: React.PropTypes.string.isRequired,
+          fontSize: React.PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    };
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 95. ### چطوری classهای یه المنت رو به صورت شرطی رندر کنیم؟
 
@@ -2674,7 +2693,7 @@
 
     ```jsx harmony
     <div className="btn-panel {this.props.visible ? 'show' : 'hidden'}">
-     ```
+    ```
 
      </span>
 
@@ -2684,11 +2703,11 @@
 
     ```jsx harmony
     <div className={'btn-panel ' + (this.props.visible ? 'show' : 'hidden')}>
-     ```
+    ```
 
      </span>
 
-    با استفاده از *Template strings* هم کار میکنه:
+    با استفاده از _Template strings_ هم کار‌می‌کنه:
 
     <span align="left" dir="ltr">
 
@@ -2698,20 +2717,20 @@
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 96. ### تفاوت‌های React و ReactDOM چیه؟
 
-    بسته ری اکت شامل `React.createElement`، `React.Component`، `React.Children` و helperهای دیگه که مربوطه به کلاس کامپوننت‌ها و المنت‌ها هستش. می‌تونیم اینا رو به عنوان isomorphic یا universal helpers که واسه ساختن کامپوننت ها نیاز داریم, در نظر بگیریم. بسته ‍‍`react-dom` شامل `ReactDOM.render` میشه و داخل `react-dom/server` میتونیم با استفاده از متد های `ReactDOMServer.renderToString()` و `ReactDOMServer.renderToStaticMarkup` *server-side rendering* رو پشتیبانی کنیم.
+    بسته ری‌اکت شامل `React.createElement`، `React.Component`، `React.Children` و helperهای دیگه که مربوطه به کلاس کامپوننت‌ها و المنت‌ها هستش. می‌تونیم اینا رو به عنوان isomorphic یا universal helpers که واسه ساختن کامپوننت ها نیاز داریم, در نظر بگیریم. بسته ‍‍`react-dom` شامل `ReactDOM.render` میشه و داخل `react-dom/server` می‌تونیم با استفاده از متد های `ReactDOMServer.renderToString` و `ReactDOMServer.renderToStaticMarkup` _server-side rendering_ رو پشتیبانی کنیم.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 97. ### چرا ReactDOM رو از React جدا کردن؟
 
-    تیم ری اکت سعی کرده تمام ویژگی های مرتبط با DOM رو جدا کنه و اونو تی یه کتابخونه جدا به اسم *ReactDom* قرار بده. ری اک ورژن ۱۴ اولین نسخه ایه که توی اون کتابخونه ها از هم جدا میشن. با نگاهی به بعضی از بسته های ری اکت مثل `react-native`، `react-art`، `react-canvas` و `react-three` مشخص میشه که زیبایی و جوهر ری اکت هیچ ربطی به مرورگر ها یا DOM نداره. برای ساختن محیط های بیشتری که ری اکت بتونه رندر بشه، تیم ری اکت قصد داره بسته اصلی ری اکت رو به دو بخش تقسیم کنه: `react` و ‍‍`react-dom`.
-    از این طریق میشه کامپوننت هایی نوشت که بین ری اکت وب و ری اکت نیتیو قابل اشتراک باشه.
+    تیم ری‌اکت سعی کرده تمام ویژگی های مرتبط با DOM رو جدا کنه و اونو تی یه کتابخونه جدا به اسم _ReactDom_ قرار بده. ری اک ورژن ۱۴ اولین نسخه ایه که توی اون کتابخونه ها از هم جدا میشن. با نگاهی به بعضی از بسته های ری‌اکت مثل `react-native`، `react-art`، `react-canvas` و `react-three` مشخص میشه که زیبایی و جوهر ری‌اکت هیچ ربطی به مرورگر ها یا DOM نداره. برای ساختن محیط های بیشتری که ری‌اکت بتونه رندر بشه، تیم ری‌اکت قصد داره بسته اصلی ری‌اکت رو به دو بخش تقسیم کنه: `react` و ‍‍`react-dom`.
+    از این طریق میشه کامپوننت‌هایی نوشت که بین ری‌اکت وب و ری‌اکت نیتیو قابل اشتراک باشه.
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 98. ### چطوری از label تو ری‌اکت استفاده کنیم؟
 
@@ -2722,41 +2741,45 @@
     ```jsx harmony
     <label for={'user'}>{'User'}</label>
     <input type={'text'} id={'user'} />
-     ```
+    ```
 
      </span>
 
-    از اونجایی که `for` یه کلمه کلیدی رزرو شده توی جاوااسکریپته، به جاش باید از `htmlFor` استفاده کنیم.
+    از اونجایی که `for` یه کلمه کلیدی رزرو شده توی جاواسکریپته، به جاش باید از `htmlFor` استفاده کنیم.
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
     <label htmlFor={'user'}>{'User'}</label>
     <input type={'text'} id={'user'} />
-     ```
+    ```
 
      </span>
 
-     **[فهرست](#فهرست)**
+    **[فهرست](#فهرست)**
 
 99. ### چطوری می‌تونیم چندتا object از استایل‌های درون خطی رو با هم ترکیب کنیم؟
 
-    میتونیم از *spread operator* در ری اکت استفاده کنیم:
+    می‌تونیم از _spread operator_ در ری‌اکت استفاده کنیم:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <button style={{...styles.panel.button, ...styles.panel.submitButton}}>{'Submit'}</button>
+    <button style={{ ...styles.panel.button, ...styles.panel.submitButton }}>
+      {"Submit"}
+    </button>
     ```
 
     </span>
 
-    اگه داریم از ریکت نیتیو استفاده میکنیم میتونیم از نماد آرایه استفاده کنیم:
+    اگه داریم از ریکت نیتیو استفاده میکنیم می‌تونیم از نماد آرایه استفاده کنیم:
 
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <button style={[styles.panel.button, styles.panel.submitButton]}>{'Submit'}</button>
+    <button style={[styles.panel.button, styles.panel.submitButton]}>
+      {"Submit"}
+    </button>
     ```
 
     </span>
@@ -3461,7 +3484,7 @@
 126.  ### معروف‌ترین linterهای ری‌اکت کدوما هستن؟
 
       ESLint یه linter برای JavaScript هستش۰. یه سری کتابخونه برای کمک به کدنویسی تو سبک‌های مشخص و استاندارد برای eslint وجود داره. یکی از معروف‌ترین پلاگین‌های موجود `eslint-plugin-react` هست.
-      به صورت پیش‌فرض این پلاگین یه سری از best practiceها رو برای کدهای نوشته شده بررسی می‌کنه. با مجموعه‌ای از قوانین برای . پلاگین مشهور دیگه `eslint-plugin-jsx-a11y` هستش، که برای مسائل معروف در زمینه accessibility کمک میکنه. چرا که JSX یه سینتکس متفاوت‌تری از HTML ارائه می‌کنه، مشکلاتی که ممکنه مثلا با `alt` و `tabindex` پیش میاد رو با این پلاگین میشه متوجه شد.
+      به صورت پیش‌فرض این پلاگین یه سری از best practiceها رو برای کدهای نوشته شده بررسی می‌کنه. با مجموعه‌ای از قوانین برای . پلاگین مشهور دیگه `eslint-plugin-jsx-a11y` هستش، که برای مسائل معروف در زمینه accessibility کمک‌می‌کنه. چرا که JSX یه سینتکس متفاوت‌تری از HTML ارائه می‌کنه، مشکلاتی که ممکنه مثلا با `alt` و `tabindex` پیش میاد رو با این پلاگین میشه متوجه شد.
 
       **[فهرست](#فهرست)**
 
@@ -3587,7 +3610,7 @@
 
 131. ### کامپوننت‌های router توی نسخه۴ چیا هستن؟
 
-     React Router v4 سه نوع مختلف از کامپوننت رووتر(`<Router>`) رو معرفی میکنه :
+     React Router v4 سه نوع مختلف از کامپوننت رووتر(`<Router>`) رو معرفی‌می‌کنه :
 
      1. `<BrowserRouter>`
      2. `<HashRouter>`
@@ -4057,7 +4080,7 @@
 
 147. ### پکیج TestRenderer توی ری‌اکت چیه؟
 
-     این پکیج یه renderer معرفی می‌کنه که می‌تونیم ازش برای رندر کردن کامپوننت‌ها و تبدیل اونا به یه آبجکت pure JavaScript استفاده کنیم بدون اینکه وابستگی به DOM یا محیط اجرایی موبایلی داشته باشیم. این پکیج گرفتن snapshot از سلسله مرتب view(یه چیزی شبیه به درخت DOM) که توسط ReactDOM یا React Native درست میشه رو بدون نیاز به مرورگو یا `jsdom` فراهم می‌کنه.
+     این پکیج یه renderer معرفی می‌کنه که می‌تونیم ازش برای رندر کردن کامپوننت‌ها و تبدیل اونا به یه آبجکت pure JavaScript استفاده کنیم بدون اینکه وابستگی به DOM یا محیط اجرایی موبایلی داشته باشیم. این پکیج گرفتن snapshot از سلسله مرتب view(یه چیزی شبیه به درخت DOM) که توسط ReactDOM یا React Native درست میشه رو بدون نیاز به مرورگر یا `jsdom` فراهم می‌کنه.
 
      <span align="left" dir="ltr">
 
@@ -4184,7 +4207,7 @@
 
      1. **یک مرجع کامل و همواره درست:** حالت موجود برا کل برنامه در یک درخت object و توی یه store نگهداری میشه. این یکی بودن store باعث میشه دنبال کردن تغییرات در طول زمان و حتی دیباگ کردن برنامه ساده‌تر باشه.
      2. **State فقط قابل خواندن است:** تنها روش ایجاد تغییر در store استفاده از action هستش و نتیجه اجرای این action یک object خواهد بود که رخداد پیش اومده رو توصیف می‌کنه. به این ترتیب مطمئن میشیم که تغییرات فقط با action انجام میشن و هر دیتایی توی store باشه توسط خودمون پر شده.
-     3. **تغییرات با یه سری تابع pure انجام میشن:** برای مشخص کردن نحوه انجام تغییرات در store باید reducer بنویسیم. Reducerها فقط یه سری توابع pure هستند که حالت قبلی و action رو به عنوان پارامتر می‌گیرن و حالت بعدی رو برگشت میدن.
+     3. **تغییرات با یه سری تابع pure انجام میشن:** برای مشخص کردن نحوه انجام تغییرات در store باید reducer بنویسیم. Reducerها فقط یه سری توابع pure هستن که حالت قبلی و action رو به عنوان پارامتر می‌گیرن و حالت بعدی رو برگشت میدن.
 
      **[فهرست](#فهرست)**
 
@@ -4511,7 +4534,7 @@
 
 169. ### روش صحیح برای دسترسی به store ریداکس چیه؟
 
-     بهترین روش برای دسترسی به store و انجام عملیات روی اون استفاده از تابع `connect` هستش که یه کامپوننت جدید ایجاد میکنه که کامپوننت جاری توی اون قرار داره و دیتای لازم رو بهش پاس میده. این پترن با عنوان **Higher-Order Components** یا کامپوننت‌های مرتبه بالاتر شناخته میشه و یه روش مورد استفاده برای extend کردن کارکرد کامپوننت‌های ری‌اکتی محسوب میشه. این تابع بهمون این امکان رو میده که state و actionهای مورد نظرمون رو به داخل کامپوننت بیاریم و البته به شکل پیوسته با تغییرات اونا کامپوننت‌مون رو به روز کنیم.
+     بهترین روش برای دسترسی به store و انجام عملیات روی اون استفاده از تابع `connect` هستش که یه کامپوننت جدید ایجاد‌می‌کنه که کامپوننت جاری توی اون قرار داره و دیتای لازم رو بهش پاس میده. این پترن با عنوان **Higher-Order Components** یا کامپوننت‌های مرتبه بالاتر شناخته میشه و یه روش مورد استفاده برای extend کردن کارکرد کامپوننت‌های ری‌اکتی محسوب میشه. این تابع بهمون این امکان رو میده که state و actionهای مورد نظرمون رو به داخل کامپوننت بیاریم و البته به شکل پیوسته با تغییرات اونا کامپوننت‌مون رو به روز کنیم.
 
      بیایین یه مثال از کامپوننت `<FilterLink>` با استفاده از تابع connect بزنیم:
 
@@ -4700,7 +4723,7 @@
      اکثر برنامه‌های ریداکسی یه ساختاری مثل این دارند:
 
      1. **Components**: که برای کامپوننت‌های _dumb_ یا فقط نمایشی که به ریداکس وصل نیستند استفاده می‌شود.
-     2. **Containers**: که برای کامپوننت‌های _smart_ که به ریداکس وصل هستند.
+     2. **Containers**: که برای کامپوننت‌های _smart_ که به ریداکس وصل هستن.
      3. **Actions**: که برای همه actionها استفاده میشه و هر فایل به بخشی از عملکرد برنامه تعلق داره.
      4. **Reducers**: که برای همه reducerها استفاده میشه و هر فایل به یه state توی store تعلق داره.
      5. **Store**: که برای ساختن store استفاده میشه.
@@ -4759,13 +4782,13 @@
 
 178. ### Redux Thunk چیه؟
 
-     میان افزار _Redux Thunk_ بهمون این اجازه رو میده که actionهایی رو بسازیم که به‌جای action عادی تابع‌ برگردونن  thunk می‌تونه به عنوان یه ایجاد کننده delay برای dispatch کردن یه action استفاده کنیم، یا حتی با بررسی یه شرط خاص یه action رو dispatch کنیم. تابعی که توی action استفاده میشه و `dispatch` و `getState` رو به عنوان پارامتر ورودی می‌گیره.
+     میان افزار _Redux Thunk_ بهمون این اجازه رو میده که actionهایی رو بسازیم که به‌جای action عادی تابع‌ برگردونن thunk می‌تونه به عنوان یه ایجاد کننده delay برای dispatch کردن یه action استفاده کنیم، یا حتی با بررسی یه شرط خاص یه action رو dispatch کنیم. تابعی که توی action استفاده میشه و `dispatch` و `getState` رو به عنوان پارامتر ورودی می‌گیره.
 
      **[فهرست](#فهرست)**
 
 179. ### تفاوت‌های redux-saga و redux-thunk جیا هستن؟
 
-     هر دوی _ReduxThunk_ و _ReduxSaga_ می‌تونن مدیریت ساید افکت‌ها رو به دست بگیرن. توی اکثر سناریوها، Thunk از _Promise_ استفاده می‌کنه، درحالیکه Saga از _Generatorها_ استفاده میکنه. Thunk تقریبا ساده‌تره و promise رو تقریبا همه دولوپرها باهاش آشنا هستن، Sagas/Generators خیلی قوی‌تر هستن و می‌تونن کاربردی‌تر باشن ولی خب لازمه که یاد بگیرینش. هردوی میان‌افزارها می‌تونن خیلی مفید باشن و شما می‌تونین با Thunks شروع کنین و اگه جایی دیدین نیازمندی‌تون رو برآورده نمی‌کنه سراغ Sagas برید.
+     هر دوی _ReduxThunk_ و _ReduxSaga_ می‌تونن مدیریت ساید افکت‌ها رو به دست بگیرن. توی اکثر سناریوها، Thunk از _Promise_ استفاده می‌کنه، درحالیکه Saga از _Generatorها_ استفاده‌می‌کنه. Thunk تقریبا ساده‌تره و promise رو تقریبا همه دولوپرها باهاش آشنا هستن، Sagas/Generators خیلی قوی‌تر هستن و می‌تونن کاربردی‌تر باشن ولی خب لازمه که یاد بگیرینش. هردوی میان‌افزارها می‌تونن خیلی مفید باشن و شما می‌تونین با Thunks شروع کنین و اگه جایی دیدین نیازمندی‌تون رو برآورده نمی‌کنه سراغ Sagas برید.
 
      **[فهرست](#فهرست)**
 
@@ -4880,7 +4903,7 @@
 
 190. ### چطوری میشه توی React Native لاگ کرد؟
 
-     میتونیم از `console.log`، `console.warn` و غیره استفاده کرد. از نسخه ReactNative 0.29 می‌تونیم خیلی ساده کدهای زیر رو اجرا کنیم که لاگ رو توی خروجی ببینیم:
+     می‌تونیم از `console.log`، `console.warn` و غیره استفاده کرد. از نسخه ReactNative 0.29 می‌تونیم خیلی ساده کدهای زیر رو اجرا کنیم که لاگ رو توی خروجی ببینیم:
 
      <span align="left" dir="ltr">
 
@@ -4897,11 +4920,11 @@
 
      برای دیباگ کردن برنامه ری‌اکت native گام‌های زیر رو طی می‌کنیم:
 
-     1. برنامه رو توی  شبیه‌ساز iOS اجرا می‌کنیم.
+     1. برنامه رو توی شبیه‌ساز iOS اجرا می‌کنیم.
      2. دکمه‌های `Command + D` رو فشار میدیم و یه صفحه وب توی آدرس `http://localhost:8081/debugger-ui` اجرا میشه.
-     3. چک‌باکس On Caught Exceptions_ رو برای یه دیباگ بهتر فعال می‌کنیم.
+     3. چک‌باکس On Caught Exceptions\_ رو برای یه دیباگ بهتر فعال می‌کنیم.
      4. دکمه‌های `Command + Option + I` رو برای اجرای developer-tools کروم فشار میدیم یا از طریق منوهای `View` و `Developer` و `DeveloperTools` باز می‌کنیم‌ـش.
-     5. حالا میتونیم برنامه مورد نظر خودمون رو به راحتی تست کنیم.
+     5. حالا می‌تونیم برنامه مورد نظر خودمون رو به راحتی تست کنیم.
 
 ## کتابخونه‌های پشتیبانی شده ری‌اکتی و Integrationهاش
 
@@ -4909,19 +4932,19 @@
 
       _Reselect_ یه کتابخونه **selector** برای ریداکس هست که از مفهوم _memoization_ استفاده می‌کنه. این کتابخونه به صورت اولیه نوشته شده بوده که داده‌های هر برنامه Redux-like یا شبیه ریداکس رو پردازش کنه، ولی نتونسته با هیچ برنامه یا کتابخونه دیگه‌ای گره بخوره.
 
-      Reselect یه کپی از آخرین inputs/outputs از هر فراخوانی رو نگهداری می‌کنه و فقط زمانی اونو دوباره محاسبه می‌کنه که تغییراتی توی ورودی رخ داده باشه. اگه همون ورودی‌ها دوبار استفاده بشن، Reselect مقدار cache شده رو برمیگردونه. memoization و cacheای که استفاده میشه تا حد زیادی قابل شخصی سازیه.
+      Reselect یه کپی از آخرین inputs/outputs از هر فراخوانی رو نگهداری می‌کنه و فقط زمانی اونو دوباره محاسبه می‌کنه که تغییراتی توی ورودی رخ داده باشه. اگه همون ورودی‌ها دوبار استفاده بشن، Reselect مقدار cache شده رو برمی‌گردونه. memoization و cacheای که استفاده میشه تا حد زیادی قابل شخصی سازیه.
 
       **[فهرست](#فهرست)**
 
 193.  ### Flow چیه؟
 
-      _Flow_ یه  _static type checker_ هستش که طراحی شده تا خطاهای مربوط به نوع‌ها رو توی جاواسکریپت پیدا کنیم. نوع‌های flow می‌تونه خیلی ریزبینانه‌تر از رویکردهای سنتی بررسی نوع عمل کنه. برای مثال، Flow بهمون کمک میکنه که خطاهای مربوط به دریافت `null` توی برنامه رو کنترل کنیم که توی روش‌های سنتی غیرممکنه تقریبا.
+      _Flow_ یه _static type checker_ هستش که طراحی شده تا خطاهای مربوط به نوع‌ها رو توی جاواسکریپت پیدا کنیم. نوع‌های flow می‌تونه خیلی ریزبینانه‌تر از رویکردهای سنتی بررسی نوع عمل کنه. برای مثال، Flow بهمون کمک‌می‌کنه که خطاهای مربوط به دریافت `null` توی برنامه رو کنترل کنیم که توی روش‌های سنتی غیرممکنه تقریبا.
 
       **[فهرست](#فهرست)**
 
 194.  ### تفاوت‌های Flow و PropTypes چیا هستن؟
 
-      Flow یه _ابزار تجزیه و تحلیل استاتیک_ (static-checker) هستش که از ویژگی‌های بالاتر از زبان استفاده می‌کنه و بهمون کمک میکنه که به بخش‌های مختلف برنامه نوع اضافه کنیم و خطاهایی که مرتبط با بررسی نوع‌ها هست رو موقع compile ازشون جلوگیری کنیم. PropTypes یه _روش بررسی نوع ساده_ (موقع runtime) هست که روی ری‌اکت اضافه شده. به غیر از نوع‌هایی که به کامپوننت موردنظر به عنوان prop داده شده رو نمی‌تونه بررسی کنه. پس اگه دنبال یه روش برای بررسی نوع منعطف هستیم که توی کل پروژه عمل کنه Flow یا TypeScript روش‌های بهتری هستن.
+      Flow یه _ابزار تجزیه و تحلیل استاتیک_ (static-checker) هستش که از ویژگی‌های بالاتر از زبان استفاده می‌کنه و بهمون کمک‌می‌کنه که به بخش‌های مختلف برنامه نوع اضافه کنیم و خطاهایی که مرتبط با بررسی نوع‌ها هست رو موقع compile ازشون جلوگیری کنیم. PropTypes یه _روش بررسی نوع ساده_ (موقع runtime) هست که روی ری‌اکت اضافه شده. به غیر از نوع‌هایی که به کامپوننت موردنظر به عنوان prop داده شده رو نمی‌تونه بررسی کنه. پس اگه دنبال یه روش برای بررسی نوع منعطف هستیم که توی کل پروژه عمل کنه Flow یا TypeScript روش‌های بهتری هستن.
 
       **[فهرست](#فهرست)**
 
@@ -5041,69 +5064,65 @@
       3. برای تولید برنامه‌های موبایلی هم مناسبه.
       4. اطلاعات و راهکارهای مختلفی براش توی دسترسه.
 
-			**نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
+         **نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستن
 
-**[فهرست](#فهرست)**
+     **[فهرست](#فهرست)**
 
 200. ### تفاوت‌های React و Angular چیا هستن؟
 
-     | React                                                                                       | Angular                                                                                                                            |
-     | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-     | React is a library and has only the View layer                                              | Angular is a framework and has complete MVC functionality                                                                          |
-     | React handles rendering on the server side                                                  | AngularJS renders only on the client side but Angular 2 and above renders on the server side                                       |
-     | React uses JSX that looks like HTML in JS which can be confusing                            | Angular follows the template approach for HTML, which makes code shorter and easy to understand                                    |
-     | React Native, which is a React type to build mobile applications are faster and more stable | Ionic, Angular's mobile native app is relatively less stable and slower                                                            |
-     | In React, data flows only in one way and hence debugging is easy                            | In Angular, data flows both way i.e it has two-way data binding between children and parent and hence debugging is often difficult |
+     | React | Angular |
+     | ----- | ------- |
+     | ری‌اکت یه کتابخونه ست و فقط یه لایه view داره | Angular یه فریم ورکه و عملکردش کاملا MVC هستش | ری‌اکت رندر سمت سرور رو هم هندل میکنه | AngularJS رندر رو فقط سمت مشتری هندل میکنه ولی Angular 2 و ورژن های بالاتر رندر سمت سرور رو هم هندل میکنن | ری‌اکت از JSX استفاده میکنه که مثل HTML در js هستش که میتونه یکم گیج کننده باشه | Angular رویکرد قالب رو برای HTML دنبال میکنه که باعث میشه کد کوتاه تر و قابل فهم تر باشه | ری‌اکت نیتیو، نوعی از ری‌اکت هستش که برای ساخت برنامه های موبایل با سرعت و پایداری بیشتر استفاده میشه | 
+     | در ری‌اکت جریان داده ها فقط از یه طریق هستش و به خاطر همین اشکال زدایی راحت تره | در Angular جریان داده ها از دو جهته، یعنی اتصال داده های دوطرفه بین والدین و فرزندان رو داره و به خاطر همین اشکال زدایی سخت تره |
 
-		 **نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
-
-**[فهرست](#فهرست)**
+     **نکته:** لیست موارد فوق صرفاً اظهار نظر شخصی بوده و براساس تجربه حرفه‌ای ممکن است متفاوت باشد. اما به عنوان پارامترهای پایه مفید هستند
+     **[فهرست](#فهرست)**
 
 201. ### چرا تب React در DevTools نشان داده نمی‌شود؟
 
-     When the page loads, _React DevTools_ sets a global named `__REACT_DEVTOOLS_GLOBAL_HOOK__`, then React communicates with that hook during initialization. If the website is not using React or if React fails to communicate with DevTools then it won't show up the tab.
+     موقع بارگیری صفحه، *React DevTools* یه گلوبال به اسم `__REACT_DEVTOOLS_GLOBAL_HOOK__` تنظیم میکنه، بعدش ری‌اکت موقع مقدار دهی اولیه با اون هوک ارتباط برقرار میکنه. اگه وب سایت از ری‌اکت استفاده نکنه یا ری‌اکت نتونه با DevTools ارتباط برقرار کنه اون تب رو نشون نمیده.
 
      **[فهرست](#فهرست)**
 
 202. ### Styled components چیه؟
 
-     `styled-components` is a JavaScript library for styling React applications. It removes the mapping between styles and components, and lets you write actual CSS augmented with JavaScript.
+     `styled-components` یه کتابخونه جاواسکریپته برای طراحی ظاهر برنامه های ری‌اکت. نقشه برداری بین استایل ها و کامپوننت ها رو حذف میکنه و بهمون این امکان رو میده که css واقعی رو با جاواسکریپت بنویسیم.
 
      **[فهرست](#فهرست)**
 
 203. ### یه مثال از Styled Components می‌تونی بگی؟
 
-     Lets create `<Title>` and `<Wrapper>` components with specific styles for each.
+     بیاین کامپوننت های `<Title>` و `<Wrapper>` رو با استایل های خاص برای هر کدوم بسازیم.
 
      <span align="left" dir="ltr">
 
      ```javascript
-     import React from "react";
-     import styled from "styled-components";
+     import React from 'react'
+     import styled from 'styled-components'
 
      // Create a <Title> component that renders an <h1> which is centered, red and sized at 1.5em
      const Title = styled.h1`
        font-size: 1.5em;
        text-align: center;
        color: palevioletred;
-     `;
+     `
 
      // Create a <Wrapper> component that renders a <section> with some padding and a papayawhip background
      const Wrapper = styled.section`
        padding: 4em;
        background: papayawhip;
-     `;
+     `
      ```
 
      </span>
 
-     These two variables, `Title` and `Wrapper`, are now components that you can render just like any other react component.
+     این دو تا متغیر، `Title` و `Wrapper`، کامپوننت هایی هستن که می تونیم مثل هر کامپوننت دیگه ای رندرشون کنیم.
 
      <span align="left" dir="ltr">
 
      ```jsx harmony
      <Wrapper>
-       <Title>{"Lets start first styled component!"}</Title>
+       <Title>{'Lets start first styled component!'}</Title>
      </Wrapper>
      ```
 
@@ -5113,13 +5132,13 @@
 
 204. ### Relay چیه؟
 
-     Relay is a JavaScript framework for providing a data layer and client-server communication to web applications using the React view layer.
+     Relay یه فریم ورک جاواسکریپت هستش برای ارائه یه لایه داده و ارتباط client-server به برنامه های وب با استفاده از لایه view ری‌اکت.
 
      **[فهرست](#فهرست)**
 
 205. ### چطوری میشه از تایپ اسکریپت توی create-react-app استفاده کرد؟
 
-     Starting from react-scripts@2.1.0 or higher, there is a built-in support for typescript. You can just pass `--typescript` option as below
+     با شروع از react-scripts@2.1.0 یا بالاتر، یه پشتیبان داخلی برای typescript وجود داره. میتونیم گزینه `--typescript` رو به صورت زیر منتقل کنیم.
 
      <span dir="ltr" align="left">
 
@@ -5132,9 +5151,9 @@
      ```
 
      </span>
-     But for lower versions of react scripts, just supply `--scripts-version` option as `react-scripts-ts` while you create a new project. `react-scripts-ts` is a set of adjustments to take the standard `create-react-app` project pipeline and bring TypeScript into the mix.
+     ولی برای ورژن های پایین تر وقتی داریم یه پروژه جدید می سازیم react scripts، گزینه `--scripts-version` رو به عنوان `react-scripts-ts` تنظیم میکنیم. `react-scripts-ts` مجموعه ای از تنظیمات برای گرفتن پروژه `create-react-app` و آوردن typeScript داخلش هست.
 
-     Now the project layout should look like the following:
+     حالا ساختار پروژه باید این شکلی باشه:
 
      <span dir="ltr" align="left">
 
@@ -5159,51 +5178,52 @@
 
 206. ### اصلی‌ترین ویژگی‌های کتابخونه reselect چیا هستن؟
 
-     1. Selectors can compute derived data, allowing Redux to store the minimal possible state.
-     2. Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
-     3. Selectors are composable. They can be used as input to other selectors.
+     1. Selector ها داده های مشتق شده رو محاسبه میکنه و به ریداکس اجازه میدن حداقل state های ممکن رو ذخیره کنه.
+     2. Selector‌ ها کارامد هستن. یه selector تا وقتی که یکی از آرگومان هاش تغییر نکرده معتبر نیست.
+     3. Selector ها قابل ترکیب هستن. اونا می تونن به عنوان ورودی برای بقیه Selector ها استفاده بشن.
 
-207. #### یه مثال از کارکرد کتابخونه reselect بزن؟
+207. ### یه مثال از کارکرد کتابخونه reselect بزن؟
 
-     Let's take calculations and different amounts of a shipment order with the simplified usage of Reselect:
+     بیاین محاسبات و مقادیر مختلف یه سفارش حمل و نقل رو با استفاده ساده از Reselect انجام بدیم:
 
      <span align="left" dir="ltr">
 
      ```javascript
-     import { createSelector } from "reselect";
+     import { createSelector } from 'reselect'
 
-     const shopItemsSelector = (state) => state.shop.items;
-     const taxPercentSelector = (state) => state.shop.taxPercent;
+     const shopItemsSelector = state => state.shop.items
+     const taxPercentSelector = state => state.shop.taxPercent
 
-     const subtotalSelector = createSelector(shopItemsSelector, (items) =>
-       items.reduce((acc, item) => acc + item.value, 0)
-     );
+     const subtotalSelector = createSelector(
+       shopItemsSelector,
+       items => items.reduce((acc, item) => acc + item.value, 0)
+     )
 
      const taxSelector = createSelector(
        subtotalSelector,
        taxPercentSelector,
        (subtotal, taxPercent) => subtotal * (taxPercent / 100)
-     );
+     )
 
      export const totalSelector = createSelector(
        subtotalSelector,
        taxSelector,
        (subtotal, tax) => ({ total: subtotal + tax })
-     );
+     )
 
      let exampleState = {
        shop: {
          taxPercent: 8,
          items: [
-           { name: "apple", value: 1.2 },
-           { name: "orange", value: 0.95 },
-         ],
-       },
-     };
+           { name: 'apple', value: 1.20 },
+           { name: 'orange', value: 0.95 },
+         ]
+       }
+     }
 
-     console.log(subtotalSelector(exampleState)); // 2.15
-     console.log(taxSelector(exampleState)); // 0.172
-     console.log(totalSelector(exampleState)); // { total: 2.322 }
+     console.log(subtotalSelector(exampleState)) // 2.15
+     console.log(taxSelector(exampleState))      // 0.172
+     console.log(totalSelector(exampleState))    // { total: 2.322 }
      ```
 
      </span>
@@ -5212,9 +5232,9 @@
 
 208. ### توی Redux اکشن چیکار می‌کنه؟
 
-     _Actions_ are plain JavaScript objects or payloads of information that send data from your application to your store. They are the only source of information for the store. Actions must have a type property that indicates the type of action being performed.
+     *اکشن* ها آبجکت های ساده جاواسکریپت یا اطلاعاتی هستن که داده ها رو از برنامه به store میفرستن. اونا تنها منابع اطلاعاتی برای store هستن. اکشن باید یه ویژگی type داشته باشه که نوع اکشنی که انجام میشه رو نشون بده.
 
-     For example an example action which represents adding a new todo item:
+     برای مثال اکشنی که نشون میده یه آیتم todo جدید اضافه شده:
 
      <span align="left" dir="ltr">
 
@@ -5231,23 +5251,23 @@
 
 209. ### استاتیک شی با کلاس های ES6 در React کار می کنه؟
 
-     No, `statics` only works with `React.createClass()`:
+     خیر، `استاتیک ها` فقط با `React.createClass()` کار میکنن:
 
      <span align="left" dir="ltr">
 
      ```javascript
-     someComponent = React.createClass({
+     someComponent= React.createClass({
        statics: {
-         someMethod: function () {
+         someMethod: function() {
            // ..
-         },
-       },
-     });
+         }
+       }
+     })
      ```
 
      </span>
 
-     But you can write statics inside ES6+ classes or writing them outside class as below,
+     اما میتونیم استاتیک ها رو داخل کلاس های ES6 یا خارج از کلاس مثل زیر بنویسیم،
 
      <span align="left" dir="ltr">
 
@@ -5255,7 +5275,7 @@
      class Component extends React.Component {
        static propTypes = {
          // ...
-       };
+       }
 
        static someMethod() {
          // ...
@@ -5279,49 +5299,52 @@
 
      **[فهرست](#فهرست)**
 
-210. ### ریداکس رو قفط با ری‌اکت میشه استفاده کرد؟
+210. ### ریداکس رو فقط با ری‌اکت میشه استفاده کرد؟
 
-     Redux can be used as a data store for any UI layer. The most common usage is with React and React Native, but there are bindings available for Angular, Angular 2, Vue, Mithril, and more. Redux simply provides a subscription mechanism which can be used by any other code.
+     ریداگس میتونه به عنوان یه ذخیره داده برای لایه UI استفاده بشه. رایج ترین کاربرد ریداکس برای ری‌اکت و ری‌اکت نیتیو هستش، ولی اتصالاتی هم برای Angular، Angular 2، Vue، Mithril و موارد دیگه موجوده. ریداکس به راحتی یه مکانیسم اشتراکی ارائه میده که میتونه برای کد های دیگه هم استفاده بشه.
 
      **[فهرست](#فهرست)**
 
 211. ### برای استفاده از Redux به ابزار build خاصی احتیاج داریم؟
 
-     Redux is originally written in ES6 and transpiled for production into ES5 with Webpack and Babel. You should be able to use it regardless of your JavaScript build process. Redux also offers a UMD build that can be used directly without any build process at all.
+     ریداکس در اصل توی ES6‌ نوشته شده و برای تولید توی ES5 با Webpack و Babel منتشر شده. ما باید بتونیم بدون توجه به مراحل ساخت جاواسکریپت از اون استفاده کنیم. ریداکس همینطور یه ساختار UMD ارائه میده که میتونه مستقیم و بدون هیچگونه مراحل ساخت مورد استفاده قرار بگیره.
 
      **[فهرست](#فهرست)**
 
 212. ### مقادیر پیش‌فرض ریداکس فرم چطوری تغییرات رو از state می‌گیرن؟
 
-     You need to add `enableReinitialize : true` setting.
+     باید تنظیمات `enableReinitialize : true` رو اضافه کنیم.
 
      <span align="left" dir="ltr">
 
      ```javascript
      const InitializeFromStateForm = reduxForm({
-       form: "initializeFromState",
-       enableReinitialize: true,
-     })(UserEdit);
+       form: 'initializeFromState',
+       enableReinitialize : true
+     })(UserEdit)
      ```
 
      </span>
 
-     If your `initialValues` prop gets updated, your form will update too.
+     اگه prop ‍‍`initialValues` به روز بشه، فرممون هم به روز میشه.
 
      **[فهرست](#فهرست)**
 
 213. ### توی PropTypeهای ری‌اکت چطوری میشه برای یه prop چند نوع داده مجاز مشخص کرد؟
 
-     You can use `oneOfType()` method of `PropTypes`.
+     می تونیم از یکی از متد های `PropTypes` به اسم `oneOfType()` استفاده کنیم.
 
-     For example, the height property can be defined with either `string` or `number` type as below:
+     برای مثال، ویژگی height رو می تونیم با دو نوع `string` یا `number` مثل زیر تعریف کنیم:
 
      <span align="left" dir="ltr">
 
      ```javascript
      Component.PropTypes = {
-       size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-     };
+       size: PropTypes.oneOfType([
+         PropTypes.string,
+         PropTypes.number
+       ])
+     }
      ```
 
      </span>
@@ -5330,76 +5353,79 @@
 
 214. ### می‌تونیم فایل svg رو به عنوان کامپوننت import کنیم؟
 
-     You can import SVG directly as component instead of loading it as a file. This feature is available with `react-scripts@2.0.0` and higher.
+     میتونیم SVG‌ رو مستقیما به عنوان یه کامپوننت به جای لود کردنش به عنوان یه فایل ایمپورت کنیم. این ویژگی توی `react-scripts@2.0.0` و ورژن های بالاتر در دسترسه.
 
      <span align="left" dir="ltr">
 
      ```jsx harmony
-     import { ReactComponent as Logo } from "./logo.svg";
+     import { ReactComponent as Logo } from './logo.svg'
 
      const App = () => (
        <div>
          {/* Logo is an actual react component */}
          <Logo />
        </div>
-     );
+     )
      ```
 
      </span>
 
-     **Note**: Don't forget about the curly braces in the import.
+     **نکته** فراموش نکنیم که موقع ایمپورت کردن از آکولاد استفاده کنیم.
 
      **[فهرست](#فهرست)**
 
 215. ### چرا استفاده از توابع ref callback درون خطی توصیه نمیشه؟
 
-     If the ref callback is defined as an inline function, it will get called twice during updates, first with null and then again with the DOM element. This is because a new instance of the function is created with each render, so React needs to clear the old ref and set up the new one.
+     اگه ref callback به عنوان یه تابع درون خطی تعریف بشه، در طول به روزرسانی دو بار فراخوانی میشه، یه بار با مقدار null و بعد دوباره با عنصر DOM. این موضوع به خاطر اینه که یه نمونه جدیدی از تابع با هر بار رندر ساخته میشه، پس ری‌اکت باید ref قبلی رو پاک کنه و یه نمونه جدید ایجاد کنه.
 
      <span align="left" dir="ltr">
 
      ```jsx
      class UserForm extends Component {
        handleSubmit = () => {
-         console.log("Input Value is: ", this.input.value);
-       };
-
-       render() {
-         return (
-           <form onSubmit={this.handleSubmit}>
-             <input type="text" ref={(input) => (this.input = input)} /> //
-             Access DOM input in handle submit
-             <button type="submit">Submit</button>
-           </form>
-         );
+         console.log("Input Value is: ", this.input.value)
        }
+
+
+       render () {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              ref={(input) => this.input = input} /> // Access DOM input in handle submit
+            <button type='submit'>Submit</button>
+          </form>
+        )
+      }
      }
      ```
 
      </span>
 
-     But our expectation is for the ref callback to get called once, when the component mounts. One quick fix is to use the ES7 class property syntax to define the function
+     اما انتظار ما اینه که وقتی کامپوننت mount‌ شد، ref callback یه بار صدا زده بشه. یه راه حل سریع استفاده از class property syntax ES6 برای تعریف تابع هستش.
 
      <span align="left" dir="ltr">
 
      ```jsx
      class UserForm extends Component {
-       handleSubmit = () => {
-         console.log("Input Value is: ", this.input.value);
-       };
+      handleSubmit = () => {
+        console.log("Input Value is: ", this.input.value)
+      }
 
-       setSearchInput = (input) => {
-         this.input = input;
-       };
+      setSearchInput = (input) => {
+        this.input = input
+      }
 
-       render() {
-         return (
-           <form onSubmit={this.handleSubmit}>
-             <input type="text" ref={this.setSearchInput} /> // Access DOM input
-             in handle submit
-             <button type="submit">Submit</button>
-           </form>
-         );
-       }
+      render () {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              ref={this.setSearchInput} /> // Access DOM input in handle submit
+            <button type='submit'>Submit</button>
+          </form>
+        )
+      }
      }
      ```
 
@@ -5409,29 +5435,30 @@
 
 216. ### render hijacking توی ری‌اکت چیه؟
 
-     The concept of render hijacking is the ability to control what a component will output from another component. It actually means that you decorate your component by wrapping it into a Higher-Order component. By wrapping you can inject additional props or make other changes, which can cause changing logic of rendering. It does not actually enables hijacking, but by using HOC you make your component behave in different way.
+     مفهوم render hijacking توانایی کنترل اینه که چه کامپوننتی خروجی بقیه کامپوننت هاست. در واقع به این معنیه که ما می تونیم با قرار دادن کامپوننت خودمون توی یه کامپوننت با اولویت بالا یه تغییراتی بهش بدیم، مثلا یه سری prop بهش اضافه کنیم یا تغییرات دیگه ای که باعث تغییر منطق رندر بشه. این در واقع hijacking رو فعال نمیکنه اما با استفاده ار HOC این امکان رو فراهم میکنیم که کامپوننت رفتار متفاوتی داشته باشه.
 
      **[فهرست](#فهرست)**
 
 217. ### پیاده‌سازی factory یا سازنده HOC چطوریه؟
 
-     There are two main ways of implementing HOCs in React. 1. Props Proxy (PP) and 2. Inheritance Inversion (II). They follow different approaches for manipulating the _WrappedComponent_.
+     دو روش اصلی برای اجرای HOC ها توی ری‌اکت وجود داره. 1. Props Proxy (PP) و 2. Inheritance Inversion (II). اونا روش های مختلفی رو برای اداره کردن *WrappedComponent* دنبال می کنن.
 
      **Props Proxy**
 
-     In this approach, the render method of the HOC returns a React Element of the type of the WrappedComponent. We also pass through the props that the HOC receives, hence the name **Props Proxy**.
+     تو این روش، متد رندر HOC یه عنصر ری‌اکت از نوع WrappedComponent رو برمی گردونه. ما هم prop هایی که HOC دریافت میکنه رو انتقال میدیم، به خاطر همین بهش میگیم **Props Proxy**.
 
      <span align="left" dir="ltr">
 
      ```jsx
+
      function ppHOC(WrappedComponent) {
-       return class PP extends React.Component {
-         render() {
-           return <WrappedComponent {...this.props} />;
-         }
-       };
+      return class PP extends React.Component {
+        render() {
+          return <WrappedComponent {...this.props}/>
+        }
+      }
      }
-     ```
+      ```
 
      </span>
      **Inheritance Inversion**
@@ -5442,11 +5469,11 @@
 
      ```jsx
      function iiHOC(WrappedComponent) {
-       return class Enhancer extends WrappedComponent {
-         render() {
-           return super.render();
-         }
-       };
+      return class Enhancer extends WrappedComponent {
+        render() {
+          return super.render()
+        }
+      }
      }
      ```
 
@@ -5456,15 +5483,12 @@
 
 218. ### چطوری به یه کامپوننت ری‌اکت عدد پاس بدیم؟
 
-     You should be passing the numbers via curly braces({}) where as strings inn quotes
+     اعداد رو باید از طریق آکولاد همونطور که رشته رو داخل کوتیشن قرار میدیم، انتقال بدیم.
 
      <span align="left" dir="ltr">
 
      ```jsx
-     React.render(
-       <User age={30} department={"IT"} />,
-       document.getElementById("container")
-     );
+        React.render(<User age={30} department={"IT"} />, document.getElementById('container'));
      ```
 
      </span>
@@ -5473,32 +5497,31 @@
 
 219. ### لازمه همه stateها رو توی ریداکس مدیریت کنیم؟ لزومی به استفاده از state داخلی داریم؟
 
-     It is up to developer decision. i.e, It is developer job to determine what kinds of state make up your application, and where each piece of state should live. Some users prefer to keep every single piece of data in Redux, to maintain a fully serializable and controlled version of their application at all times. Others prefer to keep non-critical or UI state, such as “is this dropdown currently open”, inside a component's internal state.
+     این به تصمیم توسعه دهنده بستگی داره. به عنوان مثال این وظیفه توسعه دهنده ست که بررسی کنه چه نوعی از state ها برنامه رو تشکیل بده و هر state کجا باید قرار بگیره. بعضی از کاربرا ترجیح میدن هر قسمت از داده رو توی ریداکس نگه دارن، تا همیشه یه ورژن پشت سر هم و کنترل شده از برنامه شون رو داشته باشن. یه عده دیگه ترجیح میدن UI State یا non-critical رو نگه دارن، مثل “is this dropdown currently open”، توی state داخلی یه کامپوننت.
 
-     Below are the thumb rules to determine what kind of data should be put into Redux
-
-     1. Do other parts of the application care about this data?
-     2. Do you need to be able to create further derived data based on this original data?
-     3. Is the same data being used to drive multiple components?
-     4. Is there value to you in being able to restore this state to a given point in time (ie, time travel debugging)?
-     5. Do you want to cache the data (ie, use what's in state if it's already there instead of re-requesting it)?
+     اینا قوانینی هستن که تعیین می کنن  چه نوع داده ای باید توی ریداکس قرار بگیره
+     1. آیا بقیه قسمتای برنامه به این داده ها اهمیت میدن؟
+     2. آیا نیازه که بتونیم یه سری داده ها رو از روی این داده های اصلی به دست بیاریم؟
+     3. آیا از این داده ها توی چندین کامپوننت استفاده میشه؟
+     4. آیا نیازه که بتونیم یه state رو به یه بازه زمانی خاصی برگردونیم؟
+     5. آیا میخوایم داده رو توی حافظه نگه داریم؟ (یعنی به جای درخواست مجدد، از اطلاعات موجود توی state استفاده کنیم)
 
      **[فهرست](#فهرست)**
 
 220. ### هدف از متد registerServiceWorker توی ری‌اکت چیه؟
 
-     React creates a service worker for you without any configuration by default. The service worker is a web API that helps you cache your assets and other files so that when the user is offline or on slow network, he/she can still see results on the screen, as such, it helps you build a better user experience, that's what you should know about service worker's for now. It's all about adding offline capabilities to your site.
+     ری‌اکت به صورت پیش فرض و بدون هیچگونه پیکربندی، یه سرویس دهنده برامون ایجاد میکنه. سرویس دهنده یه API وب هستش که در ذخیره کردن asset ها و فایل های دیگه بهمون کمک میکنه تا وقتی کاربر آفلاینه یا سرعت اینترنتش پایینه، بازم بتونه نتایج رو روی صفحه ببینه. به این ترتیب بهمون کمک میکنه تجربه کاربری بهتری ایجاد کنیم و همون چیزیه که باید در مورد service worker ها بدونیم. این ها همه مواردی بود در رابطه با اضافه کردن قابلیت های آفلاین به سایتمون.
 
      <span align="left" dir="ltr">
 
      ```jsx
-     import React from "react";
-     import ReactDOM from "react-dom";
-     import App from "./App";
-     import registerServiceWorker from "./registerServiceWorker";
+        import React from 'react';
+        import ReactDOM from 'react-dom';
+        import App from './App';
+        import registerServiceWorker from './registerServiceWorker';
 
-     ReactDOM.render(<App />, document.getElementById("root"));
-     registerServiceWorker();
+        ReactDOM.render(<App />, document.getElementById('root'));
+        registerServiceWorker();
      ```
 
      </span>
@@ -7053,7 +7076,7 @@
 
      **[فهرست](#فهرست)**
 
-288. ### قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستند؟
+288. ### قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستن؟
 
      When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements. It covers the below rules during reconciliation algorithm,
 
@@ -7463,7 +7486,7 @@
 
 313. ### react scripts چیه؟
 
-     پکیج `react-scripts` یه مجموعه از اسکریپت‌هاست که توی create-react-app برای ایجاد سریع و ساده پروژه ری‌اکتی ازشون استفاده میشه. دستور `react-scripts start` محیط توسعه کد رو ایجاد میکنه و یه سرور براتون استارت می‌کنه که از لود درلحظه و داغ ماژول‌ها پشتیبانی می‌کنه.
+     پکیج `react-scripts` یه مجموعه از اسکریپت‌هاست که توی create-react-app برای ایجاد سریع و ساده پروژه ری‌اکتی ازشون استفاده میشه. دستور `react-scripts start` محیط توسعه کد رو ایجاد‌می‌کنه و یه سرور براتون استارت می‌کنه که از لود درلحظه و داغ ماژول‌ها پشتیبانی می‌کنه.
 
      **[فهرست](#فهرست)**
 
@@ -7537,7 +7560,7 @@
 
      </span>
 
-     2. عملگر spread: به پاس دادن propها به پایین برای کامپوننت‌های فرزند کمک میکنه
+     2. عملگر spread: به پاس دادن propها به پایین برای کامپوننت‌های فرزند کمک‌می‌کنه
 
      <span align="left" dir="ltr">
 
