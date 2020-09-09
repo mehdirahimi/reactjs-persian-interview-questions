@@ -6102,8 +6102,8 @@ puppeteer:
 
 250. ### code-splitting چیه؟
 
-     Code-Splitting is a feature supported by bundlers like Webpack and Browserify which can create multiple bundles that can be dynamically loaded at runtime. The react project supports code splitting via dynamic import() feature.
-     For example, in the below code snippets, it will make moduleA.js and all its unique dependencies as a separate chunk that only loads after the user clicks the 'Load' button.
+     Code-Splitting یه ویژگی هستش که توسط پک کننده‌ها(bunder)هایی مثل Webpack و Browserify استفاده میشه که می‌تونن سورس‌های تیکه تیکه با حجم کمتری تولید کنن که توی زمان اجرا بارگذاری بشن. پروژه ری‌اکت این امکان رو با استفاده از ویژگی import داینامیک انجام میده.
+     برای مثال، توی تیکه کد زیر یه ماژول به اسم moduleA.js داریم که محتویات خودش و تمام وابستگی‌هاش با کلیک روی دکمه 'Load' بارگذاری میشن.
      **moduleA.js**
 
      <span align="left" dir="ltr">
@@ -6115,6 +6115,7 @@ puppeteer:
      ```
 
      </span>
+
      **App.js**
 
      <span align="left" dir="ltr">
@@ -6151,7 +6152,7 @@ puppeteer:
 
 251. ### مزایای حالت strict چیه؟
 
-     The <StrictMode> will be helpful in the below cases
+     **StrictMode** توی موارد زیر قابل استفاده‌ست
 
      1. Identifying components with **unsafe lifecycle methods**.
      2. Warning about **legacy string ref** API usage.
@@ -7086,19 +7087,20 @@ puppeteer:
      When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements. It covers the below rules during reconciliation algorithm,
 
      1. **Elements Of Different Types:**
-        Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. For example, elements <a> to <img>, or from <Article> to <Comment> of different types lead a full rebuild.
+        Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. For example, elements `<a>` to `<img>`, or from `<Article>` to `<Comment>` of different types lead a full rebuild.
      2. **DOM Elements Of The Same Type:**
         When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. Lets take an example with same DOM elements except className attribute,
 
-     <span align="left" dir="ltr">
+        <span align="left" dir="ltr">
 
-     ```javascript
-        <div className="show" title="ReactJS" />
+        ```javascript
+            <div className="show" title="ReactJS" />
 
-        <div className="hide" title="ReactJS" />
-     ```
+            <div className="hide" title="ReactJS" />
+        ```
 
-     </span>
+        </span>
+
      3. **Component Elements Of The Same Type:**
         When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls componentWillReceiveProps() and componentWillUpdate() on the underlying instance. After that, the render() method is called and the diff algorithm recurses on the previous result and the new result.
      4. **Recursing On Children:**
