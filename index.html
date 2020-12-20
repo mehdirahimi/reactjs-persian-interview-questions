@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <link rel="stylesheet" href="file:////Users/macbook/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
       
       
       
@@ -5605,36 +5605,8 @@ Component<span class="token punctuation">.</span><span class="token function-var
 <p><strong><a class="backToTop" href="#91d1e3de938b6939f9aa6eedbea4a30e-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
-<h3><a id="722678995f582424859b2f214849d7fe" class="anchor" href="#722678995f582424859b2f214849d7fe">&#x62A;&#x627;&#x628;&#x639; memo &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Class components can be restricted from rendering when their input props are the same using <strong>PureComponent or shouldComponentUpdate</strong>. Now you can do the same with function components by wrapping them in <strong>React.memo</strong>.</p>
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">const</span> MyComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">memo</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">/* only rerenders if props change */</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre></span>
-<p><strong><a class="backToTop" href="#722678995f582424859b2f214849d7fe-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
-</li>
-<li>
-<h3><a id="bf0fa285214ab55b12c8ade5dfb418de" class="anchor" href="#bf0fa285214ab55b12c8ade5dfb418de">&#x62A;&#x627;&#x628;&#x639; lazy &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>The React.lazy function lets you render an dynamic import as a regular component. It will automatically load the bundle containing the OtherComponent when the component gets rendered. This must return a Promise which resolves to a module with a default export containing a React component.</p>
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">const</span> OtherComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">lazy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&quot;./OtherComponent&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">OtherComponent</span></span> <span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre></span>
-**Note:**
-React.lazy and Suspense is not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we still recommend React Loadable.
-<p><strong><a class="backToTop" href="#bf0fa285214ab55b12c8ade5dfb418de-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
-</li>
-<li>
 <h3><a id="93b3c7be1b23b704a907de2b34170951" class="anchor" href="#93b3c7be1b23b704a907de2b34170951">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x62A;&#x627;&#x628;&#x639; setState &#x627;&#x632; &#x631;&#x646;&#x62F;&#x631; &#x63A;&#x6CC;&#x631;&#x636;&#x631;&#x648;&#x631;&#x6CC; &#x62C;&#x644;&#x648;&#x6AF;&#x6CC;&#x631;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>You can compare current value of the state with an existing state value and decide whether to rerender the page or not. If the values are same then you need to return <strong>null</strong> to stop rerendering otherwise return the latest state value. For example, the user profile information is conditionally rendered as follows,</p>
+<p>&#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x641;&#x639;&#x644;&#x6CC; &#x6CC;&#x647; state &#x631;&#x648; &#x628;&#x627; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x645;&#x648;&#x62C;&#x648;&#x62F; &#x645;&#x642;&#x627;&#x6CC;&#x633;&#x647; &#x6A9;&#x646;&#x6CC;&#x645; &#x648; &#x62A;&#x635;&#x645;&#x6CC;&#x645; &#x628;&#x6AF;&#x6CC;&#x631;&#x6CC;&#x645; &#x6A9;&#x647; &#x635;&#x641;&#x62D;&#x647; &#x645;&#x62C;&#x62F;&#x62F;&#x627; &#x631;&#x646;&#x62F;&#x631; &#x628;&#x634;&#x647; &#x6CC;&#x627; &#x646;&#x647;. &#x627;&#x6AF;&#x647; &#x645;&#x642;&#x627;&#x62F;&#x6CC;&#x631; &#x6CC;&#x6A9;&#x633;&#x627;&#x646; &#x628;&#x648;&#x62F; &#x628;&#x631;&#x627;&#x6CC; &#x62C;&#x644;&#x648;&#x6AF;&#x6CC;&#x631;&#x6CC; &#x627;&#x632; &#x631;&#x646;&#x62F;&#x631; &#x645;&#x62C;&#x62F;&#x62F; &#x628;&#x627;&#x6CC;&#x62F; &#x645;&#x642;&#x62F;&#x627;&#x631; null &#x631;&#x648; &#x628;&#x631;&#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x6CC;&#x645; &#x648; &#x62F;&#x631; &#x63A;&#x6CC;&#x631; &#x627;&#x6CC;&#x646; &#x635;&#x648;&#x631;&#x62A; &#x622;&#x62E;&#x631;&#x6CC;&#x646; &#x645;&#x642;&#x62F;&#x627;&#x631; state&#x200C; &#x631;&#x648; &#x628;&#x631;&#x645;&#x6CC; &#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x6CC;&#x645;. &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x627;&#x637;&#x644;&#x627;&#x639;&#x627;&#x62A; &#x67E;&#x631;&#x648;&#x641;&#x627;&#x6CC;&#x644; &#x6A9;&#x627;&#x631;&#x628;&#x631; &#x62A;&#x648;&#x6CC; &#x645;&#x62B;&#x627;&#x644; &#x632;&#x6CC;&#x631; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x634;&#x631;&#x637;&#x6CC; &#x631;&#x646;&#x62F;&#x631; &#x634;&#x62F;&#x647;:</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token function-variable function">getUserProfile</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> latestAddress <span class="token operator">=</span> user<span class="token punctuation">.</span>address<span class="token punctuation">;</span>
@@ -5651,7 +5623,8 @@ React.lazy and Suspense is not yet available for server-side rendering. If you w
 </li>
 <li>
 <h3><a id="0813864f0430e3b5432c0e2d3c79f1d4" class="anchor" href="#0813864f0430e3b5432c0e2d3c79f1d4">&#x62A;&#x648;&#x6CC; &#x646;&#x633;&#x62E;&#x647; &#x6F1;&#x6F6; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x686;&#x637;&#x648;&#x631;&#x6CC; &#x645;&#x6CC;&#x634;&#x647; &#x622;&#x631;&#x627;&#x6CC;&#x647;&#x60C; Strings &#x648; &#x6CC;&#x627; &#x639;&#x62F;&#x62F; &#x631;&#x648; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p><strong>Arrays</strong>: Unlike older releases, you don&apos;t need to make sure <strong>render</strong> method return a single element in React16. You are able to return multiple sibling elements without a wrapping element by returning an array. For example, let us take the below list of developers,</p>
+<p><strong>&#x622;&#x631;&#x627;&#x6CC;&#x647; &#x647;&#x627;</strong>: &#x628;&#x631; &#x62E;&#x644;&#x627;&#x641; &#x646;&#x633;&#x62E;&#x647; &#x647;&#x627;&#x6CC; &#x642;&#x62F;&#x6CC;&#x645;&#x6CC;&#x60C; &#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x646;&#x6CC;&#x633;&#x62A; &#x645;&#x637;&#x645;&#x639;&#x646; &#x628;&#x634;&#x6CC;&#x645; &#x6A9;&#x647; &#x645;&#x62A;&#x62F; <strong>render</strong> &#x6CC;&#x647; &#x639;&#x646;&#x635;&#x631;&#x6CC; &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; 16 &#x628;&#x631;&#x645;&#x6CC;&#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x647;.<br>
+&#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x639;&#x646;&#x627;&#x635;&#x631; &#x634;&#x628;&#x6CC;&#x647; &#x647;&#x645; &#x631;&#x648; &#x628;&#x62F;&#x648;&#x646; &#x646;&#x6CC;&#x627;&#x632; &#x628;&#x647; &#x639;&#x646;&#x635;&#x631; &#x628;&#x633;&#x62A;&#x647; &#x628;&#x646;&#x62F;&#x6CC; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x622;&#x631;&#x627;&#x6CC;&#x647; &#x628;&#x631;&#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x6CC;&#x645;. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x644;&#x6CC;&#x633;&#x62A; &#x62A;&#x648;&#x633;&#x639;&#x647; &#x62F;&#x647;&#x646;&#x62F;&#x6AF;&#x627;&#x646; &#x632;&#x6CC;&#x631; &#x631;&#x648; &#x628;&#x6AF;&#x6CC;&#x631;&#x6CC;&#x645;&#x60C;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">ReactJSDevs</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">[</span>
@@ -5661,7 +5634,7 @@ React.lazy and Suspense is not yet available for server-side rendering. If you w
   <span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre></span>
-You can also merge this array of items in another array component
+&#x647;&#x645;&#x6CC;&#x646;&#x637;&#x648;&#x631; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x622;&#x6CC;&#x62A;&#x645; &#x647;&#x627;&#x6CC; &#x627;&#x6CC;&#x646; &#x622;&#x631;&#x627;&#x6CC;&#x647; &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x62F;&#x6CC;&#x6AF;&#x647; &#x627;&#x6CC; &#x627;&#x62F;&#x63A;&#x627;&#x645; &#x6A9;&#x646;&#x6CC;&#x645;
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">JSDevs</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -5674,18 +5647,27 @@ You can also merge this array of items in another array component
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre></span>
-**Strings and Numbers:** You can also return string and number type from the render method
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token keyword">return</span> <span class="token string">&apos;Welcome to ReactJS questions&apos;</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// Number</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token keyword">return</span> <span class="token number">2018</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre></span>
-<p><strong><a class="backToTop" href="#0813864f0430e3b5432c0e2d3c79f1d4-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
+</ol>
+<pre class="language-text">**&#x631;&#x634;&#x62A;&#x647; &#x647;&#x627; &#x648; &#x627;&#x639;&#x62F;&#x627;&#x62F;:** &#x647;&#x645;&#x6CC;&#x646;&#x637;&#x648;&#x631; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x646;&#x648;&#x627;&#x639; &#x631;&#x634;&#x62A;&#x647; &#x647;&#x627; &#x648; &#x627;&#x639;&#x62F;&#x627;&#x62F; &#x631;&#x648; &#x628;&#x627; &#x645;&#x62A;&#x62F; &#x631;&#x646;&#x62F;&#x631; &#x628;&#x631;&#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x6CC;&#x645;
+
+ &lt;span align=&quot;left&quot; dir=&quot;ltr&quot;&gt;
+
+ ```jsx
+ render() {
+  return &apos;Welcome to ReactJS questions&apos;;
+ }
+ // Number
+ render() {
+  return 2018;
+ }
+ ```
+
+ &lt;/span&gt;
+
+ **[&#x641;&#x647;&#x631;&#x633;&#x62A;](#&#x641;&#x647;&#x631;&#x633;&#x62A;)**
+</pre>
+<ol start="225">
 <li>
 <h3><a id="3477b0f197f4f055510926dd6c549e70" class="anchor" href="#3477b0f197f4f055510926dd6c549e70">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x645;&#x6CC;&#x634;&#x647; &#x627;&#x632; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x62F;&#x631; &#x6A9;&#x644;&#x627;&#x633; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x631;&#x62F;&#x61F;</a></h3>
 <p>React Class Components can be made much more concise using the class field declarations. You can initialize local state without using the constructor and declare class methods by using arrow functions without the extra need to bind them. Let&apos;s take a counter example to demonstrate class field declarations for state without using constructor and methods without binding,</p>
@@ -5717,63 +5699,82 @@ You can also merge this array of items in another array component
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </pre></span>
-<p><strong><a class="backToTop" href="#3477b0f197f4f055510926dd6c549e70-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
+<p><strong><a class="backToTop" href="#0813864f0430e3b5432c0e2d3c79f1d4-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="f22f727886f77111bdfef5b329b045f6" class="anchor" href="#f22f727886f77111bdfef5b329b045f6">hook&#x647;&#x627; &#x686;&#x6CC; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>Hooks is a new feature that lets you use state and other React features without writing a class. Let&apos;s see an example of useState hook example,</p>
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+</li>
+</ol>
+<pre class="language-text">&#x647;&#x648;&#x6A9; &#x647;&#x627; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x62C;&#x62F;&#x6CC;&#x62F;&#x6CC; &#x647;&#x633;&#x62A;&#x646; &#x6A9;&#x647; &#x628;&#x647;&#x645;&#x648;&#x646; &#x627;&#x6CC;&#x646; &#x627;&#x645;&#x6A9;&#x627;&#x646; &#x631;&#x648; &#x645;&#x6CC;&#x62F;&#x646; &#x6A9;&#x647; &#x628;&#x62F;&#x648;&#x646; &#x646;&#x648;&#x634;&#x62A;&#x646; &#x6A9;&#x644;&#x627;&#x633; &#x627;&#x632; state&#x200C; &#x648; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x647;&#x627;&#x6CC; &#x62F;&#x6CC;&#x6AF;&#x647; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.
+ &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; &#x645;&#x62B;&#x627;&#x644; &#x627;&#x632; &#x647;&#x648;&#x6A9; useState &#x628;&#x628;&#x6CC;&#x646;&#x6CC;&#x645;:
 
-<span class="token keyword">function</span> <span class="token function">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Declare a new state variable, which we&apos;ll call &quot;count&quot;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ &lt;span align=&quot;left&quot; dir=&quot;ltr&quot;&gt;
 
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>You clicked <span class="token punctuation">{</span>count<span class="token punctuation">}</span> times<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre></span>
+ ```jsx
+ import { useState } from &quot;react&quot;;
+
+ function Example() {
+   // Declare a new state variable, which we&apos;ll call &quot;count&quot;
+   const [count, setCount] = useState(0);
+
+   return (
+     &lt;div&gt;
+       &lt;p&gt;You clicked {count} times&lt;/p&gt;
+       &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Click me&lt;/button&gt;
+     &lt;/div&gt;
+   );
+ }
+ ```
+
+ &lt;/span&gt;
+
+ **[&#x641;&#x647;&#x631;&#x633;&#x62A;](#&#x641;&#x647;&#x631;&#x633;&#x62A;)**
+</pre>
+<ol start="227">
+<li>
+<h3><a id="a2f148c936d3f1a1646774e0b782fcab" class="anchor" href="#a2f148c936d3f1a1646774e0b782fcab">&#x686;&#x647; &#x642;&#x648;&#x627;&#x646;&#x6CC;&#x646;&#x6CC; &#x628;&#x631;&#x627;&#x6CC; &#x647;&#x648;&#x6A9;&#x200C;&#x647;&#x627; &#x628;&#x627;&#x6CC;&#x62F; &#x631;&#x639;&#x627;&#x6CC;&#x62A; &#x628;&#x634;&#x646;&#x61F;</a></h3>
+<p>&#x628;&#x631;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x647;&#x648;&#x6A9; &#x647;&#x627; &#x628;&#x627;&#x6CC;&#x62F; &#x627;&#x632; &#x62F;&#x648; &#x642;&#x627;&#x646;&#x648;&#x646; &#x67E;&#x6CC;&#x631;&#x648;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;</p>
+<ol>
+<li><p>&#x647;&#x648;&#x6A9; &#x647;&#x627; &#x631;&#x648; &#x641;&#x642;&#x637; &#x62F;&#x631; &#x633;&#x637;&#x62D; &#x628;&#x627;&#x644;&#x627;&#x6CC; &#x62A;&#x648;&#x627;&#x628;&#x639; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x635;&#x62F;&#x627; &#x6A9;&#x646;&#x6CC;&#x645;. &#x6CC;&#x639;&#x646;&#x6CC; &#x646;&#x628;&#x627;&#x6CC;&#x62F; &#x647;&#x648;&#x6A9; &#x647;&#x627; &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x62D;&#x644;&#x642;&#x647; &#x647;&#x627;&#x60C; &#x634;&#x631;&#x637; &#x647;&#x627; &#x6CC;&#x627; &#x62A;&#x648;&#x627;&#x628;&#x639; &#x62A;&#x648;&#x62F;&#x631;&#x62A;&#x648; &#x635;&#x62F;&#x627; &#x6A9;&#x646;&#x6CC;&#x645;. &#x628;&#x627; &#x627;&#x6CC;&#x646; &#x6A9;&#x627;&#x631; &#x627;&#x637;&#x645;&#x6CC;&#x646;&#x627;&#x646; &#x62D;&#x627;&#x635;&#x644; &#x645;&#x6CC;&#x634;&#x647; &#x6A9;&#x647; &#x647;&#x648;&#x6A9; &#x647;&#x627; &#x628;&#x627; &#x647;&#x631; &#x628;&#x627;&#x631; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x628;&#x647; &#x647;&#x645;&#x648;&#x646; &#x62A;&#x631;&#x62A;&#x6CC;&#x628; &#x635;&#x62F;&#x627; &#x632;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x646; &#x648; state&#x200C; &#x647;&#x648;&#x6A9; &#x647;&#x627; &#x628;&#x6CC;&#x646; &#x686;&#x646;&#x62F;&#x6CC;&#x646; &#x628;&#x627;&#x631; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; useState , useEffect &#x62D;&#x641;&#x638; &#x645;&#x6CC;&#x634;&#x647;.</p></li>
+<li><p>&#x647;&#x648;&#x6A9; &#x647;&#x627; &#x631;&#x648; &#x641;&#x642;&#x637; &#x62A;&#x648;&#x6CC; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;. &#x62A;&#x648;&#x6CC; &#x62A;&#x648;&#x627;&#x628;&#x639; &#x62C;&#x627;&#x648;&#x627;&#x627;&#x633;&#x6A9;&#x631;&#x6CC;&#x67E;&#x62A;&#x6CC; &#x646;&#x628;&#x627;&#x6CC;&#x62F; &#x647;&#x648;&#x6A9; &#x647;&#x627; &#x631;&#x648; &#x635;&#x62F;&#x627; &#x628;&#x632;&#x646;&#x6CC;&#x645;.</p></li>
+</ol>
 <p><strong><a class="backToTop" href="#f22f727886f77111bdfef5b329b045f6-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
-<h3><a id="a2f148c936d3f1a1646774e0b782fcab" class="anchor" href="#a2f148c936d3f1a1646774e0b782fcab">&#x686;&#x647; &#x642;&#x648;&#x627;&#x646;&#x6CC;&#x646;&#x6CC; &#x628;&#x631;&#x627;&#x6CC; &#x647;&#x648;&#x6A9;&#x200C;&#x647;&#x627; &#x628;&#x627;&#x6CC;&#x62F; &#x631;&#x639;&#x627;&#x6CC;&#x62A; &#x628;&#x634;&#x646;&#x61F;</a></h3>
-<p>You need to follow two rules inorder to use hooks</p>
-<ol>
-<li><p>Call Hooks only at the top level of your react functions. i.e, You shouldn&#x2019;t call Hooks inside loops, conditions, or nested functions. This will ensure that Hooks are called in the same order each time a component renders and it preserves the state of Hooks between multiple useState and useEffect calls.</p></li>
-<li><p>Call Hooks from React Functions only. i.e, You shouldn&#x2019;t call Hooks from regular JavaScript functions.</p></li>
-</ol>
-<p><strong><a class="backToTop" href="#a2f148c936d3f1a1646774e0b782fcab-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
-</li>
-<li>
 <h3><a id="3ebc137c2347125d5569fd0164985c8b" class="anchor" href="#3ebc137c2347125d5569fd0164985c8b">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x645;&#x6CC;&#x634;&#x647; &#x627;&#x632; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x62F;&#x631;&#x633;&#x62A; &#x647;&#x648;&#x6A9;&#x200C;&#x647;&#x627; &#x627;&#x637;&#x645;&#x6CC;&#x646;&#x627;&#x646; &#x62D;&#x627;&#x635;&#x644; &#x6A9;&#x631;&#x62F;&#x61F;</a></h3>
-<p>React team released an ESLint plugin called <strong>eslint-plugin-react-hooks</strong> that enforces these two rules. You can add this plugin to your project using the below command,</p>
+<p>&#x62A;&#x6CC;&#x645; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x6CC;&#x647; &#x67E;&#x644;&#x627;&#x6AF;&#x6CC;&#x646; ESLinst &#x628;&#x647; &#x627;&#x633;&#x645; <strong>eslint-plugin-react-hooks</strong> &#x645;&#x646;&#x62A;&#x634;&#x631; &#x6A9;&#x631;&#x62F;&#x647; &#x6A9;&#x647; &#x627;&#x6CC;&#x646; &#x62F;&#x648; &#x642;&#x627;&#x646;&#x648;&#x646; &#x631;&#x648; &#x627;&#x62C;&#x631;&#x627; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x62F;&#x633;&#x62A;&#x648;&#x631; &#x632;&#x6CC;&#x631; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x6CC;&#x646; &#x67E;&#x644;&#x627;&#x6AF;&#x6CC;&#x646; &#x631;&#x648; &#x628;&#x647; &#x67E;&#x631;&#x648;&#x698;&#x647; &#x645;&#x648;&#x646; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> eslint-plugin-react-hooks@next
 </pre></span>
-And apply the below config in your ESLint config file,
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// Your ESLint configuration</span>
-<span class="token punctuation">{</span>
-  <span class="token string">&quot;plugins&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token comment">// ...</span>
-    <span class="token string">&quot;react-hooks&quot;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;rules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token comment">// ...</span>
-    <span class="token string">&quot;react-hooks/rules-of-hooks&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;error&quot;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</pre></span>
-**Note:** This plugin is intended to use in Create React App by default.
-<p><strong><a class="backToTop" href="#3ebc137c2347125d5569fd0164985c8b-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
+</ol>
+<pre class="language-text">&#x648; &#x62A;&#x646;&#x638;&#x6CC;&#x645;&#x627;&#x62A; &#x632;&#x6CC;&#x631; &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x641;&#x627;&#x6CC;&#x644; ESLint config &#x627;&#x639;&#x645;&#x627;&#x644; &#x6A9;&#x646;&#x6CC;&#x645;
+
+ &lt;span align=&quot;left&quot; dir=&quot;ltr&quot;&gt;
+
+ ```javascript
+ // Your ESLint configuration
+ {
+   &quot;plugins&quot;: [
+     // ...
+     &quot;react-hooks&quot;
+   ],
+   &quot;rules&quot;: {
+     // ...
+     &quot;react-hooks/rules-of-hooks&quot;: &quot;error&quot;
+   }
+ }
+ ```
+
+ &lt;/span&gt;
+ **&#x646;&#x6A9;&#x62A;&#x647;** &#x627;&#x6CC;&#x646; &#x67E;&#x644;&#x627;&#x6AF;&#x6CC;&#x646; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x62F;&#x631; &#x646;&#x638;&#x631; &#x6AF;&#x631;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x647; &#x62A;&#x627; &#x62F;&#x631; &#x633;&#x627;&#x62E;&#x62A; React App &#x627;&#x632;&#x634; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.
+
+ **[&#x641;&#x647;&#x631;&#x633;&#x62A;](#&#x641;&#x647;&#x631;&#x633;&#x62A;)**
+</pre>
+<ol start="229">
 <li>
 <h3><a id="c52d94b3d715c2156e59a87188101db5" class="anchor" href="#c52d94b3d715c2156e59a87188101db5">&#x62A;&#x641;&#x627;&#x648;&#x62A;&#x200C;&#x647;&#x627;&#x6CC; Flux &#x648; Redux &#x686;&#x6CC;&#x627; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>Below are the major differences between Flux and Redux</p>
+<p>&#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x62A;&#x641;&#x627;&#x648;&#x62A; &#x639;&#x645;&#x62F;&#x647; Flux &#x648; Redux &#x6AF;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x647;</p>
 <table>
 <thead>
 <tr>
@@ -5783,51 +5784,51 @@ And apply the below config in your ESLint config file,
 </thead>
 <tbody>
 <tr>
-<td>State is mutable</td>
-<td>State is immutable</td>
+<td>State &#x642;&#x627;&#x628;&#x644; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631;&#x647;</td>
+<td>State &#x63A;&#x6CC;&#x631; &#x642;&#x627;&#x628;&#x644; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631;&#x647;</td>
 </tr>
 <tr>
-<td>The Store contains both state and change logic</td>
-<td>The Store and change logic are separate</td>
+<td>Store &#x634;&#x627;&#x645;&#x644; &#x645;&#x646;&#x637;&#x642; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x648; State &#x647;&#x633;&#x62A;&#x634;</td>
+<td>Store &#x648; &#x645;&#x646;&#x637;&#x642; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x627;&#x632; &#x647;&#x645; &#x62C;&#x62F;&#x627; &#x647;&#x633;&#x62A;&#x646;</td>
 </tr>
 <tr>
-<td>There are multiple stores exist</td>
-<td>There is only one store exist</td>
+<td>Store &#x647;&#x627;&#x6CC; &#x645;&#x62E;&#x62A;&#x644;&#x641;&#x6CC; &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x631;&#x647;</td>
+<td>&#x641;&#x642;&#x637; &#x6CC;&#x647; Store &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x631;&#x647;</td>
 </tr>
 <tr>
-<td>All the stores are disconnected and flat</td>
-<td>Single store with hierarchical reducers</td>
+<td>&#x62A;&#x645;&#x627;&#x645; Store &#x647;&#x627; &#x62C;&#x62F;&#x627; &#x627;&#x632; &#x647;&#x645; &#x647;&#x633;&#x62A;&#x646;</td>
+<td>&#x6CC;&#x647; Store &#x628;&#x627; Reducer &#x647;&#x627;&#x6CC; &#x633;&#x644;&#x633;&#x644;&#x647; &#x645;&#x631;&#x627;&#x62A;&#x628;&#x6CC;</td>
 </tr>
 <tr>
-<td>It has a singleton dispatcher</td>
-<td>There is no concept of dispatcher</td>
+<td>&#x6CC;&#x647; dispatcher &#x62A;&#x6A9;&#x6CC; &#x62F;&#x627;&#x631;&#x647;</td>
+<td>&#x645;&#x641;&#x647;&#x648;&#x645;&#x6CC; &#x628;&#x647; &#x627;&#x633;&#x645; dispatcher &#x648;&#x62C;&#x648;&#x62F; &#x646;&#x62F;&#x627;&#x631;&#x647;</td>
 </tr>
 <tr>
 <td>React components subscribe to the store</td>
-<td>Container components uses connect function</td>
+<td>&#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; Container &#x627;&#x632; &#x62A;&#x627;&#x6CC;&#x639; connect &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC; &#x6A9;&#x646;&#x646;.</td>
 </tr>
 </tbody>
 </table>
-<p><strong><a class="backToTop" href="#c52d94b3d715c2156e59a87188101db5-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
+<p><strong><a class="backToTop" href="#3ebc137c2347125d5569fd0164985c8b-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="f22220282cd7ed75918bfded15d6caf8" class="anchor" href="#f22220282cd7ed75918bfded15d6caf8">&#x645;&#x632;&#x627;&#x6CC;&#x627;&#x6CC; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x631;&#x648;&#x62A;&#x631; &#x646;&#x633;&#x62E;&#x647;&#x6F4; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Below are the main benefits of React Router V4 module,</p>
+<p>&#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x645;&#x632;&#x627;&#x6CC;&#x627;&#x6CC; &#x627;&#x635;&#x644;&#x6CC; &#x645;&#x627;&#x698;&#x648;&#x644; React Router V4 &#x6AF;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x647;:</p>
 <ol>
-<li><p>In React Router v4(version 4), the API is completely about components. A router can be visualized as a single component(<browserrouter>) which wraps specific child router components(<route>).</route></browserrouter></p></li>
-<li><p>You don&apos;t need to manually set history. The router module will take care history by wrapping routes with <browserrouter> component.</browserrouter></p></li>
-<li><p>The application size is reduced by adding only the specific router module(Web, core, or native)</p></li>
+<li><p>&#x62A;&#x648;&#x6CC; React Router &#x648;&#x631;&#x698;&#x646; &#x6F4;&#x60C; API &#x6A9;&#x644;&#x627; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x633;&#x62A;. &#x6CC;&#x647; Router &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x62A;&#x6A9;&#x6CC; (<browserrouter>) &#x62A;&#x62C;&#x633;&#x645; &#x6A9;&#x646;&#x6CC;&#x645; &#x6A9;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x631;&#x648;&#x62A;&#x631; &#x641;&#x631;&#x632;&#x646;&#x62F; (<route>) &#x631;&#x648; &#x62F;&#x633;&#x62A;&#x647; &#x628;&#x646;&#x62F;&#x6CC; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</route></browserrouter></p></li>
+<li><p>&#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x628;&#x647; &#x62A;&#x646;&#x638;&#x6CC;&#x645; &#x62F;&#x633;&#x62A;&#x6CC; history&#x200C; &#x646;&#x62F;&#x627;&#x631;&#x6CC;&#x645;. &#x631;&#x648;&#x62A;&#x631; &#x627;&#x632; &#x637;&#x631;&#x6CC;&#x642; &#x628;&#x633;&#x62A;&#x647; &#x628;&#x646;&#x62F;&#x6CC; route &#x647;&#x627; &#x628;&#x627; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; <browserrouter> &#x627;&#x632; history &#x645;&#x631;&#x627;&#x642;&#x628;&#x62A; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</browserrouter></p></li>
+<li><p>&#x627;&#x646;&#x62F;&#x627;&#x632;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x641;&#x642;&#x637; &#x628;&#x627; &#x6CC;&#x647; &#x645;&#x627;&#x698;&#x648;&#x644; &#x631;&#x648;&#x62A;&#x631; &#x62E;&#x627;&#x635; (Web, core &#x6CC;&#x627; native) &#x6A9;&#x627;&#x647;&#x634; &#x67E;&#x6CC;&#x62F;&#x627; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#f22220282cd7ed75918bfded15d6caf8-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="9197fd1a7d532a5ca1a4c3d7a7cd6b74" class="anchor" href="#9197fd1a7d532a5ca1a4c3d7a7cd6b74">&#x645;&#x6CC;&#x200C;&#x62A;&#x648;&#x646;&#x6CC; &#x631;&#x627;&#x62C;&#x639; &#x628;&#x647; &#x645;&#x62A;&#x62F; componentDidCatch &#x62A;&#x648;&#x636;&#x6CC;&#x62D; &#x628;&#x62F;&#x6CC;&#x61F;</a></h3>
-<p>The <strong>componentDidCatch</strong> lifecycle method is invoked after an error has been thrown by a descendant component. The method receives two parameters,</p>
+<p>&#x628;&#x639;&#x62F; &#x627;&#x632; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x62E;&#x637;&#x627;&#x6CC;&#x6CC; &#x62A;&#x648;&#x633;&#x637; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x628;&#x627; &#x633;&#x644;&#x633;&#x644;&#x647; &#x645;&#x631;&#x627;&#x62A;&#x628; &#x67E;&#x627;&#x6CC;&#x6CC;&#x646; &#x62A;&#x631; &#x627;&#x631;&#x633;&#x627;&#x644; &#x634;&#x62F;&#x60C; &#x645;&#x62A;&#x62F; <strong>componentDidCatch</strong> &#x635;&#x62F;&#x627; &#x632;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647;. &#x627;&#x6CC;&#x646; &#x645;&#x62A;&#x62F; &#x62F;&#x648; &#x62A;&#x627; &#x67E;&#x627;&#x631;&#x627;&#x645;&#x62A;&#x631; &#x62F;&#x631;&#x6CC;&#x627;&#x641;&#x62A; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;:</p>
 <ol>
-<li><p>error: - The error object which was thrown</p></li>
-<li><p>info: - An object with a componentStack key contains the information about which component threw the error.</p></li>
+<li><p>error: - &#x622;&#x628;&#x62C;&#x6A9;&#x62A; error</p></li>
+<li><p>info: - &#x6CC;&#x647; &#x622;&#x628;&#x62C;&#x6A9;&#x62A; &#x628;&#x627; &#x6A9;&#x644;&#x6CC;&#x62F; componentStack &#x6A9;&#x647; &#x634;&#x627;&#x645;&#x644; &#x627;&#x637;&#x644;&#x627;&#x639;&#x627;&#x62A;&#x6CC;&#x647; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x6A9;&#x62F;&#x648;&#x645; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x62E;&#x637;&#x627; &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x6A9;&#x631;&#x62F;&#x647;.</p></li>
 </ol>
-<p>The method structure would be as follows<br>
+<p>&#x633;&#x627;&#x62E;&#x62A;&#x627;&#x631; &#x645;&#x62A;&#x62F; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x632;&#x6CC;&#x631; &#x647;&#x633;&#x62A;&#x634;:<br>
 <span align="left" dir="ltr"></span></p>
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">componentDidCatch</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span> info<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre>
@@ -5835,19 +5836,20 @@ And apply the below config in your ESLint config file,
 </li>
 <li>
 <h3><a id="7c728b4e444b6f1f88059311d7d0a603" class="anchor" href="#7c728b4e444b6f1f88059311d7d0a603">&#x62F;&#x631; &#x686;&#x647; &#x633;&#x646;&#x627;&#x631;&#x6CC;&#x648;&#x6CC;&#x6CC; error boundary &#x62E;&#x637;&#x627; &#x631;&#x648; catch &#x646;&#x645;&#x6CC;&#x200C;&#x6A9;&#x646;&#x647;&#x61F;</a></h3>
-<p>Below are the cases in which error boundaries doesn&apos;t work</p>
+<p>&#x627;&#x6CC;&#x646; &#x647;&#x627; &#x645;&#x648;&#x627;&#x631;&#x62F;&#x6CC; &#x647;&#x633;&#x62A;&#x646; &#x6A9;&#x647; error boundary &#x647;&#x627; &#x627;&#x648;&#x646;&#x62C;&#x627; &#x6A9;&#x627;&#x631; &#x646;&#x645;&#x6CC; &#x6A9;&#x646;&#x646;</p>
 <ol>
-<li><p>Inside Event handlers</p></li>
-<li><p>Asynchronous code using <strong>setTimeout or requestAnimationFrame</strong> callbacks</p></li>
+<li><p>&#x62F;&#x627;&#x62E;&#x644; Event handler &#x647;&#x627;</p></li>
+<li><p>&#x6A9;&#x62F; &#x646;&#x627;&#x647;&#x645;&#x632;&#x645;&#x627;&#x646; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; callback&#x200C; &#x647;&#x627;&#x6CC; <strong>setTimeout &#x6CC;&#x627; requestAnimationFrame</strong></p></li>
 <li><p>During Server side rendering</p></li>
-<li><p>When errors thrown in the error boundary code itself</p></li>
+<li><p>&#x645;&#x648;&#x642;&#x639; &#x627;&#x631;&#x627;&#x626;&#x647; &#x633;&#x645;&#x62A; &#x633;&#x631;&#x648;&#x631; (Server side rendering)</p></li>
+<li><p>&#x648;&#x642;&#x62A;&#x6CC; &#x62E;&#x637;&#x627;&#x647;&#x627; &#x62F;&#x631; &#x62E;&#x648;&#x62F; &#x6A9;&#x62F; error boundary &#x647;&#x627; &#x631;&#x62E; &#x645;&#x6CC;&#x62F;&#x647;.</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#7c728b4e444b6f1f88059311d7d0a603-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="1931c5572d221740d6c970f171a8b93b" class="anchor" href="#1931c5572d221740d6c970f171a8b93b">&#x686;&#x631;&#x627; &#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x628;&#x647; error boundaries &#x628;&#x631;&#x627;&#x6CC; event handler&#x647;&#x627; &#x646;&#x6CC;&#x633;&#x62A;&#x61F;</a></h3>
-<p>Error boundaries do not catch errors inside event handlers. Event handlers don&apos;t happened or invoked during rendering time unlike render method or lifecycle methods. So React knows how to recover these kind of errors in event handlers.<br>
-If still you need to catch an error inside event handler, use the regular JavaScript try / catch statement as below</p>
+<p>Error boundary&#x200C; &#x647;&#x627; &#x62E;&#x637;&#x627;&#x647;&#x627; &#x631;&#x648; &#x62A;&#x648;&#x6CC; event handler &#x647;&#x627; &#x646;&#x645;&#x6CC; &#x6AF;&#x6CC;&#x631;&#x646;. Event handler &#x647;&#x627; &#x628;&#x631; &#x62E;&#x644;&#x627;&#x641; &#x645;&#x62A;&#x62F; &#x631;&#x646;&#x62F;&#x631; &#x6CC;&#x627; lifecycle &#x645;&#x648;&#x642;&#x639; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x631;&#x62F;&#x646; &#x627;&#x62A;&#x641;&#x627;&#x642; &#x646;&#x645;&#x6CC; &#x627;&#x641;&#x62A;&#x647; &#x6CC;&#x627; &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x646;&#x645;&#x6CC;&#x634;&#x647;. &#x628;&#x646;&#x627;&#x628;&#x631;&#x627;&#x6CC;&#x646; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x645;&#x6CC;&#x62F;&#x648;&#x646;&#x647; &#x6A9;&#x647; &#x627;&#x6CC;&#x646; &#x645;&#x62F;&#x644; &#x62E;&#x637;&#x627; &#x647;&#x627; &#x631;&#x648; &#x62A;&#x648;&#x6CC; event handler &#x647;&#x627; &#x686;&#x637;&#x648;&#x631;&#x6CC; &#x628;&#x627;&#x632;&#x6CC;&#x627;&#x628;&#x6CC; &#x6A9;&#x646;&#x647;.<br>
+&#x627;&#x6AF;&#x647; &#x647;&#x646;&#x648;&#x632; &#x646;&#x6CC;&#x627;&#x632; &#x62F;&#x627;&#x631;&#x6CC;&#x645; &#x62E;&#x637;&#x627; &#x631;&#x648; &#x62A;&#x648;&#x6CC; event handler &#x628;&#x6AF;&#x6CC;&#x631;&#x6CC;&#x645;&#x60C; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x632; &#x62F;&#x633;&#x62A;&#x648;&#x631; try / catch &#x62C;&#x627;&#x648;&#x627;&#x627;&#x633;&#x6A9;&#x631;&#x6CC;&#x67E;&#x62A; &#x645;&#x62B;&#x644; &#x632;&#x6CC;&#x631; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;:</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -5871,13 +5873,13 @@ If still you need to catch an error inside event handler, use the regular JavaSc
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </pre></span>
-The above code is catching the error using vanilla javascript try/catch block instead of error boundaries.
+&#x6A9;&#x62F; &#x628;&#x627;&#x644;&#x627; &#x62E;&#x637;&#x627; &#x631;&#x648; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; try/catch &#x62C;&#x627;&#x648;&#x627;&#x627;&#x633;&#x6A9;&#x631;&#x6CC;&#x67E;&#x62A; &#x628;&#x647; &#x62C;&#x627;&#x6CC; error boundary  &#x647;&#x627; &#x645;&#x6CC;&#x6AF;&#x6CC;&#x631;&#x647;.
 <p><strong><a class="backToTop" href="#1931c5572d221740d6c970f171a8b93b-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="a363f84bccf025f7158ece092e52d115" class="anchor" href="#a363f84bccf025f7158ece092e52d115">&#x62A;&#x641;&#x627;&#x648;&#x62A; &#x628;&#x644;&#x648;&#x6A9; try catch &#x648; error boundary&#x647;&#x627; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Try catch block works with imperative code whereas error boundaries are meant for declarative code to render on the screen.<br>
-For example, the try catch block used for below imperative code</p>
+<p>&#x628;&#x644;&#x648;&#x6A9; try catch &#x628;&#x627; &#x6A9;&#x62F; &#x62F;&#x633;&#x62A;&#x648;&#x631;&#x6CC; &#x6A9;&#x627;&#x631; &#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x62F;&#x631; &#x62D;&#x627;&#x644;&#x6CC; &#x6A9;&#x647; error boundary &#x647;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x631;&#x627;&#x626;&#x647; &#x6A9;&#x62F; &#x627;&#x639;&#x644;&#x627;&#x646;&#x6CC; &#x631;&#x648;&#x6CC; &#x635;&#x641;&#x62D;&#x647; &#x62F;&#x631; &#x646;&#x638;&#x631; &#x6AF;&#x631;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x646;.<br>
+&#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x628;&#x644;&#x648;&#x6A9; try catch &#x628;&#x631;&#x627;&#x6CC; &#x6A9;&#x62F; &#x62F;&#x633;&#x62A;&#x648;&#x631;&#x6CC; &#x632;&#x6CC;&#x631; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">try</span> <span class="token punctuation">{</span>
   <span class="token function">showButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -5885,59 +5887,59 @@ For example, the try catch block used for below imperative code</p>
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span>
 </pre></span>
-<p>Whereas error boundaries wrap declarative code as below,</p>
+<p>&#x62F;&#x631; &#x62D;&#x627;&#x644;&#x6CC; &#x6A9;&#x647; error boundary &#x647;&#x627; &#x6A9;&#x62F; &#x647;&#x627;&#x6CC; &#x627;&#x639;&#x644;&#x627;&#x646;&#x6CC; &#x631;&#x648; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x632;&#x6CC;&#x631; &#x628;&#x633;&#x62A;&#x647; &#x628;&#x646;&#x62F;&#x6CC; &#x645;&#x6CC; &#x6A9;&#x646;&#x647;&#x60C;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ErrorBoundary</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyComponent</span></span> <span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ErrorBoundary</span></span><span class="token punctuation">&gt;</span></span>
 </pre></span>
-<p>So if an error occurs in a <strong>componentDidUpdate</strong> method caused by a <strong>setState</strong> somewhere deep in the tree, it will still correctly propagate to the closest error boundary.</p>
+<p>&#x67E;&#x633; &#x627;&#x6AF;&#x647; &#x62E;&#x637;&#x627;&#x6CC;&#x6CC; &#x62A;&#x648;&#x6CC; &#x645;&#x62A;&#x62F; <strong>componentDidUpdate</strong> &#x62A;&#x648;&#x633;&#x637; <strong>setState</strong> &#x62C;&#x627;&#x6CC;&#x6CC; &#x62F;&#x631; &#x639;&#x645;&#x642; &#x62F;&#x631;&#x62E;&#x62A;&#x60C; &#x631;&#x62E; &#x628;&#x62F;&#x647; &#x628;&#x627;&#x632;&#x645; &#x628;&#x647; &#x62F;&#x631;&#x633;&#x62A;&#x6CC; &#x628;&#x647; &#x646;&#x632;&#x62F;&#x6CC;&#x6A9; &#x62A;&#x631;&#x6CC;&#x646; error boundary &#x6AF;&#x633;&#x62A;&#x631;&#x634; &#x67E;&#x6CC;&#x62F;&#x627; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</p>
 <p><strong><a class="backToTop" href="#a363f84bccf025f7158ece092e52d115-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="07d296d413f89f1e1cd5449807926fe2" class="anchor" href="#07d296d413f89f1e1cd5449807926fe2">&#x631;&#x641;&#x62A;&#x627;&#x631; &#x62E;&#x637;&#x627;&#x647;&#x627;&#x6CC; uncaught &#x62F;&#x631; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; 16 &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>In React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree. The reason behind this decision is that it is worse to leave corrupted UI in place than to completely remove it. For example, it is worse for a payments app to display a wrong amount than to render nothing.</p>
+<p>&#x62A;&#x648;&#x6CC; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x648;&#x631;&#x698;&#x646; &#x6F1;&#x6F6;&#x60C; &#x62E;&#x637;&#x627;&#x647;&#x627;&#x6CC;&#x6CC; &#x6A9;&#x647; &#x62A;&#x648;&#x633;&#x637; &#x647;&#x6CC;&#x686; error boundary &#x6AF;&#x631;&#x641;&#x62A;&#x647; &#x646;&#x634;&#x646;&#x60C; &#x645;&#x646;&#x62C;&#x631; &#x628;&#x647; unmount &#x634;&#x62F;&#x646; &#x6A9;&#x644; &#x62F;&#x631;&#x62E;&#x62A; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x645;&#x6CC;&#x634;&#x646;.&#x62F;&#x644;&#x6CC;&#x644; &#x627;&#x6CC;&#x646; &#x62A;&#x635;&#x645;&#x6CC;&#x645; &#x627;&#x6CC;&#x646;&#x647; &#x6A9;&#x647; &#x631;&#x627;&#x628;&#x637; &#x6A9;&#x627;&#x631;&#x628;&#x631;&#x6CC; &#x62E;&#x631;&#x627;&#x628; &#x628;&#x647;&#x62A;&#x631;&#x647; &#x6A9;&#x647; &#x6A9;&#x627;&#x645;&#x644; &#x62D;&#x630;&#x641; &#x628;&#x634;&#x647; &#x62A;&#x627; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x633;&#x631; &#x62C;&#x627;&#x6CC; &#x62E;&#x648;&#x62F;&#x634; &#x628;&#x627;&#x642;&#x6CC; &#x628;&#x645;&#x648;&#x646;&#x647;.&#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x628;&#x631;&#x627;&#x6CC; &#x6CC;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x67E;&#x631;&#x62F;&#x627;&#x62E;&#x62A; &#x628;&#x647;&#x62A;&#x631;&#x647; &#x6AF;&#x647; &#x647;&#x6CC;&#x686;&#x6CC; &#x631;&#x646;&#x62F;&#x631; &#x646;&#x6A9;&#x646;&#x6CC;&#x645; &#x62A;&#x627; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x628;&#x62E;&#x648;&#x627;&#x6CC;&#x645; &#x6CC;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x627;&#x634;&#x62A;&#x628;&#x627;&#x647; &#x631;&#x648; &#x646;&#x634;&#x648;&#x646; &#x628;&#x62F;&#x6CC;&#x645;.</p>
 <p><strong><a class="backToTop" href="#07d296d413f89f1e1cd5449807926fe2-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="23749a99562639e311295d638e02ccb7" class="anchor" href="#23749a99562639e311295d638e02ccb7">&#x645;&#x62D;&#x644; &#x645;&#x646;&#x627;&#x633;&#x628; &#x628;&#x631;&#x627;&#x6CC; &#x642;&#x631;&#x627;&#x631; &#x62F;&#x627;&#x62F;&#x646; error boundary &#x6A9;&#x62C;&#x627;&#x633;&#x62A;&#x61F;</a></h3>
-<p>The granularity of error boundaries usage is up to the developer based on project needs. You can follow either of these approaches,</p>
+<p>&#x645;&#x6CC;&#x632;&#x627;&#x646; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; error boundary &#x647;&#x627; &#x628;&#x631; &#x627;&#x633;&#x627;&#x633; &#x646;&#x6CC;&#x627;&#x632; &#x67E;&#x631;&#x648;&#x698;&#x647; &#x628;&#x647; &#x639;&#x647;&#x62F;&#x647; &#x62A;&#x648;&#x633;&#x639;&#x647; &#x62F;&#x647;&#x646;&#x62F;&#x647; &#x633;&#x62A;. &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x632; &#x647;&#x631; &#x6A9;&#x62F;&#x648;&#x645; &#x627;&#x632; &#x631;&#x648;&#x634; &#x647;&#x627;&#x6CC; &#x632;&#x6CC;&#x631; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;</p>
 <ol>
-<li><p>You can wrap top-level route components to display a generic error message for the entire application.</p></li>
-<li><p>You can also wrap individual components in an error boundary to protect them from crashing the rest of the application.</p></li>
+<li><p>&#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x631;&#x648;&#x62A; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x633;&#x637;&#x62D; &#x628;&#x627;&#x644;&#x627; &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x6CC;&#x647; &#x67E;&#x6CC;&#x63A;&#x627;&#x645; &#x62E;&#x637;&#x627;&#x6CC; &#x639;&#x645;&#x648;&#x645;&#x6CC; &#x648;&#x627;&#x633;&#x647; &#x6A9;&#x644; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x628;&#x633;&#x62A;&#x647; &#x628;&#x646;&#x62F;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;.</p></li>
+<li><p>&#x647;&#x645;&#x6CC;&#x646; &#x637;&#x648;&#x631; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x62A;&#x6A9;&#x6CC; &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x6CC;&#x647; error boundary &#x642;&#x631;&#x627;&#x631; &#x628;&#x62F;&#x6CC;&#x645; &#x62A;&#x627; &#x627;&#x632; &#x62E;&#x631;&#x627;&#x628; &#x634;&#x62F;&#x646; &#x6A9;&#x644; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x645;&#x62D;&#x627;&#x641;&#x638;&#x62A; &#x628;&#x634;&#x647;.</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#23749a99562639e311295d638e02ccb7-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="4e33859af69a2da13e4e472365c2e4b1" class="anchor" href="#4e33859af69a2da13e4e472365c2e4b1">&#x645;&#x632;&#x6CC;&#x62A; &#x686;&#x627;&#x67E; &#x634;&#x62F;&#x646; stack trace &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x200C;&#x647;&#x627; &#x62A;&#x648;&#x6CC; &#x645;&#x62A;&#x646; &#x627;&#x631;&#x648;&#x631; boundary &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Apart from error messages and javascript stack, React16 will display the component stack trace with file names and line numbers using error boundary concept. For example, BuggyCounter component displays the component stack trace as below,</p>
+<p>&#x628;&#x647; &#x63A;&#x6CC;&#x631; &#x627;&#x632; &#x67E;&#x6CC;&#x627;&#x645; &#x647;&#x627;&#x6CC; &#x62E;&#x637;&#x627; &#x648; &#x67E;&#x634;&#x62A;&#x647; &#x62C;&#x627;&#x648;&#x627;&#x627;&#x633;&#x6A9;&#x631;&#x6CC;&#x67E;&#x62A;&#x60C; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x648;&#x631;&#x698;&#x646; &#x6F1;&#x6F6; &#x67E;&#x634;&#x62A;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x631;&#x648; &#x628;&#x627; &#x646;&#x627;&#x645; &#x641;&#x627;&#x6CC;&#x644; &#x648; &#x634;&#x645;&#x627;&#x631;&#x647; &#x62E;&#x637; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x645;&#x641;&#x647;&#x648;&#x645; error boundary &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x645;&#x6CC;&#x62F;&#x647;. &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; BuggyCounter &#x67E;&#x634;&#x62A;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x631;&#x648; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x632;&#x6CC;&#x631; &#x646;&#x634;&#x648;&#x646; &#x645;&#x6CC;&#x62F;&#x647;:</p>
 <p><img src="images/error_boundary.png" alt="stacktrace"></p>
 <p><strong><a class="backToTop" href="#4e33859af69a2da13e4e472365c2e4b1-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="f639e77ce71c00afa90cd5340a3b58f2" class="anchor" href="#f639e77ce71c00afa90cd5340a3b58f2">&#x645;&#x62A;&#x62F;&#x6CC; &#x6A9;&#x647; &#x62F;&#x631; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x200C;&#x647;&#x627;&#x6CC; class &#x627;&#x644;&#x632;&#x627;&#x645;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>The render() method is the only required method in a class component. i.e, All methods other than render method are optional for a class component.</p>
+<p>&#x645;&#x62A;&#x62F; render() &#x62A;&#x646;&#x647;&#x627; &#x645;&#x62A;&#x62F; &#x645;&#x648;&#x631;&#x62F; &#x646;&#x6CC;&#x627;&#x632; &#x62A;&#x648;&#x6CC; class &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x633;&#x62A;&#x634;. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x647;&#x645;&#x647; &#x645;&#x62A;&#x62F; &#x647;&#x627; &#x63A;&#x6CC;&#x631; &#x627;&#x632; &#x645;&#x62A;&#x62F; render &#x62A;&#x648;&#x6CC; class&#x200C; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x62E;&#x62A;&#x6CC;&#x627;&#x631;&#x6CC; &#x647;&#x633;&#x62A;&#x634;.</p>
 <p><strong><a class="backToTop" href="#f639e77ce71c00afa90cd5340a3b58f2-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="f087bd450ee3a8b61b7d5b792fd7253f" class="anchor" href="#f087bd450ee3a8b61b7d5b792fd7253f">&#x646;&#x648;&#x639;&#x200C;&#x647;&#x627;&#x6CC; &#x645;&#x645;&#x6A9;&#x646; &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x628;&#x627;&#x632;&#x6AF;&#x634;&#x62A;&#x6CC; &#x645;&#x62A;&#x62F; render &#x686;&#x6CC;&#x627; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>Below are the list of following types used and return from render method,</p>
+<p>&#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x644;&#x6CC;&#x633;&#x62A;&#x6CC; &#x627;&#x632; &#x627;&#x646;&#x648;&#x627;&#x639; type&#x200C; &#x647;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x634;&#x62F;&#x647; &#x648; &#x628;&#x631;&#x6AF;&#x634;&#x62A; &#x62F;&#x627;&#x62F;&#x647; &#x634;&#x62F;&#x647; &#x62A;&#x648;&#x633;&#x637; &#x645;&#x62A;&#x62F; &#x631;&#x646;&#x62F;&#x631; &#x646;&#x648;&#x634;&#x62A;&#x647; &#x634;&#x62F;&#x647;:</p>
 <ol>
-<li><p><strong>React elements:</strong> Elements that instruct React to render a DOM node. It includes html elements such as <code>&lt;div/&gt;</code> and user defined elements.</p></li>
+<li><p><strong>&#x639;&#x646;&#x627;&#x635;&#x631; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A;</strong> &#x639;&#x646;&#x627;&#x635;&#x631;&#x6CC; &#x6A9;&#x647; &#x628;&#x647; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x62F;&#x633;&#x62A;&#x648;&#x631; &#x645;&#x6CC;&#x62F;&#x646; &#x62A;&#x627; &#x6CC;&#x647; &#x6AF;&#x631;&#x647; DOM &#x631;&#x648; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x646;&#x647;. &#x627;&#x6CC;&#x646; &#x639;&#x646;&#x627;&#x635;&#x631; &#x634;&#x627;&#x645;&#x644; &#x639;&#x646;&#x627;&#x635;&#x631; html &#x645;&#x62B;&#x644; <code>&lt;div/&gt;</code> &#x648; &#x639;&#x646;&#x627;&#x635;&#x631; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x634;&#x62F;&#x647; &#x62A;&#x648;&#x633;&#x637; &#x6A9;&#x627;&#x631;&#x628;&#x631; &#x647;&#x633;&#x62A;&#x634;.</p></li>
 <li><p><strong>Arrays and fragments:</strong> Return multiple elements to render as Arrays and Fragments to wrap multiple elements</p></li>
-<li><p><strong>Portals:</strong> Render children into a different DOM subtree.</p></li>
-<li><p><strong>String and numbers:</strong> Render both Strings and Numbers as text nodes in the DOM</p></li>
-<li><p><strong>Booleans or null:</strong> Doesn&apos;t render anything but these types are used to conditionally render content.</p></li>
+<li><p><strong>Portals</strong> &#x641;&#x631;&#x632;&#x646;&#x62F; &#x647;&#x627; &#x631;&#x648; &#x62F;&#x627;&#x62E;&#x644; &#x6CC;&#x647; &#x632;&#x6CC;&#x631;&#x634;&#x627;&#x62E;&#x647; DOM&#x200C; &#x645;&#x62A;&#x641;&#x627;&#x648;&#x62A; &#x631;&#x646;&#x62F;&#x631; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;</p></li>
+<li><p><strong>&#x631;&#x634;&#x62A;&#x647; &#x647;&#x627; &#x648; &#x627;&#x639;&#x62F;&#x627;&#x62F;</strong> &#x631;&#x634;&#x62A;&#x647; &#x647;&#x627; &#x648; &#x627;&#x639;&#x62F;&#x627;&#x62F; &#x631;&#x648; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6AF;&#x631;&#x647; &#x645;&#x62A;&#x646;&#x6CC; &#x62A;&#x648;&#x6CC; DOM &#x631;&#x646;&#x62F;&#x631; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</p></li>
+<li><p><strong>&#x200C;Boolean &#x6CC;&#x627; null</strong> &#x686;&#x6CC;&#x632;&#x6CC; &#x631;&#x646;&#x62F;&#x631; &#x646;&#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x627;&#x645;&#x627; &#x627;&#x632; &#x627;&#x6CC;&#x646; type &#x628;&#x631;&#x627;&#x6CC; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x631;&#x62F;&#x646; &#x645;&#x62D;&#x62A;&#x648;&#x627;&#x6CC; &#x634;&#x631;&#x637;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647;.</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#f087bd450ee3a8b61b7d5b792fd7253f-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="9b2ec35584b9fe098efdca54ea0341d6" class="anchor" href="#9b2ec35584b9fe098efdca54ea0341d6">&#x647;&#x62F;&#x641; &#x627;&#x635;&#x644;&#x6CC; &#x627;&#x632; &#x645;&#x62A;&#x62F; constructor &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>The constructor is mainly used for two purposes,</p>
+<p>constructor &#x628;&#x647; &#x637;&#x648;&#x631; &#x639;&#x645;&#x62F;&#x647; &#x628;&#x631;&#x627;&#x6CC; &#x62F;&#x648; &#x645;&#x646;&#x638;&#x648;&#x631; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647;:</p>
 <ol>
-<li><p>To initialize local state by assigning object to this.state</p></li>
-<li>For binding event handler methods to the instance<br>
-For example, the below code covers both the above cases,<br>
+<li><p>&#x628;&#x631;&#x627;&#x6CC; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x62F;&#x647;&#x6CC; &#x627;&#x648;&#x644;&#x6CC;&#x647; local state &#x628;&#x627; &#x62A;&#x62E;&#x635;&#x6CC;&#x635; &#x627;&#x628;&#x62C;&#x6A9;&#x62A; &#x628;&#x647; this.state</p></li>
+<li>&#x628;&#x631;&#x627;&#x6CC; &#x627;&#x62A;&#x635;&#x627;&#x644; &#x645;&#x62A;&#x62F;&#x647;&#x627;&#x6CC; event handler &#x628;&#x647; &#x646;&#x645;&#x648;&#x646;&#x647;<br>
+&#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644; &#x6A9;&#x62F; &#x632;&#x6CC;&#x631; &#x647;&#x631; &#x62F;&#x648; &#x645;&#x648;&#x631;&#x62F; &#x628;&#x627;&#x644;&#x627; &#x631;&#x648; &#x67E;&#x648;&#x634;&#x634; &#x645;&#x6CC;&#x62F;&#x647;:<br>
 <span align="left" dir="ltr"></span></li>
 </ol>
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -5951,12 +5953,12 @@ For example, the below code covers both the above cases,<br>
 </li>
 <li>
 <h3><a id="b2d2d5f97918801f68cc98e069630fed" class="anchor" href="#b2d2d5f97918801f68cc98e069630fed">&#x622;&#x6CC;&#x627; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x645;&#x62A;&#x62F; &#x633;&#x627;&#x632;&#x646;&#x62F;&#x647; &#x62A;&#x648;&#x6CC; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x644;&#x632;&#x627;&#x645;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>No, it is not mandatory. i.e, If you don&#x2019;t initialize state and you don&#x2019;t bind methods, you don&#x2019;t need to implement a constructor for your React component.</p>
+<p>&#x646;&#x647;&#x60C; &#x627;&#x62C;&#x628;&#x627;&#x631;&#x6CC; &#x646;&#x6CC;&#x633;&#x62A;. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x627;&#x6AF;&#x647; &#x645;&#x627; state &#x631;&#x648; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x62F;&#x647;&#x6CC; &#x627;&#x648;&#x644;&#x6CC;&#x647; &#x646;&#x6A9;&#x646;&#x6CC;&#x645; &#x648; &#x645;&#x62A;&#x62F; &#x647;&#x627; &#x631;&#x648; &#x645;&#x62A;&#x635;&#x644; &#x646;&#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x628;&#x647; &#x67E;&#x6CC;&#x627;&#x62F;&#x647; &#x633;&#x627;&#x632;&#x6CC; constructor &#x628;&#x631;&#x627;&#x6CC; &#x6A9;&#x627;&#x645;&#x648;&#x646;&#x646;&#x62A;&#x645;&#x648;&#x646; &#x646;&#x62F;&#x627;&#x631;&#x6CC;&#x645;.</p>
 <p><strong><a class="backToTop" href="#b2d2d5f97918801f68cc98e069630fed-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="67959eedaff26a7d04c4881dbbe7b15a" class="anchor" href="#67959eedaff26a7d04c4881dbbe7b15a">Default prop&#x647;&#x627; &#x686;&#x6CC; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>The defaultProps are defined as a property on the component class to set the default props for the class. This is used for undefined props, but not for null props. For example, let us create color default prop for the button component,</p>
+<p>defaultProp  &#x647;&#x627; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x631;&#x648;&#x6CC; &#x6A9;&#x644;&#x627;&#x633; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x634;&#x62F;&#x647; &#x62A;&#x627; prop &#x647;&#x627;&#x6CC; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; &#x6A9;&#x644;&#x627;&#x633; &#x62A;&#x646;&#x638;&#x6CC;&#x645; &#x6A9;&#x646;&#x647;. &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F; &#x628;&#x631;&#x627;&#x6CC; prop &#x647;&#x627;&#x6CC; undefined &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647; &#x646;&#x647; &#x628;&#x631;&#x627;&#x6CC; prop &#x647;&#x627;&#x6CC; null. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644; &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; prop &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x631;&#x646;&#x6AF; &#x628;&#x631;&#x627;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; button &#x628;&#x633;&#x627;&#x632;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">MyButton</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token comment">// ...</span>
@@ -5966,18 +5968,18 @@ MyButton<span class="token punctuation">.</span>defaultProps <span class="token 
   color<span class="token punctuation">:</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </pre></span>
-<p>If props.color is not provided then it will set the default value to &apos;red&apos;. i.e, Whenever you try to access the color prop it uses default value</p>
+<p>&#x627;&#x6AF;&#x647; props.color &#x627;&#x631;&#x627;&#x626;&#x647; &#x646;&#x634;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x631;&#x648;&#x6CC; <code>red</code> &#x62A;&#x646;&#x637;&#x6CC;&#x645; &#x645;&#x6CC;&#x634;&#x647;. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644; &#x647;&#x631; &#x62C;&#x627; &#x628;&#x62E;&#x648;&#x627;&#x6CC;&#x645; &#x628;&#x647; prop color &#x62F;&#x633;&#x62A;&#x631;&#x633;&#x6CC; &#x67E;&#x6CC;&#x62F;&#x627; &#x6A9;&#x646;&#x6CC;&#x645; &#x627;&#x632; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyButton</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token punctuation">;</span> <span class="token comment">// props.color will be set to red</span>
  <span class="token punctuation">}</span>
 </pre></span>
-**Note:** If you provide null value then it remains null value.
+**&#x646;&#x6A9;&#x62A;&#x647;:** &#x627;&#x6AF;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; null &#x631;&#x648; &#x627;&#x631;&#x627;&#x626;&#x647; &#x628;&#x62F;&#x6CC;&#x645; &#x645;&#x642;&#x62F;&#x627;&#x631; null &#x628;&#x627;&#x642;&#x6CC; &#x645;&#x6CC; &#x645;&#x648;&#x646;&#x647;.
 <p><strong><a class="backToTop" href="#67959eedaff26a7d04c4881dbbe7b15a-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="53fa17032a2dfd895d347bcc2f80aae8" class="anchor" href="#53fa17032a2dfd895d347bcc2f80aae8">&#x686;&#x631;&#x627; &#x646;&#x628;&#x627;&#x6CC;&#x62F; &#x62A;&#x627;&#x628;&#x639; setState &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x645;&#x62A;&#x62F; componentWillUnmount &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x6A9;&#x631;&#x62F;&#x61F;</a></h3>
-<p>You should not call setState() in componentWillUnmount() because Once a component instance is unmounted, it will never be mounted again.</p>
+<p>setState() &#x631;&#x648; &#x646;&#x628;&#x627;&#x6CC;&#x62F; &#x62A;&#x648;&#x6CC; componentWillUnmount() &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645; &#x686;&#x648;&#x646; &#x648;&#x642;&#x62A;&#x6CC; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; unmount &#x645;&#x6CC;&#x634;&#x647;&#x60C; &#x62F;&#x6CC;&#x6AF;&#x647; &#x647;&#x6CC;&#x686;&#x648;&#x642;&#x62A; &#x62F;&#x648;&#x628;&#x627;&#x631;&#x647; mount &#x646;&#x645;&#x6CC;&#x634;&#x647;.</p>
 <p><strong><a class="backToTop" href="#53fa17032a2dfd895d347bcc2f80aae8-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
@@ -6013,7 +6015,7 @@ Let us take error boundary use case with the above lifecycle method for demonist
 </li>
 <li>
 <h3><a id="c398f4ccd8ee3e1e79d64de724422489" class="anchor" href="#c398f4ccd8ee3e1e79d64de724422489">&#x6A9;&#x62F;&#x648;&#x645; &#x645;&#x62A;&#x62F;&#x647;&#x627; &#x648; &#x628;&#x647; &#x686;&#x647; &#x62A;&#x631;&#x62A;&#x6CC;&#x628;&#x6CC; &#x62F;&#x631; &#x637;&#x648;&#x644; &#x631;&#x6CC;&#x200C;&#x631;&#x646;&#x62F;&#x631; &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x634;&#x646;&#x61F;</a></h3>
-<p>An update can be caused by changes to props or state. The below methods are called in the following order when a component is being re-rendered.</p>
+<p>&#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x62F;&#x631; prop &#x647;&#x627; &#x6CC;&#x627; state &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x628;&#x627;&#x639;&#x62B; &#x628;&#x647; &#x631;&#x648;&#x632;&#x631;&#x633;&#x627;&#x646;&#x6CC; &#x628;&#x634;&#x647;. &#x645;&#x62A;&#x62F; &#x647;&#x627;&#x6CC; &#x632;&#x6CC;&#x631; &#x628;&#x647; &#x62A;&#x631;&#x62A;&#x6CC;&#x628; &#x632;&#x6CC;&#x631; &#x648;&#x642;&#x62A;&#x6CC; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x645;&#x62C;&#x62F;&#x62F;&#x627; &#x631;&#x646;&#x62F;&#x631; &#x645;&#x6CC;&#x634;&#x647; &#x635;&#x62F;&#x627; &#x632;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647;.</p>
 <ol>
 <li><p>static getDerivedStateFromProps()</p></li>
 <li><p>shouldComponentUpdate()</p></li>
@@ -6025,7 +6027,7 @@ Let us take error boundary use case with the above lifecycle method for demonist
 </li>
 <li>
 <h3><a id="35329d395cf8b7b29c488fab70574189" class="anchor" href="#35329d395cf8b7b29c488fab70574189">&#x6A9;&#x62F;&#x648;&#x645; &#x645;&#x62A;&#x62F;&#x200C;&#x647;&#x627; &#x645;&#x648;&#x642;&#x639; error handling &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x634;&#x646;&#x61F;</a></h3>
-<p>Below methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.</p>
+<p>&#x648;&#x642;&#x62A;&#x6CC; &#x6CC;&#x647; &#x62E;&#x637;&#x627;&#x6CC;&#x6CC; &#x645;&#x648;&#x642;&#x639; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x631;&#x62F;&#x646; &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x647;&#x60C; &#x62A;&#x648;&#x6CC; &#x645;&#x62A;&#x62F; lifecycle&#x60C; &#x6CC;&#x627; &#x62A;&#x648;&#x6CC; constructor &#x647;&#x631; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x641;&#x631;&#x632;&#x646;&#x62F;&#x60C; &#x645;&#x62A;&#x62F;&#x647;&#x627;&#x6CC; &#x632;&#x6CC;&#x631; &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x634;&#x647;.</p>
 <ol>
 <li><p>static getDerivedStateFromError()</p></li>
 <li><p>componentDidCatch()</p></li>
@@ -6034,8 +6036,7 @@ Let us take error boundary use case with the above lifecycle method for demonist
 </li>
 <li>
 <h3><a id="57cdfb12d073986446dc2eeed4d121f9" class="anchor" href="#57cdfb12d073986446dc2eeed4d121f9">&#x6A9;&#x627;&#x631;&#x6A9;&#x631;&#x62F; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; displayName &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>The displayName string is used in debugging messages. Usually, you don&#x2019;t need to set it explicitly because it&#x2019;s inferred from the name of the function or class that defines the component. You might want to set it explicitly if you want to display a different name for debugging purposes or when you create a higher-order component.<br>
-For example, To ease debugging, choose a display name that communicates that it&#x2019;s the result of a withSubscription HOC.</p>
+<p>&#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x628;&#x631;&#x627;&#x6CC; &#x633;&#x647;&#x648;&#x644;&#x62A; &#x62A;&#x648;&#x6CC; &#x627;&#x634;&#x6A9;&#x627;&#x644; &#x632;&#x62F;&#x627;&#x6CC;&#x6CC; &#x6CC;&#x647; displayName &#x627;&#x646;&#x62A;&#x62E;&#x627;&#x628; &#x645;&#x6CC;&#x6A9;&#x646;&#x6CC;&#x645; &#x6A9;&#x647; &#x646;&#x634;&#x648;&#x646; &#x645;&#x6CC;&#x62F;&#x647; &#x627;&#x6CC;&#x646; &#x646;&#x62A;&#x6CC;&#x62C;&#x647; &#x6CC;&#x647; withSubscription HOC &#x647;&#x633;&#x62A;&#x634;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">function</span> <span class="token function">withSubscription</span><span class="token punctuation">(</span><span class="token parameter">WrappedComponent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">class</span> <span class="token class-name">WithSubscription</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
@@ -6056,13 +6057,13 @@ For example, To ease debugging, choose a display name that communicates that it&
 </li>
 <li>
 <h3><a id="455928ebf98f4d3398dfb20d22d9effe" class="anchor" href="#455928ebf98f4d3398dfb20d22d9effe">&#x633;&#x627;&#x67E;&#x648;&#x631;&#x62A; &#x645;&#x631;&#x648;&#x631;&#x6AF;&#x631;&#x647;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A;&#x6CC; &#x686;&#x637;&#x648;&#x631;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>React supports all popular browsers, including Internet Explorer 9 and above, although some polyfills are required for older browsers such as IE 9 and IE 10. If you use <strong>es5-shim and es5-sham</strong> polyfill then it even support old browsers that doesn&apos;t support ES5 methods.</p>
+<p>&#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x647;&#x645;&#x647; &#x645;&#x631;&#x648;&#x631;&#x6AF;&#x631; &#x647;&#x627;&#x6CC; &#x645;&#x639;&#x631;&#x648;&#x641; &#x627;&#x632; &#x62C;&#x645;&#x644;&#x647; &#x627;&#x6CC;&#x646;&#x62A;&#x631;&#x646;&#x62A; &#x627;&#x6A9;&#x633;&#x67E;&#x644;&#x648;&#x631;&#x631; &#x6F9; &#x628;&#x647; &#x628;&#x627;&#x644;&#x627; &#x631;&#x648; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC; &#x6A9;&#x646;&#x647;&#x60C; &#x627;&#x6AF;&#x631;&#x686;&#x647; &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x631;&#x648;&#x631;&#x6AF;&#x631;&#x647;&#x627;&#x6CC; &#x642;&#x62F;&#x6CC;&#x645;&#x6CC; &#x62A;&#x631; &#x645;&#x62B;&#x644; IE 9 &#x648; IE 10 &#x6CC;&#x647; &#x633;&#x631;&#x6CC; polyfill &#x647;&#x627; &#x646;&#x6CC;&#x627;&#x632;&#x647;. &#x627;&#x6AF;&#x647; &#x627;&#x632; polyfill <strong>es5-shim &#x648; es5-sham</strong> &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645; &#x62F;&#x631; &#x627;&#x648;&#x646; &#x635;&#x648;&#x631;&#x62A; &#x62D;&#x62A;&#x6CC; &#x645;&#x631;&#x648;&#x631;&#x6AF;&#x631; &#x647;&#x627;&#x6CC; &#x642;&#x62F;&#x6CC;&#x645;&#x6CC; &#x631;&#x648; &#x647;&#x645; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x6A9;&#x647; &#x645;&#x62A;&#x62F; &#x647;&#x627;&#x6CC; ES5&#x200C; &#x631;&#x648; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x646;&#x645;&#x6CC;&#x6A9;&#x646;&#x647;</p>
 <p><strong><a class="backToTop" href="#455928ebf98f4d3398dfb20d22d9effe-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="759f9a01df4f6da4020eb0ec9ef482c4" class="anchor" href="#759f9a01df4f6da4020eb0ec9ef482c4">&#x647;&#x62F;&#x641; &#x627;&#x632; &#x645;&#x62A;&#x62F; unmountComponentAtNode &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>This method is available from react-dom package and it removes a mounted React component from the DOM and clean up its event handlers and state. If no component was mounted in the container, calling this function does nothing. Returns true if a component was unmounted and false if there was no component to unmount.<br>
-The method signature would be as follows,</p>
+<p>&#x627;&#x6CC;&#x646; &#x645;&#x62A;&#x62F; &#x627;&#x632; &#x628;&#x633;&#x62A;&#x647; react-dom &#x62F;&#x631; &#x62F;&#x633;&#x62A;&#x631;&#x633; &#x647;&#x633;&#x62A;&#x634; &#x648; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; mount &#x634;&#x62F;&#x647; &#x631;&#x648; &#x627;&#x632; DOM &#x62D;&#x630;&#x641; &#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x648; event handler &#x647;&#x627; &#x648; state &#x647;&#x627;&#x6CC; &#x627;&#x648;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x631;&#x648; &#x641;&#x6CC;&#x644;&#x62A;&#x631; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x627;&#x6AF;&#x647; &#x647;&#x6CC;&#x686; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; mount &#x634;&#x62F;&#x647; &#x627;&#x6CC; &#x62A;&#x648;&#x6CC; container &#x648;&#x62C;&#x648;&#x62F; &#x646;&#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x647;&#x60C; &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; &#x627;&#x6CC;&#x646; &#x62A;&#x627;&#x628;&#x639; &#x647;&#x6CC;&#x686; &#x6A9;&#x627;&#x631;&#x6CC; &#x631;&#x648; &#x627;&#x646;&#x62C;&#x627;&#x645; &#x646;&#x645;&#x6CC;&#x62F;&#x647;. &#x627;&#x6AF;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; unmount &#x634;&#x62F;&#x647; &#x627;&#x6CC; &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x634;&#x62A; true &#x631;&#x648; &#x628;&#x631; &#x645;&#x6CC; &#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x647; &#x648; &#x627;&#x6AF;&#x647; &#x647;&#x6CC;&#x686; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x6CC; &#x628;&#x631;&#x627;&#x6CC; unmount &#x634;&#x62F;&#x646; &#x648;&#x62C;&#x648;&#x62F; &#x646;&#x62F;&#x627;&#x634;&#x62A; false &#x631;&#x648; &#x628;&#x631;&#x645;&#x6CC; &#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x647;.<br>
+&#x627;&#x645;&#x636;&#x627;&#x6CC; &#x645;&#x62A;&#x62F; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x632;&#x6CC;&#x631; &#x647;&#x633;&#x62A;&#x634;&#x60C;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript">ReactDOM<span class="token punctuation">.</span><span class="token function">unmountComponentAtNode</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></span>
@@ -6070,9 +6071,9 @@ The method signature would be as follows,</p>
 </li>
 <li>
 <h3><a id="af1d6dc6166ab94b03455e38ff0136dc" class="anchor" href="#af1d6dc6166ab94b03455e38ff0136dc">code-splitting &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Code-Splitting is a feature supported by bundlers like Webpack and Browserify which can create multiple bundles that can be dynamically loaded at runtime. The react project supports code splitting via dynamic import() feature.<br>
-For example, in the below code snippets, it will make moduleA.js and all its unique dependencies as a separate chunk that only loads after the user clicks the &apos;Load&apos; button.<br>
-<strong>moduleA.js</strong></p>
+<p>code-splitting &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x634;&#x62F;&#x647; &#x62A;&#x648;&#x633;&#x637; &#x628;&#x627;&#x646;&#x62F;&#x644;&#x631;&#x200C;&#x647;&#x627;&#x6CC;&#x6CC; &#x645;&#x62B;&#x644; webpack &#x648; browserify &#x647;&#x633;&#x62A;&#x634; &#x6A9;&#x647; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x628;&#x633;&#x62A;&#x647;&#x200C;&#x647;&#x627;&#x6CC; &#x645;&#x62E;&#x62A;&#x644;&#x641;&#x6CC; &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x6A9;&#x646;&#x647; &#x6A9;&#x647; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x67E;&#x648;&#x6CC;&#x627; &#x62F;&#x631; &#x632;&#x645;&#x627;&#x646; &#x627;&#x62C;&#x631;&#x627;&#x628;&#x627;&#x631;&#x6AF;&#x6CC;&#x631;&#x6CC; &#x628;&#x634;&#x647;.&#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; code-splitting&#x200C; &#x631;&#x648; &#x627;&#x632; &#x637;&#x631;&#x6CC;&#x642; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; dynamic import() &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.<br>
+&#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x62F;&#x631; &#x642;&#x637;&#x639;&#x647; &#x6A9;&#x62F; &#x632;&#x6CC;&#x631;&#x60C; moduleA.js &#x648; &#x62A;&#x645;&#x627;&#x645; &#x648;&#x627;&#x628;&#x633;&#x62A;&#x6AF;&#x6CC;&#x200C;&#x647;&#x627;&#x6CC; &#x645;&#x646;&#x62D;&#x635;&#x631; &#x628;&#x647; &#x641;&#x631;&#x62F; &#x627;&#x648;&#x646; &#x631;&#x648; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x642;&#x637;&#x639;&#x647; &#x62C;&#x62F;&#x627;&#x6AF;&#x627;&#x646;&#x647; &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x6A9;&#x647; &#x641;&#x642;&#x637; &#x628;&#x639;&#x62F; &#x627;&#x632; &#x6A9;&#x644;&#x6CC;&#x6A9; &#x6A9;&#x627;&#x631;&#x628;&#x631; &#x631;&#x648;&#x6CC; &#x62F;&#x6A9;&#x645;&#x647; &apos;Load&apos; &#x628;&#x627;&#x631;&#x6AF;&#x6CC;&#x631;&#x6CC; &#x645;&#x6CC;&#x634;&#x647;.</p>
+<p><strong>moduleA.js</strong></p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">const</span> moduleA <span class="token operator">=</span> <span class="token string">&quot;Hello&quot;</span><span class="token punctuation">;</span>
 
@@ -6108,19 +6109,19 @@ For example, in the below code snippets, it will make moduleA.js and all its uni
 </li>
 <li>
 <h3><a id="c3166544328cc0c8ae6418485d0f80cb" class="anchor" href="#c3166544328cc0c8ae6418485d0f80cb">&#x645;&#x632;&#x627;&#x6CC;&#x627;&#x6CC; &#x62D;&#x627;&#x644;&#x62A; strict &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>The <strictmode> will be helpful in the below cases</strictmode></p>
+<p><strictmode> &#x62A;&#x648;&#x6CC; &#x645;&#x648;&#x627;&#x631;&#x62F; &#x632;&#x6CC;&#x631; &#x628;&#x647; &#x6A9;&#x627;&#x631; &#x645;&#x6CC;&#x627;&#x62F;</strictmode></p>
 <ol>
-<li><p>Identifying components with <strong>unsafe lifecycle methods</strong>.</p></li>
-<li><p>Warning about <strong>legacy string ref</strong> API usage.</p></li>
-<li><p>Detecting unexpected <strong>side effects</strong>.</p></li>
-<li><p>Detecting <strong>legacy context</strong> API.</p></li>
-<li><p>Warning about deprecated findDOMNode usage</p></li>
+<li><p>&#x634;&#x646;&#x627;&#x633;&#x627;&#x6CC;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627; &#x628;&#x627; &#x645;&#x62A;&#x62F; <strong>unsafe lifecycle</strong>.</p></li>
+<li><p>&#x647;&#x634;&#x62F;&#x627;&#x631; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; API &#x645;&#x631;&#x628;&#x648;&#x637; &#x628;&#x647; <strong>legacy string ref</strong>.</p></li>
+<li><p>&#x62A;&#x634;&#x62E;&#x6CC;&#x635; <strong>side effect</strong>  &#x647;&#x627;&#x200C;&#x6CC; &#x63A;&#x6CC;&#x631;&#x645;&#x646;&#x62A;&#x638;&#x631;&#x647;.</p></li>
+<li><p>&#x634;&#x646;&#x627;&#x633;&#x627;&#x6CC;&#x6CC; API <strong>legacy context</strong>.</p></li>
+<li><p>&#x647;&#x634;&#x62F;&#x627;&#x631; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x646;&#x633;&#x648;&#x62E; findDOMNode.</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#c3166544328cc0c8ae6418485d0f80cb-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="ca2152ba0b7cb5017d6e643c42cfe8ae" class="anchor" href="#ca2152ba0b7cb5017d6e643c42cfe8ae">Fragment&#x647;&#x627;&#x6CC; &#x62F;&#x627;&#x631;&#x627;&#x6CC; key &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>The Fragments declared with the explicit &lt;React.Fragment&gt; syntax may have keys. The general usecase is mapping a collection to an array of fragments as below,</p>
+<p>Fragment &#x647;&#x627;&#x200C;&#x6CC; &#x627;&#x639;&#x644;&#x627;&#x645; &#x634;&#x62F;&#x647; &#x628;&#x627; &#x633;&#x6CC;&#x646;&#x62A;&#x6A9;&#x633; &lt;React.Fragment&gt; &#x645;&#x645;&#x6A9;&#x646;&#x647; key &#x647;&#x627;&#x6CC;&#x6CC; &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x646;. &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x639;&#x645;&#x648;&#x645;&#x6CC; &#x645;&#x67E; &#x6A9;&#x631;&#x62F;&#x646; &#x6CC;&#x647; &#x645;&#x62C;&#x645;&#x648;&#x639;&#x647; &#x628;&#x647; &#x622;&#x631;&#x627;&#x6CC;&#x647;&#x200C;&#x627;&#x6CC; &#x627;&#x632; fragment &#x647;&#x627; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x632;&#x6CC;&#x631; &#x647;&#x633;&#x62A;&#x634;&#x60C;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">function</span> <span class="token function">Glossary</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -6136,27 +6137,27 @@ For example, in the below code snippets, it will make moduleA.js and all its uni
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre></span>
-**Note:** key is the only attribute that can be passed to Fragment. In the future, there might be a support for additional attributes, such as event handlers.
+**&#x6CC;&#x627;&#x62F;&#x62F;&#x627;&#x634;&#x62A;** key &#x62A;&#x646;&#x647;&#x627; &#x627;&#x62A;&#x631;&#x6CC;&#x628;&#x6CC;&#x648;&#x62A;&#x6CC; &#x647;&#x633;&#x62A;&#x634; &#x6A9;&#x647; &#x645;&#x6CC;&#x634;&#x647; &#x628;&#x647; Fragment &#x627;&#x646;&#x62A;&#x642;&#x627;&#x644; &#x62F;&#x627;&#x62F;. &#x62F;&#x631; &#x622;&#x6CC;&#x646;&#x62F;&#x647;&#x60C; &#x645;&#x645;&#x6A9;&#x646;&#x647; &#x627;&#x632; &#x627;&#x62A;&#x631;&#x6CC;&#x628;&#x6CC;&#x648;&#x62A; &#x647;&#x627;&#x6CC; &#x627;&#x636;&#x627;&#x641;&#x647; &#x627;&#x6CC; &#x647;&#x645; &#x645;&#x62B;&#x644; event handler&#x200C;&#x647;&#x627; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x628;&#x634;&#x647;.
 <p><strong><a class="backToTop" href="#ca2152ba0b7cb5017d6e643c42cfe8ae-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="386ae1bfc14f8c833b6bcf7fbf23144c" class="anchor" href="#386ae1bfc14f8c833b6bcf7fbf23144c">&#x622;&#x6CC;&#x627; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x632; &#x647;&#x645;&#x647;&#x200C;&#x6CC; attribute&#x647;&#x627;&#x6CC; HTML &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x200C;&#x6A9;&#x646;&#x647;&#x61F;</a></h3>
-<p>As of React 16, both standard or custom DOM attributes are fully supported. Since React components often take both custom and DOM-related props, React uses the camelCase convention just like the DOM APIs. Let us take few props with respect to standard HTML attributes,</p>
+<p>&#x627;&#x632; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; 16&#x60C; &#x647;&#x631; &#x62F;&#x648; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x627;&#x633;&#x62A;&#x627;&#x646;&#x62F;&#x627;&#x631;&#x62F; &#x6CC;&#x627; &#x633;&#x641;&#x627;&#x631;&#x634;&#x6CC; DOM &#x6A9;&#x627;&#x645;&#x644;&#x627; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x634;&#x646;.&#x627;&#x632; &#x627;&#x648;&#x646;&#x62C;&#x627;&#x6CC;&#x6CC; &#x6A9;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x63A;&#x644;&#x628; &#x647;&#x631; &#x62F;&#x648; &#x646;&#x648;&#x639; &#x67E;&#x631;&#x627;&#x67E; &#x647;&#x627;&#x6CC; DOM-related &#x648; custom &#x631;&#x648; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x646;&#x60C; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x62F;&#x642;&#x6CC;&#x642;&#x627; &#x645;&#x627;&#x646;&#x646;&#x62F; API &#x647;&#x627;&#x6CC; DOM &#x627;&#x632; &#x642;&#x631;&#x627;&#x631;&#x62F;&#x627;&#x62F; camelCase &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC;&#x200C;&#x647;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x627;&#x646;&#x62F;&#x627;&#x631;&#x62F; HTML &#x686;&#x646;&#x62F; &#x645;&#x648;&#x631;&#x62F; &#x631;&#x648; &#x627;&#x646;&#x62A;&#x62E;&#x627;&#x628; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">tabIndex</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>-1<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>      <span class="token comment">// Just like node.tabIndex DOM API</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Button<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span> <span class="token comment">// Just like node.className DOM API</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">readOnly</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token boolean">true</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>  <span class="token comment">// Just like node.readOnly DOM API</span>
 </pre></span>
-These props work similarly to the corresponding HTML attributes, with the exception of the special cases. It also support all SVG attributes.
+&#x627;&#x6CC;&#x646; prop &#x647;&#x627; &#x628;&#x647; &#x627;&#x633;&#x62A;&#x62B;&#x646;&#x627;&#x6CC; &#x645;&#x648;&#x627;&#x631;&#x62F; &#x62E;&#x627;&#x635;&#x60C; &#x645;&#x634;&#x627;&#x628;&#x647; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x647;&#x627;&#x6CC; &#x645;&#x62A;&#x646;&#x627;&#x638;&#x631; HTML &#x6A9;&#x627;&#x631; &#x645;&#x6CC;&#x6A9;&#x646;&#x646;. &#x647;&#x645;&#x686;&#x646;&#x6CC;&#x646; &#x627;&#x632; &#x62A;&#x645;&#x627;&#x645; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x647;&#x627;&#x6CC; svg &#x648;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC; &#x6A9;&#x646;&#x647;.
 <p><strong><a class="backToTop" href="#386ae1bfc14f8c833b6bcf7fbf23144c-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="7abb6fbac4b0f8a5b6d9a5aa47c879e4" class="anchor" href="#7abb6fbac4b0f8a5b6d9a5aa47c879e4">&#x645;&#x62D;&#x62F;&#x648;&#x62F;&#x6CC;&#x62A;&#x200C;&#x647;&#x627;&#x6CC; HOC&#x647;&#x627; &#x686;&#x6CC; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>Higher-order components come with a few caveats apart from its benefits. Below are the few listed in an order</p>
+<p>&#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x628;&#x627; &#x627;&#x648;&#x644;&#x648;&#x6CC;&#x62A; &#x628;&#x627;&#x644;&#x627; &#x62C;&#x62F;&#x627; &#x627;&#x632; &#x645;&#x632;&#x627;&#x6CC;&#x627;&#x6CC;&#x6CC; &#x6A9;&#x647; &#x62F;&#x627;&#x631;&#x647;&#x60C; &#x686;&#x646;&#x62F; &#x62A;&#x627; &#x646;&#x6A9;&#x62A;&#x647; &#x645;&#x647;&#x645; &#x647;&#x645; &#x62F;&#x627;&#x631;&#x647;. &#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x686;&#x646;&#x62F; &#x645;&#x648;&#x631;&#x62F; &#x628;&#x647; &#x62A;&#x631;&#x62A;&#x6CC;&#x628; &#x6AF;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x647;</p>
 <ol>
 <li>
-<p><strong>Don&#x2019;t Use HOCs Inside the render Method:</strong><br>
-It is not recommended to apply a HOC to a component within the render method of a component.</p>
+<p><strong>&#x627;&#x632; HOC &#x647;&#x627; &#x62A;&#x648;&#x6CC; &#x645;&#x62A;&#x62F; render &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x646;&#x6A9;&#x646;&#x6CC;&#x645;:</strong><br>
+&#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; HOC &#x62A;&#x648;&#x6CC; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x628;&#x627; &#x645;&#x62A;&#x62F; &#x631;&#x646;&#x62F;&#x631; &#x627;&#x648;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x62A;&#x648;&#x635;&#x6CC;&#x647; &#x646;&#x645;&#x6CC;&#x634;&#x647;.</p>
 <span align="left" dir="ltr">
 </span></li>
 </ol>
@@ -6168,10 +6169,14 @@ It is not recommended to apply a HOC to a component within the render method of 
   <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">EnhancedComponent</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre>
-   The above code impact performance by remounting a component that causes the state of that component and all of its children to be lost. Instead, apply HOCs outside the component definition so that the resulting component is created only once
-2. **Static Methods Must Be Copied Over:**
-   When you apply a HOC to a component the new component does not have any of the static methods of the original component
-   <span align="left" dir="ltr">
+   &#x6A9;&#x62F; &#x628;&#x627;&#x644;&#x627; &#x628;&#x627; remount &#x6A9;&#x631;&#x62F;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x6CC; &#x6A9;&#x647; &#x628;&#x627;&#x639;&#x62B; &#x627;&#x632; &#x628;&#x6CC;&#x646; &#x631;&#x641;&#x62A;&#x646; state &#x627;&#x648;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x648; &#x647;&#x645;&#x647; &#x641;&#x631;&#x632;&#x646;&#x62F;&#x627;&#x646;&#x634; &#x634;&#x62F;&#x647;&#x60C; &#x631;&#x648;&#x6CC; &#x639;&#x645;&#x644;&#x6A9;&#x631;&#x62F; &#x62A;&#x627;&#x62B;&#x6CC;&#x631; &#x645;&#x6CC;&#x630;&#x627;&#x631;&#x647;. &#x62F;&#x631; &#x639;&#x648;&#x636;&#x60C; HOC &#x647;&#x627; &#x631;&#x648; &#x628;&#x6CC;&#x631;&#x648;&#x646; &#x627;&#x632; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x639;&#x645;&#x627;&#x644; &#x645;&#x6CC;&#x6A9;&#x646;&#x6CC;&#x645; &#x62A;&#x627; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x628;&#x62F;&#x633;&#x62A; &#x627;&#x648;&#x645;&#x62F;&#x647; &#x641;&#x642;&#x637; &#x6CC;&#x647; &#x628;&#x627;&#x631; &#x633;&#x627;&#x62E;&#x62A;&#x647; &#x628;&#x634;&#x647;.
+<ol start="2">
+<li>
+<p><strong>&#x645;&#x62A;&#x62F;&#x200C;&#x647;&#x627;&#x6CC; static &#x628;&#x627;&#x6CC;&#x62F; &#x6A9;&#x67E;&#x6CC; &#x628;&#x634;&#x646;</strong><br>
+&#x648;&#x642;&#x62A;&#x6CC; HOC &#x631;&#x648; &#x631;&#x648;&#x6CC; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x639;&#x645;&#x627;&#x644; &#x645;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x62C;&#x62F;&#x6CC;&#x62F; &#x647;&#x6CC;&#x686; &#x6A9;&#x62F;&#x648;&#x645; &#x627;&#x632; &#x645;&#x62A;&#x62F;&#x200C;&#x647;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x627;&#x62A;&#x6CC;&#x6A9; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x635;&#x644;&#x6CC; &#x631;&#x648; &#x646;&#x62F;&#x627;&#x631;&#x647;</p>
+<span align="left" dir="ltr">
+</span></li>
+</ol>
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// Define a static method</span>
 WrappedComponent<span class="token punctuation">.</span><span class="token function-variable function">staticMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">/*...*/</span>
@@ -6181,37 +6186,45 @@ WrappedComponent<span class="token punctuation">.</span><span class="token funct
 
 <span class="token comment">// The enhanced component has no static method</span>
 <span class="token keyword">typeof</span> EnhancedComponent<span class="token punctuation">.</span>staticMethod <span class="token operator">===</span> <span class="token string">&quot;undefined&quot;</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-</pre></span>
-   You can overcome this by copying the methods onto the container before returning it
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">function</span> <span class="token function">enhance</span><span class="token punctuation">(</span><span class="token parameter">WrappedComponent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">class</span> <span class="token class-name">Enhance</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-    <span class="token comment">/*...*/</span>
-  <span class="token punctuation">}</span>
-  <span class="token comment">// Must know exactly which method(s) to copy :(</span>
-  Enhance<span class="token punctuation">.</span>staticMethod <span class="token operator">=</span> WrappedComponent<span class="token punctuation">.</span>staticMethod<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> Enhance<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre></span>
-3. **Refs Aren&#x2019;t Passed Through:**
-   For HOCs you need to pass through all props to the wrapped component but this does not work for refs. This is because ref is not really a prop similar to key. In this case you need to use the React.forwardRef API
-<p><strong><a class="backToTop" href="#7abb6fbac4b0f8a5b6d9a5aa47c879e4-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
+</pre>
 </li>
+</ol>
+<p>&#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x628;&#x627; &#x6A9;&#x67E;&#x6CC; &#x6A9;&#x631;&#x62F;&#x646; &#x645;&#x62A;&#x62F;&#x647;&#x627; &#x62A;&#x648;&#x6CC; container &#x642;&#x628;&#x644; &#x627;&#x632; return &#x6A9;&#x631;&#x62F;&#x646;&#x634; &#x631;&#x648; &#x627;&#x6CC;&#x646; &#x645;&#x634;&#x6A9;&#x644; &#x63A;&#x644;&#x628;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.<br>
+<span align="left" dir="ltr"></span></p>
+<pre class="language-text"> ```javascript
+ function enhance(WrappedComponent) {
+   class Enhance extends React.Component {
+     /*...*/
+   }
+   // Must know exactly which method(s) to copy :(
+   Enhance.staticMethod = WrappedComponent.staticMethod;
+   return Enhance;
+ }
+ ```
+
+ &lt;/span&gt;
+
+ 3. **Ref &#x647;&#x627; &#x631;&#x648; &#x646;&#x645;&#x6CC;&#x634;&#x647; &#x627;&#x646;&#x62A;&#x642;&#x627;&#x644; &#x62F;&#x627;&#x62F;:**
+    &#x628;&#x631;&#x627;&#x6CC; HOC &#x647;&#x627; &#x646;&#x6CC;&#x627;&#x632; &#x62F;&#x627;&#x631;&#x6CC;&#x645; &#x6A9;&#x647; &#x647;&#x645;&#x647; prop &#x647;&#x627; &#x631;&#x648; &#x628;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x67E;&#x627;&#x633; &#x628;&#x62F;&#x6CC;&#x645; &#x627;&#x645;&#x627; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; ref &#x647;&#x627; &#x627;&#x6CC;&#x646; &#x6A9;&#x627;&#x631; &#x62C;&#x648;&#x627;&#x628; &#x646;&#x645;&#x6CC;&#x62F;&#x647;. &#x62F;&#x644;&#x6CC;&#x644;&#x634; &#x647;&#x645; &#x627;&#x6CC;&#x646;&#x647; &#x6A9;&#x647; ref &#x62F;&#x631; &#x648;&#x627;&#x642;&#x639; &#x6CC;&#x647; prop &#x634;&#x628;&#x6CC;&#x647; key &#x646;&#x6CC;&#x633;&#x62A;. &#x62A;&#x648; &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F; &#x628;&#x627;&#x6CC;&#x62F; &#x627;&#x632; React.forwardRef API &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.
+
+ **[&#x641;&#x647;&#x631;&#x633;&#x62A;](#&#x641;&#x647;&#x631;&#x633;&#x62A;)**
+</pre>
+<ol start="255">
 <li>
 <h3><a id="e88490c486fb785c0cb6f336e9f1a23d" class="anchor" href="#e88490c486fb785c0cb6f336e9f1a23d">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x645;&#x6CC;&#x634;&#x647; forwardRefs &#x631;&#x648; &#x62A;&#x648;&#x6CC; DevTools &#x62F;&#x6CC;&#x628;&#x627;&#x6AF; &#x6A9;&#x631;&#x62F;&#x61F;</a></h3>
-<p><strong>React.forwardRef</strong> accepts a render function as parameter and DevTools uses this function to determine what to display for the ref forwarding component. For example, If you don&apos;t name the render function or not using displayName property then it will appear as &#x201D;ForwardRef&#x201D; in the DevTools,</p>
+<p><strong>&#x64B;React.forwardRef</strong> &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; &#x631;&#x646;&#x62F;&#x631; &#x631;&#x648; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x67E;&#x627;&#x631;&#x627;&#x645;&#x62A;&#x631; &#x645;&#x6CC;&#x6AF;&#x6CC;&#x631;&#x647; &#x648; DevTools &#x627;&#x632; &#x627;&#x6CC;&#x646; &#x62A;&#x627;&#x628;&#x639; &#x628;&#x631;&#x627;&#x6CC; &#x62A;&#x639;&#x6CC;&#x6CC;&#x646; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x686;&#x647; &#x686;&#x6CC;&#x632;&#x6CC; &#x628;&#x627;&#x6CC;&#x62F; &#x628;&#x631;&#x627;&#x6CC; ref forwarding component &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x62F;&#x627;&#x62F;&#x647; &#x628;&#x634;&#x647;&#x60C; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x627;&#x6AF;&#x647; &#x645;&#x627; &#x647;&#x6CC;&#x686; &#x627;&#x633;&#x645;&#x6CC; &#x628;&#x631;&#x627;&#x6CC; &#x62A;&#x627;&#x628;&#x639; &#x631;&#x646;&#x62F;&#x631; &#x646;&#x630;&#x627;&#x631;&#x6CC;&#x645; &#x6CC;&#x627; &#x627;&#x632; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; diplayName &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x646;&#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x62A;&#x648;&#x6CC; DevTools&#x200C; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646;  &#x201D;ForwardRef&#x201D; &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x62F;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">const</span> WrappedComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">forwardRef</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> ref</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LogProps</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">props</span><span class="token punctuation">}</span></span> <span class="token attr-name">forwardedRef</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></span>
-But If you name the render function then it will appear as **&#x201D;ForwardRef(myFunction)&#x201D;**
+&#x627;&#x645;&#x627; &#x627;&#x6AF;&#x647; &#x628;&#x631;&#x627;&#x6CC; &#x62A;&#x627;&#x628;&#x639; &#x631;&#x646;&#x62F;&#x631; &#x627;&#x633;&#x645; &#x6AF;&#x630;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x6CC;&#x645; &#x627;&#x648;&#x646;&#x648;&#x642;&#x62A; &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; **&#x201D;ForwardRef(myFunction)&#x201D;** &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x62F;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647; 
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">const</span> WrappedComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">forwardRef</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> ref</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LogProps</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">props</span><span class="token punctuation">}</span></span> <span class="token attr-name">forwardedRef</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></span>
-As an alternative, You can also set displayName property for forwardRef function,
+&#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x6AF;&#x632;&#x6CC;&#x646;&#x647; &#x62F;&#x6CC;&#x6AF;&#x647;&#x60C; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x632; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; displayName &#x628;&#x631;&#x627;&#x6CC; &#x62A;&#x627;&#x628;&#x639; forwardRef &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">function</span> <span class="token function">logProps</span><span class="token punctuation">(</span><span class="token parameter">Component</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">class</span> <span class="token class-name">LogProps</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
@@ -6230,43 +6243,50 @@ As an alternative, You can also set displayName property for forwardRef function
   <span class="token keyword">return</span> React<span class="token punctuation">.</span><span class="token function">forwardRef</span><span class="token punctuation">(</span>forwardRef<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre></span>
-<p><strong><a class="backToTop" href="#e88490c486fb785c0cb6f336e9f1a23d-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
+<p><strong><a class="backToTop" href="#7abb6fbac4b0f8a5b6d9a5aa47c879e4-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="75c5a3b2e88f9fd48ad7e9ce340323db" class="anchor" href="#75c5a3b2e88f9fd48ad7e9ce340323db">&#x645;&#x642;&#x62F;&#x627;&#x631; &#x6CC;&#x647; props &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x6A9;&#x6CC; true &#x645;&#x6CC;&#x634;&#x647;&#x61F;</a></h3>
-<p>If you pass no value for a prop, it defaults to true. This behavior is available so that it matches the behavior of HTML. For example, below expressions are equivalent,</p>
+<p>&#x627;&#x6AF;&#x647; &#x647;&#x6CC;&#x686; &#x645;&#x642;&#x62F;&#x627;&#x631;&#x6CC; &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; prop &#x627;&#x646;&#x62A;&#x642;&#x627;&#x644; &#x646;&#x62F;&#x6CC;&#x645;&#x60C; &#x628;&#x647; &#x637;&#x648;&#x631; &#x67E;&#x6CC;&#x634;&#x200C;&#x641;&#x631;&#x636; true &#x62F;&#x631; &#x646;&#x638;&#x631; &#x6AF;&#x631;&#x641;&#x62A;&#x647; &#x645;&#x6CC;&#x634;&#x647;. &#x627;&#x6CC;&#x646; &#x631;&#x641;&#x62A;&#x627;&#x631; &#x62F;&#x631; &#x62F;&#x633;&#x62A;&#x631;&#x633; &#x647;&#x633;&#x62A;&#x634; &#x637;&#x648;&#x631;&#x6CC; &#x6A9;&#x647; &#x628;&#x627; &#x631;&#x641;&#x62A;&#x627;&#x631; HTML &#x647;&#x645; &#x645;&#x637;&#x627;&#x628;&#x642;&#x62A; &#x62F;&#x627;&#x631;&#x647;. &#x628;&#x647; &#x637;&#x648;&#x631; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x639;&#x628;&#x627;&#x631;&#x62A; &#x647;&#x627;&#x6CC; &#x632;&#x6CC;&#x631; &#x645;&#x639;&#x627;&#x62F;&#x644; &#x647;&#x645; &#x647;&#x633;&#x62A;&#x646;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyInput</span></span> <span class="token attr-name">autocomplete</span> <span class="token punctuation">/&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MyInput</span></span> <span class="token attr-name">autocomplete</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token boolean">true</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span>
 </pre></span>
-**Note:** It is not recommend using this approach because it can be confused with the ES6 object shorthand (example, {name} which is short for {name: name})
+**&#x6CC;&#x627;&#x62F;&#x62F;&#x627;&#x634;&#x62A;:** &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F; &#x62A;&#x648;&#x635;&#x6CC;&#x647; &#x646;&#x645;&#x6CC;&#x634;&#x647; &#x686;&#x648;&#x646; &#x645;&#x645;&#x6A9;&#x646;&#x647; &#x628;&#x627; &#x645;&#x62E;&#x62A;&#x635;&#x631; &#x646;&#x648;&#x6CC;&#x633;&#x6CC; ES6 &#x627;&#x634;&#x62A;&#x628;&#x627;&#x647; &#x6AF;&#x631;&#x641;&#x62A;&#x647; &#x628;&#x634;&#x647; (&#x645;&#x62B;&#x627;&#x644; &#x60C; {name} &#x645;&#x62E;&#x641;&#x641; {name: name})
 <p><strong><a class="backToTop" href="#75c5a3b2e88f9fd48ad7e9ce340323db-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="929f803c7abb877ad030335367646757" class="anchor" href="#929f803c7abb877ad030335367646757">NextJS &#x686;&#x6CC;&#x647; &#x648; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC;&#x200C;&#x647;&#x627;&#x6CC; &#x627;&#x635;&#x644;&#x6CC;&#x634; &#x686;&#x6CC;&#x627; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>Next.js is a popular and lightweight framework for static and server&#x2011;rendered applications built with React. It also provides styling and routing solutions. Below are the major features provided by NextJS,</p>
+<p>Next.js &#x6CC;&#x647; &#x641;&#x631;&#x6CC;&#x645;&#x648;&#x631;&#x6A9; &#x645;&#x62D;&#x628;&#x648;&#x628; &#x648; &#x633;&#x628;&#x6A9; &#x628;&#x631;&#x627;&#x6CC; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x647;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x627;&#x62A;&#x6CC;&#x6A9; &#x648; &#x62A;&#x62D;&#x62A; &#x633;&#x631;&#x648;&#x631; &#x647;&#x633;&#x62A;&#x634; &#x6A9;&#x647; &#x62A;&#x648;&#x633;&#x637; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x633;&#x627;&#x62E;&#x62A;&#x647; &#x634;&#x62F;&#x647;. &#x647;&#x645;&#x686;&#x646;&#x6CC;&#x646; &#x627;&#x633;&#x62A;&#x627;&#x6CC;&#x644; &#x62F;&#x647;&#x6CC; &#x648; &#x645;&#x633;&#x6CC;&#x631;&#x6CC;&#x627;&#x628;&#x6CC; &#x631;&#x648; &#x647;&#x645; &#x627;&#x631;&#x627;&#x626;&#x647; &#x645;&#x6CC;&#x62F;&#x647;. &#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x647;&#x627;&#x6CC; &#x627;&#x635;&#x644;&#x6CC; &#x627;&#x631;&#x627;&#x626;&#x647; &#x634;&#x62F;&#x647; &#x62A;&#x648;&#x633;&#x637; Next.js &#x622;&#x648;&#x631;&#x62F;&#x647; &#x634;&#x62F;&#x647;.</p>
 <ol>
-<li><p>Server-rendered by default</p></li>
-<li><p>Automatic code splitting for faster page loads</p></li>
-<li><p>Simple client-side routing (page based)</p></li>
-<li><p>Webpack-based dev environment which supports (HMR)</p></li>
-<li><p>Able to implement with Express or any other Node.js HTTP server</p></li>
-<li><p>Customizable with your own Babel and Webpack configurations</p></li>
+<li><p>server rendering &#x628;&#x647; &#x637;&#x648;&#x631; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x627;&#x631;&#x627;&#x626;&#x647; &#x634;&#x62F;&#x647;</p></li>
+<li><p>&#x62A;&#x642;&#x633;&#x6CC;&#x645; &#x62E;&#x648;&#x62F;&#x6A9;&#x627;&#x631; &#x6A9;&#x62F; &#x628;&#x631;&#x627;&#x6CC; &#x628;&#x627;&#x631;&#x6AF;&#x630;&#x627;&#x631;&#x6CC; &#x633;&#x631;&#x6CC;&#x639;&#x62A;&#x631; &#x635;&#x641;&#x62D;&#x647;</p></li>
+<li><p>&#x645;&#x633;&#x6CC;&#x631;&#x6CC;&#x627;&#x628;&#x6CC; &#x633;&#x627;&#x62F;&#x647; &#x633;&#x645;&#x62A; &#x645;&#x634;&#x62A;&#x631;&#x6CC; (&#x645;&#x628;&#x62A;&#x646;&#x6CC; &#x628;&#x631; &#x635;&#x641;&#x62D;&#x647;)</p></li>
+<li><p>&#x645;&#x62D;&#x6CC;&#x637; &#x62A;&#x648;&#x633;&#x639;&#x647; &#x6CC;&#x627;&#x641;&#x62A;&#x647; &#x645;&#x628;&#x62A;&#x646;&#x6CC; &#x628;&#x631; &#x628;&#x633;&#x62A;&#x647; &#x648;&#x628; (HMR)</p></li>
+<li><p>&#x628;&#x627; Express &#x6CC;&#x627; &#x647;&#x631; &#x633;&#x631;&#x648;&#x631; HTTP &#x62F;&#x6CC;&#x6AF;&#x647;&#x200C;&#x627;&#x6CC; Node.js &#x642;&#x627;&#x628;&#x644; &#x67E;&#x6CC;&#x627;&#x62F;&#x647; &#x633;&#x627;&#x632;&#x6CC;&#x647;</p></li>
+<li><p>&#x628;&#x627; &#x62A;&#x646;&#x638;&#x6CC;&#x645;&#x627;&#x62A; Babel &#x648; Webpack &#x62E;&#x648;&#x62F;&#x645;&#x648;&#x646; &#x642;&#x627;&#x628;&#x644; &#x62A;&#x646;&#x638;&#x6CC;&#x645;&#x647;</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#929f803c7abb877ad030335367646757-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="8c4579ea262854d65aa4690702454ce5" class="anchor" href="#8c4579ea262854d65aa4690702454ce5">&#x686;&#x637;&#x60C;&#x648;&#x6CC; &#x6A9;&#x6CC;&#x200C;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; event handler &#x631;&#x648; &#x628;&#x647; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x67E;&#x627;&#x633; &#x628;&#x62F;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>You can pass event handlers and other functions as props to child components. It can be used in child component as below,</p>
-<span align="left" dir="ltr">
-<pre data-role="codeBlock" data-info class="language-"><code>&lt;button onClick={this.handleClick}&gt;
-</code></pre></span>
-<p><strong><a class="backToTop" href="#8c4579ea262854d65aa4690702454ce5-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
+</ol>
+<p>event handler &#x647;&#x627; &#x648; &#x62A;&#x648;&#x627;&#x628;&#x639; &#x62F;&#x6CC;&#x6AF;&#x647; &#x631;&#x648; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; prop &#x628;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x641;&#x631;&#x632;&#x646;&#x62F; &#x627;&#x646;&#x62A;&#x642;&#x627;&#x644; &#x628;&#x62F;&#x6CC;&#x645;. &#x628;&#x647; &#x635;&#x648;&#x631;&#x62A; &#x632;&#x6CC;&#x631; &#x62A;&#x648;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x641;&#x631;&#x632;&#x646;&#x62F; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x628;&#x634;&#x647;&#x60C;<br>
+<span align="left" dir="ltr"></span></p>
+<pre class="language-text"> ```
+ &lt;button onClick={this.handleClick}&gt;
+ ```
+
+ &lt;/span&gt;
+
+ **[&#x641;&#x647;&#x631;&#x633;&#x62A;](#&#x641;&#x647;&#x631;&#x633;&#x62A;)**
+</pre>
+<ol start="259">
 <li>
 <h3><a id="0dee2749e08f10c64afddc34fcde11fe" class="anchor" href="#0dee2749e08f10c64afddc34fcde11fe">&#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x62A;&#x648;&#x627;&#x628;&#x639; arrow &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62A;&#x62F;&#x647;&#x627;&#x6CC; render &#x62E;&#x648;&#x628;&#x647;&#x61F;</a></h3>
-<p>Yes, You can use. It is often the easiest way to pass parameters to callback functions. But you need to optimize the performance while using it.</p>
+<p>&#x628;&#x644;&#x647; &#x60C; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;. &#x627;&#x6CC;&#x646; &#x645;&#x639;&#x645;&#x648;&#x644;&#x627; &#x633;&#x627;&#x62F;&#x647; &#x62A;&#x631;&#x6CC;&#x646; &#x631;&#x627;&#x647; &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x646;&#x62A;&#x642;&#x627;&#x644; &#x67E;&#x627;&#x631;&#x627;&#x645;&#x62A;&#x631;&#x647;&#x627; &#x628;&#x647; &#x62A;&#x648;&#x627;&#x628;&#x639; &#x628;&#x631;&#x6AF;&#x634;&#x62A;&#x6CC; &#x647;&#x633;&#x62A;&#x634;. &#x627;&#x645;&#x627; &#x62F;&#x631; &#x62D;&#x6CC;&#x646; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x628;&#x627;&#x6CC;&#x62F; &#x639;&#x645;&#x644;&#x6A9;&#x631;&#x62F; &#x631;&#x627; &#x628;&#x647;&#x6CC;&#x646;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -6277,8 +6297,8 @@ As an alternative, You can also set displayName property for forwardRef function
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </pre></span>
-**Note:** Using an arrow function in render method creates a new function each time the component renders, which may have performance implications
-<p><strong><a class="backToTop" href="#0dee2749e08f10c64afddc34fcde11fe-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
+**&#x6CC;&#x627;&#x62F;&#x62F;&#x627;&#x634;&#x62A;:** &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x62A;&#x627;&#x628;&#x639; arrow &#x62A;&#x648;&#x6CC; &#x645;&#x62A;&#x62F; &#x631;&#x646;&#x62F;&#x631; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; &#x62C;&#x62F;&#x6CC;&#x62F; &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x6A9;&#x647; &#x647;&#x631; &#x628;&#x627;&#x631; &#x6A9;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x631;&#x646;&#x62F;&#x631; &#x645;&#x6CC;&#x634;&#x647;&#x60C; &#x645;&#x645;&#x6A9;&#x646;&#x647; &#x645;&#x641;&#x627;&#x647;&#x6CC;&#x645; &#x639;&#x645;&#x644;&#x6A9;&#x631;&#x62F;&#x6CC; &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x647;.
+<p><strong><a class="backToTop" href="#8c4579ea262854d65aa4690702454ce5-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="7586d166207bbcbf9c31fa3054790ec3" class="anchor" href="#7586d166207bbcbf9c31fa3054790ec3">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x627;&#x632; &#x627;&#x62C;&#x631;&#x627;&#x6CC; &#x686;&#x646;&#x62F;&#x628;&#x627;&#x631;&#x647; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; &#x62C;&#x644;&#x648;&#x6AF;&#x6CC;&#x631;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
@@ -6700,8 +6720,7 @@ This can be solved by lifting up the value to parent state,
 </li>
 <li>
 <h3><a id="d5280dbf45db638a45a4838052ce3d70" class="anchor" href="#d5280dbf45db638a45a4838052ce3d70">&#x647;&#x62F;&#x641; &#x627;&#x632; forward ref &#x62A;&#x648;&#x6CC; HOC&#x647;&#x627; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Refs will not get passed through because ref is not a prop. It handled differently by React just like <strong>key</strong>. If you add a ref to a HOC, the ref will refer to the outermost container component, not the wrapped component. In this case, you can use Forward Ref API. For example, we can explicitly forward refs to the inner FancyButton component using the React.forwardRef API.<br>
-The below HOC logs all props,</p>
+<p>ref &#x62F;&#x627;&#x62E;&#x644; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627; &#x67E;&#x627;&#x633; &#x62F;&#x627;&#x62F;&#x647; &#x646;&#x645;&#x6CC;&#x634;&#x647; &#x686;&#x648;&#x646; ref &#x6CC;&#x647; prop &#x646;&#x6CC;&#x633;&#x62A;. &#x627;&#x648;&#x646; &#x62A;&#x648;&#x633;&#x637; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x62F;&#x631;&#x633;&#x62A; &#x645;&#x62B;&#x644; <strong>key</strong> &#x628;&#x647; &#x637;&#x648;&#x631; &#x645;&#x62A;&#x641;&#x627;&#x648;&#x62A;&#x6CC; &#x647;&#x646;&#x62F;&#x644; &#x645;&#x6CC;&#x634;&#x647;. &#x627;&#x6AF;&#x647; &#x645;&#x627; ref &#x631;&#x648; &#x62A;&#x648;&#x6CC; HOC &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;&#x60C; ref &#x628;&#x647; &#x628;&#x6CC;&#x631;&#x648;&#x646;&#x6CC; &#x62A;&#x631;&#x6CC;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; container &#x627;&#x634;&#x627;&#x631;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;&#x60C; &#x646;&#x647; &#x628;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; wrapped &#x634;&#x62F;&#x647;. &#x62A;&#x648; &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F; &#x645;&#x627; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x632; Forward Ref API &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;. &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; React.forwardRef API &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; ref &#x631;&#x648; &#x628;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; FancyButton &#x62F;&#x627;&#x62E;&#x644;&#x6CC; &#x628;&#x641;&#x631;&#x633;&#x62A;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">function</span> <span class="token function">logProps</span><span class="token punctuation">(</span><span class="token parameter">Component</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">class</span> <span class="token class-name">LogProps</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
@@ -6734,7 +6753,7 @@ Let&apos;s use this HOC to log all props that get passed to our &#x201C;fancy bu
 <span class="token punctuation">}</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">logProps</span><span class="token punctuation">(</span>FancyButton<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></span>
-Now lets create a ref and pass it to FancyButton component. In this case, you can set focus to button element.
+&#x62D;&#x627;&#x644;&#x627; &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; ref &#x628;&#x633;&#x627;&#x632;&#x6CC;&#x645; &#x648; &#x627;&#x648;&#x646;&#x648; &#x628;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; FancyButton &#x628;&#x641;&#x631;&#x633;&#x62A;&#x6CC;&#x645;. &#x62A;&#x648;&#x6CC; &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; focus &#x631;&#x648; &#x631;&#x648;&#x6CC; &#x639;&#x646;&#x635;&#x631; &#x62F;&#x6A9;&#x645;&#x647; &#x62A;&#x646;&#x638;&#x6CC;&#x645; &#x6A9;&#x646;&#x6CC;&#x645;.
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">import</span> FancyButton <span class="token keyword">from</span> <span class="token string">&quot;./FancyButton&quot;</span><span class="token punctuation">;</span>
 
@@ -6746,17 +6765,17 @@ ref<span class="token punctuation">.</span>current<span class="token punctuation
 </li>
 <li>
 <h3><a id="b06b76f97aa81b45a771dee99d929c05" class="anchor" href="#b06b76f97aa81b45a771dee99d929c05">&#x62A;&#x648;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x200C;&#x647;&#x627; &#x645;&#x6CC;&#x200C;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x67E;&#x631;&#x627;&#x67E; ref &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>Regular function or class components don&#x2019;t receive the ref argument, and ref is not available in props either. The second ref argument only exists when you define a component with React.forwardRef call.</p>
+<p>&#x62A;&#x648;&#x627;&#x628;&#x639; &#x645;&#x646;&#x638;&#x645; &#x6CC;&#x627; &#x6A9;&#x644;&#x627;&#x633; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627; &#x622;&#x631;&#x6AF;&#x648;&#x645;&#x627;&#x646; ref &#x631;&#x648; &#x62F;&#x631;&#x6CC;&#x627;&#x641;&#x62A; &#x646;&#x645;&#x6CC; &#x6A9;&#x646;&#x646; &#x648; ref &#x62A;&#x648;&#x6CC; prop&#x200C;&#x647;&#x627; &#x647;&#x645; &#x62F;&#x631; &#x62F;&#x633;&#x62A;&#x631;&#x633; &#x646;&#x6CC;&#x633;&#x62A;. &#x622;&#x631;&#x6AF;&#x648;&#x645;&#x627;&#x646; &#x62F;&#x648;&#x645; ref &#x641;&#x642;&#x637; &#x632;&#x645;&#x627;&#x646;&#x6CC; &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x631;&#x647; &#x6A9;&#x647; &#x645;&#x627; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x631;&#x648; &#x628;&#x627; React.forwardRef &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <p><strong><a class="backToTop" href="#b06b76f97aa81b45a771dee99d929c05-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="e5c665c45af8cc782d29780635e11780" class="anchor" href="#e5c665c45af8cc782d29780635e11780">&#x686;&#x631;&#x627; &#x62F;&#x631; &#x647;&#x646;&#x6AF;&#x627;&#x645; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; ForwardRef&#x647;&#x627; &#x646;&#x6CC;&#x627;&#x632; &#x628;&#x647; &#x627;&#x62D;&#x62A;&#x6CC;&#x627;&#x637; &#x628;&#x6CC;&#x634;&#x62A;&#x631;&#x6CC; &#x62F;&#x631; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x6A9;&#x62A;&#x627;&#x628;&#x62E;&#x627;&#x646;&#x647; &#x647;&#x627;&#x6CC; &#x62C;&#x627;&#x646;&#x628;&#x6CC; &#x62F;&#x627;&#x631;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>When you start using forwardRef in a component library, you should treat it as a breaking change and release a new major version of your library. This is because your library likely has a different behavior such as what refs get assigned to, and what types are exported. These changes can break apps and other libraries that depend on the old behavior.</p>
+<p>&#x648;&#x642;&#x62A;&#x6CC; &#x645;&#x627; &#x634;&#x631;&#x648;&#x639; &#x628;&#x647; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; forwardRef &#x62A;&#x648;&#x6CC; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x645;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x628;&#x627;&#x6CC;&#x62F; &#x628;&#x627; &#x627;&#x648;&#x646; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x633;&#x631;&#x6CC;&#x639; &#x631;&#x641;&#x62A;&#x627;&#x631; &#x6A9;&#x646;&#x6CC;&#x645; &#x648; &#x646;&#x633;&#x62E;&#x647; &#x627;&#x635;&#x644;&#x6CC; &#x62C;&#x62F;&#x6CC;&#x62F;&#x6CC; &#x627;&#x632; &#x6A9;&#x62A;&#x627;&#x628;&#x62E;&#x648;&#x646;&#x647; &#x62E;&#x648;&#x62F;&#x645;&#x648;&#x646; &#x631;&#x648; &#x645;&#x646;&#x62A;&#x634;&#x631; &#x6A9;&#x646;&#x6CC;&#x645;. &#x627;&#x6CC;&#x646; &#x628;&#x647; &#x627;&#x6CC;&#x646; &#x62F;&#x644;&#x6CC;&#x644;&#x647; &#x6A9;&#x647; &#x6A9;&#x62A;&#x627;&#x628;&#x62E;&#x648;&#x646;&#x647; &#x645;&#x627; &#x631;&#x641;&#x62A;&#x627;&#x631; &#x645;&#x62A;&#x641;&#x627;&#x648;&#x62A;&#x6CC; &#x62F;&#x627;&#x631;&#x647; &#x645;&#x62B;&#x644; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x686;&#x647; &#x686;&#x6CC;&#x632;&#x6CC; &#x628;&#x647; ref &#x627;&#x62E;&#x62A;&#x635;&#x627;&#x635; &#x67E;&#x6CC;&#x62F;&#x627; &#x6A9;&#x631;&#x62F;&#x647; &#x648; &#x686;&#x647; &#x62E;&#x631;&#x648;&#x62C;&#x6CC; &#x647;&#x627;&#x6CC;&#x6CC; &#x62F;&#x627;&#x631;&#x6CC;&#x645;. &#x627;&#x6CC;&#x646; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631;&#x627;&#x62A; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x647;&#x627; &#x648; &#x628;&#x642;&#x6CC;&#x647; &#x6A9;&#x62A;&#x627;&#x628;&#x62E;&#x648;&#x646;&#x647; &#x647;&#x627;&#x6CC; &#x648;&#x627;&#x628;&#x633;&#x62A;&#x647; &#x628;&#x647; &#x631;&#x641;&#x62A;&#x627;&#x631; &#x642;&#x62F;&#x6CC;&#x645;&#x6CC; &#x631;&#x648; &#x627;&#x632; &#x628;&#x6CC;&#x646; &#x628;&#x628;&#x631;&#x647;.</p>
 <p><strong><a class="backToTop" href="#e5c665c45af8cc782d29780635e11780-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="0f9623cc03d4a1458d59b09681dae8c4" class="anchor" href="#0f9623cc03d4a1458d59b09681dae8c4">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x628;&#x62F;&#x648;&#x646; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; ES6 &#x6A9;&#x644;&#x627;&#x633; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x628;&#x633;&#x627;&#x632;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>If you don&#x2019;t use ES6 then you may need to use the create-react-class module instead. For default props, you need to define getDefaultProps() as a function on the passed object. Whereas for initial state, you have to provide a separate getInitialState method that returns the initial state.</p>
+<p>&#x627;&#x6AF;&#x647; &#x627;&#x632; ES6&#x200C; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x646;&#x645;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645; &#x645;&#x645;&#x6A9;&#x646;&#x647; &#x644;&#x627;&#x632;&#x645; &#x628;&#x627;&#x634;&#x647; &#x6A9;&#x647; &#x628;&#x647; &#x62C;&#x627;&#x6CC; &#x627;&#x648;&#x646; &#x627;&#x632; &#x645;&#x627;&#x698;&#x648;&#x644; create-react-class &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;. &#x628;&#x631;&#x627;&#x6CC; prop &#x647;&#x627;&#x6CC; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636;&#x60C; &#x646;&#x6CC;&#x627;&#x632; &#x62F;&#x627;&#x631;&#x6CC;&#x645; &#x6A9;&#x647; getDefaultProps() &#x631;&#x648; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; &#x631;&#x648;&#x6CC; &#x622;&#x628;&#x62C;&#x6A9;&#x62A; &#x67E;&#x627;&#x633; &#x62F;&#x627;&#x62F;&#x647; &#x634;&#x62F;&#x647; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x6A9;&#x646;&#x6CC;&#x645;. &#x62F;&#x631; &#x62D;&#x627;&#x644;&#x6CC; &#x6A9;&#x647; &#x628;&#x631;&#x627;&#x6CC; state &#x627;&#x648;&#x644;&#x6CC;&#x647;&#x60C; &#x628;&#x627;&#x6CC;&#x62F; &#x6CC;&#x647; &#x645;&#x62A;&#x62F; getInitialState &#x62C;&#x62F;&#x627;&#x6AF;&#x627;&#x646;&#x647; &#x627;&#x631;&#x627;&#x626;&#x647; &#x628;&#x62F;&#x6CC;&#x645; &#x6A9;&#x647; &#x6CC;&#x647; state &#x627;&#x648;&#x644;&#x6CC;&#x647; &#x628;&#x631;&#x645;&#x6CC;&#x200C;&#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x647;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">var</span> Greeting <span class="token operator">=</span> <span class="token function">createReactClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token function-variable function">getDefaultProps</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -6775,12 +6794,12 @@ ref<span class="token punctuation">.</span>current<span class="token punctuation
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></span>
-**Note:** If you use createReactClass then autobinding is available for all methods. i.e, You don&apos;t need to use .bind(this) with in constructor for event handlers.
+**&#x6CC;&#x627;&#x62F;&#x62F;&#x627;&#x634;&#x62A;:** &#x627;&#x6AF;&#x647; &#x627;&#x632; createReactClass &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x6CC;&#x645; &#x627;&#x62A;&#x635;&#x627;&#x644; &#x62E;&#x648;&#x62F;&#x6A9;&#x627;&#x631; &#x628;&#x631;&#x627;&#x6CC; &#x647;&#x645;&#x647; &#x631;&#x648;&#x634; &#x647;&#x627; &#x62F;&#x631; &#x62F;&#x633;&#x62A;&#x631;&#x633;&#x647;. &#x6CC;&#x639;&#x646;&#x6CC; &#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x628;&#x647; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; .bind(this) &#x62A;&#x648;&#x6CC; constructor &#x628;&#x631;&#x627;&#x6CC; event handler &#x647;&#x627; &#x646;&#x6CC;&#x633;&#x62A;.
 <p><strong><a class="backToTop" href="#0f9623cc03d4a1458d59b09681dae8c4-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="21c6959b94f6c7fc80cf649742cf4acd" class="anchor" href="#21c6959b94f6c7fc80cf649742cf4acd">&#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x628;&#x62F;&#x648;&#x646; JSX &#x645;&#x645;&#x6A9;&#x646; &#x627;&#x633;&#x62A;&#x61F;</a></h3>
-<p>Yes, JSX is not mandatory for using React. Actually it is convenient when you don&#x2019;t want to set up compilation in your build environment. Each JSX element is just syntactic sugar for calling React.createElement(component, props, ...children). For example, let us take a greeting example with JSX,</p>
+<p>&#x628;&#x644;&#x647;&#x60C; JSX &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x62C;&#x628;&#x627;&#x631;&#x6CC; &#x646;&#x6CC;&#x633;&#x62A;. &#x62F;&#x631; &#x648;&#x627;&#x642;&#x639; &#x645;&#x646;&#x627;&#x633;&#x628; &#x632;&#x645;&#x627;&#x646;&#x6CC; &#x647;&#x633;&#x62A; &#x6A9;&#x647; &#x645;&#x627; &#x646;&#x645;&#x6CC;&#x62E;&#x648;&#x627;&#x6CC;&#x645; &#x6A9;&#x627;&#x645;&#x67E;&#x627;&#x6CC;&#x644;&#x6CC; &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x645;&#x62D;&#x6CC;&#x637; build &#x62A;&#x646;&#x638;&#x6CC;&#x645; &#x6A9;&#x646;&#x6CC;&#x645;. &#x647;&#x631; &#x639;&#x646;&#x635;&#x631; JSX &#x641;&#x642;&#x637; syntactic sugar &#x647;&#x633;&#x62A;&#x634; &#x628;&#x631;&#x627;&#x6CC; &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; React.createElement(component, props, ...children). &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644; &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; &#x645;&#x62B;&#x627;&#x644; greeting &#x628;&#x627; JSX &#x628;&#x632;&#x646;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">class</span> <span class="token class-name">Greeting</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -6793,7 +6812,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></span>
-You can write the same code without JSX as below,
+&#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x647;&#x645;&#x6CC;&#x646; &#x6A9;&#x62F; &#x631;&#x648; &#x628;&#x62F;&#x648;&#x646; JSX &#x645;&#x62B;&#x644; &#x632;&#x6CC;&#x631; &#x628;&#x646;&#x648;&#x6CC;&#x633;&#x6CC;&#x645;&#x60C;
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Greeting</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -6810,30 +6829,30 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 </li>
 <li>
 <h3><a id="e0cdd243bd268c6bc40c51971d29552e" class="anchor" href="#e0cdd243bd268c6bc40c51971d29552e">&#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645;&#x200C;&#x647;&#x627;&#x6CC; diffing &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x686;&#x6CC; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>React needs to use algorithms to find out how to efficiently update the UI to match the most recent tree. The diffing algorithms is generating the minimum number of operations to transform one tree into another. However, the algorithms have a complexity in the order of O(n3) where n is the number of elements in the tree.<br>
-In this case, for displaying 1000 elements would require in the order of one billion comparisons. This is far too expensive. Instead, React implements a heuristic O(n) algorithm based on two assumptions:</p>
+<p>&#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x646;&#x6CC;&#x627;&#x632; &#x628;&#x647; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645;&#x200C;&#x647;&#x627; &#x62F;&#x627;&#x631;&#x647; &#x62A;&#x627; &#x628;&#x641;&#x647;&#x645;&#x647; &#x686;&#x637;&#x648;&#x631; &#x628;&#x647; &#x637;&#x648;&#x631; &#x645;&#x648;&#x62B;&#x631; UI &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x637;&#x627;&#x628;&#x642;&#x62A; &#x628;&#x627; &#x622;&#x62E;&#x631;&#x6CC;&#x646; &#x62F;&#x631;&#x62E;&#x62A; &#x628;&#x647;&#x200C;&#x631;&#x648;&#x632; &#x6A9;&#x646;&#x647;. &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645;&#x200C;&#x647;&#x627;&#x6CC; &#x645;&#x62E;&#x62A;&#x644;&#x641;&#x6CC; &#x62F;&#x631; &#x62D;&#x627;&#x644; &#x62A;&#x648;&#x644;&#x6CC;&#x62F; &#x62D;&#x62F;&#x627;&#x642;&#x644; &#x62A;&#x639;&#x62F;&#x627;&#x62F; &#x639;&#x645;&#x644;&#x6CC;&#x627;&#x62A; &#x628;&#x631;&#x627;&#x6CC; &#x62A;&#x628;&#x62F;&#x6CC;&#x644; &#x6CC;&#x647; &#x62F;&#x631;&#x62E;&#x62A; &#x628;&#x647; &#x62F;&#x631;&#x62E;&#x62A; &#x62F;&#x6CC;&#x6AF;&#x647; &#x647;&#x633;&#x62A;&#x646;. &#x628;&#x627; &#x627;&#x6CC;&#x646; &#x62D;&#x627;&#x644;&#x60C; &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645;&#x200C;&#x647;&#x627; &#x628;&#x647; &#x62A;&#x631;&#x62A;&#x6CC;&#x628; O(n3) &#x62F;&#x627;&#x631;&#x627;&#x6CC; &#x67E;&#x6CC;&#x686;&#x6CC;&#x62F;&#x6AF;&#x6CC; &#x647;&#x633;&#x62A;&#x646;&#x60C; &#x62C;&#x627;&#x6CC;&#x6CC; &#x6A9;&#x647; n &#x62A;&#x639;&#x62F;&#x627;&#x62F; &#x639;&#x646;&#x627;&#x635;&#x631; &#x645;&#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x631; &#x62F;&#x631;&#x62E;&#x62A; &#x647;&#x633;&#x62A;&#x634;.<br>
+&#x62A;&#x648;&#x6CC; &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F;&#x60C; &#x628;&#x631;&#x627;&#x6CC; &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x6F1;&#x6F0;&#x6F0;&#x6F0; &#x639;&#x646;&#x635;&#x631; &#x628;&#x647; &#x62A;&#x631;&#x62A;&#x6CC;&#x628; &#x6CC;&#x6A9; &#x645;&#x6CC;&#x644;&#x6CC;&#x627;&#x631;&#x62F; &#x645;&#x642;&#x627;&#x6CC;&#x633;&#x647; &#x646;&#x6CC;&#x627;&#x632;&#x647; &#x648; &#x627;&#x6CC;&#x646; &#x62E;&#x6CC;&#x644;&#x6CC; &#x647;&#x632;&#x6CC;&#x646;&#x647; &#x628;&#x631; &#x647;&#x633;&#x62A;&#x634;. &#x62F;&#x631; &#x639;&#x648;&#x636; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x6CC;&#x647; &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645; &#x627;&#x628;&#x62A;&#x6A9;&#x627;&#x631;&#x6CC; O(n) &#x631;&#x648; &#x628;&#x631; &#x627;&#x633;&#x627;&#x633; &#x62F;&#x648; &#x67E;&#x6CC;&#x634;&#x200C; &#x641;&#x631;&#x636; &#x67E;&#x6CC;&#x627;&#x62F;&#x647;&#x200C;&#x633;&#x627;&#x632;&#x6CC; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;:</p>
 <ol>
-<li><p>Two elements of different types will produce different trees.</p></li>
-<li><p>The developer can hint at which child elements may be stable across different renders with a key prop.</p></li>
+<li><p>&#x62F;&#x648; &#x639;&#x646;&#x635;&#x631; &#x627;&#x632; &#x627;&#x646;&#x648;&#x627;&#x639; &#x645;&#x62E;&#x62A;&#x644;&#x641; &#x628;&#x627;&#x639;&#x62B; &#x62A;&#x648;&#x644;&#x6CC;&#x62F; &#x62F;&#x631;&#x62E;&#x62A; &#x647;&#x627;&#x6CC; &#x645;&#x62E;&#x62A;&#x644;&#x641;&#x6CC; &#x645;&#x6CC;&#x634;&#x647;.</p></li>
+<li>&#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x646;&#x648;&#x6CC;&#x633; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x627;&#x634;&#x627;&#x631;&#x647; &#x6A9;&#x646;&#x647; &#x6A9;&#x647; &#x6A9;&#x62F;&#x648;&#x645; &#x6CC;&#x6A9;&#x6CC; &#x627;&#x632; &#x639;&#x646;&#x627;&#x635;&#x631; &#x641;&#x631;&#x632;&#x646;&#x62F; &#x645;&#x645;&#x6A9;&#x646;&#x647; &#x62A;&#x648;&#x6CC; &#x631;&#x646;&#x62F;&#x631;&#x200C;&#x647;&#x627;&#x6CC; &#x645;&#x62E;&#x62A;&#x644;&#x641; &#x628;&#x627; &#x6CC;&#x647; prop &#x627;&#x635;&#x644;&#x6CC; &#x67E;&#x627;&#x6CC;&#x62F;&#x627;&#x631; &#x628;&#x627;&#x634;&#x646;.<br>
+<strong><a class="backToTop" href="#e0cdd243bd268c6bc40c51971d29552e-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></li>
 </ol>
-<p><strong><a class="backToTop" href="#e0cdd243bd268c6bc40c51971d29552e-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="4b4064a5b8a8e2a3d957ec0fe7069f75" class="anchor" href="#4b4064a5b8a8e2a3d957ec0fe7069f75">&#x642;&#x648;&#x627;&#x646;&#x6CC;&#x646;&#x6CC; &#x6A9;&#x647; &#x62A;&#x648;&#x633;&#x637; &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645;&#x200C;&#x647;&#x627;&#x6CC; diffing &#x67E;&#x648;&#x634;&#x634; &#x62F;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x200C;&#x634;&#x648;&#x646;&#x62F; &#x6A9;&#x62F;&#x627;&#x645; &#x647;&#x633;&#x62A;&#x646;&#x61F;</a></h3>
-<p>When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements. It covers the below rules during reconciliation algorithm,</p>
+<p>&#x645;&#x648;&#x642;&#x639; &#x62A;&#x641;&#x627;&#x648;&#x62A; &#x628;&#x6CC;&#x646; &#x62F;&#x648; &#x62F;&#x631;&#x62E;&#x62A;&#x60C; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x648;&#x644; &#x62F;&#x648; &#x639;&#x646;&#x635;&#x631; &#x631;&#x6CC;&#x634;&#x647; &#x631;&#x648; &#x628;&#x627; &#x647;&#x645; &#x645;&#x642;&#x627;&#x6CC;&#x633;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x631;&#x641;&#x62A;&#x627;&#x631; &#x628;&#x633;&#x62A;&#x647; &#x628;&#x647; &#x627;&#x646;&#x648;&#x627;&#x639; &#x639;&#x646;&#x627;&#x635;&#x631; &#x631;&#x6CC;&#x634;&#x647; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x645;&#x648;&#x627;&#x631;&#x62F;&#x6CC; &#x6A9;&#x647; &#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x6AF;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x647; &#x642;&#x648;&#x627;&#x646;&#x6CC;&#x646;&#x6CC; &#x627;&#x632; &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645; reconciliation &#x647;&#x633;&#x62A;&#x646;.</p>
 <ol>
-<li><strong>Elements Of Different Types:</strong><br>
-Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. For example, elements <a href> to <img src>, or from <article> to <comment> of different types lead a full rebuild.</comment></article></a></li><a href>
-<li><strong>DOM Elements Of The Same Type:</strong><br>
-When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. Lets take an example with same DOM elements except className attribute,</li>
+<li><strong>&#x639;&#x646;&#x627;&#x635;&#x631; &#x628;&#x627; &#x627;&#x646;&#x648;&#x627;&#x639; &#x645;&#x62E;&#x62A;&#x644;&#x641;:</strong><br>
+&#x647;&#x631;&#x648;&#x642;&#x62A; &#x639;&#x646;&#x627;&#x635;&#x631; &#x631;&#x6CC;&#x634;&#x647; &#x627;&#x646;&#x648;&#x627;&#x639; &#x645;&#x62E;&#x62A;&#x644;&#x641;&#x6CC; &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x646;&#x60C; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x62F;&#x631;&#x62E;&#x62A; &#x642;&#x628;&#x644;&#x6CC; &#x631;&#x648; &#x627;&#x632; &#x628;&#x6CC;&#x646; &#x645;&#x6CC;&#x628;&#x631;&#x647; &#x648; &#x62F;&#x631;&#x62E;&#x62A; &#x62C;&#x62F;&#x6CC;&#x62F; &#x631;&#x648; &#x627;&#x632; &#x627;&#x648;&#x644; &#x645;&#x6CC;&#x633;&#x627;&#x632;&#x647;. &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x639;&#x646;&#x627;&#x635;&#x631; <a href> &#x62A;&#x627; <img src> &#x6CC;&#x627; &#x627;&#x632; <article> &#x62A;&#x627; <comment> &#x627;&#x632; &#x627;&#x646;&#x648;&#x627;&#x639; &#x645;&#x62E;&#x62A;&#x644;&#x641; &#x628;&#x627;&#x639;&#x62B; &#x628;&#x627;&#x632;&#x633;&#x627;&#x632;&#x6CC; &#x6A9;&#x627;&#x645;&#x644; &#x645;&#x6CC;&#x634;&#x646;.</comment></article></a></li><a href>
+<li><strong>&#x639;&#x646;&#x627;&#x635;&#x631; DOM &#x627;&#x632; &#x647;&#x645;&#x627;&#x646; &#x646;&#x648;&#x639;</strong><br>
+&#x645;&#x648;&#x642;&#x639; &#x645;&#x642;&#x627;&#x6CC;&#x633;&#x647; &#x62F;&#x648; &#x639;&#x646;&#x635;&#x631; React DOM &#x627;&#x632; &#x647;&#x645;&#x648;&#x646;  &#x646;&#x648;&#x639;&#x60C; React &#x628;&#x647; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x647;&#x627;&#x6CC; &#x647;&#x631; &#x62F;&#x648; &#x646;&#x6AF;&#x627;&#x647; &#x645;&#x6CC; &#x6A9;&#x646;&#x62F;&#x60C; &#x647;&#x645;&#x648;&#x646; &#x6AF;&#x631;&#x647; DOM &#x632;&#x6CC;&#x631;&#x6CC;&#x646; &#x631;&#x648; &#x646;&#x6AF;&#x647; &#x645;&#x6CC;&#x62F;&#x627;&#x631;&#x647; &#x648; &#x641;&#x642;&#x637; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; &#x647;&#x627;&#x6CC; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x6CC;&#x627;&#x641;&#x62A;&#x647; &#x631;&#x648; &#x628;&#x647; &#x631;&#x648;&#x632; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; &#x645;&#x62B;&#x627;&#x644; &#x628;&#x627; &#x639;&#x646;&#x627;&#x635;&#x631; DOM &#x645;&#x634;&#x627;&#x628;&#x647; &#x628;&#x647; &#x62C;&#x632; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; className &#x628;&#x6CC;&#x627;&#x631;&#x6CC;&#x645;&#x60C;</li>
 </a></ol><a href>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript">   <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;show&quot;</span> title<span class="token operator">=</span><span class="token string">&quot;ReactJS&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
 
    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;hide&quot;</span> title<span class="token operator">=</span><span class="token string">&quot;ReactJS&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
 </pre></span>
-3. **Component Elements Of The Same Type:**
-   When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls componentWillReceiveProps() and componentWillUpdate() on the underlying instance. After that, the render() method is called and the diff algorithm recurses on the previous result and the new result.
+3. **&#x639;&#x646;&#x627;&#x635;&#x631; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x632; &#x647;&#x645;&#x627;&#x646; &#x646;&#x648;&#x639;:**
+   &#x648;&#x642;&#x62A;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x628;&#x647;&#x200C;&#x631;&#x648;&#x632; &#x645;&#x6CC;&#x634;&#x647;&#x60C; &#x646;&#x645;&#x648;&#x646;&#x647; &#x62B;&#x627;&#x628;&#x62A; &#x645;&#x6CC;&#x645;&#x648;&#x646;&#x647;&#x60C; &#x628;&#x646;&#x627;&#x628;&#x631;&#x627;&#x6CC;&#x646; state&#x200C; &#x628;&#x6CC;&#x646; &#x631;&#x646;&#x62F;&#x631;&#x200C;&#x647;&#x627; &#x62D;&#x641;&#x637; &#x645;&#x6CC;&#x634;&#x647;. &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x637;&#x627;&#x628;&#x642;&#x62A; &#x628;&#x627; &#x639;&#x646;&#x635;&#x631; &#x62C;&#x62F;&#x6CC;&#x62F; prop&#x200C;&#x647;&#x627;&#x6CC; &#x646;&#x645;&#x648;&#x646;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x627;&#x633;&#x627;&#x633;&#x6CC; &#x631;&#x648; &#x628;&#x647;&#x200C;&#x631;&#x648;&#x632; &#x645;&#x6CC;&#x6A9;&#x646;&#x647; &#x648; &#x645;&#x62A;&#x62F;&#x200C;&#x647;&#x627;&#x6CC; componentWillReceiveProps() &#x648; componentWillUpdate() &#x631;&#x648; &#x631;&#x648;&#x6CC; &#x646;&#x645;&#x648;&#x646;&#x647; &#x627;&#x635;&#x644;&#x6CC; &#x635;&#x62F;&#x627; &#x645;&#x6CC;&#x632;&#x646;&#x647;. &#x628;&#x639;&#x62F; &#x627;&#x632; &#x627;&#x648;&#x646; &#x645;&#x62A;&#x62F; render() &#x635;&#x62F;&#x627; &#x632;&#x62F;&#x647; &#x645;&#x6CC;&#x634;&#x647; &#x648; &#x627;&#x644;&#x6AF;&#x648;&#x631;&#x6CC;&#x62A;&#x645; diff&#x60C; &#x646;&#x62A;&#x6CC;&#x62C;&#x647; &#x642;&#x628;&#x644;&#x6CC; &#x648; &#x646;&#x62A;&#x6CC;&#x62C;&#x647; &#x62C;&#x62F;&#x6CC;&#x62F; &#x631;&#x648; &#x62C;&#x633;&#x62A;&#x62C;&#x648; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.
 4. **Recursing On Children:**
    when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there&#x2019;s a difference. For example, when adding an element at the end of the children, converting between these two trees works well.
 <span align="left" dir="ltr">
@@ -6848,8 +6867,8 @@ When comparing two React DOM elements of the same type, React looks at the attri
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>third<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
 </pre></span>
-5. **Handling keys:**
-React supports a key attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a key can make the tree conversion efficient,
+5. **&#x647;&#x646;&#x62F;&#x644; &#x6A9;&#x631;&#x62F;&#x646; &#x6A9;&#x644;&#x6CC;&#x62F;&#x200C;&#x647;&#x627;**
+<p>&#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x632; &#x648;&#x6CC;&#x698;&#x6AF;&#x6CC; key &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x648;&#x642;&#x62A;&#x6CC; &#x641;&#x631;&#x632;&#x646;&#x62F;&#x627;&#x646; key &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x646;&#x60C; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x632; key&#x200C; &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x637;&#x627;&#x628;&#x642;&#x62A; &#x62F;&#x627;&#x62F;&#x646; &#x641;&#x631;&#x632;&#x646;&#x62F;&#x627;&#x646; &#x62F;&#x631; &#x62F;&#x631;&#x62E;&#x62A; &#x627;&#x635;&#x644;&#x6CC; &#x628;&#x627; &#x641;&#x631;&#x632;&#x646;&#x62F;&#x627;&#x646; &#x62F;&#x631; &#x62F;&#x631;&#x62E;&#x62A; &#x628;&#x639;&#x62F;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x631;&#x62F;&#x646; &#x6CC;&#x647; key &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x62A;&#x628;&#x62F;&#x6CC;&#x644; &#x62F;&#x631;&#x62E;&#x62A; &#x631;&#x648; &#x6A9;&#x627;&#x631;&#x622;&#x645;&#x62F; &#x6A9;&#x646;&#x647;&#x60C;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>2015<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Duke<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -6866,17 +6885,17 @@ React supports a key attribute. When children have keys, React uses the key to m
 </li>
 <li>
 <h3><a id="3d21109d8c0c019a067b77eae2b18afb" class="anchor" href="#3d21109d8c0c019a067b77eae2b18afb">&#x686;&#x647; &#x645;&#x648;&#x642;&#x639;&#x6CC; &#x646;&#x6CC;&#x627;&#x632; &#x647;&#x633;&#x62A; &#x6A9;&#x647; &#x627;&#x632; ref&#x647;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>There are few use cases to go for refs</p>
+<p>&#x645;&#x648;&#x627;&#x631;&#x62F; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x645;&#x6CC; &#x628;&#x631;&#x627;&#x6CC; ref&#x200C;&#x647;&#x627; &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x631;&#x647;</p>
 <ol>
-<li><p>Managing focus, text selection, or media playback.</p></li>
-<li><p>Triggering imperative animations.</p></li>
-<li><p>Integrating with third-party DOM libraries.</p></li>
+<li><p>&#x645;&#x62F;&#x6CC;&#x631;&#x6CC;&#x62A; focus&#x60C; text selection &#x6CC;&#x627; &#x67E;&#x62E;&#x634; media</p></li>
+<li><p>&#x631;&#x627;&#x647;&#x200C;&#x627;&#x646;&#x62F;&#x627;&#x632;&#x6CC; &#x627;&#x646;&#x6CC;&#x645;&#x6CC;&#x634;&#x646;&#x200C;&#x647;&#x627;&#x6CC; &#x636;&#x631;&#x648;&#x631;&#x6CC;.</p></li>
+<li><p>&#x627;&#x62F;&#x63A;&#x627;&#x645; &#x628;&#x627; &#x6A9;&#x62A;&#x627;&#x628;&#x62E;&#x627;&#x646;&#x647;&#x200C;&#x647;&#x627;&#x6CC; third-party DOM.</p></li>
 </ol>
 <p><strong><a class="backToTop" href="#3d21109d8c0c019a067b77eae2b18afb-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="09e7d6d9365026005fd53dec1dd0073d" class="anchor" href="#09e7d6d9365026005fd53dec1dd0073d">&#x628;&#x631;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; render prop&#x647;&#x627; &#x644;&#x627;&#x632;&#x645;&#x647; &#x6A9;&#x647; &#x627;&#x633;&#x645; prop &#x631;&#x648; render &#x628;&#x632;&#x627;&#x631;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>Even though the pattern named render props, you don&#x2019;t have to use a prop named render to use this pattern. i.e, Any prop that is a function that a component uses to know what to render is technically a &#x201C;render prop&#x201D;. Lets take an example with the children prop for render props,</p>
+<p>&#x62D;&#x62A;&#x6CC; &#x627;&#x6AF;&#x647; &#x6CC;&#x647; &#x627;&#x644;&#x6AF;&#x648;&#x6CC;&#x6CC; &#x628;&#x647; &#x627;&#x633;&#x645; render props &#x648;&#x62C;&#x648;&#x62F; &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x647;&#x60C; &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x627;&#x6CC;&#x646; &#x627;&#x644;&#x6AF;&#x648; &#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x628;&#x647; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x6CC;&#x647; prop &#x628;&#x647; &#x627;&#x633;&#x645; render &#x646;&#x6CC;&#x633;&#x62A;. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644;&#x60C; &#x647;&#x631; prop &#x6A9;&#x647; &#x62A;&#x627;&#x628;&#x639;&#x6CC; &#x628;&#x627;&#x634;&#x647;&#x60C; &#x6A9;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x6CC; &#x627;&#x632; &#x627;&#x648;&#x646; &#x628;&#x631;&#x627;&#x6CC; &#x62F;&#x648;&#x646;&#x633;&#x62A;&#x646; &#x627;&#x6CC;&#x646;&#x6A9;&#x647; &#x686;&#x647; &#x686;&#x6CC;&#x632;&#x6CC; &#x628;&#x627;&#x6CC;&#x62F; &#x627;&#x631;&#x627;&#x626;&#x647; &#x628;&#x62F;&#x647; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x647;&#x60C; &#x627;&#x632; &#x646;&#x638;&#x631; &#x641;&#x646;&#x6CC; &quot;render prop&quot; &#x647;&#x633;&#x62A;&#x634;. &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; &#x645;&#x62B;&#x627;&#x644; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; prop &#x641;&#x631;&#x632;&#x646;&#x62F; &#x628;&#x631;&#x627;&#x6CC; &#x631;&#x646;&#x62F;&#x631; prop &#x628;&#x632;&#x646;&#x6CC;&#x645;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Mouse</span></span>
   <span class="token attr-name">children</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">mouse</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -6886,7 +6905,7 @@ React supports a key attribute. When children have keys, React uses the key to m
   <span class="token punctuation">)</span><span class="token punctuation">}</span></span>
 <span class="token punctuation">/&gt;</span></span>
 </pre></span>
-Actually children prop doesn&#x2019;t need to be named in the list of &#x201C;attributes&#x201D; in JSX element. Instead, you can keep it directly inside element,
+&#x62F;&#x631; &#x648;&#x627;&#x642;&#x639; &#x646;&#x6CC;&#x627;&#x632;&#x6CC; &#x646;&#x6CC;&#x633;&#x62A; &#x6A9;&#x647; &#x627;&#x632; prop &#x641;&#x631;&#x632;&#x646;&#x62F; &#x62A;&#x648;&#x6CC; &#x644;&#x6CC;&#x633;&#x62A; &quot;attribute&quot; &#x647;&#x627; &#x62A;&#x648;&#x6CC; &#x639;&#x646;&#x635;&#x631; JSX &#x646;&#x627;&#x645; &#x628;&#x631;&#x62F;&#x647; &#x628;&#x634;&#x647;. &#x62F;&#x631; &#x639;&#x648;&#x636; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x648;&#x646;&#x648; &#x645;&#x633;&#x62A;&#x642;&#x6CC;&#x645;&#x627; &#x62A;&#x648;&#x6CC; &#x627;&#x644;&#x645;&#x646;&#x62A; &#x646;&#x6AF;&#x647; &#x62F;&#x627;&#x631;&#x6CC;&#x645;.
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Mouse</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">mouse</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -6896,7 +6915,7 @@ Actually children prop doesn&#x2019;t need to be named in the list of &#x201C;at
   <span class="token punctuation">)</span><span class="token punctuation">}</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Mouse</span></span><span class="token punctuation">&gt;</span></span>
 </pre></span>
-While using this above technique(without any name), explicitly state that children should be a function in your propTypes.
+&#x62A;&#x627; &#x632;&#x645;&#x627;&#x646;&#x6CC; &#x6A9;&#x647; &#x627;&#x632; &#x631;&#x648;&#x634; &#x628;&#x627;&#x644;&#x627; (&#x628;&#x62F;&#x648;&#x646; &#x646;&#x627;&#x645;) &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x628;&#x647; &#x635;&#x631;&#x627;&#x62D;&#x62A; &#x645;&#x6CC;&#x6AF;&#x6CC;&#x645; &#x6A9;&#x647; &#x641;&#x631;&#x632;&#x646;&#x62F;&#x627;&#x646; &#x628;&#x627;&#x6CC;&#x62F; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; &#x62A;&#x648;&#x6CC; propType &#x647;&#x627;&#x645;&#x648;&#x646; &#x628;&#x627;&#x634;&#x646;.
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="javascript" class="language-javascript">Mouse<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
   children<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
@@ -6906,12 +6925,12 @@ While using this above technique(without any name), explicitly state that childr
 </li>
 <li>
 <h3><a id="1ec42730feecddde3681e9908b94fc72" class="anchor" href="#1ec42730feecddde3681e9908b94fc72">&#x645;&#x634;&#x6A9;&#x644; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; render props &#x628;&#x627; pure component&#x647;&#x627; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>If you create a function inside a render method, it negates the purpose of pure component. Because the shallow prop comparison will always return false for new props, and each render in this case will generate a new value for the render prop. You can solve this issue by defining the render function as instance method.</p>
+<p>&#x627;&#x6AF;&#x647; &#x628;&#x6CC;&#x627;&#x6CC;&#x645; &#x62F;&#x627;&#x62E;&#x644; &#x645;&#x62A;&#x62F; &#x631;&#x646;&#x62F;&#x631; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639;&#x6CC; &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x62F;&#x631; &#x627;&#x6CC;&#x646; &#x635;&#x648;&#x631;&#x62A; &#x647;&#x62F;&#x641; &#x627;&#x635;&#x644;&#x6CC; pure component &#x647;&#x627; &#x631;&#x648; &#x646;&#x641;&#x6CC; &#x6A9;&#x631;&#x62F;&#x6CC;&#x645;. &#x686;&#x648;&#x646; &#x6A9;&#x647; &#x645;&#x642;&#x627;&#x6CC;&#x633;&#x647; &#x633;&#x637;&#x62D;&#x6CC; prop &#x647;&#x627; &#x645;&#x639;&#x645;&#x648;&#x644;&#x627; &#x647;&#x645;&#x6CC;&#x634;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; false &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; prop &#x647;&#x627;&#x6CC; &#x62C;&#x62F;&#x6CC;&#x62F; &#x628;&#x631;&#x645;&#x6CC; &#x6AF;&#x631;&#x62F;&#x648;&#x646;&#x647; &#x648; &#x647;&#x631; &#x631;&#x646;&#x62F;&#x631; &#x62F;&#x631; &#x627;&#x6CC;&#x646; &#x62D;&#x627;&#x644;&#x62A; &#x6CC;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x62C;&#x62F;&#x6CC;&#x62F;&#x6CC; &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; &#x631;&#x646;&#x62F;&#x631; &#x627;&#x631;&#x627;&#x626;&#x647; &#x645;&#x6CC;&#x62F;&#x647;. &#x628;&#x627; &#x62A;&#x639;&#x631;&#x6CC;&#x641; &#x6CC;&#x647; &#x62A;&#x627;&#x628;&#x639; &#x631;&#x646;&#x62F;&#x631; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62A;&#x62F; instance &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x627;&#x6CC;&#x646; &#x645;&#x634;&#x6A9;&#x644; &#x631;&#x648; &#x62D;&#x644; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <p><strong><a class="backToTop" href="#1ec42730feecddde3681e9908b94fc72-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="3b8c07cb4463d30ac3851bc10b475ba1" class="anchor" href="#3b8c07cb4463d30ac3851bc10b475ba1">&#x686;&#x637;&#x648;&#x631;&#x6CC; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; render props &#x645;&#x6CC;&#x200C;&#x62A;&#x648;&#x646;&#x6CC;&#x645; HOC &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>You can implement most higher-order components (HOC) using a regular component with a render prop. For example, if you would prefer to have a withMouse HOC instead of a <mouse> component, you could easily create one using a regular <mouse> with a render prop.</mouse></mouse></p>
+<p>&#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x628;&#x627; &#x627;&#x644;&#x648;&#x6CC;&#x62A; &#x628;&#x627;&#x644;&#x627; (HOC) &#x631;&#x648; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x645;&#x639;&#x645;&#x648;&#x644;&#x6CC; &#x628;&#x627; &#x6CC;&#x647; &#x631;&#x646;&#x62F;&#x631; &#x67E;&#x6CC;&#x627;&#x62F;&#x647; &#x633;&#x627;&#x632;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;. &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x645;&#x62B;&#x627;&#x644; &#x627;&#x6AF;&#x647; &#x62A;&#x631;&#x62C;&#x6CC;&#x62D; &#x645;&#x6CC;&#x62F;&#x6CC;&#x645; &#x6A9;&#x647; &#x628;&#x647; &#x62C;&#x627;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; <mouse> &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; HOC &#x628;&#x647; &#x627;&#x633;&#x645; withMouse &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x6CC;&#x645;&#x60C; &#x628;&#x647; &#x631;&#x627;&#x62D;&#x62A;&#x6CC; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; <mouse> &#x628;&#x627; prop &#x631;&#x646;&#x62F;&#x631;&#x60C; &#x6CC;&#x6A9;&#x6CC; &#x628;&#x633;&#x627;&#x632;&#x6CC;&#x645;.</mouse></mouse></p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token keyword">function</span> <span class="token function">withMouse</span><span class="token punctuation">(</span><span class="token parameter">Component</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> React<span class="token punctuation">.</span>Component <span class="token punctuation">{</span>
@@ -6925,17 +6944,17 @@ While using this above technique(without any name), explicitly state that childr
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre></span>
-This way render props gives the flexibility of using either pattern.
+&#x627;&#x6CC;&#x646; &#x631;&#x648;&#x634; &#x631;&#x646;&#x62F;&#x631; &#x6A9;&#x631;&#x62F;&#x646; prop &#x647;&#x627;&#x60C; &#x627;&#x646;&#x639;&#x637;&#x627;&#x641; &#x67E;&#x630;&#x6CC;&#x631;&#x6CC; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x647;&#x631; &#x62F;&#x648; &#x627;&#x644;&#x6AF;&#x648; &#x631;&#x648; &#x645;&#x6CC;&#x62F;&#x647;.
 <p><strong><a class="backToTop" href="#3b8c07cb4463d30ac3851bc10b475ba1-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="4d788c9b6e932b199c7fbe32a63b21d5" class="anchor" href="#4d788c9b6e932b199c7fbe32a63b21d5">&#x62A;&#x6A9;&#x646;&#x6CC;&#x6A9; windowing &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Windowing is a technique that only renders a small subset of your rows at any given time, and can dramatically reduce the time it takes to re-render the components as well as the number of DOM nodes created. If your application renders long lists of data then this technique is recommended. Both react-window and react-virtualized are popular windowing libraries which provides several reusable components for displaying lists, grids, and tabular data.</p>
+<p>windowing &#x62A;&#x6A9;&#x646;&#x6CC;&#x6A9;&#x6CC;&#x647; &#x6A9;&#x647; &#x641;&#x642;&#x637; &#x632;&#x6CC;&#x631; &#x645;&#x62C;&#x645;&#x648;&#x639;&#x647; &#x627;&#x6CC; &#x627;&#x632; &#x633;&#x637;&#x631;&#x647;&#x627;&#x645;&#x648;&#x646; &#x631;&#x648; &#x62F;&#x631; &#x647;&#x631; &#x632;&#x645;&#x627;&#x646; &#x627;&#x631;&#x627;&#x626;&#x647; &#x645;&#x6CC;&#x62F;&#x647; &#x648; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x647; &#x645;&#x62F;&#x62A; &#x632;&#x645;&#x627;&#x646; &#x644;&#x627;&#x632;&#x645; &#x628;&#x631;&#x627;&#x6CC; &#x631;&#x646;&#x62F;&#x631; &#x645;&#x62C;&#x62F;&#x62F; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627; &#x648; &#x647;&#x645;&#x6CC;&#x646;&#x637;&#x648;&#x631; &#x62A;&#x639;&#x62F;&#x627;&#x62F; &#x6AF;&#x631;&#x647; &#x647;&#x627;&#x6CC; DOM &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x634;&#x62F;&#x647; &#x631;&#x648;&#x628;&#x647; &#x637;&#x631;&#x632; &#x686;&#x634;&#x645;&#x6AF;&#x6CC;&#x631;&#x6CC; &#x6A9;&#x627;&#x647;&#x634; &#x628;&#x62F;&#x647;. &#x627;&#x6AF;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x645;&#x648;&#x646; &#x644;&#x6CC;&#x633;&#x62A; &#x647;&#x627;&#x6CC; &#x637;&#x648;&#x644;&#x627;&#x646;&#x6CC; &#x627;&#x6CC; &#x627;&#x632; &#x627;&#x632; &#x62F;&#x627;&#x62F;&#x647; &#x631;&#x648; &#x627;&#x631;&#x627;&#x626;&#x647; &#x645;&#x6CC;&#x62F;&#x647;&#x60C; &#x627;&#x6CC;&#x646; &#x631;&#x648;&#x634; &#x62A;&#x648;&#x635;&#x6CC;&#x647; &#x645;&#x6CC;&#x634;&#x647;.react-window &#x648; react-virtualized &#x647;&#x631; &#x62F;&#x648; &#x6A9;&#x62A;&#x627;&#x628;&#x62E;&#x648;&#x646;&#x647; &#x647;&#x627;&#x6CC; &#x645;&#x639;&#x631;&#x648;&#x641; windowing &#x647;&#x633;&#x62A;&#x646; &#x6A9;&#x647; &#x686;&#x646;&#x62F;&#x6CC;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x642;&#x627;&#x628;&#x644; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x62C;&#x62F;&#x62F; &#x631;&#x648; &#x628;&#x631;&#x627;&#x6CC; &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x644;&#x6CC;&#x633;&#x62A; &#x647;&#x627;&#x60C; &#x634;&#x628;&#x6A9;&#x647; &#x647;&#x627; &#x648; &#x62F;&#x627;&#x62F;&#x647; &#x647;&#x627;&#x6CC; &#x62C;&#x62F;&#x648;&#x644;&#x6CC; &#x641;&#x631;&#x627;&#x647;&#x645; &#x645;&#x6CC;&#x6A9;&#x646;&#x646;.</p>
 <p><strong><a class="backToTop" href="#4d788c9b6e932b199c7fbe32a63b21d5-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="ccd32fe0919733c6a0e61cb54bd7bcdb" class="anchor" href="#ccd32fe0919733c6a0e61cb54bd7bcdb">&#x62A;&#x648;&#x6CC; JSX &#x6CC;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; falsy &#x631;&#x648; &#x686;&#x637;&#x648;&#x631;&#x6CC; &#x686;&#x627;&#x67E; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>The falsy values such as false, null, undefined, and true are valid children but they don&apos;t render anything. If you still want to display them then you need to convert it to string. Let&apos;s take an example on how to convert to a string,</p>
+<p>&#x645;&#x642;&#x627;&#x62F;&#x6CC;&#x631; &#x62C;&#x639;&#x644;&#x6CC; &#x645;&#x62B;&#x644; false&#x60C; null&#x60C; undefined &#x648; true &#x645;&#x639;&#x62A;&#x628;&#x631; &#x647;&#x633;&#x62A;&#x646;&#x62F; &#x648;&#x644;&#x6CC; &#x647;&#x6CC;&#x686; &#x686;&#x6CC;&#x632;&#x6CC; &#x631;&#x648; &#x631;&#x646;&#x62F;&#x631; &#x646;&#x645;&#x6CC;&#x6A9;&#x646;&#x646;. &#x627;&#x6AF;&#x647; &#x628;&#x62E;&#x648;&#x627;&#x6CC;&#x645; &#x627;&#x648;&#x646;&#x627; &#x631;&#x648; &#x646;&#x645;&#x627;&#x6CC;&#x634; &#x628;&#x62F;&#x6CC;&#x645; &#x628;&#x627;&#x6CC;&#x62F; &#x628;&#x647; &#x631;&#x634;&#x62A;&#x647; &#x62A;&#x628;&#x62F;&#x6CC;&#x644;&#x634;&#x648;&#x646; &#x6A9;&#x646;&#x6CC;&#x645;. &#x628;&#x6CC;&#x627;&#x6CC;&#x646; &#x6CC;&#x647; &#x645;&#x62B;&#x627;&#x644; &#x62F;&#x631; &#x645;&#x648;&#x631;&#x62F; &#x62A;&#x628;&#x62F;&#x6CC;&#x644; &#x628;&#x647; &#x631;&#x634;&#x62A;&#x647; &#x628;&#x632;&#x646;&#x6CC;&#x645;&#x60C;</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx" class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>My JavaScript variable is <span class="token punctuation">{</span><span class="token function">String</span><span class="token punctuation">(</span>myVariable<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </pre></span>
@@ -6948,7 +6967,7 @@ This way render props gives the flexibility of using either pattern.
 </li>
 <li>
 <h3><a id="84ec765d7203ebd17a491810a4434cb6" class="anchor" href="#84ec765d7203ebd17a491810a4434cb6">&#x62A;&#x648;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A;&#x200C;&#x647;&#x627;&#x6CC; &#x6A9;&#x646;&#x62A;&#x631;&#x644; &#x646;&#x634;&#x62F;&#x647; &#x686;&#x637;&#x648;&#x631;&#x6CC; &#x645;&#x642;&#x62F;&#x627;&#x631;&#x6CC; &#x67E;&#x6CC;&#x634; &#x641;&#x631;&#x636; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>In React, the value attribute on form elements will override the value in the DOM. With an uncontrolled component, you might want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a <strong>defaultValue</strong> attribute instead of <strong>value</strong>.</p>
+<p>&#x62A;&#x648;&#x6CC; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A;&#x60C; &#x645;&#x634;&#x62E;&#x635;&#x647; value &#x631;&#x648;&#x6CC; &#x639;&#x646;&#x627;&#x635;&#x631; &#x641;&#x631;&#x645; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x631;&#x648; &#x62A;&#x648;&#x6CC; DOM &#x644;&#x63A;&#x648; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;. &#x628;&#x627; &#x6CC;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x6A9;&#x646;&#x62A;&#x631;&#x644; &#x646;&#x634;&#x62F;&#x647;&#x60C; &#x645;&#x645;&#x6A9;&#x646;&#x647; &#x628;&#x62E;&#x648;&#x627;&#x6CC;&#x645; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x6CC;&#x647; &#x645;&#x642;&#x62F;&#x627;&#x631; &#x627;&#x648;&#x644;&#x6CC;&#x647; &#x645;&#x634;&#x62E;&#x635; &#x6A9;&#x646;&#x647; &#x648;&#x644;&#x6CC; &#x628;&#x647; &#x631;&#x648;&#x632;&#x631;&#x633;&#x627;&#x646;&#x6CC; &#x647;&#x627;&#x6CC; &#x628;&#x639;&#x62F;&#x6CC; &#x631;&#x648; &#x6A9;&#x646;&#x62A;&#x631;&#x644; &#x646;&#x634;&#x62F;&#x647; &#x628;&#x630;&#x627;&#x631;&#x647;. &#x628;&#x631;&#x627;&#x6CC; &#x647;&#x646;&#x62F;&#x644; &#x6A9;&#x631;&#x62F;&#x646; &#x627;&#x6CC;&#x646; &#x645;&#x648;&#x631;&#x62F;&#x60C; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x628;&#x647; &#x62C;&#x627;&#x6CC; <strong>value</strong> &#x645;&#x634;&#x62E;&#x635;&#x647; <strong>defaultValue</strong> &#x631;&#x648; &#x62A;&#x639;&#x6CC;&#x6CC;&#x646; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="jsx harmony" class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -6965,65 +6984,52 @@ This way render props gives the flexibility of using either pattern.
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre></span>
-<p>The same applies for <code>select</code> and <code>textArea</code> inputs. But you need to use <strong>defaultChecked</strong> for <code>checkbox</code> and <code>radio</code> inputs.</p>
+<p>&#x647;&#x645;&#x6CC;&#x646; &#x6A9;&#x627;&#x631; &#x628;&#x631;&#x627;&#x6CC; &#x200D;&#x200D;<code>select</code> &#x648; <code>textArea</code> &#x647;&#x645; &#x627;&#x646;&#x62C;&#x627;&#x645; &#x645;&#x6CC;&#x634;&#x647; &#x648;&#x644;&#x6CC; &#x628;&#x631;&#x627;&#x6CC; &#x200D;&#x200D;<code>checkbox</code> &#x628;&#x627;&#x6CC;&#x62F; &#x627;&#x632; <strong>defaultchecked</strong> &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <p><strong><a class="backToTop" href="#84ec765d7203ebd17a491810a4434cb6-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="4f539c55ee5ab2adf0d7782f94456799" class="anchor" href="#4f539c55ee5ab2adf0d7782f94456799">stack &#x645;&#x648;&#x631;&#x62F;&#x639;&#x644;&#x627;&#x642;&#x647; &#x634;&#x645;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x6A9;&#x627;&#x646;&#x641;&#x6CC;&#x6AF; &#x67E;&#x631;&#x648;&#x698;&#x647; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Even though the tech stack varies from developer to developer, the most popular stack is used in react boilerplate project code. It mainly uses Redux and redux-saga for state management and asynchronous side-effects, react-router for routing purpose, styled-components for styling react components, axios for invoking REST api, and other supported stack such as webpack, reselect, ESNext, Babel.<br>
-You can clone the project <a href="https://github.com/react-boilerplate/react-boilerplate">https://github.com/react-boilerplate/react-boilerplate</a> and start working on any new react project.</p>
+<p>&#x62D;&#x62A;&#x6CC; &#x627;&#x6AF;&#x647; tech stack &#x627;&#x632; &#x62A;&#x648;&#x633;&#x639;&#x647; &#x62F;&#x647;&#x646;&#x62F;&#x647; &#x627;&#x6CC; &#x628;&#x647; &#x62A;&#x648;&#x633;&#x639;&#x647; &#x62F;&#x647;&#x646;&#x62F;&#x647; &#x62F;&#x6CC;&#x6AF;&#x647; &#x645;&#x62A;&#x641;&#x627;&#x648;&#x62A; &#x628;&#x627;&#x634;&#x647;&#x60C; &#x645;&#x639;&#x631;&#x648;&#x641; &#x62A;&#x631;&#x6CC;&#x646; stack &#x62A;&#x648;&#x6CC; &#x6A9;&#x62F; &#x67E;&#x631;&#x648;&#x698;&#x647; biolerplate &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x634;&#x62F;&#x647;. boilerplate &#x628;&#x647; &#x637;&#x648;&#x631; &#x639;&#x645;&#x62F;&#x647; &#x627;&#x632; &#x631;&#x6CC;&#x62F;&#x627;&#x6A9;&#x633; &#x648; &#x631;&#x6CC;&#x62F;&#x627;&#x6A9;&#x633; &#x633;&#x627;&#x6A9;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x645;&#x62F;&#x6CC;&#x631;&#x6CC;&#x62A; &#x627;&#x633;&#x62A;&#x6CC;&#x62A; &#x648; &#x633;&#x627;&#x6CC;&#x62F; &#x627;&#x641;&#x6A9;&#x62A; &#x647;&#x627;&#x6CC; &#x646;&#x627;&#x647;&#x645;&#x632;&#x645;&#x627;&#x646;&#x60C; styled-components &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x633;&#x62A;&#x627;&#x6CC;&#x644; &#x62F;&#x647;&#x6CC; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x60C; axios &#x628;&#x631;&#x627;&#x6CC; &#x641;&#x631;&#x627;&#x62E;&#x648;&#x627;&#x646;&#x6CC; rest api &#x648; &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x647;&#x627;&#x6CC; &#x62F;&#x6CC;&#x6AF;&#x647; &#x627;&#x632; &#x642;&#x628;&#x6CC;&#x644; webpack&#x60C; reselect&#x60C; ESNext &#x648; babel.<br>
+&#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x67E;&#x631;&#x648;&#x698;&#x647; <a href="https://github.com/react-boilerplate/react-boilerplate">https://github.com/react-boilerplate/react-boilerplate</a> &#x631;&#x648; &#x6A9;&#x644;&#x648;&#x646; &#x6A9;&#x646;&#x6CC;&#x645; &#x648; &#x6A9;&#x627;&#x631; &#x631;&#x648;&#x6CC; &#x647;&#x631; &#x67E;&#x631;&#x648;&#x698;&#x647; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x62C;&#x62F;&#x6CC;&#x62F;&#x6CC; &#x631;&#x648; &#x634;&#x631;&#x648;&#x639; &#x6A9;&#x646;&#x6CC;&#x645;.</p>
 <p><strong><a class="backToTop" href="#4f539c55ee5ab2adf0d7782f94456799-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="1a649f36605c041906f43e78d2991061" class="anchor" href="#1a649f36605c041906f43e78d2991061">&#x62A;&#x641;&#x627;&#x648;&#x62A;&#x200C; DOM &#x648;&#x627;&#x642;&#x639;&#x6CC; &#x648; Virtual DOM &#x686;&#x6CC;&#x647;&#x61F;</a></h3>
-<p>Below are the main differences between Real DOM and Virtual DOM,</p>
-<table>
-<thead>
-<tr>
-<th>Real DOM</th>
-<th>Virtual DOM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Updates are slow</td>
-<td>Updates are fast</td>
-</tr>
-<tr>
-<td>DOM manipulation is very expensive.</td>
-<td>DOM manipulation is very easy</td>
-</tr>
-<tr>
-<td>You can update HTML directly.</td>
-<td>You Can&#x2019;t directly update HTML</td>
-</tr>
-<tr>
-<td>It causes too much of memory wastage</td>
-<td>There is no memory wastage</td>
-</tr>
-<tr>
-<td>Creates a new DOM if element updates</td>
-<td>It updates the JSX if element update</td>
-</tr>
-</tbody>
-</table>
+<p>&#x627;&#x6CC;&#x646;&#x62C;&#x627; &#x62A;&#x641;&#x627;&#x648;&#x62A; &#x647;&#x627;&#x6CC; &#x627;&#x635;&#x644;&#x6CC; &#x628;&#x6CC;&#x646; DOM &#x648;&#x627;&#x642;&#x639;&#x6CC; &#x648; DOM &#x645;&#x62C;&#x627;&#x632;&#x6CC; &#x6AF;&#x641;&#x62A;&#x647; &#x634;&#x62F;&#x647;:</p>
+<p>&#x648;&#x627;&#x642;&#x639;&#x6CC; DOM :</p>
+<ol>
+<li><p>&#x628;&#x647; &#x631;&#x648;&#x632; &#x631;&#x633;&#x627;&#x646;&#x6CC; &#x647;&#x627; &#x6A9;&#x646;&#x62F; &#x647;&#x633;&#x62A;&#x646;</p></li>
+<li><p>&#x62F;&#x633;&#x62A;&#x6A9;&#x627;&#x631;&#x6CC; DOM &#x647;&#x632;&#x6CC;&#x646;&#x647; &#x628;&#x631; &#x647;&#x633;&#x62A;&#x634;.</p></li>
+<li><p>&#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; HTML &#x631;&#x648; &#x645;&#x633;&#x62A;&#x642;&#x6CC;&#x645;&#x627; &#x628;&#x647; &#x631;&#x648;&#x632;&#x631;&#x633;&#x627;&#x646;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;.</p></li>
+<li><p>&#x628;&#x627;&#x639;&#x62B; &#x627;&#x62A;&#x644;&#x627;&#x641; &#x628;&#x6CC;&#x634; &#x627;&#x632; &#x62D;&#x62F; &#x62D;&#x627;&#x641;&#x638;&#x647; &#x645;&#x6CC;&#x634;&#x647;.</p></li>
+<li><p>&#x62F;&#x631; &#x635;&#x648;&#x631;&#x62A; &#x628;&#x647; &#x631;&#x648;&#x632; &#x631;&#x633;&#x627;&#x646;&#x6CC; &#x6CC;&#x647; &#x627;&#x644;&#x645;&#x646;&#x62A;&#x60C; &#x6CC;&#x647; DOM &#x62C;&#x62F;&#x6CC;&#x62F; &#x627;&#x6CC;&#x62C;&#x627;&#x62F; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</p></li>
+</ol>
+<p>&#x645;&#x62C;&#x627;&#x632;&#x6CC; DOM :</p>
+<ol>
+<li><p>&#x628;&#x647; &#x631;&#x648;&#x632; &#x631;&#x633;&#x627;&#x646;&#x6CC; &#x647;&#x627; &#x633;&#x631;&#x6CC;&#x639; &#x647;&#x633;&#x62A;&#x646;</p></li>
+<li><p>&#x62F;&#x633;&#x62A;&#x6A9;&#x627;&#x631;&#x6CC; DOM &#x62E;&#x6CC;&#x644;&#x6CC; &#x631;&#x627;&#x62D;&#x62A;&#x647;.</p></li>
+<li><p>HTML &#x631;&#x648; &#x646;&#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x645;&#x633;&#x62A;&#x642;&#x6CC;&#x645;&#x627; &#x628;&#x647; &#x631;&#x648;&#x632; &#x631;&#x633;&#x627;&#x646;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;.</p></li>
+<li><p>&#x647;&#x6CC;&#x686; &#x627;&#x62A;&#x644;&#x627;&#x641; &#x62D;&#x627;&#x641;&#x638;&#x647; &#x627;&#x6CC; &#x648;&#x62C;&#x648;&#x62F; &#x646;&#x62F;&#x627;&#x631;&#x647;.</p></li>
+<li><p>&#x62F;&#x631; &#x635;&#x648;&#x631;&#x62A; &#x628;&#x647; &#x631;&#x648;&#x632; &#x631;&#x633;&#x627;&#x646;&#x6CC; &#x6CC;&#x647; &#x627;&#x644;&#x645;&#x646;&#x62A;&#x60C; JSX &#x631;&#x648; &#x628;&#x647; &#x631;&#x648;&#x632; &#x645;&#x6CC;&#x6A9;&#x646;&#x647;.</p></li>
+</ol>
 <p><strong><a class="backToTop" href="#1a649f36605c041906f43e78d2991061-q">&#x641;&#x647;&#x631;&#x633;&#x62A;</a></strong></p>
 </li>
 <li>
 <h3><a id="ad201c73315c4fd5d94e5d52319347bc" class="anchor" href="#ad201c73315c4fd5d94e5d52319347bc">&#x686;&#x637;&#x648;&#x631;&#x6CC; Bootstrap &#x631;&#x648; &#x628;&#x647; &#x6CC;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A;&#x6CC; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;&#x61F;</a></h3>
-<p>Bootstrap can be added to your React app in a three possible ways</p>
+<p>Bootstrap &#x631;&#x648; &#x628;&#x647; &#x633;&#x647; &#x631;&#x648;&#x634; &#x645;&#x6CC;&#x62A;&#x648;&#x646;&#x6CC;&#x645; &#x628;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x646;&#x6CC;&#x645;</p>
 <ol>
-<li>Using the Bootstrap CDN:<br>
-This is the easiest way to add bootstrap. Add both bootstrap CSS and JS resources in a head tag.</li>
-<li>Bootstrap as Dependency:<br>
-If you are using a build tool or a module bundler such as Webpack, then this is the preferred option for adding Bootstrap to your React application</li>
+<li>&#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; Bootstrap CDN<br>
+&#x627;&#x6CC;&#x646; &#x633;&#x627;&#x62F;&#x647; &#x62A;&#x631;&#x6CC;&#x646; &#x631;&#x627;&#x647; &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x631;&#x62F;&#x646; bootstrap &#x647;&#x633;&#x62A;&#x634;. &#x645;&#x646;&#x627;&#x628;&#x639; bootstrap css &#x648; js &#x631;&#x648; &#x62A;&#x648;&#x6CC; &#x62A;&#x6AF; head &#x627;&#x636;&#x627;&#x641;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x6CC;&#x645;.</li>
+<li><p>Bootstrap as Dependency:</p></li>
+<li>bootstrap &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; dependency<br>
+&#x627;&#x6AF;&#x647; &#x627;&#x632; &#x6CC;&#x647; &#x627;&#x628;&#x632;&#x627;&#x631; build &#x6CC;&#x627; &#x628;&#x633;&#x62A;&#x647; &#x646;&#x631;&#x645; &#x627;&#x641;&#x632;&#x627;&#x631;&#x6CC; &#x645;&#x627;&#x698;&#x648;&#x644;&#x6CC; &#x645;&#x62B;&#x644; webpack &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x645;&#x6CC;&#x6A9;&#x646;&#x6CC;&#x645;&#x60C; &#x627;&#x6CC;&#x646; &#x628;&#x647;&#x62A;&#x631;&#x6CC;&#x646; &#x6AF;&#x632;&#x6CC;&#x646;&#x647; &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x631;&#x62F;&#x646; bootstrap &#x628;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x631;&#x6CC;&#x200C;&#x627;&#x6A9;&#x62A; &#x647;&#x633;&#x62A;&#x634;.</li>
 </ol>
 <span align="left" dir="ltr">
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> bootstrap
 </pre></span>
 <ol start="3">
-<li>React Bootstrap Package:<br>
-In this case, you can add Bootstrap to our React app is by using a package that has rebuilt Bootstrap components to work particularly as React components. Below packages are popular in this category,
+<li>&#x628;&#x633;&#x62A;&#x647; React Bootstrap:<br>
+&#x62F;&#x631; &#x627;&#x6CC;&#x646; &#x62D;&#x627;&#x644;&#x62A; &#x645;&#x6CC; &#x62A;&#x648;&#x646;&#x6CC;&#x645; bootstrap &#x631;&#x648; &#x628;&#x647; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x627;&#x636;&#x627;&#x641;&#x647; &#x6A9;&#x646;&#x6CC;&#x645; &#x62A;&#x627; &#x628;&#x627; &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x628;&#x633;&#x62A;&#x647; &#x647;&#x627;&#x6CC;&#x6CC; &#x6A9;&#x647; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x631;&#x648; &#x62F;&#x648;&#x628;&#x627;&#x631;&#x647; &#x633;&#x627;&#x62E;&#x62A;&#x647; &#x62A;&#x627; &#x645;&#x646;&#x62D;&#x635;&#x631;&#x627; &#x628;&#x647; &#x639;&#x646;&#x648;&#x627;&#x646; &#x6A9;&#x627;&#x645;&#x67E;&#x648;&#x646;&#x646;&#x62A; &#x647;&#x627;&#x6CC; &#x631;&#x6CC; &#x627;&#x6A9;&#x62A; &#x6A9;&#x627;&#x631; &#x6A9;&#x646;&#x646;&#x62F;. &#x645;&#x639;&#x631;&#x648;&#x641; &#x62A;&#x631;&#x6CC;&#x646; &#x628;&#x633;&#x62A;&#x647; &#x647;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x627;&#x6CC;&#x646; &#x6A9;&#x627;&#x631; &#x627;&#x6CC;&#x646;&#x627; &#x647;&#x633;&#x62A;&#x646;&#x62F;
 <ol>
 <li><p>react-bootstrap</p></li>
 <li><p>reactstrap</p></li>
