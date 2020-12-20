@@ -29,6 +29,7 @@ puppeteer:
 
 می‌تونید از بخش ریلیزهای گیت هاب دانلود کنین([این لینک](https://github.com/Mariotek/reactjs-persian-interview-questions/releases)).
 
+
 ### فهرست
 
 | ردیف | سوال                                                                                                                                                                                                     |
@@ -5533,49 +5534,9 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
-221. ### تابع memo ری‌اکت چیه؟
-
-     Class components can be restricted from rendering when their input props are the same using **PureComponent or shouldComponentUpdate**. Now you can do the same with function components by wrapping them in **React.memo**.
-
-     <span align="left" dir="ltr">
-
-     ```jsx
-     const MyComponent = React.memo(function MyComponent(props) {
-       /* only rerenders if props change */
-     });
-     ```
-
-     </span>
-
-     **[فهرست](#فهرست)**
-
-222. ### تابع lazy ری‌اکت چیه؟
-
-     The React.lazy function lets you render an dynamic import as a regular component. It will automatically load the bundle containing the OtherComponent when the component gets rendered. This must return a Promise which resolves to a module with a default export containing a React component.
-
-     <span align="left" dir="ltr">
-
-     ```jsx
-     const OtherComponent = React.lazy(() => import("./OtherComponent"));
-
-     function MyComponent() {
-       return (
-         <div>
-           <OtherComponent />
-         </div>
-       );
-     }
-     ```
-
-     </span>
-     **Note:**
-     React.lazy and Suspense is not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we still recommend React Loadable.
-
-     **[فهرست](#فهرست)**
-
 223. ### چطوری با استفاده از تابع setState از رندر غیرضروری جلوگیری کنیم؟
 
-     You can compare current value of the state with an existing state value and decide whether to rerender the page or not. If the values are same then you need to return **null** to stop rerendering otherwise return the latest state value. For example, the user profile information is conditionally rendered as follows,
+     می تونیم مقدار فعلی یه state رو با مقدار موجود مقایسه کنیم و تصمیم بگیریم که صفحه مجددا رندر بشه یا نه. اگه مقادیر یکسان بود برای جلوگیری از رندر مجدد باید مقدار null رو برگردونیم و در غیر این صورت آخرین مقدار state‌ رو برمی گردونیم. برای مثال، اطلاعات پروفایل کاربر توی مثال زیر به صورت شرطی رندر شده: 
 
      <span align="left" dir="ltr">
 
@@ -5598,7 +5559,8 @@ puppeteer:
 
 224. ### توی نسخه ۱۶ ری‌اکت چطوری میشه آرایه، Strings و یا عدد رو رندر کنیم؟
 
-     **Arrays**: Unlike older releases, you don't need to make sure **render** method return a single element in React16. You are able to return multiple sibling elements without a wrapping element by returning an array. For example, let us take the below list of developers,
+     **آرایه ها**: بر خلاف نسخه های قدیمی، نیازی نیست مطمعن بشیم که متد **render** یه عنصری رو توی ری اکت 16 برمیگردونه.
+     میتونیم عناصر شبیه هم رو بدون نیاز به عنصر بسته بندی به عنوان یه آرایه برگردونیم. به عنوان مثال، بیاین لیست توسعه دهندگان زیر رو بگیریم،
 
      <span align="left" dir="ltr">
 
@@ -5613,7 +5575,7 @@ puppeteer:
      ```
 
      </span>
-     You can also merge this array of items in another array component
+     همینطور میتونیم آیتم های این آرایه رو توی یه کامپوننت دیگه ای ادغام کنیم
 
      <span align="left" dir="ltr">
 
@@ -5631,7 +5593,7 @@ puppeteer:
      ```
 
      </span>
-     **Strings and Numbers:** You can also return string and number type from the render method
+    **رشته ها و اعداد:** همینطور می تونیم انواع رشته ها و اعداد رو با متد رندر برگردونیم
 
      <span align="left" dir="ltr">
 
@@ -5690,7 +5652,8 @@ puppeteer:
 
 226. ### hookها چی هستن؟
 
-     Hooks is a new feature that lets you use state and other React features without writing a class. Let's see an example of useState hook example,
+    هوک ها ویژگی جدیدی هستن که بهمون این امکان رو میدن که بدون نوشتن کلاس از state‌ و ویژگی های دیگه ری اکت استفاده کنیم.
+     بیاین یه مثال از هوک useState ببینیم:
 
      <span align="left" dir="ltr">
 
@@ -5716,16 +5679,16 @@ puppeteer:
 
 227. ### چه قوانینی برای هوک‌ها باید رعایت بشن؟
 
-     You need to follow two rules inorder to use hooks
-
-     1. Call Hooks only at the top level of your react functions. i.e, You shouldn’t call Hooks inside loops, conditions, or nested functions. This will ensure that Hooks are called in the same order each time a component renders and it preserves the state of Hooks between multiple useState and useEffect calls.
-     2. Call Hooks from React Functions only. i.e, You shouldn’t call Hooks from regular JavaScript functions.
+      برای استفاده از هوک ها باید از دو قانون پیروی کنیم
+      
+     1. هوک ها رو فقط در سطح بالای توابع ری اکت صدا کنیم. یعنی نباید هوک ها رو توی حلقه ها، شرط ها یا توابع تودرتو صدا کنیم. با این کار اطمینان حاصل میشه که هوک ها با هر بار رندر کامپوننت به همون ترتیب صدا زده میشن و state‌ هوک ها بین چندین بار استفاده از useState , useEffect حفظ میشه.
+     2. هوک ها رو فقط توی ری اکت میتونیم استفاده کنیم. توی توابع جاوااسکریپتی نباید هوک ها رو صدا بزنیم.
 
      **[فهرست](#فهرست)**
 
 228. ### چطوری میشه از استفاده درست هوک‌ها اطمینان حاصل کرد؟
 
-     React team released an ESLint plugin called **eslint-plugin-react-hooks** that enforces these two rules. You can add this plugin to your project using the below command,
+     تیم ری اکت یه پلاگین ESLinst به اسم **eslint-plugin-react-hooks** منتشر کرده که این دو قانون رو اجرا میکنه. با استفاده از دستور زیر میتونیم این پلاگین رو به پروژه مون اضافه کنیم.
 
      <span align="left" dir="ltr">
 
@@ -5734,7 +5697,7 @@ puppeteer:
      ```
 
      </span>
-     And apply the below config in your ESLint config file,
+    و تنظیمات زیر رو توی فایل ESLint config اعمال کنیم
 
      <span align="left" dir="ltr">
 
@@ -5753,43 +5716,43 @@ puppeteer:
      ```
 
      </span>
-     **Note:** This plugin is intended to use in Create React App by default.
+     **نکته** این پلاگین به صورت پیش فرض در نظر گرفته شده تا در ساخت React App ازش استفاده کنیم.
 
      **[فهرست](#فهرست)**
 
 229. ### تفاوت‌های Flux و Redux چیا هستن؟
 
-     Below are the major differences between Flux and Redux
+     اینجا تفاوت عمده Flux و Redux گفته شده
 
      | Flux                                           | Redux                                      |
      | ---------------------------------------------- | ------------------------------------------ |
-     | State is mutable                               | State is immutable                         |
-     | The Store contains both state and change logic | The Store and change logic are separate    |
-     | There are multiple stores exist                | There is only one store exist              |
-     | All the stores are disconnected and flat       | Single store with hierarchical reducers    |
-     | It has a singleton dispatcher                  | There is no concept of dispatcher          |
-     | React components subscribe to the store        | Container components uses connect function |
+     | State قابل تغییره                             | State غیر قابل تغییره                     |
+     | Store شامل منطق تغییر و State هستش           | Store و منطق تغییر از هم جدا هستن         |
+     | Store های مختلفی وجود داره                   |  فقط یه Store وجود داره                  |
+     | تمام Store ها جدا از هم هستن                 | یه Store با Reducer های سلسله مراتبی    |
+     | یه dispatcher تکی داره                        | مفهومی به اسم dispatcher وجود نداره          |
+     | React components subscribe to the store        | کامپوننت های Container از تایع connect استفاده می کنن. |
 
      **[فهرست](#فهرست)**
 
 230. ### مزایای ری‌اکت روتر نسخه۴ چیه؟
 
-     Below are the main benefits of React Router V4 module,
+     اینجا مزایای اصلی ماژول React Router V4 گفته شده:
 
-     1. In React Router v4(version 4), the API is completely about components. A router can be visualized as a single component(<BrowserRouter>) which wraps specific child router components(<Route>).
-     2. You don't need to manually set history. The router module will take care history by wrapping routes with <BrowserRouter> component.
-     3. The application size is reduced by adding only the specific router module(Web, core, or native)
+     1. توی React Router ورژن ۴، API کلا در مورد کامپوننت هاست. یه Router می تونیم به عنوان یه کامپوننت تکی (<BrowserRouter>) تجسم کنیم که کامپوننت های روتر فرزند (<Route>) رو دسته بندی میکنه. 
+     2. نیازی به تنظیم دستی history‌ نداریم. روتر از طریق بسته بندی route ها با کامپوننت <BrowserRouter> از history مراقبت میکنه.
+     3. اندازه برنامه فقط با یه ماژول روتر خاص (Web, core یا native) کاهش پیدا میکنه.
 
      **[فهرست](#فهرست)**
 
 231. ### می‌تونی راجع به متد componentDidCatch توضیح بدی؟
 
-     The **componentDidCatch** lifecycle method is invoked after an error has been thrown by a descendant component. The method receives two parameters,
+     بعد از اینکه خطایی توسط یه کامپوننت با سلسله مراتب پایین تر ارسال شد، متد **componentDidCatch** صدا زده میشه. این متد دو تا پارامتر دریافت میکنه:
 
-     1. error: - The error object which was thrown
-     2. info: - An object with a componentStack key contains the information about which component threw the error.
+     1. error: - آبجکت error
+     2. info: - یه آبجکت با کلید componentStack که شامل اطلاعاتیه در مورد اینکه کدوم کامپوننت خطا ایجاد کرده.
 
-     The method structure would be as follows
+     ساختار متد به صورت زیر هستش:
      <span align="left" dir="ltr">
 
      ```javascript
@@ -5802,19 +5765,20 @@ puppeteer:
 
 232. ### در چه سناریویی error boundary خطا رو catch نمی‌کنه؟
 
-     Below are the cases in which error boundaries doesn't work
+     این ها مواردی هستن که error boundary ها اونجا کار نمی کنن
 
-     1. Inside Event handlers
-     2. Asynchronous code using **setTimeout or requestAnimationFrame** callbacks
+     1. داخل Event handler ها
+     2. کد ناهمزمان با استفاده از callback‌ های **setTimeout یا requestAnimationFrame**
      3. During Server side rendering
-     4. When errors thrown in the error boundary code itself
+     3. موقع ارائه سمت سرور (Server side rendering)
+     4. وقتی خطاها در خود کد error boundary ها رخ میده.
 
      **[فهرست](#فهرست)**
 
 233. ### چرا نیازی به error boundaries برای event handlerها نیست؟
 
-     Error boundaries do not catch errors inside event handlers. Event handlers don't happened or invoked during rendering time unlike render method or lifecycle methods. So React knows how to recover these kind of errors in event handlers.
-     If still you need to catch an error inside event handler, use the regular JavaScript try / catch statement as below
+     Error boundary‌ ها خطاها رو توی event handler ها نمی گیرن. Event handler ها بر خلاف متد رندر یا lifecycle موقع رندر کردن اتفاق نمی افته یا فراخوانی نمیشه. بنابراین ری اکت میدونه که این مدل خطا ها رو توی event handler ها چطوری بازیابی کنه.
+     اگه هنوز نیاز داریم خطا رو توی event handler بگیریم، می تونیم از دستور try / catch جاوااسکریپت مثل زیر استفاده کنیم:
 
      <span align="left" dir="ltr">
 
@@ -5843,14 +5807,14 @@ puppeteer:
      ```
 
      </span>
-     The above code is catching the error using vanilla javascript try/catch block instead of error boundaries.
+     کد بالا خطا رو با استفاده از try/catch جاوااسکریپت به جای error boundary  ها میگیره.
 
      **[فهرست](#فهرست)**
 
 234. ### تفاوت بلوک try catch و error boundaryها چیه؟
 
-     Try catch block works with imperative code whereas error boundaries are meant for declarative code to render on the screen.
-     For example, the try catch block used for below imperative code
+     بلوک try catch با کد دستوری کار میکنه در حالی که error boundary ها برای ارائه کد اعلانی روی صفحه در نظر گرفته شدن.
+     برای مثال، بلوک try catch برای کد دستوری زیر استفاده میشه
 
      <span align="left" dir="ltr">
 
@@ -5864,7 +5828,7 @@ puppeteer:
 
      </span>
 
-     Whereas error boundaries wrap declarative code as below,
+     در حالی که error boundary ها کد های اعلانی رو به صورت زیر بسته بندی می کنه،
 
      <span align="left" dir="ltr">
 
@@ -5876,28 +5840,28 @@ puppeteer:
 
      </span>
 
-     So if an error occurs in a **componentDidUpdate** method caused by a **setState** somewhere deep in the tree, it will still correctly propagate to the closest error boundary.
+     پس اگه خطایی توی متد **componentDidUpdate** توسط **setState** جایی در عمق درخت، رخ بده بازم به درستی به نزدیک ترین error boundary گسترش پیدا میکنه.
 
      **[فهرست](#فهرست)**
 
 235. ### رفتار خطاهای uncaught در ری‌اکت 16 چیه؟
 
-     In React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree. The reason behind this decision is that it is worse to leave corrupted UI in place than to completely remove it. For example, it is worse for a payments app to display a wrong amount than to render nothing.
+     توی ری اکت ورژن ۱۶، خطاهایی که توسط هیچ error boundary گرفته نشن، منجر به unmount شدن کل درخت کامپوننت ری اکت میشن.دلیل این تصمیم اینه که رابط کاربری خراب بهتره که کامل حذف بشه تا اینکه سر جای خودش باقی بمونه.به عنوان مثال، برای یه برنامه پرداخت بهتره گه هیچی رندر نکنیم تا اینکه بخوایم یه مقدار اشتباه رو نشون بدیم.
 
      **[فهرست](#فهرست)**
 
 236. ### محل مناسب برای قرار دادن error boundary کجاست؟
 
-     The granularity of error boundaries usage is up to the developer based on project needs. You can follow either of these approaches,
+     میزان استفاده از error boundary ها بر اساس نیاز پروژه به عهده توسعه دهنده ست. می تونیم از هر کدوم از روش های زیر استفاده کنیم
 
-     1. You can wrap top-level route components to display a generic error message for the entire application.
-     2. You can also wrap individual components in an error boundary to protect them from crashing the rest of the application.
+     1. می تونیم روت کامپوننت های سطح بالا رو برای نمایش یه پیغام خطای عمومی واسه کل برنامه بسته بندی کنیم.
+     2. همین طور می تونیم کامپوننت های تکی رو توی یه error boundary قرار بدیم تا از خراب شدن کل برنامه محافظت بشه.
 
      **[فهرست](#فهرست)**
 
 237. ### مزیت چاپ شدن stack trace کامپوننت‌ها توی متن ارور boundary ری‌اکت چیه؟
 
-     Apart from error messages and javascript stack, React16 will display the component stack trace with file names and line numbers using error boundary concept. For example, BuggyCounter component displays the component stack trace as below,
+     به غیر از پیام های خطا و پشته جاوااسکریپت، ری اکت ورژن ۱۶ پشته کامپوننت رو با نام فایل و شماره خط با استفاده از مفهوم error boundary نمایش میده. برای مثال، کامپوننت BuggyCounter پشته کامپوننت رو به صورت زیر نشون میده:
 
      ![stacktrace](images/error_boundary.png)
 
@@ -5905,29 +5869,29 @@ puppeteer:
 
 238. ### متدی که در تعریف کامپوننت‌های class الزامیه؟
 
-     The render() method is the only required method in a class component. i.e, All methods other than render method are optional for a class component.
+     متد render() تنها متد مورد نیاز توی class کامپوننت هستش. به عنوان مثال، همه متد ها غیر از متد render توی class‌ کامپوننت اختیاری هستش.
 
      **[فهرست](#فهرست)**
 
 239. ### نوع‌های ممکن برای مقدار بازگشتی متد render چیا هستن؟
 
-     Below are the list of following types used and return from render method,
+     اینجا لیستی از انواع type‌ های استفاده شده و برگشت داده شده توسط متد رندر نوشته شده:
 
-     1. **React elements:** Elements that instruct React to render a DOM node. It includes html elements such as `<div/>` and user defined elements.
+     1. **عناصر ری اکت** عناصری که به ری اکت دستور میدن تا یه گره DOM رو رندر کنه. این عناصر شامل عناصر html مثل `<div/>` و عناصر تعریف شده توسط کاربر هستش.
      2. **Arrays and fragments:** Return multiple elements to render as Arrays and Fragments to wrap multiple elements
-     3. **Portals:** Render children into a different DOM subtree.
-     4. **String and numbers:** Render both Strings and Numbers as text nodes in the DOM
-     5. **Booleans or null:** Doesn't render anything but these types are used to conditionally render content.
+     3. **Portals** فرزند ها رو داخل یه زیرشاخه DOM‌ متفاوت رندر میکنه
+     4. **رشته ها و اعداد** رشته ها و اعداد رو به عنوان گره متنی توی DOM رندر میکنه.
+     5. **‌Boolean یا null** چیزی رندر نمیکنه اما از این type برای رندر کردن محتوای شرطی استفاده میشه.
 
      **[فهرست](#فهرست)**
 
 240. ### هدف اصلی از متد constructor چیه؟
 
-     The constructor is mainly used for two purposes,
+     constructor به طور عمده برای دو منظور استفاده میشه:
 
-     1. To initialize local state by assigning object to this.state
-     2. For binding event handler methods to the instance
-        For example, the below code covers both the above cases,
+     1. برای مقدار دهی اولیه local state با تخصیص ابجکت به this.state
+     2. برای اتصال متدهای event handler به نمونه
+        به عنوان مثال کد زیر هر دو مورد بالا رو پوشش میده:
         <span align="left" dir="ltr">
 
      ```javascript
@@ -5945,13 +5909,13 @@ puppeteer:
 
 241. ### آیا تعریف متد سازنده توی ری‌اکت الزامیه؟
 
-     No, it is not mandatory. i.e, If you don’t initialize state and you don’t bind methods, you don’t need to implement a constructor for your React component.
+     نه، اجباری نیست. به عنوان مثال، اگه ما state رو مقدار دهی اولیه نکنیم و متد ها رو متصل نکنیم، نیازی به پیاده سازی constructor برای کاموننتمون نداریم.
 
      **[فهرست](#فهرست)**
 
 242. ### Default propها چی هستن؟
 
-     The defaultProps are defined as a property on the component class to set the default props for the class. This is used for undefined props, but not for null props. For example, let us create color default prop for the button component,
+     defaultProp  ها به عنوان یه ویژگی روی کلاس کامپوننت تعریف شده تا prop های پیش فرض رو برای کلاس تنظیم کنه. این مورد برای prop های undefined استفاده میشه نه برای prop های null. به عنوان مثال بیاین یه prop پیش فرض رنگ برای کامپوننت button بسازیم.
 
      <span align="left" dir="ltr">
 
@@ -5967,7 +5931,7 @@ puppeteer:
 
      </span>
 
-     If props.color is not provided then it will set the default value to 'red'. i.e, Whenever you try to access the color prop it uses default value
+     اگه props.color ارائه نشه مقدار پیش فرض روی `red` تنطیم میشه. به عنوان مثال هر جا بخوایم به prop color دسترسی پیدا کنیم از مقدار پیش فرض استفاده میکنه.
 
      <span align="left" dir="ltr">
 
@@ -5978,13 +5942,13 @@ puppeteer:
      ```
 
      </span>
-     **Note:** If you provide null value then it remains null value.
+     **نکته:** اگه مقدار null رو ارائه بدیم مقدار null باقی می مونه.
 
      **[فهرست](#فهرست)**
 
 243. ### چرا نباید تابع setState رو توی متد componentWillUnmount فراخوانی کرد؟
 
-     You should not call setState() in componentWillUnmount() because Once a component instance is unmounted, it will never be mounted again.
+     setState() رو نباید توی componentWillUnmount() فراخوانی کنیم چون وقتی یه کامپوننت unmount میشه، دیگه هیچوقت دوباره mount نمیشه.
 
      **[فهرست](#فهرست)**
 
@@ -6032,7 +5996,7 @@ puppeteer:
 
 245. ### کدوم متدها و به چه ترتیبی در طول ری‌رندر فراخوانی میشن؟
 
-     An update can be caused by changes to props or state. The below methods are called in the following order when a component is being re-rendered.
+     تغییر در prop ها یا state میتونه باعث به روزرسانی بشه. متد های زیر به ترتیب زیر وقتی یه کامپوننت مجددا رندر میشه صدا زده میشه.
 
      1. static getDerivedStateFromProps()
      2. shouldComponentUpdate()
@@ -6044,7 +6008,7 @@ puppeteer:
 
 246. ### کدوم متد‌ها موقع error handling فراخوانی میشن؟
 
-     Below methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+     وقتی یه خطایی موقع رندر کردن وجود داشته باشه، توی متد lifecycle، یا توی constructor هر کامپوننت فرزند، متدهای زیر فراخوانی میشه.
 
      1. static getDerivedStateFromError()
      2. componentDidCatch()
@@ -6053,8 +6017,7 @@ puppeteer:
 
 247. ### کارکرد ویژگی displayName چیه؟
 
-     The displayName string is used in debugging messages. Usually, you don’t need to set it explicitly because it’s inferred from the name of the function or class that defines the component. You might want to set it explicitly if you want to display a different name for debugging purposes or when you create a higher-order component.
-     For example, To ease debugging, choose a display name that communicates that it’s the result of a withSubscription HOC.
+     به عنوان مثال، برای سهولت توی اشکال زدایی یه displayName انتخاب میکنیم که نشون میده این نتیجه یه withSubscription HOC هستش.
 
      <span align="left" dir="ltr">
 
@@ -6081,14 +6044,14 @@ puppeteer:
 
 248. ### ساپورت مرورگرها برای برنامه ری‌اکتی چطوریه؟
 
-     React supports all popular browsers, including Internet Explorer 9 and above, although some polyfills are required for older browsers such as IE 9 and IE 10. If you use **es5-shim and es5-sham** polyfill then it even support old browsers that doesn't support ES5 methods.
+     ری اکت همه مرورگر های معروف از جمله اینترنت اکسپلورر ۹ به بالا رو پشتیبانی می کنه، اگرچه برای مرورگرهای قدیمی تر مثل IE 9 و IE 10 یه سری polyfill ها نیازه. اگه از polyfill **es5-shim و es5-sham** استفاده کنیم در اون صورت حتی مرورگر های قدیمی رو هم پشتیبانی میکنه که متد های ES5‌ رو پشتیبانی نمیکنه
 
      **[فهرست](#فهرست)**
 
 249. ### هدف از متد unmountComponentAtNode چیه؟
 
-     This method is available from react-dom package and it removes a mounted React component from the DOM and clean up its event handlers and state. If no component was mounted in the container, calling this function does nothing. Returns true if a component was unmounted and false if there was no component to unmount.
-     The method signature would be as follows,
+     این متد از بسته react-dom در دسترس هستش و کامپوننت mount شده رو از DOM حذف میکنه و event handler ها و state های اون کامپوننت رو فیلتر میکنه. اگه هیچ کامپوننت mount شده ای توی container وجود نداشته باشه، فراخوانی این تابع هیچ کاری رو انجام نمیده. اگه کامپوننت unmount شده ای وجود داشت true رو بر می گردونه و اگه هیچ کامپوننتی برای unmount شدن وجود نداشت false رو برمی گردونه.
+     امضای متد به صورت زیر هستش،
 
      <span align="left" dir="ltr">
 
@@ -6102,8 +6065,9 @@ puppeteer:
 
 250. ### code-splitting چیه؟
 
-     Code-Splitting یه ویژگی هستش که توسط پک کننده‌ها(bunder)هایی مثل Webpack و Browserify استفاده میشه که می‌تونن سورس‌های تیکه تیکه با حجم کمتری تولید کنن که توی زمان اجرا بارگذاری بشن. پروژه ری‌اکت این امکان رو با استفاده از ویژگی import داینامیک انجام میده.
-     برای مثال، توی تیکه کد زیر یه ماژول به اسم moduleA.js داریم که محتویات خودش و تمام وابستگی‌هاش با کلیک روی دکمه 'Load' بارگذاری میشن.
+     code-splitting ویژگی پشتیبانی شده توسط باندلر‌هایی مثل webpack و browserify هستش که میتونه بسته‌های مختلفی ایجاد کنه که میتونه به صورت پویا در زمان اجرابارگیری بشه.ری‌اکت code-splitting‌ رو از طریق ویژگی dynamic import() پشتیبانی میکنه.
+     برای مثال، در قطعه کد زیر، moduleA.js و تمام وابستگی‌های منحصر به فرد اون رو به عنوان یه قطعه جداگانه ایجاد میکنه که فقط بعد از کلیک کاربر روی دکمه 'Load' بارگیری میشه.
+     
      **moduleA.js**
 
      <span align="left" dir="ltr">
@@ -6115,7 +6079,6 @@ puppeteer:
      ```
 
      </span>
-
      **App.js**
 
      <span align="left" dir="ltr">
@@ -6152,19 +6115,19 @@ puppeteer:
 
 251. ### مزایای حالت strict چیه؟
 
-     **StrictMode** توی موارد زیر قابل استفاده‌ست
+     <StrictMode> توی موارد زیر به کار میاد
 
-     1. Identifying components with **unsafe lifecycle methods**.
-     2. Warning about **legacy string ref** API usage.
-     3. Detecting unexpected **side effects**.
-     4. Detecting **legacy context** API.
-     5. Warning about deprecated findDOMNode usage
+     1. شناسایی کامپوننت ها با متد **unsafe lifecycle**.
+     2. هشدار در مورد استفاده از API مربوط به **legacy string ref**.
+     3. تشخیص **side effect**  ها‌ی غیرمنتظره.
+     4. شناسایی API **legacy context**.
+     5. هشدار در مورد استفاده منسوخ findDOMNode.
 
      **[فهرست](#فهرست)**
 
 252. ### Fragmentهای دارای key هستن؟
 
-     The Fragments declared with the explicit <React.Fragment> syntax may have keys. The general usecase is mapping a collection to an array of fragments as below,
+     Fragment ها‌ی اعلام شده با سینتکس <React.Fragment> ممکنه key هایی داشته باشن. استفاده عمومی مپ کردن یه مجموعه به آرایه‌ای از fragment ها به صورت زیر هستش،
 
      <span align="left" dir="ltr">
 
@@ -6185,13 +6148,13 @@ puppeteer:
      ```
 
      </span>
-     **Note:** key is the only attribute that can be passed to Fragment. In the future, there might be a support for additional attributes, such as event handlers.
+     **یادداشت** key تنها اتریبیوتی هستش که میشه به Fragment انتقال داد. در آینده، ممکنه از اتریبیوت های اضافه ای هم مثل event handler‌ها پشتیبانی بشه.
 
      **[فهرست](#فهرست)**
 
 253. ### آیا ری‌اکت از همه‌ی attributeهای HTML پشتیبانی می‌کنه؟
 
-     As of React 16, both standard or custom DOM attributes are fully supported. Since React components often take both custom and DOM-related props, React uses the camelCase convention just like the DOM APIs. Let us take few props with respect to standard HTML attributes,
+     از ری‌اکت 16، هر دو ویژگی استاندارد یا سفارشی DOM کاملا پشتیبانی میشن.از اونجایی که کامپوننت های ری‌اکت اغلب هر دو نوع پراپ های DOM-related و custom رو استفاده میکنن، ری‌اکت دقیقا مانند API های DOM از قرارداد camelCase استفاده میکنه. بیاین با استفاده از ویژگی‌های استاندارد HTML چند مورد رو انتخاب کنیم.
 
      <span align="left" dir="ltr">
 
@@ -6202,16 +6165,16 @@ puppeteer:
      ```
 
      </span>
-     These props work similarly to the corresponding HTML attributes, with the exception of the special cases. It also support all SVG attributes.
+     این prop ها به استثنای موارد خاص، مشابه ویژگی های متناظر HTML کار میکنن. همچنین از تمام ویژگی های svg وشتیبانی می کنه.
 
      **[فهرست](#فهرست)**
 
 254. ### محدودیت‌های HOCها چی هستن؟
 
-     Higher-order components come with a few caveats apart from its benefits. Below are the few listed in an order
+     کامپوننت های با اولویت بالا جدا از مزایایی که داره، چند تا نکته مهم هم داره. اینجا چند مورد به ترتیب گفته شده
 
-     1. **Don’t Use HOCs Inside the render Method:**
-        It is not recommended to apply a HOC to a component within the render method of a component.
+     1. **از HOC ها توی متد render استفاده نکنیم:**
+        استفاده از HOC توی یه کامپوننت با متد رندر اون کامپوننت توصیه نمیشه.
 
         <span align="left" dir="ltr">
 
@@ -6226,9 +6189,10 @@ puppeteer:
      ```
 
      </span>
-        The above code impact performance by remounting a component that causes the state of that component and all of its children to be lost. Instead, apply HOCs outside the component definition so that the resulting component is created only once
-     2. **Static Methods Must Be Copied Over:**
-        When you apply a HOC to a component the new component does not have any of the static methods of the original component
+        کد بالا با remount کردن کامپوننتی که باعث از بین رفتن state اون کامپوننت و همه فرزندانش شده، روی عملکرد تاثیر میذاره. در عوض، HOC ها رو بیرون از تعریف کامپوننت اعمال میکنیم تا کامپوننت بدست اومده فقط یه بار ساخته بشه.
+     
+     2. **متد‌های static باید کپی بشن**
+        وقتی HOC رو روی یه کامپوننت اعمال می کنیم، کامپوننت جدید هیچ کدوم از متد‌های استاتیک کامپوننت اصلی رو نداره
 
         <span align="left" dir="ltr">
 
@@ -6245,8 +6209,7 @@ puppeteer:
      ```
 
      </span>
-        You can overcome this by copying the methods onto the container before returning it
-
+میتونیم با کپی کردن متدها توی container قبل از return کردنش رو این مشکل غلبه کنیم.
      <span align="left" dir="ltr">
 
      ```javascript
@@ -6261,14 +6224,15 @@ puppeteer:
      ```
 
      </span>
-     3. **Refs Aren’t Passed Through:**
-        For HOCs you need to pass through all props to the wrapped component but this does not work for refs. This is because ref is not really a prop similar to key. In this case you need to use the React.forwardRef API
+
+     3. **Ref ها رو نمیشه انتقال داد:**
+        برای HOC ها نیاز داریم که همه prop ها رو به کامپوننت پاس بدیم اما در مورد ref ها این کار جواب نمیده. دلیلش هم اینه که ref در واقع یه prop شبیه key نیست. تو این مورد باید از React.forwardRef API استفاده کنیم.
 
      **[فهرست](#فهرست)**
 
 255. ### چطوری میشه forwardRefs رو توی DevTools دیباگ کرد؟
 
-     **React.forwardRef** accepts a render function as parameter and DevTools uses this function to determine what to display for the ref forwarding component. For example, If you don't name the render function or not using displayName property then it will appear as ”ForwardRef” in the DevTools,
+     **ًReact.forwardRef** یه تابع رندر رو به عنوان یه پارامتر میگیره و DevTools از این تابع برای تعیین اینکه چه چیزی باید برای ref forwarding component نمایش داده بشه، استفاده میکنه. برای مثال، اگه ما هیچ اسمی برای تابع رندر نذاریم یا از ویژگی diplayName استفاده نکنیم، توی DevTools‌ به عنوان  ”ForwardRef” نمایش داده میشه.
 
      <span align="left" dir="ltr">
 
@@ -6279,7 +6243,7 @@ puppeteer:
      ```
 
      </span>
-     But If you name the render function then it will appear as **”ForwardRef(myFunction)”**
+     اما اگه برای تابع رندر اسم گذاشته باشیم اونوقت به صورت **”ForwardRef(myFunction)”** نمایش داده میشه 
 
      <span align="left" dir="ltr">
 
@@ -6290,7 +6254,7 @@ puppeteer:
      ```
 
      </span>
-     As an alternative, You can also set displayName property for forwardRef function,
+     به عنوان یه گزینه دیگه، میتونیم از ویژگی displayName برای تابع forwardRef استفاده کنیم.
 
      <span align="left" dir="ltr">
 
@@ -6319,7 +6283,7 @@ puppeteer:
 
 256. ### مقدار یه props کامپوننت کی true میشه؟
 
-     If you pass no value for a prop, it defaults to true. This behavior is available so that it matches the behavior of HTML. For example, below expressions are equivalent,
+     اگه هیچ مقداری رو برای prop انتقال ندیم، به طور پیش‌فرض true در نظر گرفته میشه. این رفتار در دسترس هستش طوری که با رفتار HTML هم مطابقت داره. به طور مثال، عبارت های زیر معادل هم هستن.
 
      <span align="left" dir="ltr">
 
@@ -6330,27 +6294,26 @@ puppeteer:
      ```
 
      </span>
-     **Note:** It is not recommend using this approach because it can be confused with the ES6 object shorthand (example, {name} which is short for {name: name})
+     **یادداشت:** این مورد توصیه نمیشه چون ممکنه با مختصر نویسی ES6 اشتباه گرفته بشه (مثال ، {name} مخفف {name: name})
 
      **[فهرست](#فهرست)**
 
 257. ### NextJS چیه و ویژگی‌های اصلیش چیا هستن؟
 
-     Next.js is a popular and lightweight framework for static and server‑rendered applications built with React. It also provides styling and routing solutions. Below are the major features provided by NextJS,
+     Next.js یه فریمورک محبوب و سبک برای برنامه های استاتیک و تحت سرور هستش که توسط ری‌اکت ساخته شده. همچنین استایل دهی و مسیریابی رو هم ارائه میده. اینجا ویژگی های اصلی ارائه شده توسط Next.js آورده شده.
 
-     1. Server-rendered by default
-     2. Automatic code splitting for faster page loads
-     3. Simple client-side routing (page based)
-     4. Webpack-based dev environment which supports (HMR)
-     5. Able to implement with Express or any other Node.js HTTP server
-     6. Customizable with your own Babel and Webpack configurations
+     1. server rendering به طور پیش فرض ارائه شده
+     2. تقسیم خودکار کد برای بارگذاری سریعتر صفحه
+     3. مسیریابی ساده سمت مشتری (مبتنی بر صفحه)
+     4. محیط توسعه یافته مبتنی بر بسته وب (HMR)
+     5. با Express یا هر سرور HTTP دیگه‌ای Node.js قابل پیاده سازیه
+     6. با تنظیمات Babel و Webpack خودمون قابل تنظیمه
 
      **[فهرست](#فهرست)**
 
 258. ### چط،وی کی‌تونیم یه تابع event handler رو به یه کامپوننت پاس بدیم؟
 
-     You can pass event handlers and other functions as props to child components. It can be used in child component as below,
-
+event handler ها و توابع دیگه رو میتونیم به عنوان prop به کامپوننت های فرزند انتقال بدیم. به صورت زیر توی کامپوننت فرزند میتونه استفاده بشه،
      <span align="left" dir="ltr">
 
      ```
@@ -6363,7 +6326,7 @@ puppeteer:
 
 259. ### استفاده از توابع arrow برای متدهای render خوبه؟
 
-     Yes, You can use. It is often the easiest way to pass parameters to callback functions. But you need to optimize the performance while using it.
+     بله ، می تونیم استفاده کنیم. این معمولا ساده ترین راه برای انتقال پارامترها به توابع برگشتی هستش. اما در حین استفاده باید عملکرد را بهینه کنیم.
 
      <span align="left" dir="ltr">
 
@@ -6379,7 +6342,7 @@ puppeteer:
      ```
 
      </span>
-     **Note:** Using an arrow function in render method creates a new function each time the component renders, which may have performance implications
+     **یادداشت:** استفاده از تابع arrow توی متد رندر یه تابع جدید ایجاد میکنه که هر بار که کامپوننت رندر میشه، ممکنه مفاهیم عملکردی داشته باشه.
 
      **[فهرست](#فهرست)**
 
@@ -6930,8 +6893,7 @@ puppeteer:
 
 282. ### هدف از forward ref توی HOCها چیه؟
 
-     Refs will not get passed through because ref is not a prop. It handled differently by React just like **key**. If you add a ref to a HOC, the ref will refer to the outermost container component, not the wrapped component. In this case, you can use Forward Ref API. For example, we can explicitly forward refs to the inner FancyButton component using the React.forwardRef API.
-     The below HOC logs all props,
+     ref داخل کامپوننت ها پاس داده نمیشه چون ref یه prop نیست. اون توسط ری‌اکت درست مثل **key** به طور متفاوتی هندل میشه. اگه ما ref رو توی HOC اضافه کنیم، ref به بیرونی ترین کامپوننت container اشاره میکنه، نه به کامپوننت wrapped شده. تو این مورد ما می تونیم از Forward Ref API استفاده کنیم. برای مثال با استفاده از React.forwardRef API میتونیم ref رو به کامپوننت FancyButton داخلی بفرستیم.
 
      <span align="left" dir="ltr">
 
@@ -6973,7 +6935,7 @@ puppeteer:
      ```
 
      </span>
-     Now lets create a ref and pass it to FancyButton component. In this case, you can set focus to button element.
+     حالا بیاین یه ref بسازیم و اونو به کامپوننت FancyButton بفرستیم. توی این مورد می تونیم focus رو روی عنصر دکمه تنظیم کنیم.
 
      <span align="left" dir="ltr">
 
@@ -6991,19 +6953,19 @@ puppeteer:
 
 283. ### توی کامپوننت‌ها می‌تونیم پراپ ref داشته باشیم؟
 
-     Regular function or class components don’t receive the ref argument, and ref is not available in props either. The second ref argument only exists when you define a component with React.forwardRef call.
+     توابع منظم یا کلاس کامپوننت ها آرگومان ref رو دریافت نمی کنن و ref توی prop‌ها هم در دسترس نیست. آرگومان دوم ref فقط زمانی وجود داره که ما کامپوننت رو با React.forwardRef تعریف کنیم.
 
      **[فهرست](#فهرست)**
 
 284. ### چرا در هنگام استفاده از ForwardRefها نیاز به احتیاط بیشتری در استفاده از کتابخانه های جانبی داریم؟
 
-     When you start using forwardRef in a component library, you should treat it as a breaking change and release a new major version of your library. This is because your library likely has a different behavior such as what refs get assigned to, and what types are exported. These changes can break apps and other libraries that depend on the old behavior.
+     وقتی ما شروع به استفاده از forwardRef توی یه کامپوننت می کنیم، باید با اون به عنوان یه تغییر سریع رفتار کنیم و نسخه اصلی جدیدی از کتابخونه خودمون رو منتشر کنیم. این به این دلیله که کتابخونه ما رفتار متفاوتی داره مثل اینکه چه چیزی به ref اختصاص پیدا کرده و چه خروجی هایی داریم. این تغییرات میتونه برنامه ها و بقیه کتابخونه های وابسته به رفتار قدیمی رو از بین ببره.
 
      **[فهرست](#فهرست)**
 
 285. ### چطوری بدون استفاده از ES6 کلاس کامپوننت بسازیم؟
 
-     If you don’t use ES6 then you may need to use the create-react-class module instead. For default props, you need to define getDefaultProps() as a function on the passed object. Whereas for initial state, you have to provide a separate getInitialState method that returns the initial state.
+     اگه از ES6‌ استفاده نمی کنیم ممکنه لازم باشه که به جای اون از ماژول create-react-class استفاده کنیم. برای prop های پیش فرض، نیاز داریم که getDefaultProps() رو به عنوان یه تابع روی آبجکت پاس داده شده تعریف کنیم. در حالی که برای state اولیه، باید یه متد getInitialState جداگانه ارائه بدیم که یه state اولیه برمی‌گردونه.
 
      <span align="left" dir="ltr">
 
@@ -7027,13 +6989,13 @@ puppeteer:
      ```
 
      </span>
-     **Note:** If you use createReactClass then autobinding is available for all methods. i.e, You don't need to use .bind(this) with in constructor for event handlers.
+     **یادداشت:** اگه از createReactClass استفاده میکنیم اتصال خودکار برای همه روش ها در دسترسه. یعنی نیازی به استفاده از .bind(this) توی constructor برای event handler ها نیست.
 
      **[فهرست](#فهرست)**
 
 286. ### استفاده از ری‌اکت بدون JSX ممکن است؟
 
-     Yes, JSX is not mandatory for using React. Actually it is convenient when you don’t want to set up compilation in your build environment. Each JSX element is just syntactic sugar for calling React.createElement(component, props, ...children). For example, let us take a greeting example with JSX,
+     بله، JSX برای استفاده از ری‌اکت اجباری نیست. در واقع مناسب زمانی هست که ما نمیخوایم کامپایلی رو توی محیط build تنظیم کنیم. هر عنصر JSX فقط syntactic sugar هستش برای فراخوانی React.createElement(component, props, ...children). برای مثال بیاین یه مثال greeting با JSX بزنیم.
 
      <span align="left" dir="ltr">
 
@@ -7051,7 +7013,7 @@ puppeteer:
      ```
 
      </span>
-     You can write the same code without JSX as below,
+     میتونیم همین کد رو بدون JSX مثل زیر بنویسیم،
 
      <span align="left" dir="ltr">
 
@@ -7074,35 +7036,33 @@ puppeteer:
 
 287. ### الگوریتم‌های diffing ری‌اکت چی هستن؟
 
-     React needs to use algorithms to find out how to efficiently update the UI to match the most recent tree. The diffing algorithms is generating the minimum number of operations to transform one tree into another. However, the algorithms have a complexity in the order of O(n3) where n is the number of elements in the tree.
-     In this case, for displaying 1000 elements would require in the order of one billion comparisons. This is far too expensive. Instead, React implements a heuristic O(n) algorithm based on two assumptions:
+     ری‌اکت نیاز به استفاده از الگوریتم‌ها داره تا بفهمه چطور به طور موثر UI رو برای مطابقت با آخرین درخت به‌روز کنه. الگوریتم‌های مختلفی در حال تولید حداقل تعداد عملیات برای تبدیل یه درخت به درخت دیگه هستن. با این حال، الگوریتم‌ها به ترتیب O(n3) دارای پیچیدگی هستن، جایی که n تعداد عناصر موجود در درخت هستش.
+     توی این مورد، برای نمایش ۱۰۰۰ عنصر به ترتیب یک میلیارد مقایسه نیازه و این خیلی هزینه بر هستش. در عوض ری‌اکت یه الگوریتم ابتکاری O(n) رو بر اساس دو پیش‌ فرض پیاده‌سازی میکنه:
 
-     1. Two elements of different types will produce different trees.
-     2. The developer can hint at which child elements may be stable across different renders with a key prop.
-
+     1. دو عنصر از انواع مختلف باعث تولید درخت های مختلفی میشه.
+     2. برنامه نویس میتونه اشاره کنه که کدوم یکی از عناصر فرزند ممکنه توی رندر‌های مختلف با یه prop اصلی پایدار باشن.
      **[فهرست](#فهرست)**
 
 288. ### قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستن؟
 
-     When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements. It covers the below rules during reconciliation algorithm,
+     موقع تفاوت بین دو درخت، ری‌اکت اول دو عنصر ریشه رو با هم مقایسه میکنه. رفتار بسته به انواع عناصر ریشه تغییر میکنه. مواردی که اینجا گفته شده قوانینی از الگوریتم reconciliation هستن.
 
-     1. **Elements Of Different Types:**
-        Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. For example, elements `<a>` to `<img>`, or from `<Article>` to `<Comment>` of different types lead a full rebuild.
-     2. **DOM Elements Of The Same Type:**
-        When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. Lets take an example with same DOM elements except className attribute,
+     1. **عناصر با انواع مختلف:**
+        هروقت عناصر ریشه انواع مختلفی داشته باشن، ری‌اکت درخت قبلی رو از بین میبره و درخت جدید رو از اول میسازه. برای مثال، عناصر <a> تا <img> یا از <Article> تا <Comment> از انواع مختلف باعث بازسازی کامل میشن.
+     2. **عناصر DOM از همان نوع**
+        موقع مقایسه دو عنصر React DOM از همون  نوع، React به ویژگی های هر دو نگاه می کند، همون گره DOM زیرین رو نگه میداره و فقط ویژگی های تغییر یافته رو به روز میکنه. بیاین یه مثال با عناصر DOM مشابه به جز ویژگی className بیاریم،
 
-        <span align="left" dir="ltr">
+     <span align="left" dir="ltr">
 
-        ```javascript
-            <div className="show" title="ReactJS" />
+     ```javascript
+        <div className="show" title="ReactJS" />
 
-            <div className="hide" title="ReactJS" />
-        ```
+        <div className="hide" title="ReactJS" />
+     ```
 
-        </span>
-
-     3. **Component Elements Of The Same Type:**
-        When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls componentWillReceiveProps() and componentWillUpdate() on the underlying instance. After that, the render() method is called and the diff algorithm recurses on the previous result and the new result.
+     </span>
+     3. **عناصر کامپوننت از همان نوع:**
+        وقتی کامپوننت به‌روز میشه، نمونه ثابت میمونه، بنابراین state‌ بین رندر‌ها حفط میشه. ری‌اکت برای مطابقت با عنصر جدید prop‌های نمونه کامپوننت اساسی رو به‌روز میکنه و متد‌های componentWillReceiveProps() و componentWillUpdate() رو روی نمونه اصلی صدا میزنه. بعد از اون متد render() صدا زده میشه و الگوریتم diff، نتیجه قبلی و نتیجه جدید رو جستجو میکنه.
      4. **Recursing On Children:**
         when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there’s a difference. For example, when adding an element at the end of the children, converting between these two trees works well.
 
@@ -7122,8 +7082,9 @@ puppeteer:
      ```
 
      </span>
-     5. **Handling keys:**
-     React supports a key attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a key can make the tree conversion efficient,
+     5. **هندل کردن کلید‌ها**
+
+     ری‌اکت از ویژگی key پشتیبانی میکنه. وقتی فرزندان key داشته باشن، ری‌اکت از key‌ برای مطابقت دادن فرزندان در درخت اصلی با فرزندان در درخت بعدی استفاده میکنه. برای مثال، اضافه کردن یه key میتونه تبدیل درخت رو کارآمد کنه،
 
      <span align="left" dir="ltr">
 
@@ -7146,17 +7107,17 @@ puppeteer:
 
 289. ### چه موقعی نیاز هست که از refها استفاده کنیم؟
 
-     There are few use cases to go for refs
+     موارد استفاده کمی برای ref‌ها وجود داره
 
-     1. Managing focus, text selection, or media playback.
-     2. Triggering imperative animations.
-     3. Integrating with third-party DOM libraries.
+     1. مدیریت focus، text selection یا پخش media
+     2. راه‌اندازی انیمیشن‌های ضروری.
+     3. ادغام با کتابخانه‌های third-party DOM.
 
      **[فهرست](#فهرست)**
 
 290. ### برای استفاده از render propها لازمه که اسم prop رو render بزاریم؟
 
-     Even though the pattern named render props, you don’t have to use a prop named render to use this pattern. i.e, Any prop that is a function that a component uses to know what to render is technically a “render prop”. Lets take an example with the children prop for render props,
+     حتی اگه یه الگویی به اسم render props وجود داشته باشه، برای استفاده از این الگو نیازی به استفاده از یه prop به اسم render نیست. به عنوان مثال، هر prop که تابعی باشه، که کامپوننتی از اون برای دونستن اینکه چه چیزی باید ارائه بده استفاده کنه، از نظر فنی "render prop" هستش. بیاین یه مثال در مورد prop فرزند برای رندر prop بزنیم
 
      <span align="left" dir="ltr">
 
@@ -7171,7 +7132,7 @@ puppeteer:
      ```
 
      </span>
-     Actually children prop doesn’t need to be named in the list of “attributes” in JSX element. Instead, you can keep it directly inside element,
+     در واقع نیازی نیست که از prop فرزند توی لیست "attribute" ها توی عنصر JSX نام برده بشه. در عوض میتونیم اونو مستقیما توی المنت نگه داریم.
      <span align="left" dir="ltr">
 
      ```jsx
@@ -7185,7 +7146,7 @@ puppeteer:
      ```
 
      </span>
-     While using this above technique(without any name), explicitly state that children should be a function in your propTypes.
+     تا زمانی که از روش بالا (بدون نام) استفاده میکنیم، به صراحت میگیم که فرزندان باید یه تابع توی propType هامون باشن.
 
      <span align="left" dir="ltr">
 
@@ -7201,13 +7162,13 @@ puppeteer:
 
 291. ### مشکل استفاده از render props با pure componentها چیه؟
 
-     If you create a function inside a render method, it negates the purpose of pure component. Because the shallow prop comparison will always return false for new props, and each render in this case will generate a new value for the render prop. You can solve this issue by defining the render function as instance method.
+     اگه بیایم داخل متد رندر یه تابعی ایجاد کنیم، در این صورت هدف اصلی pure component ها رو نفی کردیم. چون که مقایسه سطحی prop ها معمولا همیشه مقدار false رو برای prop های جدید برمی گردونه و هر رندر در این حالت یه مقدار جدیدی رو برای رندر ارائه میده. با تعریف یه تابع رندر به عنوان متد instance میتونیم این مشکل رو حل کنیم.
 
      **[فهرست](#فهرست)**
 
 292. ### چطوری با استفاده از render props می‌تونیم HOC ایجاد کنیم؟
 
-     You can implement most higher-order components (HOC) using a regular component with a render prop. For example, if you would prefer to have a withMouse HOC instead of a <Mouse> component, you could easily create one using a regular <Mouse> with a render prop.
+     میتونیم کامپوننت های با الویت بالا (HOC) رو با استفاده از یه کامپوننت همعمولی با یه رندر پیاده سازی کنیم. به عنوان مثال اگه ترجیح میدیم که به جای کامپوننت <Mouse> یه کامپوننت HOC به اسم withMouse داشته باشیم، به راحتی میتونیم با استفاده از کامپوننت <Mouse> با prop رندر، یکی بسازیم.
 
      <span align="left" dir="ltr">
 
@@ -7226,19 +7187,19 @@ puppeteer:
      ```
 
      </span>
-     This way render props gives the flexibility of using either pattern.
+     این روش رندر کردن prop ها، انعطاف پذیری استفاده از هر دو الگو رو میده.
 
      **[فهرست](#فهرست)**
 
 293. ### تکنیک windowing چیه؟
 
-     Windowing is a technique that only renders a small subset of your rows at any given time, and can dramatically reduce the time it takes to re-render the components as well as the number of DOM nodes created. If your application renders long lists of data then this technique is recommended. Both react-window and react-virtualized are popular windowing libraries which provides several reusable components for displaying lists, grids, and tabular data.
+     windowing تکنیکیه که فقط زیر مجموعه ای از سطرهامون رو در هر زمان ارائه میده و میتونه مدت زمان لازم برای رندر مجدد کامپوننت ها و همینطور تعداد گره های DOM ایجاد شده روبه طرز چشمگیری کاهش بده. اگه برنامه مون لیست های طولانی ای از از داده رو ارائه میده، این روش توصیه میشه.react-window و react-virtualized هر دو کتابخونه های معروف windowing هستن که چندین کامپوننت قابل استفاده مجدد رو برای نمایش لیست ها، شبکه ها و داده های جدولی فراهم میکنن.
 
      **[فهرست](#فهرست)**
 
 294. ### توی JSX یه مقدار falsy رو چطوری چاپ کنیم؟
 
-     The falsy values such as false, null, undefined, and true are valid children but they don't render anything. If you still want to display them then you need to convert it to string. Let's take an example on how to convert to a string,
+     مقادیر جعلی مثل false، null، undefined و true معتبر هستند ولی هیچ چیزی رو رندر نمیکنن. اگه بخوایم اونا رو نمایش بدیم باید به رشته تبدیلشون کنیم. بیاین یه مثال در مورد تبدیل به رشته بزنیم،
 
      <span align="left" dir="ltr">
 
@@ -7258,7 +7219,7 @@ puppeteer:
 
 296. ### توی کامپوننت‌های کنترل نشده چطوری مقداری پیش فرض اضافه کنیم؟
 
-     In React, the value attribute on form elements will override the value in the DOM. With an uncontrolled component, you might want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a **defaultValue** attribute instead of **value**.
+     توی ری‌اکت، مشخصه value روی عناصر فرم مقدار رو توی DOM لغو میکنه. با یه کامپوننت کنترل نشده، ممکنه بخوایم ری‌اکت یه مقدار اولیه مشخص کنه ولی به روزرسانی های بعدی رو کنترل نشده بذاره. برای هندل کردن این مورد، میتونیم به جای **value** مشخصه **defaultValue** رو تعیین کنیم.
 
      <span align="left" dir="ltr">
 
@@ -7281,39 +7242,48 @@ puppeteer:
 
      </span>
 
-     The same applies for `select` and `textArea` inputs. But you need to use **defaultChecked** for `checkbox` and `radio` inputs.
+     همین کار برای ‍‍`select` و `textArea` هم انجام میشه ولی برای ‍‍`checkbox` باید از **defaultchecked** استفاده کنیم.
 
      **[فهرست](#فهرست)**
 
 297. ### stack موردعلاقه شما برای کانفیگ پروژه ری‌اکت چیه؟
 
-     Even though the tech stack varies from developer to developer, the most popular stack is used in react boilerplate project code. It mainly uses Redux and redux-saga for state management and asynchronous side-effects, react-router for routing purpose, styled-components for styling react components, axios for invoking REST api, and other supported stack such as webpack, reselect, ESNext, Babel.
-     You can clone the project https://github.com/react-boilerplate/react-boilerplate and start working on any new react project.
+     حتی اگه tech stack از توسعه دهنده ای به توسعه دهنده دیگه متفاوت باشه، معروف ترین stack توی کد پروژه biolerplate ری اکت استفاده شده. boilerplate به طور عمده از ریداکس و ریداکس ساکا برای مدیریت استیت و ساید افکت های ناهمزمان، styled-components برای استایل دهی کامپوننت ها، axios برای فراخوانی rest api و پشتیبانی های دیگه از قبیل webpack، reselect، ESNext و babel.
+     میتونیم پروژه https://github.com/react-boilerplate/react-boilerplate رو کلون کنیم و کار روی هر پروژه ری اکت جدیدی رو شروع کنیم.
 
      **[فهرست](#فهرست)**
 
 298. ### تفاوت‌ DOM واقعی و Virtual DOM چیه؟
 
-     Below are the main differences between Real DOM and Virtual DOM,
+     اینجا تفاوت های اصلی بین DOM واقعی و DOM مجازی گفته شده:
 
-     | Real DOM                             | Virtual DOM                          |
-     | ------------------------------------ | ------------------------------------ |
-     | Updates are slow                     | Updates are fast                     |
-     | DOM manipulation is very expensive.  | DOM manipulation is very easy        |
-     | You can update HTML directly.        | You Can’t directly update HTML       |
-     | It causes too much of memory wastage | There is no memory wastage           |
-     | Creates a new DOM if element updates | It updates the JSX if element update |
+     واقعی DOM :
+
+     1. به روز رسانی ها کند هستن
+     2. دستکاری DOM هزینه بر هستش.
+     3. می تونیم HTML رو مستقیما به روزرسانی کنیم.
+     4. باعث اتلاف بیش از حد حافظه میشه.
+     5. در صورت به روز رسانی یه المنت، یه DOM جدید ایجاد میکنه.
+
+     مجازی DOM :
+
+     1. به روز رسانی ها سریع هستن
+     2. دستکاری DOM خیلی راحته.
+     3. HTML رو نمیتونیم مستقیما به روز رسانی کنیم.
+     4. هیچ اتلاف حافظه ای وجود نداره.
+     5. در صورت به روز رسانی یه المنت، JSX رو به روز میکنه.
 
      **[فهرست](#فهرست)**
 
 299. ### چطوری Bootstrap رو به یه برنامه ری‌اکتی اضافه کنیم؟
 
-     Bootstrap can be added to your React app in a three possible ways
+     Bootstrap رو به سه روش میتونیم به برنامه ری‌اکت اضافه کنیم
 
-     1. Using the Bootstrap CDN:
-        This is the easiest way to add bootstrap. Add both bootstrap CSS and JS resources in a head tag.
+     1. با استفاده از Bootstrap CDN
+        این ساده ترین راه برای اضافه کردن bootstrap هستش. منابع bootstrap css و js رو توی تگ head اضافه میکنیم.
      2. Bootstrap as Dependency:
-        If you are using a build tool or a module bundler such as Webpack, then this is the preferred option for adding Bootstrap to your React application
+     2. bootstrap به عنوان dependency
+        اگه از یه ابزار build یا بسته نرم افزاری ماژولی مثل webpack استفاده میکنیم، این بهترین گزینه برای اضافه کردن bootstrap به برنامه ری‌اکت هستش.
 
      <span align="left" dir="ltr">
 
@@ -7323,8 +7293,8 @@ puppeteer:
 
      </span>
 
-     3. React Bootstrap Package:
-        In this case, you can add Bootstrap to our React app is by using a package that has rebuilt Bootstrap components to work particularly as React components. Below packages are popular in this category,
+     3. بسته React Bootstrap: 
+        در این حالت می تونیم bootstrap رو به برنامه ری اکت اضافه کنیم تا با استفاده از بسته هایی که کامپوننت های ری اکت رو دوباره ساخته تا منحصرا به عنوان کامپوننت های ری اکت کار کنند. معروف ترین بسته ها برای این کار اینا هستند
         1. react-bootstrap
         2. reactstrap
 
