@@ -589,7 +589,7 @@ puppeteer:
     }
     ```
 
-     </span>
+    </span>
 
     ![state](images/state.jpg)
 
