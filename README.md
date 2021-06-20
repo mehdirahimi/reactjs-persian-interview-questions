@@ -6,7 +6,7 @@
 
 # مجموعه سوال و جواب‌های ری‌اکت (react.js)
 
-این کتاب شامل ۲۳۰ تا سوال پرتکرار توی جلسات مصاحبه استخدامی شرکت‌های بزرگ هست که توی `۲۰۰ صفحه` و به رایگان به شکل متن‌باز ارائه میشه.
+این کتاب شامل 324 تا سوال و جواب‌های پرتکرار توی جلسات مصاحبه استخدامی شرکت‌های بزرگ هست که توی `۲۰۰ صفحه` و به رایگان به شکل متن‌باز ارائه میشه.
 
 > اگه خوشتون اومد به گیت‌هابمون :star: بدین. اگر هم قصد مشارکت داشتید خیلی خوشحال می‌شیم :)
 
@@ -33,7 +33,7 @@ https://zarinp.al/327941
 
 # Top react interview questions
 
-This book contains 230 repeated react.js interview questions which are asked in big companies interview sessions.
+This book contains 325 repeated react.js interview questions which are asked in big companies interview sessions.
 It is in `200 pages` in Persian and also it is free and open source! 
 
 > if you like our job, give us a :star: in our github repo, contributes are accpeted :)
