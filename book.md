@@ -2898,7 +2898,7 @@ puppeteer:
 
 100.  ### چطوری با resize شدن مرورگر یه ویو رو ری‌رندر کنیم؟
 
-      می تونیم به رخداد `resize` توی `componentDidMount` گوش کنیم و ابعاد(`width` و `height`) رو تغییر بدیم. البته باید حواسمون باشه که این listener رو باید توی متد `componentWillUnmount` حذفش کنیم.
+      می‌تونیم به رخداد `resize` توی `componentDidMount` گوش کنیم و ابعاد(`width` و `height`) رو تغییر بدیم. البته باید حواسمون باشه که این listener رو باید توی متد `componentWillUnmount` حذفش کنیم.
 
       <span align="left" dir="ltr">
 
@@ -2974,13 +2974,13 @@ puppeteer:
 
 101.  ### تفاوت متدهای setState و replaceState چیه؟
 
-      وقتی که از متد `setState` فعلی و قبلی با هم ترکیب می‌شدند. `replaceState` حالت فعلی رو نشون میده و با stateای می‌خواییم جایگزینش می‌کنه. معمولا `setState` برای این استفاده می‌شه که بنا به دلیلی بخواییم همه کلید‌های قبلی رو پاک کنیم. البته میشه بجای استفاده از `replaceState` با استفاده از `setState` بیاییم و state رو برابر با `false` یا `null` قرار بدیم.
+      وقتی که از متد `setState`  روی کلاس کامپوننت استفاده می‌کنیم، مقادیر فعلی و قبلی با هم ترکیب می‌شن. `replaceState` حالت فعلی رو با stateای که می‌خواییم جایگزینش می‌کنه. معمولا اگه از `setState` برای جایگزین کردن استفاده کنیم، همه کلید‌های قبلی رو پاک کنیم. البته میشه بجای استفاده از `replaceState` با استفاده از `setState` بیاییم و state رو برابر با `false` یا `null` قرار بدیم.
 
       **[فهرست](#فهرست)**
 
 102.  ### چطوری به تغییرات state گوش بدیم؟
 
-      متدی که معرفی میشه در کلاس کامپوننت‌ها هنگام به روز شدن state فراخوانی میشه. با استفاده از این متد میشه state و prop فعلی رو با مقادیر جدید مقایسه کرده و یه سری کار که مدنظر داریم رو انجام بدیم.
+      توی کلاس کامپوننت‌ها هنگام به روز شدن state یه سری متدها فراخوانی میشه. با استفاده از این متدها میشه state و prop فعلی رو با مقادیر جدید مقایسه کرده و یه سری کار که مدنظر داریم رو انجام بدیم.
 
       <span align="left" dir="ltr">
 
@@ -3010,7 +3010,7 @@ puppeteer:
 
       استفاده از متد `Array.prototype.filter` آرایه‌ها روش خوبیه.
 
-      برای مثال بیایین یه تابع به اسم `removeItem` برای به روز کردن state در نظر بگیریم.
+      برای مثال می‌تونیم یه تابع به اسم `removeItem` برای به روز کردن state به شکل زیر در نظر بگیریم.
 
       <span align="left" dir="ltr">
 
@@ -3086,7 +3086,7 @@ puppeteer:
 
 105.  ### چطوری میشه با ری‌اکت یه JSON به شکل beautify شده نشون داد؟
 
-      میشه با استفاده از تگ `<pre>` و استفاده از optionهای متد `JSON.stringify` این کار رو انجام داد:
+      میشه گفت زیاد ربطی به ری‌اکت یا غیر ری‌اکت بودن برنامه نداره ولی در کل میشه با استفاده از تگ `<pre>` و استفاده از optionهای متد `JSON.stringify` این کار رو انجام داد:
 
       <span align="left" dir="ltr">
 
@@ -3108,13 +3108,35 @@ puppeteer:
 
 106.  ### چرا نمی‌تونیم prop رو آپدیت کنیم؟
 
-      فلسفه ساختاری ری‌اکت طوریه که propها باید _immutable_ باشن و _بالا به پایین_ و به صورت سلسه‌مراتبی مقدار بگیرند. به این معنی که پدر هر کامپوننت می‌تونه هر مقداری رو به فرزند پاس بده و فرزند حق دستکاری اونو نداره.
+      فلسفه ساختاری ری‌اکت به شکلیه که propها باید _immutable_ باشن و از بالا به پایین و به صورت سلسه‌مراتبی مقدار بگیرند. به این معنی که پدر هر کامپوننت می‌تونه هر مقداری رو به فرزند پاس بده و فرزند حق دستکاری اونو نداره.
 
       **[فهرست](#فهرست)**
 
 107.  ### چطوری می‌تونیم موقع لود صفحه روی یه input فوکوس کنیم؟
 
       میشه با ایجاد یه _ref_ برای المنت `input` و استفاده از اون توی `componentDidMount` یا `useEffect` این‌کار رو کرد:
+
+      <span align="left" dir="ltr">
+
+      ```jsx harmony
+      const App = () => {
+        const nameInputRef = useRef();
+        useEffect(() => {
+          nameInputRef.current.focus();
+        }, []);
+
+        return (
+          <div>
+            <input defaultValue={"Won't focus"} />
+            <input ref={nameInputRef} defaultValue={"Will focus"} />
+          </div>
+        );
+      };
+      ```
+
+      </span>
+
+      همین کد در کلاس کامپوننت:
 
       <span align="left" dir="ltr">
 
@@ -3142,33 +3164,13 @@ puppeteer:
 
       </span>
 
-      <span align="left" dir="ltr">
-
-      ```jsx harmony
-      const App = () => {
-        const nameInputRef = useRef();
-        useEffect(() => {
-          nameInputRef.current.focus();
-        }, []);
-
-        return (
-          <div>
-            <input defaultValue={"Won't focus"} />
-            <input ref={nameInputRef} defaultValue={"Will focus"} />
-          </div>
-        );
-      };
-      ```
-
-      </span>
-
       **[فهرست](#فهرست)**
 
 108.  ### روش‌های ممکن برای آپدیت کردن object توی state کدوما هستن؟
 
       1. **فراخوانی متد `setState` با استفاده از یه object برای ترکیب شدن اون:**
-
-         - استفاده از `Object.assign` برای ایجاد یه کپی از object:
+          
+      - استفاده از `Object.assign` برای ایجاد یه کپی از object:
 
       <span align="left" dir="ltr">
 
@@ -3179,7 +3181,7 @@ puppeteer:
 
       </span>
 
-          * استفاده از عملگر *spread*:
+      - استفاده از عملگر *spread*:
 
       <span align="left" dir="ltr">
 
@@ -3190,7 +3192,7 @@ puppeteer:
 
       </span>
 
-      2. **فراخوانی `setState` با یه تابع callback:**
+      2. **فراخوانی `setState` با یه تابع callback:** به این شکل میشه پیاده‌سازی کرد:
 
       <span align="left" dir="ltr">
 
@@ -3209,7 +3211,7 @@ puppeteer:
 
 109.  ### چرا توابع به جای object در setState ترجیح داده می‌شوند؟
 
-      ری‌اکت اجازه ترکیب کردن تغییرات state رو با استفاده از متد `setState` فراهم کرده است که باهث بهبود پرفورمنس میشه. چون `this.props` و `this.state` ممکنه به صورت asynchronous و همزمان به روز بشن، نباید به مقدار اونا برای محاسبه مقدار بعدی اعتماد کرد.
+      ری‌اکت اجازه ترکیب کردن تغییرات state رو با استفاده از متد `setState` فراهم کرده، همین موضوع باعث بهبود پرفورمنس میشه. توی کلاس کامپوننت‌ها `this.props` و `this.state` ممکنه به صورت asynchronous و همزمان به روز بشن، نباید به مقدار اونا برای محاسبه مقدار بعدی اعتماد کرد.
 
       برای مثال به این شمارنده که درست کار نمی‌کنه دقت کنیم:
 
@@ -3286,13 +3288,13 @@ puppeteer:
 
       </span>
 
-      توی تکه کد فوق ما برای polyfill کردن `Array.prototype.includes` درخواست دادیم.
+      مثلا توی تکه کد فوق ما برای polyfill کردن `Array.prototype.includes` درخواست دادیم.
 
       **[فهرست](#فهرست)**
 
 112.  ### توی CRA چطوری از https به‌جای http استفاده کنیم؟
 
-      لازمه که کانفیگ `HTTPS=true` رو برای env جاری‌ستکنیم. میشه فایل `package.json` بخش scripts رو به شکل پایین تغییر داد:
+      برای این‌کار لازمه که کانفیگ `HTTPS=true` رو برای env جاری ‌ست کنیم، برای این‌کار حتی لازم هم نیست فایل .env بسازیم و می‌تونیم توی فایل `package.json` بخش scripts رو به شکل پایین تغییر بدیم:
 
       <span align="left" dir="ltr">
 
@@ -3304,7 +3306,7 @@ puppeteer:
 
       </span>
 
-      یا حتی `set HTTPS=true && npm start`
+      یا حتی به شکل `set HTTPS=true && npm start` هم میشه تغییر داد.
 
       **[فهرست](#فهرست)**
 
@@ -3320,13 +3322,13 @@ puppeteer:
 
       </span>
 
-      بعد از این تغییر سرور develop رو ریستارت می‌کنیم بعدش دیگه می‌تونیم هر چیزی رو از مسیر `src/app` بارگذاری کنیم و لازم هم نباشه مسیر کاملشو بهش بدیم.
+      بعد از این تغییر سرور develop رو ریستارت می‌کنیم بعدش دیگه می‌تونیم هر چیزی رو از مسیر `src/app` بارگذاری کنیم و لازم هم نباشه مسیر کاملشو بهش بدیم. این‌کار رو میشه با بخش module resolve توی webpack هم انجام داد.
 
       **[فهرست](#فهرست)**
 
 114.  ### چطوری میشه Google Analytics رو به react-router اضافه کرد؟
 
-      یه listener به object `history` اضافه می‌کنیم تا بتونیم لود شدن صفحه رو track کنیم:
+      یه listener به آبجکت `history` اضافه می‌کنیم تا بتونیم لود شدن صفحه رو track کنیم:
 
       <span align="left" dir="ltr">
 
@@ -3339,12 +3341,45 @@ puppeteer:
 
       </span>
 
+      توی نسخه ۶ از react-router-dom دسترسی مستقیم به history برداشته شده تا پشتیبانی از suspense راحت‌تر باشه، توی این نسخه میشه از useLocation به شکل زیر استفاده کرد:
+
+      <span align="left" dir="ltr">
+
+      ```javascript
+      const location = useLocation();
+      
+      useEffect(() => {
+        window.ga("set", "page", location);
+        window.ga("send", "pageview", location);
+      }, [location]);
+      ```
+
+      </span>
+
       **[فهرست](#فهرست)**
 
 115.  ### چطوری یه کامپوننت رو هر ثانیه به روز کنیم؟
 
-      لازمه که از `setInterval` استفاده کنیم تا تغییرات رو اعمال کنیم و البته حواسمون هست که موقع unmount این interval رو حذف کنیم که memory leak نشه.
+      لازمه که از `setInterval` استفاده کنیم تا تغییرات رو اعمال کنیم و البته حواسمون هست که موقع unmount این interval رو حذف کنیم که باعث memory leak نشه.
 
+      <span align="left" dir="ltr">
+
+      ```javascript
+      const intervalRef = useRef();
+      
+      useEffect(() => {
+         intervalRef.current = setInterval(() => this.setState({ time: Date.now() }), 1000);
+      
+         return () => {
+           clearInterval(intervalRef.current);
+         }
+      }, [location]);
+      ```
+
+      </span>
+
+      توی کلاس کامپوننت هم به شکل:
+      
       <span align="left" dir="ltr">
 
       ```javascript
@@ -3358,24 +3393,12 @@ puppeteer:
       ```
 
       </span>
-      <span align="left" dir="ltr">
-
-      ```javascript
-      let interval;
-      useEffect(() {
-        interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
-
-        return () => clearInterval(interval);
-      }, []);
-      ```
-
-      </span>
 
       **[فهرست](#فهرست)**
 
 116.  ### برای استایل‌دهی‌های درون خطی چطوری باید پیشوند‌های مخصوص مرورگرها رو اضافه کرد؟
 
-      ری‌اکت به شکل اتوماتیک *پیشوند‌های مخصوص مرورگر*ها رو اعمال _نمی‌کنه_. لازمه که تغییرات رو به شکل دستی اضافه کنیم.
+      ری‌اکت به شکل اتوماتیک پیشوند‌های مخصوص مرورگرها روی css رو اعمال **نمی‌کنه**. لازمه که تغییرات رو به شکل دستی اضافه کنیم.
 
       <span align="left" dir="ltr">
 
@@ -3412,19 +3435,18 @@ puppeteer:
 
       </span>
 
-      با استفاده از شناساگر export کامپوننت MyProfile قراره یه عضو از ماژول فعلی میشه و برای import کردن لزومی به استفاده از عنوان این کامپوننت نیست.
+      با استفاده از کلمه کلیدی export default می‌تونیم کامپوننت MyProfile(یا هر متغیر و کلاس دیگه‌ای) رو به عنوان یه عضو از ماژول فعلی معرفی کرد و بعد از این، برای import کردن اون لزومی به استفاده از عنوان این کامپوننت نیست.
 
       **[فهرست](#فهرست)**
 
 118.  ### استثنایی که برای نام‌گذاری کامپوننت اجازه استفاده از حرف کوچک رو میده چیه؟
 
-      همه کامپوننت‌های ری‌اکت لازم هست که با حرف بزرگ شروع بشن ولی در این مورد نیز یکسری استثناها وجود داره. تگ‌هایی که با property و عملگر dot کار می‌کنن به عنوان کامپوننت‌های با حرف کوچک تلقی می‌شن.
-      For example the below tag can be compiled to a valid component,
+      همه کامپوننت‌های ری‌اکت لازمه که با حرف بزرگ شروع بشن، ولی توی این مورد هم یه سری استثناها وجود داره. تگ‌هایی که با property و عملگر dot کار می‌کنن رو میشه به عنوان کامپوننت‌هایی با حرف کوچک تلقی کرد. برای مثال این تگ می‌تونه syntax معتبری برای ری‌اکت باشه که با حروف کوچیک شروع میشه:
 
       <span align="left" dir="ltr">
 
       ```jsx
-      render(){
+      const Component = () => {
          return (
              <obj.component /> // `React.createElement(obj.component)`
          )
@@ -3437,7 +3459,7 @@ puppeteer:
 
 119.  ### چرا تابع سازنده کلاس کامپوننت یکبار صدا زده میشه؟
 
-      الگوریتم _reconciliation_ ری‌اکت بعد از رندر کردن کامپوننت با بررسی رندرهای مجدد، بررسی می‌کنه که این کامپوننت قبلا رندر شده یا نه و اگه قبلا رندر شده باشه بر روی همون instance قبلی رندر رو انجام میده و instance جدیدی ساخته نمیشه پس تابع سازنده هم تنها یکبار صدا زده میشه.
+      الگوریتم reconciliation ری‌اکت بعد از رندر کردن کامپوننت با بررسی رندرهای مجدد، بررسی می‌کنه که این کامپوننت قبلا رندر شده یا نه و اگه قبلا رندر شده باشه، تغییرات جدید رو روی همون instance قبلی رندر می‌کنه و instance جدیدی ساخته نمیشه، پس تابع سازنده هم تنها یکبار صدا زده میشه.
 
       **[فهرست](#فهرست)**
 
@@ -3455,7 +3477,7 @@ puppeteer:
 
       </span>
 
-      _فیلدهای استاتیک_ بخشی از _فیلدهای کلاس_ توی پروپوزال stage 3 هستن.
+      فیلدهای استاتیک بخشی از فیلدهای کلاس(class properties) هستن که توی پروپوزال stage 3 معرفی شدن.
 
       **[فهرست](#فهرست)**
 
@@ -3469,7 +3491,7 @@ puppeteer:
       <span align="left" dir="ltr">
 
       ```jsx harmony
-      <input ref={(input) => (this.inputElement = input)} />
+      <input ref={inputRef} />
       ```
 
       </span>
@@ -3479,7 +3501,7 @@ puppeteer:
       <span align="left" dir="ltr">
 
       ```javascript
-      this.inputElement.click();
+      inputRef.click();
       ```
 
       </span>
@@ -3496,9 +3518,9 @@ puppeteer:
 
       دو روش معروف برای پوشه‌های ری‌اکت وجود داره:
 
-      1. **گروه بندی براساس وپژگی یا route:**
+      1. **گروه بندی براساس ویژگی یا route:**
 
-         یک روش معروف قراردادن فایل‌های CSS، JS و تست‌ها کنارهم به ازای هر ویژگی یا route هست
+         یک روش معروف قراردادن فایل‌های CSS، JS و تست‌ها کنارهم به ازای هر ویژگی یا route هست، مثل این ساختار:
 
       <span align="left" dir="ltr">
 
@@ -3527,7 +3549,7 @@ puppeteer:
 
       2. **گروه‌بندی بر اساس ماهیت فایل:**
 
-         یک سبک مشهور دیگر گروه‌بندی فایل‌ها براساس ماهیت اونهاست
+         یک سبک مشهور دیگر گروه‌بندی فایل‌ها براساس ماهیت اونهاست که حالا همین روش هم می‌تونه به شکل‌های مختلف اجرا بشه ولی ساختار پایین می‌تونه یه مثال برای این روش باشه:
 
       <span align="left" dir="ltr">
 
@@ -3555,7 +3577,7 @@ puppeteer:
 
 124.  ### پکیج‌های مشهور برای انیمیشن کدوما هستن؟
 
-      _React Transition Group_، _React Spring_ و _React Motion_ پکیج‌های مشهور برای انیمیشن برای ری‌اکت هستن.
+      React Transition Group، React Spring و React Motion پکیج‌های مشهور برای انیمیشن برای ری‌اکت هستن.
 
       **[فهرست](#فهرست)**
 
@@ -3593,8 +3615,8 @@ puppeteer:
 
 126.  ### معروف‌ترین linterهای ری‌اکت کدوما هستن؟
 
-      ESLint یه linter برای JavaScript هستش۰. یه سری کتابخونه برای کمک به کدنویسی تو سبک‌های مشخص و استاندارد برای eslint وجود داره. یکی از معروف‌ترین پلاگین‌های موجود `eslint-plugin-react` هست.
-      به صورت پیش‌فرض این پلاگین یه سری از best practiceها رو برای کدهای نوشته شده بررسی می‌کنه. با مجموعه‌ای از قوانین برای. پلاگین مشهور دیگه `eslint-plugin-jsx-a11y` هستش، که برای مسائل معروف در زمینه accessibility کمک‌می‌کنه. چرا که JSX یه سینتکس متفاوت‌تری از HTML ارائه می‌کنه، مشکلاتی که ممکنه مثلا با `alt` و `tabindex` پیش میاد رو با این پلاگین میشه متوجه شد.
+      ESLint یه linter برای JavaScript هستش. یه سری کتابخونه برای کمک به کدنویسی تو سبک‌های مشخص و استاندارد برای eslint وجود داره. یکی از معروف‌ترین پلاگین‌های موجود `eslint-plugin-react` هست.
+      به صورت پیش‌فرض این پلاگین یه سری از best practiceها رو برای کدهای نوشته شده بررسی می‌کنه و یه مجموعه‌ از قوانین رو برای کدنویسی الزام می‌کنه. پلاگین مشهور دیگه `eslint-plugin-jsx-a11y` هستش، که برای بررسی نکات و ملزومات معروف در زمینه accessibility کمک‌ می‌کنه. چرا که JSX یه سینتکس متفاوت‌تری از HTML ارائه می‌کنه، مشکلاتی که ممکنه مثلا با `alt` و `tabindex` پیش میاد رو با این پلاگین میشه متوجه شد.
 
       **[فهرست](#فهرست)**
 
@@ -3603,6 +3625,44 @@ puppeteer:
       می‌تونیم از کتابخونه‌های AJAX مثل Axios یا حتی از `fetch` که به صورت پیش‌فرض تو مرورگر وجود داره استفاده کنیم. لازمه که توی `Mount` درخواست API رو انجام بدیم و برای به روز کردن کامپوننت می‌تونیم از `setState` استفاده کنیم تا داده بدست اومده رو توی کامپوننت نشون بدیم.
 
       برای مثال، لیست کارمندان از API گرفته میشه و توی state نگهداری میشه:
+
+      <span align="left" dir="ltr">
+
+      ```jsx harmony
+      const MyComponent = () => {
+        const [employees, setEmployees] = useState([]);
+        const [error, setError] = useState(null);
+
+        useEffect(() => {
+          fetch("https://api.example.com/items")
+           .then((res) => res.json())
+           .then(
+              (result) => {
+                setEmployees(result.employees);
+              },
+              (error) => {
+                setError(error);
+              }
+            );
+        }, []);
+
+        return error ? (
+          <div>Error: {error.message}</div>
+        ): (
+          <ul>
+            {employees.map((employee) => (
+              <li key={employee.name}>
+                {employee.name}-{employee.experience}
+              </li>
+            ))}
+          </ul>
+        );
+      };
+      ```
+
+      </span>
+
+      همین کد روی کلاس کامپوننت به شکل زیر اجرا میشد:
 
       <span align="left" dir="ltr">
 
@@ -3652,47 +3712,11 @@ puppeteer:
 
       </span>
 
-      <span align="left" dir="ltr">
-
-      ```jsx harmony
-      const MyComponent = () => {
-        const [employees, setEmployees] = useState([]);
-        const [error, setError] = useState(null);
-
-        useEffect(() => {
-          fetch("https://api.example.com/items")
-           .then((res) => res.json())
-           .then(
-              (result) => {
-                setEmployees(result.employees);
-              },
-              (error) => {
-                setError(error);
-              }
-            );
-        }, []);
-
-        return error ? (
-          <div>Error: {error.message}</div>
-        ): (
-          <ul>
-            {employees.map((employee) => (
-              <li key={employee.name}>
-                {employee.name}-{employee.experience}
-              </li>
-            ))}
-          </ul>
-        );
-      };
-      ```
-
-      </span>
-
       **[فهرست](#فهرست)**
 
 128.  ### render props چیه؟
 
-      **Render Props** یه تکنیک ساده برای به اشتراک گذاری کد بین کامپوننت‌هاست که با استفاده از یه prop که یه تابع رو بهش دادیم انجام میشه. کامپوننت زیر از همین روش برای پاس دادن یه React element استفاده می‌کنه.
+      **Render Props** یه تکنیک ساده برای به اشتراک گذاری کامپوننت بین کامپوننت‌های دیگه‌ـست که با استفاده از یه prop که یه تابع یا یه کامپوننت رو بهش دادیم انجام میشه. کامپوننت زیر از همین روش برای پاس دادن یه React element استفاده می‌کنه و توی کامپوننت پایین این prop رو یه شکل یه تابع فراخوانی می‌کنیم و چون یه تابع هست، میتونیم بهش هر مقداری که میخواییم بیاریم این سمت رو پاس بدیم.
 
       <span align="left" dir="ltr">
 
@@ -3714,7 +3738,7 @@ puppeteer:
 
 130. ### ارتباط React Router و کتابخونه history چیه؟
 
-     React Router یک wrapper روی کتابخونه `history` هستش که اعمال اجرایی بر روی `window.history` رو با استفاده از ابجکت‌های hash و browser مدیریت می‌کنه. البته این کتابخونه یک نوع دیگه از historyها به اسم memory history رو هم معرفی می‌کنه که برای محیط‌هایی که به صورت عمومی از history پشتیبانی نمی‌کنن کاربرد داره. مثل محیط توسعه برنامه موبایل با (React Native) یا محیط‌های unit test و Nodejs.
+     React Router یه wrapper روی کتابخونه `history` هست که اعمال اجرایی بر روی `window.history` رو با استفاده از ابجکت‌های hash و browser مدیریت می‌کنه. البته این کتابخونه یک نوع دیگه از historyها به اسم memory history رو هم معرفی می‌کنه که برای محیط‌هایی که به صورت عمومی از history پشتیبانی نمی‌کنن کاربرد داره. مثل محیط توسعه برنامه موبایل با (React Native) یا محیط‌های unit test و Nodejs.
 
      **[فهرست](#فهرست)**
 
@@ -3726,28 +3750,27 @@ puppeteer:
      2. `<HashRouter>`
      3. `<MemoryRouter>`
 
-     کامپوننت‌های فوق به ترتیب _browser_، _hash_، و _memory_ history درست می‌کنن. React Router v4 ساخت `history` را براساس context ارائه شده به آبجکت router انجام می‌دهد.
+     کامپوننت‌های فوق به ترتیب browser، hash، و memory history درست می‌کنن. React Router v4 ساخت `history` رو براساس context ارائه شده به آبجکت router انجام می‌ده و همین موضوعه که باعث میشه بتونیم از این کتابخونه توی محیط‌های مختلف استفاده کنیم.
 
      **[فهرست](#فهرست)**
 
 132. ### هدف از متدهای push و replace توی history چیه؟
 
-     هر شئ از history دو متد برای جابجایی ارائه می‌دهد.
+     هر شئ از آبجکت history دو تا متد برای کار با state مرورگر ارائه می‌ده.
 
      1. `push`
      2. `replace`
 
-     اگر به history به عنوان یک آرایه از مسیرهای بازدید شده نگاه کنیم، `push` یک جابجایی جدید به مسیر اضافه می‌کنه و `replace` مسیر فعلی را با یک مسیر جدید جابجا می‌کنه.
+     اگه به history به شکل یک آرایه از مسیرهای بازدید شده نگاه کنیم، `push` یک جابجایی جدید به مسیر اضافه می‌کنه و `replace` مسیر فعلی رو با یه مسیر جدید جایگزین می‌کنه.
 
      **[فهرست](#فهرست)**
 
 133. ### چطوری توی برنامه به route خاص جابجا بشیم؟
-
-     روش‌های مختلفی برای جابجایی در برنامه و توسط کد وجود دارد.
+     روش‌های مختلفی برای جابجایی در برنامه و توسط کد وجود داره که پایین لیست می‌کنیم، ولی روش آخر(استفاده از هوک‌ها) بهترین و ساده‌ترین روش توی کامپوننت‌های تابعی هست.
 
      1. **استفاده از تابع مرتبه بالاتر(higher-order) `withRouter`:**
 
-        متد `withRouter` آبجکت history را به عنوان یک prop به کامپوننت اضافه می‌کنه. در این prop دسترسی به متدهای `push` و `replace` بسادگی می‌تونه مسیریابی بین کامپوننت رو فراهم کنه و نیاز به context رو رفع کنه.
+        متد `withRouter` آبجکت history رو به عنوان یه prop به کامپوننت اضافه می‌کنه. روی این prop به متدهای `push` و `replace` دسترسی داریم که به‌سادگی می‌تونه مسیریابی بین routeها رو فراهم کنه و نیاز به context رو رفع کنه.
 
      <span align="left" dir="ltr">
 
@@ -3824,7 +3847,7 @@ puppeteer:
 
      4. **استفاده از هوک‌های موجود:**
 
-        هوک‌هایی برای دسترسی به history و params در این کتابخونه وجود داره مثل useHistory:
+        هوک‌هایی برای دسترسی به history و params در این کتابخونه وجود داره مثل useHistory یا حتی توی نسخه‌ ۶ به بعد هوک useNavigate که راحت‌تر می‌تونه امکان navigate بین صفحات رو فراهم کنه:
 
      <span align="left" dir="ltr">
 
@@ -3839,6 +3862,29 @@ puppeteer:
            type="button"
            onClick={() => {
              history.push("/new-location");
+           }}
+         >
+           {"Click Me!"}
+         </button>
+       );
+     };
+     ```
+
+     </span>
+    
+     نسخه ۶:
+
+     <span align="left" dir="ltr">
+
+     ```jsx harmony
+     const Page = (props, context) => {
+       const navigate = useNavigate();
+
+       return (
+         <button
+           type="button"
+           onClick={() => {
+             navigate("/new-location");
            }}
          >
            {"Click Me!"}
@@ -3869,9 +3915,7 @@ puppeteer:
 
 135. ### دلیل خطای "Router may have only one child element" چیه؟
 
-     باید کامپوننت Route رو توی بلاک `<Switch>` قرار بدیم چون `<Switch>` چون Switch باعث میشه که منحصرا یک کامپوننت در صفحه لود بشه.
-
-     اولش لازمه که `Switch` رو import کنیم:
+     باید کامپوننت Route رو توی بلاک `<Switch>` قرار بدیم چون همین کامپوننت `<Switch>` چون Switch هست که باعث میشه منحصرا فقط یه route با مسیر فعلی تطابق پیدا کنه و کامپوننت اون route توی صفحه رندر بشه. اولش لازمه که `Switch` رو import کنیم:
 
      <span align="left" dir="ltr">
 
@@ -3881,7 +3925,7 @@ puppeteer:
 
      </span>
 
-     بعدش رووت‌ها رو توی بلاک `<Switch>` تعریف می‌کنیم:
+     بعدش routeها رو `<Switch>` تعریف می‌کنیم:
 
      <span align="left" dir="ltr">
 
@@ -3900,7 +3944,7 @@ puppeteer:
 
 136. ### چطوری میشه به متد history.push پارامتر اضافه کرد؟
 
-     موقع جابجایی می‌تونیم یه object به `history` پاس بدیم که یه سری گزینه‌ها رو برامون قابل کانفیگ می‌کنه:
+     همونطوری که می‌دونیم موقع جابجایی میشه یه object به `history` پاس بدیم که یه سری گزینه‌ها رو برامون قابل کانفیگ می‌کنه:
 
      <span align="left" dir="ltr">
 
@@ -3920,7 +3964,7 @@ puppeteer:
 
 137. ### چطوری میشه صفحه ۴۰۴ ساخت؟
 
-     کامپوننت `<Switch>` اولین فرزند `<Route>`ای که با درخواست موجود تطابق داشته باشه رو رندر می‌کنه. از اونجایی که یه `<Route>` بدون path یا با path \* همیشه مطابق با درخواست است، پس هنگام خطای ۴۰۴ این مورد برای رندر استفاده میشه.
+     کامپوننت `<Switch>` اولین فرزند `<Route>`ای که با درخواست موجود تطابق داشته باشه رو رندر می‌کنه. از اونجایی که یه `<Route>` بدون path یا با path \* همیشه مطابق با درخواست‌هاست، پس هنگام خطای ۴۰۴ این مورد برای رندر استفاده میشه.
 
      <span align="left" dir="ltr">
 
@@ -3986,25 +4030,25 @@ puppeteer:
 
      </span>
 
+     **نکته:** روی نسخه ۶ دسترسی مستقیم به history حذف شده و برای هر کار یه هوک مختص به اون کار مهیا شده.
+
      **[فهرست](#فهرست)**
 
 139. ### چطوری بعد از لاگین به شکل خودکار ریدایرکت کنیم؟
 
-     پکیج `react-router` مکان استفاده از کامپوننت `<Redirect>` رو توی React Router میده. رندر کردن `<Redirect>` باعث جابجایی به مسیر پاس داده شده بهش میشه. مثل ریدایرکت سرور-ساید، مسیر جدید با path فعلی جایگزین می‌شه.
+     پکیج `react-router` امکان استفاده از کامپوننت `<Redirect>` رو توی React Router فراهم می‌کنه. رندر کردن `<Redirect>` باعث جابجایی به مسیر پاس داده شده میشه. دقیقا مثل ریدایرکت سمت سرور، path مسیر جدید با path فعلی جایگزین می‌شه.
 
      <span align="left" dir="ltr">
 
      ```javascript
      import React, { Component } from "react";
      import { Redirect } from "react-router";
-
-     export default class LoginComponent extends Component {
-       render() {
-         if (this.state.isLoggedIn === true) {
-           return <Redirect to="/your/redirect/page" />;
-         } else {
-           return <div>{"Login Please"}</div>;
-         }
+     
+     const Component = () => {
+       if (isLoggedIn === true) {
+         return <Redirect to="/your/redirect/page" />;
+       } else {
+         return <div>{"Login Please"}</div>;
        }
      }
      ```
@@ -4015,7 +4059,7 @@ puppeteer:
 
 140. ### React-Intl چیه؟
 
-     _React Intl_ یه کتابخونه برای راحت کردن کار با برنامه‌های چند زبانه‌ست. این کتابخونه از مجموعه‌ای از کامپوننت‌ها و APIها برای فرمت‌بندی string، date و اعداد برای سهولت چندزبانگی استفاده می‌کنه. React Intl بخشی از _FormatJS_ هست که امکان اتصال به ری‌اکت رو با کامپوننت‌های خودش فراهم می‌کنه.
+     _React Intl_ یه کتابخونه برای آسان نمودن توسعه برنامه‌های چند زبانه‌ـست. این کتابخونه از مجموعه‌ای از کامپوننت‌ها و APIها برای فرمت‌بندی رشته‌ها، تاریخ و اعداد رو برای ساده‌سازی فرآیند چندزبانگی فراهم می‌کنه. React Intl بخشی از _FormatJS_ هست که امکان اتصال به ری‌اکت رو با کامپوننت‌های خودش فراهم می‌کنه.
 
      **[فهرست](#فهرست)**
 
