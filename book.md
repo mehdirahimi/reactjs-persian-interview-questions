@@ -325,7 +325,7 @@ puppeteer:
 | 276  | [چطوری به ازای route می‌تونیم code splitting داشته باشیم؟](#چطوری-به-ازای-route-می‌تونیم-code-splitting-داشته-باشیم)                                                                                      |
 | 277  | [یه مثال از نحوه استفاده از context میزنی؟](#یه-مثال-از-نحوه-استفاده-از-context-میزنی)                                                                                                                   |
 | 278  | [هدف از مقدار پیش‌فرض توی context چیه؟](#هدف-از-مقدار-پیشفرض-توی-context-چیه)                                                                                                                            |
-| 279  | [چظوری از contextType استفاده می‌کنین؟](#چظوری-از-contextType-استفاده-میکنین)                                                                                                                            |
+| 279  | [چطوری از contextType استفاده می‌کنین؟](#چطوری-از-contextType-استفاده-میکنین)                                                                                                                            |
 | 280  | [consumer چیه؟](#consumer-چیه)                                                                                                                                                                           |
 | 281  | [چطوری مسائل مربوط به پرفورمنس با context رو حل می‌کنین؟](#چطوری-مسائل-مربوط-به-پرفورمنس-با-context-رو-حل-میکنین)                                                                                        |
 | 282  | [هدف از forward ref توی HOCها چیه؟](#هدف-از-forward-ref-توی-HOCها-چیه)                                                                                                                                   |
@@ -346,7 +346,7 @@ puppeteer:
 | 297  | [stack موردعلاقه شما برای کانفیگ پروژه ری‌اکت چیه؟](#stack-موردعلاقه-شما-برای-کانفیگ-پروژه-ریاکت-چیه)                                                                                                    |
 | 298  | [تفاوت‌ DOM واقعی و Virtual DOM چیه؟](#تفاوت-DOM-واقعی-و-Virtual-DOM-چیه)                                                                                                                                |
 | 299  | [چطوری Bootstrap رو به یه برنامه ری‌اکتی اضافه کنیم؟](#چطوری-Bootstrap-رو-به-یه-برنامه-ریاکتی-اضافه-کنیم)                                                                                                |
-| 300  | [می‌تونی یه لیسستی از معروف‌ترین وب‌سایت‌هایی که از ری‌اکت استفاده می‌کنن رو بگی؟](#میتونی-یه-لیسستی-از-معروفترین-وبسایتهایی-که-از-ریاکت-استفاده-می‌کنن-رو-بگی)                                           |
+| 300  | [می‌تونی یه لیستی از معروف‌ترین وب‌سایت‌هایی که از ری‌اکت استفاده می‌کنن رو بگی؟](#میتونی-یه-لیسستی-از-معروفترین-وبسایتهایی-که-از-ریاکت-استفاده-می‌کنن-رو-بگی)                                           |
 | 301  | [استفاده از تکنیک CSS In JS تو ری‌اکت توصیه میشه؟](#استفاده-از-تکنیک-CSS-In-JS-تو-ریاکت-توصیه-میشه)                                                                                                      |
 | 302  | [لازمه همه کلاس کامپوننت‌ها رو تبدیل کنیم به هوک؟](#لازمه-همه-کلاس-کامپوننتها-رو-تبدیل-کنیم-به-هوک)                                                                                                      |
 | 303  | [چطوری میشه با هوک‌های ری‌اکت دیتا fetch کرد؟](#چطوری-میشه-با-هوکهای-ریاکت-دیتا-fetch-کرد)                                                                                                               |
@@ -389,9 +389,9 @@ puppeteer:
     اصلی‌ترین ویژگی‌های ری‌اکت اینا هستن:
 
     - از **VirtualDOM** به جای RealDOM استفاده‌می‌کنه چون هزینه تغییرات RealDOM زیاده (یعنی پیدا کردن DOM Element و حذف یا به روز رسانی با سرعت کمتری انجام میشه)
-    - از **SSR (server side rendering)** پشتیبانی ‌می‌کنه
+    - از **SSR** یا همون **Server Side Rendering** پشتیبانی ‌می‌کنه
     - از جریان داده‌ها یا data binding به صورت **یک طرفه (unidirectional)** پیروی‌ می‌کنه
-    - برای توسعه view از UI کامپوننت‌های ‌**reusable/composable** استفاده ‌می‌کنه
+    - برای توسعه view از UI کامپوننت‌های **reusable/composable** استفاده ‌می‌کنه
 
     **[فهرست](#فهرست)**
 
@@ -620,7 +620,7 @@ puppeteer:
     <span align="left" dir="ltr">
 
     ```jsx harmony
-    <Element renderProp={<span>Hi there</spam>} />
+    <Element renderProp={<span>Hi there</span>} />
     ```
 
      </span>
@@ -1122,6 +1122,8 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+<br />
+
 29. ### کامپوننت‌های کنترل شده چی هستن؟
 
     کامپوننتی که عناصر ورودی رو توی فرم‌های ورودی کاربر کنترل‌می‌کنه به عنوان کامپوننت کنترل شده شناخته میشن، توی این کامپوننت‌ها هر تغییر state یه تابع نگهدارنده مرتبط باهاش رو داره.
@@ -1429,7 +1431,7 @@ puppeteer:
 
     <span align="left" dir="ltr">
 
-    ```javascript
+    ```javascript harmony
     handleInputChange(event) {
       this.setState({ [event.target.id]: event.target.value })
     }
@@ -6094,7 +6096,7 @@ puppeteer:
 
 244. ### کاربرد متد getDerivedStateFromError چیه؟
 
-     این متد زمانی فراخوانی میشه که یه خطا توی کامپوننت‌های فرزندان این کامپوننت رخ بده. این متد errorای که رخ داده رو به عنوان ورودی دریافت می‌کنه و باید یه مقداری رو برای به روز کردن state برگردونه. ساختار کلی این متد به شکل پایینه:
+     این متد زمانی فراخوانی میشه که یه خطا توی کامپوننت‌های فرزندان این کامپوننت رخ بده. این متد errorای که رخ داده رو به عنوان ورودی دریافت می‌کنه و باید یه مقداری رو برای به روز کردن state برگردونه. ساختار کلی این متد به شکل پایین‌ـه:
 
      <span align="left" dir="ltr">
 
@@ -6500,15 +6502,15 @@ puppeteer:
 
      اگه از eventHandlerها مثل  **onClick یا onScroll** استفاده می‌کنین و می‌خوایید از اجرا شدن بیش از حد تابع callback جلوگیری کنین، روش‌های مختلفی برای انجام این کار وجود داره:
 
-     1. **Throttling:** Changes based on a time based frequency. For example, it can be used using \_.throttle lodash function
-     2. **Debouncing:** Publish changes after a period of inactivity. For example, it can be used using \_.debounce lodash function
-     3. **Throttling با RequestAnimationFrame :** Changes based on requestAnimationFrame. For example, it can be used using raf-schd lodash function
+     1. **Throttling:** تغییر براساس زمان و به شکل پیوسته. برای مثال میشه با استفاده از تابع `_.throttle` روی کتابخونه lodash(روی npm موجوده) انجامش داد.
+     2. **Debouncing:** تغییر براساس یک مدت زمان بدون فعالیت. میشه با استفاده از تابع `_.debounce` روی کتابخونه lodash انجامش داد.
+     3. **Throttling با RequestAnimationFrame :** تغییر بر اساس requestAnimationFrame. میشه از کتابخونه یا تابع raf-schd روی lodash استفاده کرد.
 
      **[فهرست](#فهرست)**
 
 261. ### JSX چطوری از حمله‌های Injection جلوگیری می‌کنه؟
 
-     React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. For example, you can embed user input as below,
+     ReactDOM قبل از embedd کردن هر مقدار در JSX اون رو امن می‌کنه و اصطلاحا escape میکنه. به همین دلیل میشه اطمینان داشت که هیچ کدمخربی رو نمیشه به شکل مقداری تو jsx ادد کرد. هر مقداری قبل از رندر شدن به رشته تبدیل میشه و برای مثال اگه از ورودی input یه مقدار نا امن از کاربر دریافت کنیم مثل:
 
      <span align="left" dir="ltr">
 
@@ -6518,13 +6520,14 @@ puppeteer:
      ```
 
      </span>
-     This way you can prevent XSS(Cross-site-scripting) attacks in the application.
+     
+     مقدار چاپ شده در مقابل حمله XSS یا همون (Cross-site-scripting) در امان خواهد بود.
 
      **[فهرست](#فهرست)**
 
 262. ### چطوری elementهای رندر شده رو آپدیت کنیم؟
 
-     You can update UI(represented by rendered element) by passing the newly created element to ReactDOM's render method. For example, lets take a ticking clock example, where it updates the time by calling render method multiple times,
+     میشه UI(تولید شده توسط رندرشدن elementها) رو با پاس دادن مقدار جدید به متد رندر از ReactDOM به روزرسانی کرد. برای مثال بیایین یه ساعت رو بررسی کنیم که با هر تیک‌تاک باید رندر بشه و ما این کار رو با ReactDom میخواییم انجام بدیم:
 
      <span align="left" dir="ltr">
 
@@ -6548,24 +6551,25 @@ puppeteer:
 
 263. ### چرا propها read only هستن؟
 
-     When you declare a component as a function or a class, it must never modify its own props. Let us take a below capital function,
+     وقتی یه کامپوننت می‌سازید، فرقی هم نمی‌کنه تابع یا کلاس، نباید روی propهای ورودیش تغییری انجام بده. به این کامپوننت نگاه کنید:
 
      <span align="left" dir="ltr">
 
      ```javascript
-     function capital(amount, interest) {
+     function Capital(amount, interest) {
        return amount + interest;
      }
      ```
 
      </span>
-     The above function is called “pure” because it does not attempt to change their inputs, and always return the same result for the same inputs. Hence, React has a single rule saying "All React components must act like pure functions with respect to their props."
+     
+     این کامپوننت pure نامیده میشه چون با ورودی‌های یکسان، همواره خروجی یکسانی تولید می‌کنه و تغییری روی اونا نمیده. به همین خاطر ری‌اکت یه قانون ساده داره که میگه: "همه کامپوننت‌ها باید مثل یه pure کامپوننت رفتار کنن و در مورد propهای ورودی هیچ تغییری روشون ندن."
 
      **[فهرست](#فهرست)**
 
 264. ### چرا میگیم تابع setState از طریق merge کردن state را مدیریت می‌کنه؟
 
-     When you call setState() in the component, React merges the object you provide into the current state. For example, let us take a facebook user with posts and comments details as state variables,
+     وقتی که متد setState() رو داخل یه کامپوننت فراخوانی می‌کنیم، ری‌اکت object پاس داده شده رو با  state فعلی ترکیب می‌کنه. بیایین یه مثال رو درنظر بگیریم از کاربران، پست‌ها و نظرات فیس‌بوک:
 
      <span align="left" dir="ltr">
 
@@ -6580,7 +6584,8 @@ puppeteer:
      ```
 
      </span>
-     Now you can update them independently with separate setState() calls as below,
+     
+     حالا می‌تونیم به شکل جداگانه هر کدوم از این داده‌ها رو با setState() جداگانه مثل زیر آپدیت کنیم:
 
      <span align="left" dir="ltr">
 
@@ -6601,13 +6606,15 @@ puppeteer:
      ```
 
      </span>
-     As mentioned in the above code snippets, this.setState({comments}) updates only comments variable without modifying or replacing posts variable.
+     
+     همونطوری که بالاتر هم گفته شد، this.setState({ comments }) فقط بخش مربوط به نظرات رو به روز می‌کنه و کاری با بقیه بخش‌ها نداره.
 
      **[فهرست](#فهرست)**
 
 265. ### چطوری می‌تونیم به متد event handler پارامتر پاس بدیم؟
 
-     During iterations or loops, it is common to pass an extra parameter to an event handler. This can be achieved through arrow functions or bind method. Let us take an example of user details updated in a grid,
+     موقع iterations یا داخل حلقه‌ها، مرسوم هست که یه پارامتر اضافی دیگه به eventHandler پاس بدیم، مثلا آی کاربر و ... . این می‌تونه arrow-functionها یا متد bind انجام بشه. بیایین یه نگاهی به تابع آپدیت کاربر داخل یه جدول بندازیم:
+     
      <span align="left" dir="ltr">
 
      ```jsx
@@ -6617,13 +6624,13 @@ puppeteer:
 
      </span>
 
-     In both the approaches, the synthetic argument e is passed as a second argument. You need to pass it explicitly for arrow functions and it forwarded automatically for bind method.
+     در هر دو حالت پارامتر e به عنوان دومین پارامتر پاس داده می‌شود. در مورد تابع arrow باید به شکل مستقیم اون رو پاس بدیم و در مورد مثال bind به شکل اتوماتیک پاس داده میشه.
 
      **[فهرست](#فهرست)**
 
 266. ### چطوری از رندر مجدد کامپوننت‌ها جلوگیری کنیم؟
 
-     You can prevent component from rendering by returning null based on specific condition. This way it can conditionally render component.
+     می‌تونیم با چک کردن یه شرط و برگردوندن null کامپوننت‌ـمون رو رندر نکنیم. مثل این کامپوننت:
 
      <span align="left" dir="ltr">
 
@@ -6649,34 +6656,36 @@ puppeteer:
        }
 
        render() {
-        return (
-            <div>
-              //Prevent component render if it is not loggedIn
-              <Greeting loggedIn={this.state.loggedIn} />
-              <UserDetails name={this.state.name}>
-            </div>
+         return (
+           <div>
+             //Prevent component render if it is not loggedIn
+             <Greeting loggedIn={this.state.loggedIn} />
+             <UserDetails name={this.state.name}>
+           </div>
         );
        }
+     }
      ```
 
      </span>
-     In the above example, the greeting component skips its rendering section by applying condition and returning null value.
+     
+     در کامپوننت‌های فوق، کامپوننت greeting با بررسی مقدار prop مورد نظر برای لاگین بودن، به صورت شرطی رندر میشه.
 
      **[فهرست](#فهرست)**
 
 267. ### شرایطی که بدون مشکل پرفورمنس بتونیم از ایندکس به عنوان key استفاده کنیم چی هست؟
 
-     There are three conditions to make sure, it is safe use the index as a key.
+     سه تا شرط وجود داره که مطمئن بشیم می‌تونیم از index به عنوان key استفاده کنیم:
 
-     1. The list and items are static– they are not computed and do not change
-     2. The items in the list have no ids
-     3. The list is never reordered or filtered.
+     1. لیست و آیتم‌هاش ثابت هستن و کامپایل نمیشن و تغییر نمی‌کنن.
+     2. آیتم‌های موجود توی لیست، فیلدی برای id ندارن.
+     3. لیست موردنظر هیچ وقت مجددا تولید و مقداردهی نمیشه، یا فیلتر نمیشه.
 
      **[فهرست](#فهرست)**
 
 268. ### keyهای ری‌اکت باید به صورت عمومی منحصر بفرد باشن؟
 
-     Keys used within arrays should be unique among their siblings but they don’t need to be globally unique. i.e, You can use the same keys withtwo different arrays. For example, the below book component uses two arrays with different arrays,
+     Keyهایی که در طول رندر کردن یک آرایه استفاده میشن، الزاما باید در همسایگی خودشون منحصر به فرد باشن ولی هیچ لزومی نداره که به شکل عمومی منحصر به فرد باشن. برای مثال می‌تونین یه کلید یکسان رو موقع رندر کردن دو تا آرایه متفاوت استفاده کنین، مثل:
 
      <span align="left" dir="ltr">
 
@@ -6712,36 +6721,36 @@ puppeteer:
 
 269. ### گزینه‌های محبوب برای مدیریت فرم‌ها توی ری‌اکت کدوما هستن؟
 
-     Formik is a form library for react which provides solutions such as validation, keeping track of the visited fields, and handling form submission. In detail, You can categorize them as follows,
+     Formik یه کتابخونه مدیریت فرم برای ری‌اکت‌ـه که به شکل پیش‌فرض امکان زیادی مثل اعتبارسنجی، نگهداری سابقه تغییر فیلد‌ها و مدیریت ثبت شدن فرم رو فراهم می‌کنه. در حالت کلی میشه به صورت زیر دسته‌بندی‌شون کرد:
 
-     1. Getting values in and out of form state
-     2. Validation and error messages
-     3. Handling form submission
-
-     It is used to create a scalable, performant, form helper with a minimal API to solve annoying stuff.
+     1. دریافت و فراهم کردن داده‌های فیلدهای فرم
+     2. اعتبارسنجی و مدیریت پیام‌های خطا
+     3. مدیریت ثبت شدن فرم
+     
+     از فرمیک میشه برای فرم‌های مقیاس‌پذیر، بهینه، بی دردسر و حتی پیچیده استفاده کرد. API فرمیک هم بسیار ساده و قابل فهمه.
 
      **[فهرست](#فهرست)**
 
 270. ### مزایای کتابخانه فرمیک نبست به redux form چیه؟
 
-     Below are the main reasons to recommend formik over redux form library
+     دلایل استفاده از فرمیک به‌جای ریداکس‌فرم اینا هستن:
 
-     1. The form state is inherently short-term and local, so tracking it in Redux (or any kind of Flux library) is unnecessary.
-     2. Redux-Form calls your entire top-level Redux reducer multiple times ON EVERY SINGLE KEYSTROKE. This way it increases input latency for large apps.
-     3. Redux-Form is 22.5 kB minified gzipped whereas Formik is 12.7 kB
+     1. State فرم به شکل محلی و کوتاه مدت ذخیره میشه و هیچ نیازی به نگهداری اون به شکل عمومی روی ریداکس یا هر کتابخونه شبیه flux نیست.
+     2. Redux-Form با هر کلیدی که فشرده میشه به شکل عمومی reducer موجود در redux رو فراخوانی میکنه. این مسئله توی برنامه‌های بزرگ باعث ایجاد کندی میشه.
+     3. سایز کتابخونه Redux-Form حدود 22.5 kB به شکل minify و gzip شده هستش که در مقابل Formik فقط 12.7 kB هست.
 
      **[فهرست](#فهرست)**
 
 271. ### چرا اجباری برای استفاده از ارث‌بری توی ری‌اکت نیست؟ مزیتی داره؟
 
-     In React, it is recommend using composition instead of inheritance to reuse code between components. Both Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way.
-     Whereas, If you want to reuse non-UI functionality between components, it is suggested to extracting it into a separate JavaScript module. Later components import it and use that function, object, or a class, without extending it.
+     در ری‌اکت توصیه میشه که از composition(ترکیب) بجای inheritance(ارث‌بری) برای استفاده مجدد از کدها توی کامپوننت‌های دیگه بهره ببریم. هر دو مورد به ما این امکان رو میدن که به شکل منعطف کدهای موجود رو بین کامپوننت‌ها به اشتراک بزاریم.
+     ولی, اگه بخواییم یه کد غیر UI بین کامپوننت‌ها به اشتراک بزاریم، توصیه میشه اون بخش رو به شکل یه ماژول جداگانه جاواسکریپت دربیاریم و بعدا بدون دغدغه از اینکه کامپوننتی که می‌خواییم از این کد استفاده کنیم، کلاس هست یا تابع، یا حتی اصلا ربطی به ui نداره، از ماژول‌مون استفاده کنیم.
 
      **[فهرست](#فهرست)**
 
 272. ### می‌تونیم از web components توی برنامه ری‌اکت استفاده کنیم؟
 
-     Yes, you can use web components in a react application. Even though many developers won't use this combination, it may require especially if you are using third-party UI components that are written using Web Components. For example, let us use Vaadin date picker web component as below,
+     بله، میشه از وب‌ کامپوننت‌ها توی برنامه ری‌اکتی استفاده کرد. اگرچه خیلی از توسعه‌دهنده‌ها از این قابلیت استفاده نمی‌کنن، ممکنه بیشتر زمان‌هایی به کارمون بیاد که از کتابخونه‌های خارجی توی برنامه‌مون میخواییم استفاده کنیم. برای مثال وب کامپوننت انتخاب تاریخ Vaadin رو میشه به شکل زیر استفاده کرد:
 
      <span align="left" dir="ltr">
 
@@ -6767,9 +6776,9 @@ puppeteer:
 
 273. ### dynamic import چیه؟
 
-     The dynamic import() syntax is a ECMAScript proposal not currently part of the language standard. It is expected to be accepted in the near future. You can achieve code-splitting into your app using dynamic import(). Let's take an example of addition,
+     ساختار import داینامیک در ابتدا به شکل یه پروپوزال روی ECMAScript ارائه شده بود که تایید شد. می‌تونیم با استفاده از این قابلیت به راحتی code-splitting رو توی برنامه‌مون داشته باشیم. به مثال پایین توجه کنین:
 
-     1. **Normal Import**
+     1. **Import عادی**
 
      <span align="left" dir="ltr">
 
@@ -6779,7 +6788,8 @@ puppeteer:
      ```
 
      </span>
-     2. **Dynamic Import**
+     
+     2. **Import داینامیک**
 
      <span align="left" dir="ltr">
 
@@ -6795,7 +6805,7 @@ puppeteer:
 
 274. ### loadable componentها چی هستن؟
 
-     If you want to do code-splitting in a server rendered app, it is recommend to use Loadable Components because React.lazy and Suspense is not yet available for server-side rendering. Loadable lets you render a dynamic import as a regular component. Lets take an example,
+     اگه می‌خوایین code-splitting رو روی یه برنامه‌ای که سمت سرور رندر میشه داشته باشین، توصیه میشه که از کتابخونه LoadableComponents استفاده کنین، چون در حال حاضر React.lazy و Suspense روی SSR به درستی کار نمی‌کنن. Loadable بهتون این اجازه رو میده که import داینامیک رو مثل یه کامپوننت عادی باهاش برخورد کنین. بزارین یه مثال بزنیم:
 
      <span align="left" dir="ltr">
 
@@ -6814,13 +6824,14 @@ puppeteer:
      ```
 
      </span>
-     Now OtherComponent will be loaded in a separated bundle
+     
+     حالا کامپوننت OtherComponent تو یه فایل جداگانه bundle میشه.
 
      **[فهرست](#فهرست)**
 
 275. ### کامپوننت suspense چیه؟
 
-     If the module containing the dynamic import is not yet loaded by the time parent component renders, you must show some fallback content while you’re waiting for it to load using a loading indicator. This can be done using **Suspense** component. For example, the below code uses suspense component,
+     اگه یه ماژول شامل import داینامیک باشه و هنوز رندر نشده نباشه، توی کامپوننت والدش باید یه رابط کاربری loading براش نمایش داده بشه. این بخش می‌تونه با کامپوننت **Suspense** مدیریت بشه. برای مثال کامپوننت‌های پایین رو ببینید که از Suspense در طول مدت بارگذاری کامپوننت دوم استفاده می‌کنن:
 
      <span align="left" dir="ltr">
 
@@ -6839,13 +6850,14 @@ puppeteer:
      ```
 
      </span>
-     As mentioned in the above code, Suspense is wrapped above the lazy component.
+     
+     همونطوری که اشاره کردیم، Suspense روی یه کامپوننت که به شکل lazy بارگذاری شده wrap میشه.
 
      **[فهرست](#فهرست)**
 
 276. ### چطوری به ازای route می‌تونیم code splitting داشته باشیم؟
 
-     One of the best place to do code splitting is with routes. The entire page is going to re-render at once so users are unlikely to interact with other elements in the page at the same time. Due to this, the user experience won't be disturbed. Let us take an example of route based website using libraries like React Router with React.lazy,
+     یکی از بهترین جاها برای انجام code-splitting، انجام اون به ازای routeهای برنامه‌ست. وقتی می‌خواییم یه route جدید رو بارگذاری کنیم کاربر انتظار داره که صفحه عوض بشه، پس با نمایش fallback و استفاده از suspense تجربه کاربری خیلی بهتر میشه. بیایین یه مثال از روتر‌ها در کنار استفاده از lazy و suspense ببینیم:
 
      <span align="left" dir="ltr">
 
@@ -6869,19 +6881,21 @@ puppeteer:
      ```
 
      </span>
-     In the above code, the code splitting will happen at each route level.
+     
+     در مثال فوق به ازای هر route یک فایل bundle مجزا ساخته میشه و برنامه وقتی می‌خواد بارگذاری بشه، فقط فایل مربوط به اون route لود میشه که باعث افزایش سرعت لود و بهبود تجربه کاربری میشه.
 
      **[فهرست](#فهرست)**
 
 277. ### یه مثال از نحوه استفاده از context میزنی؟
 
-     **Context** is designed to share data that can be considered **global** for a tree of React components. For example, in the code below lets manually thread through a “theme” prop in order to style the Button component.
+     **Context** برای به اشتراک گذاری داده‌هایی که به شکل **عمومی** روی درخت کامپوننت‌های ری‌اکت مورد نیاز هستن طراحی شده. برای مثال در تکه کد زیر مقدار theme برای استفاده در کامپوننت‌های پایین‌تر از طریق context منتقل شده.
 
      <span align="left" dir="ltr">
 
      ```jsx
      //Lets create a context with a default theme value "luna"
      const ThemeContext = React.createContext("luna");
+     
      // Create App component where it uses provider to pass theme value in the tree
      class App extends React.Component {
        render() {
@@ -6892,20 +6906,21 @@ puppeteer:
          );
        }
      }
+     
      // A middle component where you don't need to pass theme prop anymore
-     function Toolbar(props) {
+     const Toolbar = () => {
        return (
          <div>
            <ThemedButton />
          </div>
        );
      }
+     
      // Lets read theme value in the button component to use
-     class ThemedButton extends React.Component {
-       static contextType = ThemeContext;
-       render() {
-         return <Button theme={this.context} />;
-       }
+     const ThemedButton = () => {
+       const theme = useContext(ThemeContext);
+      
+       return <Button theme={theme} />;
      }
      ```
 
@@ -6915,7 +6930,7 @@ puppeteer:
 
 278. ### هدف از مقدار پیش‌فرض توی context چیه؟
 
-     The defaultValue argument is only used when a component does not have a matching Provider above it in the tree. This can be helpful for testing components in isolation without wrapping them. Below code snippet provides default theme value as Luna.
+     پارامتر پیش‌فرض برای context، زمانی استفاده میشه که بخواییم یه مقدار پیش‌فرض هست که اگه خواستیم از context یه جایی استفاده کنیم قبلش توی درخت کامپوننت‌های والد از Provider استفاده نکردیم، این مقدار برگشت داده بشه، بیشتر برای محیط‌های تست و... که لازم نباشه کامپوننت رو داخل Provider قرار بدیم استفاده میشه.
 
      <span align="left" dir="ltr">
 
@@ -6927,13 +6942,13 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
-279. ### چظوری از contextType استفاده می‌کنین؟
+279. ### چطوری از contextType استفاده می‌کنین؟
 
-     ContextType is used to consume the context object. The contextType property can be used in two ways,
+     اگر نخواییم از هوک useContext استفاده کنیم و داخل کلاس کامپوننت باشیم، ContextType برای دسترسی به context استفاده میشه. به دو روش میشه ازش استفاده کرد:
 
-     1. **contextType as property of class:**
-        The contextType property on a class can be assigned a Context object created by React.createContext(). After that, you can consume the nearest current value of that Context type using this.context in any of the lifecycle methods and render function.
-        Lets assign contextType property on MyClass as below,
+     1. **contextType به عنوان فیلد class:**
+        فیلد contextType روی یه class می‌تونه به عنوان محل نگهداری مقدار ایجاد شده توسط React.createContext استفاده بشه. بعد از اون برای استفاده از نزدیک‌ترین context می‌تونیم از this.context روی هر کدوم از متدهای lifecycle و سایر توابع استفاده کنیم.
+        بیایین فیلد contextType رو روی کلاس MyClass مقداردهی کنیم:
 
      <span align="left" dir="ltr">
 
@@ -6960,8 +6975,9 @@ puppeteer:
      ```
 
      </span>
-     2. **Static field**
-     You can use a static class field to initialize your contextType using public class field syntax.
+     
+     2. **فیلد استاتیک**
+     می‌تونیم از یه فیلد استاتیک روی  class برای contextType استفاده کنیم.
 
      <span align="left" dir="ltr">
 
@@ -6981,7 +6997,7 @@ puppeteer:
 
 280. ### consumer چیه؟
 
-     A Consumer is a React component that subscribes to context changes. It requires a function as a child which receives current context value as argument and returns a react node. The value argument passed to the function will be equal to the value prop of the closest Provider for this context above in the tree. Lets take a simple example,
+     یه Consumer، یه کامپوننت ری‌اکتی هست که به تغییرات یه context گوش میکنه. روی این کامپوننت الزاما باید یه تابع به عنوان فرزند پاس داده بشه. کامپوننت consumer تضمین می‌کنه که مقدار context رو به عنوان ورودی اون تابع بهمون خواهد داد و ما می‌تونیم از اون مقدار برای تولید UI خودمون استفاده کنیم. به مثال پایین توجه کنین:
 
      <span align="left" dir="ltr">
 
@@ -6993,11 +7009,13 @@ puppeteer:
 
      </span>
 
+     **نکته:** با استفاده از هوک useContext دیگه لازم نیست به این شکل از کامپوننت Consumer استفاده کنیم و به راحتی میشه به مقدار context دست پیدا کرد.
+
      **[فهرست](#فهرست)**
 
 281. ### چطوری مسائل مربوط به پرفورمنس با context رو حل می‌کنین؟
 
-     The context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider’s parent re-renders. For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for value.
+     context از رفرنس برای متوجه شدن اینکه چه زمانی به رندر شدن مجدد نیاز داریم، استفاده می‌کنه., حالت‌هایی هست که می‌تونه باعث رندر شدن ناخواسته کامپوننت consumer زمانی که والد provider ری‌رندر شد بشه. برای مثال، کدپایین همه‌یl consumerها رو با هر ری‌رندر توی کامپوننت Provider ری‌رندر می‌کنه. چون object به عنوان ورودی provider داده شده که با هر بار رندر رفرنس اون object تغییر می‌کنه.
 
      <span align="left" dir="ltr">
 
@@ -7014,7 +7032,8 @@ puppeteer:
      ```
 
      </span>
-     This can be solved by lifting up the value to parent state,
+     
+     این مورد می‌تونه با lift-up کردن state به کامپوننت والدش حل بشه:
 
      <span align="left" dir="ltr">
 
@@ -7071,7 +7090,7 @@ puppeteer:
 
      </span>
      
-     Let's use this HOC to log all props that get passed to our “fancy button” component,
+     بیایید از این HOC برای لاگ کردن propهای ورودی به کامپوننت‌ـمون استفاده کنیم:
      
      <span align="left" dir="ltr">
 
@@ -7204,9 +7223,9 @@ puppeteer:
      موقع تفاوت بین دو درخت، ری‌اکت اول دو عنصر ریشه رو با هم مقایسه میکنه. رفتار بسته به انواع عناصر ریشه تغییر میکنه. مواردی که اینجا گفته شده قوانینی از الگوریتم reconciliation هستن.
 
      1. **عناصر با انواع مختلف:**
-        هروقت عناصر ریشه انواع مختلفی داشته باشن، ری‌اکت درخت قبلی رو از بین میبره و درخت جدید رو از اول میسازه. برای مثال، عناصر <a> تا <img> یا از <Article> تا <Comment> از انواع مختلف باعث بازسازی کامل میشن.
+        هروقت عناصر ریشه انواع مختلفی داشته باشن، ری‌اکت درخت قبلی رو از بین میبره و درخت جدید رو از اول میسازه. برای مثال، عناصر `<a>` تا `<img>` یا از `<Article>` تا `<Comment>` از انواع مختلف باعث بازسازی کامل میشن.
      2. **عناصر DOM از همان نوع**
-        موقع مقایسه دو عنصر React DOM از همون  نوع، React به ویژگی‌های هر دو نگاه می کند، همون گره DOM زیرین رو نگه میداره و فقط ویژگی‌های تغییر یافته رو به روز میکنه. بیاین یه مثال با عناصر DOM مشابه به جز ویژگی className بیاریم،
+        موقع مقایسه دو عنصر React DOM از همون نوع، React به ویژگی‌های هر دو نگاه می کند، همون گره DOM زیرین رو نگه میداره و فقط ویژگی‌های تغییر یافته رو به روز میکنه. بیاین یه مثال با عناصر DOM مشابه به جز ویژگی className بیاریم،
 
      <span align="left" dir="ltr">
 
@@ -7219,9 +7238,9 @@ puppeteer:
      </span>
      
      3. **عناصر کامپوننت از همان نوع:**
-        وقتی کامپوننت به‌روز میشه، نمونه ثابت میمونه، بنابراین state‌ بین رندر‌ها حفط میشه. ری‌اکت برای مطابقت با عنصر جدید prop‌های نمونه کامپوننت اساسی رو به‌روز میکنه و متد‌های componentWillReceiveProps() و componentWillUpdate() رو روی نمونه اصلی صدا میزنه. بعد از اون متد render() صدا زده میشه و الگوریتم diff، نتیجه قبلی و نتیجه جدید رو جستجو میکنه.
-     4. **Recursing On Children:**
-        when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there’s a difference. For example, when adding an element at the end of the children, converting between these two trees works well.
+        وقتی کامپوننت به‌روز میشه، نمونه ثابت میمونه، بنابراین state‌ بین رندر‌ها حفط میشه. ری‌اکت برای مطابقت با عنصر جدید prop‌های نمونه کامپوننت اساسی رو به‌روز میکنه و متد‌های componentWillReceiveProps و componentWillUpdate رو روی نمونه اصلی صدا میزنه. بعد از اون متد render صدا زده میشه و الگوریتم diff، نتیجه قبلی و نتیجه جدید رو جستجو میکنه.
+     4. **Recursing روی فرزند:**
+        وقتی recursing روی فرزند از یه DOM استفاده میشه، ری‌اکت میاد روی لیست فرزندان حلقه میزنه و اگه تغییری رو مشاهده کرد میاد تغییر رو اعمال می‌کنه(mutation انجام میده). برای مثال، وقتی یه المنت به انتهای یه لیست اضافه میشه، تغییر بین این دوحالت به راحتی انجام میشه:
 
      <span align="left" dir="ltr">
 
@@ -7241,8 +7260,7 @@ puppeteer:
      </span>
      
      5. **هندل کردن کلید‌ها**
-
-     ری‌اکت از ویژگی key پشتیبانی میکنه. وقتی فرزندان key داشته باشن، ری‌اکت از key‌ برای مطابقت دادن فرزندان در درخت اصلی با فرزندان در درخت بعدی استفاده میکنه. برای مثال، اضافه کردن یه key می‌تونه تبدیل درخت رو کارآمد کنه،
+         ری‌اکت از ویژگی key پشتیبانی میکنه. وقتی فرزندان key داشته باشن، ری‌اکت از key‌ برای مطابقت دادن فرزندان در درخت اصلی با فرزندان در درخت بعدی استفاده میکنه. برای مثال، اضافه کردن یه key می‌تونه تبدیل درخت رو کارآمد کنه:
 
      <span align="left" dir="ltr">
 
@@ -7374,7 +7392,7 @@ puppeteer:
 
 295. ### یه مورد استفاده معمول از portals مثال میزنی؟
 
-     React portals are very useful when a parent component has overflow: hidden or has properties that affect the stacking context(z-index,position,opacity etc styles) and you need to visually “break out” of its container. For example, dialogs, global message notifications, hovercards, and tooltips.
+     portalهای ری‌اکت وقتی که یه کامپوننت والد سرریز(overflow) میشه خیلی کاربرد دارن، برای مثال: المنت‌هایhidden یا استایل‌هایی که روی  context تاثیر دارن(z-index، position، opacity و...) و لازمه که به شکل ظاهری container اون المنت رو بشکنید و استایل دهی رو عمومی‌تر کنید. برای مثال: dialogها، پیام‌های notification عمومی، tooltipها و ... از این قبیل موارد هستند.
 
      **[فهرست](#فهرست)**
 
@@ -7461,7 +7479,7 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
-300. ### می‌تونی یه لیسستی از معروف‌ترین وب‌سایت‌هایی که از ری‌اکت استفاده می‌کنن رو بگی؟
+300. ### می‌تونی یه لیستی از معروف‌ترین وب‌سایت‌هایی که از ری‌اکت استفاده می‌کنن رو بگی؟
 
      این زیر یه لیست از `10 وب‌سایت‌ مشهور` که از ری‌اکت برای فرانت‌اندشون استفاده می‌کنن رو لیست می‌کنیم:
 
