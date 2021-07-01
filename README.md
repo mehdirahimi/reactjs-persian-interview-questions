@@ -24,7 +24,7 @@
 
 خب واقعیتش اینه که هنوز ویراستاری کتاب هم انجام نشده، چه برسه به نسخه فیزیکی ولی اگه تمایل داشتین، میتونین از طریق لینک زیر توی پیش خرید کتاب شرکت کنید و ما تا یکی دو ماه بعد کتاب رو به صورت فیزیکی تحویلتون میدیم.
 
-https://zarinp.al/327941
+https://zarinp.al/370791
 
 </div>
 
@@ -51,7 +51,7 @@ Also you can download all these together from our repo release secion.([this lin
 ## 🛍 Buy print version 
 
 You can pre-order our book from this link:
-https://zarinp.al/327941
+https://zarinp.al/370791
 
 </div>
 
