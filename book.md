@@ -12,9 +12,11 @@ puppeteer:
   height: "240mm"
   margin: { top: '50px', bottom: '55px', right: '40px', left: '40px'}
   displayHeaderFooter: true
+  # pageRanges: '-20'
+  pageRanges: '21-'
   headerTemplate: '<div />'
   footerTemplate: '<div style="width: 297mm;text-align: center;font-size: 10px;font-family: BYekan;direction:rtl;position: relative; bottom: -15px">
-    <span style="position: relative; top:50px"><span class="pageNumber"></span></span>
+    <span style="position: relative; top:50px"><span class="pageNumber2"></span></span>
     <img style="width:100px;float:right;display: inline-block" src="data:image/png;base64,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" /><img src="data:image/png;base64,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" style="float:left;width: 100px;display: inline-block" />
   </div>'
 ---
@@ -267,110 +269,107 @@ puppeteer:
 | 218  | [چطوری به یه کامپوننت ری‌اکت عدد پاس بدیم؟](#چطوری-به-یه-کامپوننت-ریاکت-عدد-پاس-بدیم)                                                                                                                    |
 | 219  | [لازمه همه stateها رو توی ریداکس مدیریت کنیم؟ لزومی به استفاده از state داخلی داریم؟](#لازمه-همه-stateها-رو-توی-ریداکس-مدیریت-کنیم-لزومی-به-استفاده-از-state-داخلی-داریم)                                |
 | 220  | [هدف از متد registerServiceWorker توی ری‌اکت چیه؟](#هدف-از-متد-registerServiceWorker-توی-ریاکت-چیه)                                                                                                      |
-| 221  | [تابع memo ری‌اکت چیه؟](#تابع-memo-ریاکت-چیه)                                                                                                                                                            |
-| 222  | [تابع lazy ری‌اکت چیه؟](#تابع-lazy-ریاکت-چیه)                                                                                                                                                            |
-| 223  | [چطوری با استفاده از تابع setState از رندر غیرضروری جلوگیری کنیم؟](#چطوری-با-استفاده-از-تابع-setState-از-رندر-غیرضروری-جلوگیری-کنیم)                                                                     |
-| 224  | [توی نسخه ۱۶ ری‌اکت چطوری میشه آرایه، Strings و یا عدد رو رندر کنیم؟](#توی-نسخه-۱۶-ریاکت-چطوری-میشه-آرایه،-Strings-و-یا-عدد-رو-رندر-کنیم)                                                                |
-| 225  | [چطوری میشه از تعریف ویژگی در کلاس کامپوننت استفاده کرد؟](#چطوری-میشه-از-تعریف-ویژگی-در-کلاس-کامپوننت-استفاده-کرد)                                                                                       |
-| 226  | [hookها چی هستن؟](#hookها-چی-هستن)                                                                                                                                                                       |
-| 227  | [چه قوانینی برای هوک‌ها باید رعایت بشن؟](#چه-قوانینی-برای-هوکها-باید-رعایت-بشن)                                                                                                                          |
-| 228  | [چطوری میشه از استفاده درست هوک‌ها اطمینان حاصل کرد؟](#چطوری-میشه-از-استفاده-درست-هوکها-اطمینان-حاصل-کرد)                                                                                                |
-| 229  | [تفاوت‌های Flux و Redux کدوما هستن؟](#تفاوتهای-Flux-و-Redux-چیا-هستن)                                                                                                                                      |
-| 230  | [مزایای ری‌اکت روتر نسخه۴ چیه؟](#مزایای-ریاکت-روتر-نسخه۴-چیه)                                                                                                                                            |
-| 231  | [می‌تونی راجع به متد componentDidCatch توضیح بدی؟](#میتونی-راجع-به-متد-componentDidCatch-توضیح-بدی)                                                                                                      |
-| 232  | [در چه سناریویی error boundary خطا رو catch نمی‌کنه؟](#در-چه-سناریویی-error-boundary-خطا-رو-catch-نمیکنه)                                                                                                |
-| 233  | [چرا نیازی به error boundaries برای event handlerها نیست؟](#چرا-نیازی-به-error-boundaries-برای-event-handlerها-نیست)                                                                                     |
-| 234  | [تفاوت بلوک try catch و error boundaryها چیه؟](#تفاوت-بلوک-try-catch-و-error-boundaryها-چیه)                                                                                                             |
-| 235  | [رفتار خطاهای uncaught در ری‌اکت 16 چیه؟](#رفتار-خطاهای-uncaught-در-ریاکت-16-چیه)                                                                                                                        |
-| 236  | [محل مناسب برای قرار دادن error boundary کجاست؟](#محل-مناسب-برای-قرار-دادن-error-boundary-کجاست)                                                                                                         |
-| 237  | [مزیت چاپ شدن stack trace کامپوننت‌ها توی متن ارور boundary ری‌اکت چیه؟](#مزیت-چاپ-شدن-stack-trace-کامپوننتها-توی-متن-ارور-boundary-ریاکت-چیه)                                                           |
-| 238  | [متدی که در تعریف کامپوننت‌های class الزامیه؟](#متدی-که-در-تعریف-کامپوننتهای-class-الزامیه)                                                                                                              |
-| 239  | [نوع‌های ممکن برای مقدار بازگشتی متد render کدوما هستن؟](#نوعهای-ممکن-برای-مقدار-بازگشتی-متد-render-چیا-هستن)                                                                                              |
-| 240  | [هدف اصلی از متد constructor چیه؟](#هدف-اصلی-از-متد-constructor-چیه)                                                                                                                                     |
-| 241  | [آیا تعریف متد سازنده توی ری‌اکت الزامیه؟](#آیا-تعریف-متد-سازنده-توی-ریاکت-الزامیه)                                                                                                                      |
-| 242  | [Default propها چی هستن؟](#Default-propها-چی-هستن)                                                                                                                                                       |
-| 243  | [چرا نباید تابع setState رو توی متد componentWillUnmount فراخوانی کرد؟](#چرا-نباید-تابع-setState-رو-توی-متد-componentWillUnmount-فراخوانی-کرد)                                                           |
-| 244  | [کاربرد متد getDerivedStateFromError چیه؟](#کاربرد-متد-getDerivedStateFromError-چیه)                                                                                                                     |
-| 245  | [کدوم متدها و به چه ترتیبی در طول ری‌رندر فراخوانی میشن؟](#کدوم-متدها-و-به-چه-ترتیبی-در-طول-ریرندر-فراخوانی-میشن)                                                                                        |
-| 246  | [کدوم متد‌ها موقع error handling فراخوانی میشن؟](#کدوم-متدها-موقع-error-handling-فراخوانی-میشن)                                                                                                          |
-| 247  | [کارکرد ویژگی displayName چیه؟](#کارکرد-ویژگی-displayName-چیه)                                                                                                                                           |
-| 248  | [پشتیبانی مرورگرها برای برنامه ری‌اکتی چطوریه؟](#پشتیبانی-مرورگرها-برای-برنامه-ریاکتی-چطوریه)                                                                                                                |
-| 249  | [هدف از متد unmountComponentAtNode چیه؟](#هدف-از-متد-unmountComponentAtNode-چیه)                                                                                                                         |
-| 250  | [code-splitting چیه؟](#code-splitting-چیه)                                                                                                                                                               |
-| 251  | [مزایای حالت strict چیه؟](#مزایای-حالت-strict-چیه)                                                                                                                                                       |
-| 252  | [Fragmentهای دارای key هستن؟](#Fragmentهای-دارای-key-هستن)                                                                                                                                               |
-| 253  | [آیا ری‌اکت از همه‌ی attributeهای HTML پشتیبانی می‌کنه؟](#آیا-ریاکت-از-همهی-attributeهای-HTML-پشتیبانی-میکنه)                                                                                            |
-| 254  | [محدودیت‌های HOCها چی هستن؟](#محدودیتهای-HOCها-چی-هستن)                                                                                                                                                  |
-| 255  | [چطوری میشه forwardRefs رو توی DevTools دیباگ کرد؟](#چطوری-میشه-forwardRefs-رو-توی-DevTools-دیباگ-کرد)                                                                                                   |
-| 256  | [مقدار یه props کامپوننت کی true میشه؟](#مقدار-یه-props-کامپوننت-کی-true-میشه)                                                                                                                           |
-| 257  | [NextJS چیه و ویژگی‌های اصلیش کدوما هستن؟](#NextJS-چیه-و-ویژگیهای-اصلیش-چیا-هستن)                                                                                                                          |
-| 258  | [چطوری می‌تونیم یه تابع event handler رو به یه کامپوننت پاس بدیم؟](#چطوری-میتونیم-یه-تابع-event-handler-رو-به-یه-کامپوننت-پاس-بدیم)                                                                      |
-| 259  | [استفاده از توابع arrow برای متدهای render خوبه؟](#استفاده-از-توابع-arrow-برای-متدهای-render-خوبه)                                                                                                       |
-| 260  | [چطوری از اجرای چندباره یه تابع جلوگیری کنیم؟](#چطوری-از-اجرای-چندباره-یه-تابع-جلوگیری-کنیم)                                                                                                             |
-| 261  | [JSX چطوری از حمله‌های Injection جلوگیری می‌کنه؟](#JSX-چطوری-از-حملههای-Injection-جلوگیری-میکنه)                                                                                                         |
-| 262  | [چطوری elementهای رندر شده رو آپدیت کنیم؟](#چطوری-elementهای-رندر-شده-رو-آپدیت-کنیم)                                                                                                                     |
-| 263  | [چرا propها read only هستن؟](#چرا-propها-read-only-هستن)                                                                                                                                                 |
-| 264  | [چرا میگیم تابع setState از طریق merge کردن state را مدیریت می‌کنه؟](#چرا-میگیم-تابع-setState-از-طریق-merge-کردن-state-را-مدیریت-میکند)                                                                  |
-| 265  | [چطوری می‌تونیم به متد event handler پارامتر پاس بدیم؟](#چطوری-می‌تونیم-به-متد-event-handler-پارامتر-پاس-بدیم)                                                                                            |
-| 266  | [چطوری از رندر مجدد کامپوننت‌ها جلوگیری کنیم؟](#چطوری-از-رندر-مجدد-کامپوننتها-جلوگیری-کنیم)                                                                                                              |
-| 267  | [شرایطی که بدون مشکل پرفورمنس بتونیم از ایندکس به عنوان key استفاده کنیم چی هست؟](#شرایطی-که-بدون-مشکل-پرفورمنس-بتونیم-از-ایندکس-به-عنوان-key-استفاده-کنیم-چی-هست)                                       |
-| 268  | [keyهای ری‌اکت باید به صورت عمومی منحصر بفرد باشن؟](#keyهای-ریاکت-باید-به-صورت-عمومی-منحصر-بفرد-باشن)                                                                                                    |
-| 269  | [گزینه‌های محبوب برای مدیریت فرم‌ها توی ری‌اکت کدوما هستن؟](#گزینههای-محبوب-برای-مدیریت-فرما-توی-ریاکت-چیا-هستن)                                                                                           |
-| 270  | [مزایای کتابخانه فرمیک نبست به redux form چیه؟](#مزایای-کتابخانه-فرمیک-نبست-به-redux-form-چیه)                                                                                                           |
-| 271  | [چرا اجباری برای استفاده از ارث‌بری توی ری‌اکت نیست؟ مزیتی داره؟](#چرا-اجباری-برای-استفاده-از-ارثبری-توی-ریاکت-نیست-مزیتی-داره)                                                                          |
-| 272  | [می‌تونیم از web components توی برنامه ری‌اکت استفاده کنیم؟](#می‌تونیم-از-web-components-توی-برنامه-ریاکت-استفاده-کنیم)                                                                                   |
-| 273  | [dynamic import چیه؟](#dynamic-import-چیه)                                                                                                                                                               |
-| 274  | [loadable componentها چی هستن؟](#loadable-componentها-چی-هستن)                                                                                                                                           |
-| 275  | [کامپوننت suspense چیه؟](#کامپوننت-suspense-چیه)                                                                                                                                                         |
-| 276  | [چطوری به ازای route می‌تونیم code splitting داشته باشیم؟](#چطوری-به-ازای-route-می‌تونیم-code-splitting-داشته-باشیم)                                                                                      |
-| 277  | [یه مثال از نحوه استفاده از context میزنی؟](#یه-مثال-از-نحوه-استفاده-از-context-میزنی)                                                                                                                   |
-| 278  | [هدف از مقدار پیش‌فرض توی context چیه؟](#هدف-از-مقدار-پیشفرض-توی-context-چیه)                                                                                                                            |
-| 279  | [چطوری از contextType استفاده می‌کنین؟](#چطوری-از-contextType-استفاده-میکنین)                                                                                                                            |
-| 280  | [consumer چیه؟](#consumer-چیه)                                                                                                                                                                           |
-| 281  | [چطوری مسائل مربوط به پرفورمنس با context رو حل می‌کنین؟](#چطوری-مسائل-مربوط-به-پرفورمنس-با-context-رو-حل-میکنین)                                                                                        |
-| 282  | [هدف از forward ref توی HOCها چیه؟](#هدف-از-forward-ref-توی-HOCها-چیه)                                                                                                                                   |
-| 283  | [توی کامپوننت‌ها می‌تونیم پراپ ref داشته باشیم؟](#توی-کامپوننتها-می‌تونیم-پراپ-ref-داشته-باشیم)                                                                                                           |
-| 284  | [چرا در هنگام استفاده از ForwardRefها نیاز به احتیاط بیشتری در استفاده از کتابخانه‌های جانبی داریم؟](#چرا-در-هنگام-استفاده-از-ForwardRefها-نیاز-به-احتیاط-بیشتری-در-استفاده-از-کتابخانه-های-جانبی-داریم) |
-| 285  | [چطوری بدون استفاده از ES6 کلاس کامپوننت بسازیم؟](#چطوری-بدون-استفاده-از-ES6-کلاس-کامپوننت-بسازیم)                                                                                                       |
-| 286  | [استفاده از ری‌اکت بدون JSX ممکن است؟](#استفاده-از-ریاکت-بدون-JSX-ممکن-است)                                                                                                                              |
-| 287  | [الگوریتم‌های diffing ری‌اکت چی هستن؟](#الگوریتمهای-diffing-ریاکت-چی-هستن)                                                                                                                               |
-| 288  | [قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستن؟](#قوانینی-که-توسط-الگوریتمهای-diffing-پوشش-داده-میشوند-کدام-هستن)                                                                   |
-| 289  | [چه موقعی نیاز هست که از refها استفاده کنیم؟](#چه-موقعی-نیاز-هست-که-از-refها-استفاده-کنیم)                                                                                                               |
-| 290  | [برای استفاده از render propها لازمه که اسم prop رو render بزاریم؟](#برای-استفاده-از-render-propها-لازمه-که-اسم-prop-رو-render-بزاریم)                                                                   |
-| 291  | [مشکل استفاده از render props با pure componentها چیه؟](#مشکل-استفاده-از-render-props-با-pure-componentها-چیه)                                                                                           |
-| 292  | [چطوری با استفاده از render props می‌تونیم HOC ایجاد کنیم؟](#چطوری-با-استفاده-از-render-props-می‌تونیم-HOC-ایجاد-کنیم)                                                                                    |
-| 293  | [تکنیک windowing چیه؟](#تکنیک-windowing-چیه)                                                                                                                                                             |
-| 294  | [توی JSX یه مقدار falsy رو چطوری چاپ کنیم؟](#توی-JSX-یه-مقدار-falsy-رو-چطوری-چاپ-کنیم)                                                                                                                   |
-| 295  | [یه مورد استفاده معمول از portals مثال میزنی؟](#یه-مورد-استفاده-معمول-از-portals-مثال-میزنی)                                                                                                             |
-| 296  | [توی کامپوننت‌های کنترل نشده چطوری مقداری پیش فرض اضافه کنیم؟](#توی-کامپوننتهای-کنترل-نشده-چطوری-مقداری-پیش-فرض-اضافه-کنیم)                                                                              |
-| 297  | [stack موردعلاقه شما برای کانفیگ پروژه ری‌اکت چیه؟](#stack-موردعلاقه-شما-برای-کانفیگ-پروژه-ریاکت-چیه)                                                                                                    |
-| 298  | [تفاوت‌ DOM واقعی و Virtual DOM چیه؟](#تفاوت-DOM-واقعی-و-Virtual-DOM-چیه)                                                                                                                                |
-| 299  | [چطوری Bootstrap رو به یه برنامه ری‌اکتی اضافه کنیم؟](#چطوری-Bootstrap-رو-به-یه-برنامه-ریاکتی-اضافه-کنیم)                                                                                                |
-| 300  | [می‌تونی یه لیستی از معروف‌ترین وب‌سایت‌هایی که از ری‌اکت استفاده می‌کنن رو بگی؟](#میتونی-یه-لیسستی-از-معروفترین-وبسایتهایی-که-از-ریاکت-استفاده-می‌کنن-رو-بگی)                                           |
-| 301  | [استفاده از تکنیک CSS In JS تو ری‌اکت توصیه میشه؟](#استفاده-از-تکنیک-CSS-In-JS-تو-ریاکت-توصیه-میشه)                                                                                                      |
-| 302  | [لازمه همه کلاس کامپوننت‌ها رو تبدیل کنیم به هوک؟](#لازمه-همه-کلاس-کامپوننتها-رو-تبدیل-کنیم-به-هوک)                                                                                                      |
-| 303  | [چطوری میشه با هوک‌های ری‌اکت دیتا fetch کرد؟](#چطوری-میشه-با-هوکهای-ریاکت-دیتا-fetch-کرد)                                                                                                               |
-| 304  | [هوک‌ها همه موارد کاربرد کلاس‌ها رو پوشش میده؟](#هوکها-همه-موارد-کاربرد-کلاسها-رو-پوشش-میده)                                                                                                             |
-| 305  | [نسخه پایدار ری‌اکت که از هوک پشتیبانی می‌کنه کدومه؟](#نسخه-پایدار-ریاکت-که-از-هوک-پشتیبانی-میکنه-کدومه)                                                                                                 |
-| 306  | [چرا از حالت destructuring آرایه برای useState استفاده می‌کنیم؟](#چرا-از-حالت-destructuring-آرایه-برای-useState-استفاده-می‌کنیم)                                                                          |
-| 307  | [منابعی که باعث معرفی ایده هوک‌ها شدن کدوما بودن؟](#منابعی-که-باعث-معرفی-هوکها-شدن-چیا-بودن)                                                                                                               |
-| 308  | [چطوری به APIهای ضروری اجزای وب دسترسی پیدا کنیم؟](#چطوری-به-APIهای-ضروری-اجزای-وب-دسترسی-پیدا-کنیم)                                                                                                     |
-| 309  | [formik چیه؟](#formik-چیه)                                                                                                                                                                               |
-| 310  | [middlewareهای مرسوم برای مدیریت ارتباط‌های asynchronous توی Redux کدوما هستن؟](#middlewareهای-مرسوم-برای-مدیریت-ارتباطهای-asynchronous-توی-Redux-چیا-هستن)                                                |
-| 311  | [مرورگرها کد JSX رو متوجه میشن؟](#مرورگرها-کد-JSX-رو-متوجه-میشن)                                                                                                                                         |
-| 312  | [Data flow یا جریان داده ری‌اکت رو توضیح میدی؟](#Data-flow-یا-جریان-داده-ریاکت-رو-توضیح-میدی)                                                                                                            |
-| 313  | [react scripts چیه؟](#react-scripts-چیه)                                                                                                                                                                 |
-| 314  | [ویژگی‌های create react app چیه؟](#ویژگیهای-create-react-app-چیه)                                                                                                                                        |
-| 315  | [هدف از متد renderToNodeStream چیه؟](#هدف-از-متد-renderToNodeStream-چیه)                                                                                                                                 |
-| 316  | [MobX چیه؟](#MobX-چیه)                                                                                                                                                                                   |
-| 317  | [تفاوت‌های بین Redux و MobX کدوما هستن؟](#تفاوتهای-بین-Redux-و-MobX-چیا-هستن)                                                                                                                              |
-| 318  | [لازمه قبل از شروع ری‌اکت ES6 رو یاد گرفت؟](#لازمه-قبل-از-شروع-ریاکت-ES6-رو-یاد-گرفت)                                                                                                                    |
-| 319  | [Concurrent Rendering چیه؟](#Concurrent-Rendering-چیه)                                                                                                                                                   |
-| 320  | [تفاوت بین حالت async و concurrent چیه؟](#تفاوت-بین-حالت-async-و-concurrent-چیه)                                                                                                                         |
-| 321  | [می‌تونیم از آدرس‌های دارای url جاواسکریپت در ری‌اکت 16.9 استفاده کنیم؟](#می-تونیم-از-آدرسهای-دارای-url-جاواسکریپت-در-ریاکت-16.9-استفاده-کنیم)                                                             |
-| 322  | [هدف از پلاگین eslint برای هوک‌ها چیه؟](#هدف-از-پلاگین-eslint-برای-هوکها-چیه)                                                                                                                            |
-| 323  | [تفاوت‌های Imperative و Declarative توی ری‌اکت چیه؟](#تفاوتهای-Imperative-و-Declarative-توی-ریاکت-چیه)                                                                                                   |
-| 324  | [مزایای استفاده از تایپ اسکریپت با ری‌اکت چیه؟](#مزایای-استفاده-از-تایپ-اسکریپت-با-ریاکت-چیه)                                                                                                            |
+| 221  | [چطوری با استفاده از تابع setState از رندر غیرضروری جلوگیری کنیم؟](#چطوری-با-استفاده-از-تابع-setState-از-رندر-غیرضروری-جلوگیری-کنیم)                                                                     |
+| 222  | [توی نسخه ۱۶ ری‌اکت چطوری میشه آرایه، Strings و یا عدد رو رندر کنیم؟](#توی-نسخه-۱۶-ریاکت-چطوری-میشه-آرایه،-Strings-و-یا-عدد-رو-رندر-کنیم)                                                                |
+| 223  | [hookها چی هستن؟](#hookها-چی-هستن)                                                                                                                                                                       |
+| 224  | [چه قوانینی برای هوک‌ها باید رعایت بشن؟](#چه-قوانینی-برای-هوکها-باید-رعایت-بشن)                                                                                                                          |
+| 225  | [چطوری میشه از استفاده درست هوک‌ها اطمینان حاصل کرد؟](#چطوری-میشه-از-استفاده-درست-هوکها-اطمینان-حاصل-کرد)                                                                                                |
+| 226  | [تفاوت‌های Flux و Redux کدوما هستن؟](#تفاوتهای-Flux-و-Redux-چیا-هستن)                                                                                                                                      |
+| 227  | [مزایای ری‌اکت روتر نسخه۴ چیه؟](#مزایای-ریاکت-روتر-نسخه۴-چیه)                                                                                                                                            |
+| 228  | [می‌تونی راجع به متد componentDidCatch توضیح بدی؟](#میتونی-راجع-به-متد-componentDidCatch-توضیح-بدی)                                                                                                      |
+| 229  | [در چه سناریویی error boundary خطا رو catch نمی‌کنه؟](#در-چه-سناریویی-error-boundary-خطا-رو-catch-نمیکنه)                                                                                                |
+| 230  | [چرا نیازی به error boundaries برای event handlerها نیست؟](#چرا-نیازی-به-error-boundaries-برای-event-handlerها-نیست)                                                                                     |
+| 231  | [تفاوت بلوک try catch و error boundaryها چیه؟](#تفاوت-بلوک-try-catch-و-error-boundaryها-چیه)                                                                                                             |
+| 232  | [رفتار خطاهای uncaught در ری‌اکت 16 چیه؟](#رفتار-خطاهای-uncaught-در-ریاکت-16-چیه)                                                                                                                        |
+| 233  | [محل مناسب برای قرار دادن error boundary کجاست؟](#محل-مناسب-برای-قرار-دادن-error-boundary-کجاست)                                                                                                         |
+| 234  | [مزیت چاپ شدن stack trace کامپوننت‌ها توی متن ارور boundary ری‌اکت چیه؟](#مزیت-چاپ-شدن-stack-trace-کامپوننتها-توی-متن-ارور-boundary-ریاکت-چیه)                                                           |
+| 235  | [متدی که در تعریف کامپوننت‌های class الزامیه؟](#متدی-که-در-تعریف-کامپوننتهای-class-الزامیه)                                                                                                              |
+| 236  | [نوع‌های ممکن برای مقدار بازگشتی متد render کدوما هستن؟](#نوعهای-ممکن-برای-مقدار-بازگشتی-متد-render-چیا-هستن)                                                                                              |
+| 237  | [هدف اصلی از متد constructor چیه؟](#هدف-اصلی-از-متد-constructor-چیه)                                                                                                                                     |
+| 238  | [آیا تعریف متد سازنده توی ری‌اکت الزامیه؟](#آیا-تعریف-متد-سازنده-توی-ریاکت-الزامیه)                                                                                                                      |
+| 239  | [Default propها چی هستن؟](#Default-propها-چی-هستن)                                                                                                                                                       |
+| 240  | [چرا نباید تابع setState رو توی متد componentWillUnmount فراخوانی کرد؟](#چرا-نباید-تابع-setState-رو-توی-متد-componentWillUnmount-فراخوانی-کرد)                                                           |
+| 241  | [کاربرد متد getDerivedStateFromError چیه؟](#کاربرد-متد-getDerivedStateFromError-چیه)                                                                                                                     |
+| 242  | [کدوم متدها و به چه ترتیبی در طول ری‌رندر فراخوانی میشن؟](#کدوم-متدها-و-به-چه-ترتیبی-در-طول-ریرندر-فراخوانی-میشن)                                                                                        |
+| 243  | [کدوم متد‌ها موقع error handling فراخوانی میشن؟](#کدوم-متدها-موقع-error-handling-فراخوانی-میشن)                                                                                                          |
+| 244  | [کارکرد ویژگی displayName چیه؟](#کارکرد-ویژگی-displayName-چیه)                                                                                                                                           |
+| 245  | [پشتیبانی مرورگرها برای برنامه ری‌اکتی چطوریه؟](#پشتیبانی-مرورگرها-برای-برنامه-ریاکتی-چطوریه)                                                                                                                |
+| 246  | [هدف از متد unmountComponentAtNode چیه؟](#هدف-از-متد-unmountComponentAtNode-چیه)                                                                                                                         |
+| 247  | [code-splitting چیه؟](#code-splitting-چیه)                                                                                                                                                               |
+| 248  | [مزایای حالت strict چیه؟](#مزایای-حالت-strict-چیه)                                                                                                                                                       |
+| 249  | [Fragmentهای دارای key هستن؟](#Fragmentهای-دارای-key-هستن)                                                                                                                                               |
+| 250  | [آیا ری‌اکت از همه‌ی attributeهای HTML پشتیبانی می‌کنه؟](#آیا-ریاکت-از-همهی-attributeهای-HTML-پشتیبانی-میکنه)                                                                                            |
+| 251  | [محدودیت‌های HOCها چی هستن؟](#محدودیتهای-HOCها-چی-هستن)                                                                                                                                                  |
+| 252  | [چطوری میشه forwardRefs رو توی DevTools دیباگ کرد؟](#چطوری-میشه-forwardRefs-رو-توی-DevTools-دیباگ-کرد)                                                                                                   |
+| 253  | [مقدار یه props کامپوننت کی true میشه؟](#مقدار-یه-props-کامپوننت-کی-true-میشه)                                                                                                                           |
+| 254  | [NextJS چیه و ویژگی‌های اصلیش کدوما هستن؟](#NextJS-چیه-و-ویژگیهای-اصلیش-چیا-هستن)                                                                                                                          |
+| 255  | [چطوری می‌تونیم یه تابع event handler رو به یه کامپوننت پاس بدیم؟](#چطوری-میتونیم-یه-تابع-event-handler-رو-به-یه-کامپوننت-پاس-بدیم)                                                                      |
+| 256  | [استفاده از توابع arrow برای متدهای render خوبه؟](#استفاده-از-توابع-arrow-برای-متدهای-render-خوبه)                                                                                                       |
+| 257  | [چطوری از اجرای چندباره یه تابع جلوگیری کنیم؟](#چطوری-از-اجرای-چندباره-یه-تابع-جلوگیری-کنیم)                                                                                                             |
+| 258  | [JSX چطوری از حمله‌های Injection جلوگیری می‌کنه؟](#JSX-چطوری-از-حملههای-Injection-جلوگیری-میکنه)                                                                                                         |
+| 259  | [چطوری elementهای رندر شده رو آپدیت کنیم؟](#چطوری-elementهای-رندر-شده-رو-آپدیت-کنیم)                                                                                                                     |
+| 260  | [چرا propها read only هستن؟](#چرا-propها-read-only-هستن)                                                                                                                                                 |
+| 261  | [چرا میگیم تابع setState از طریق merge کردن state را مدیریت می‌کنه؟](#چرا-میگیم-تابع-setState-از-طریق-merge-کردن-state-را-مدیریت-میکند)                                                                  |
+| 262  | [چطوری می‌تونیم به متد event handler پارامتر پاس بدیم؟](#چطوری-می‌تونیم-به-متد-event-handler-پارامتر-پاس-بدیم)                                                                                            |
+| 263  | [چطوری از رندر مجدد کامپوننت‌ها جلوگیری کنیم؟](#چطوری-از-رندر-مجدد-کامپوننتها-جلوگیری-کنیم)                                                                                                              |
+| 264  | [شرایطی که بدون مشکل پرفورمنس بتونیم از ایندکس به عنوان key استفاده کنیم چی هست؟](#شرایطی-که-بدون-مشکل-پرفورمنس-بتونیم-از-ایندکس-به-عنوان-key-استفاده-کنیم-چی-هست)                                       |
+| 265  | [keyهای ری‌اکت باید به صورت عمومی منحصر بفرد باشن؟](#keyهای-ریاکت-باید-به-صورت-عمومی-منحصر-بفرد-باشن)                                                                                                    |
+| 266  | [گزینه‌های محبوب برای مدیریت فرم‌ها توی ری‌اکت کدوما هستن؟](#گزینههای-محبوب-برای-مدیریت-فرما-توی-ریاکت-چیا-هستن)                                                                                           |
+| 267  | [مزایای کتابخانه فرمیک نبست به redux form چیه؟](#مزایای-کتابخانه-فرمیک-نبست-به-redux-form-چیه)                                                                                                           |
+| 268  | [چرا اجباری برای استفاده از ارث‌بری توی ری‌اکت نیست؟ مزیتی داره؟](#چرا-اجباری-برای-استفاده-از-ارثبری-توی-ریاکت-نیست-مزیتی-داره)                                                                          |
+| 269  | [می‌تونیم از web components توی برنامه ری‌اکت استفاده کنیم؟](#می‌تونیم-از-web-components-توی-برنامه-ریاکت-استفاده-کنیم)                                                                                   |
+| 270  | [dynamic import چیه؟](#dynamic-import-چیه)                                                                                                                                                               |
+| 271  | [loadable componentها چی هستن؟](#loadable-componentها-چی-هستن)                                                                                                                                           |
+| 272  | [کامپوننت suspense چیه؟](#کامپوننت-suspense-چیه)                                                                                                                                                         |
+| 273  | [چطوری به ازای route می‌تونیم code splitting داشته باشیم؟](#چطوری-به-ازای-route-می‌تونیم-code-splitting-داشته-باشیم)                                                                                      |
+| 274  | [یه مثال از نحوه استفاده از context میزنی؟](#یه-مثال-از-نحوه-استفاده-از-context-میزنی)                                                                                                                   |
+| 275  | [هدف از مقدار پیش‌فرض توی context چیه؟](#هدف-از-مقدار-پیشفرض-توی-context-چیه)                                                                                                                            |
+| 276  | [چطوری از contextType استفاده می‌کنین؟](#چطوری-از-contextType-استفاده-میکنین)                                                                                                                            |
+| 277  | [consumer چیه؟](#consumer-چیه)                                                                                                                                                                           |
+| 278  | [چطوری مسائل مربوط به پرفورمنس با context رو حل می‌کنین؟](#چطوری-مسائل-مربوط-به-پرفورمنس-با-context-رو-حل-میکنین)                                                                                        |
+| 279  | [هدف از forward ref توی HOCها چیه؟](#هدف-از-forward-ref-توی-HOCها-چیه)                                                                                                                                   |
+| 280  | [توی کامپوننت‌ها می‌تونیم پراپ ref داشته باشیم؟](#توی-کامپوننتها-می‌تونیم-پراپ-ref-داشته-باشیم)                                                                                                           |
+| 281  | [چرا در هنگام استفاده از ForwardRefها نیاز به احتیاط بیشتری در استفاده از کتابخانه‌های جانبی داریم؟](#چرا-در-هنگام-استفاده-از-ForwardRefها-نیاز-به-احتیاط-بیشتری-در-استفاده-از-کتابخانه-های-جانبی-داریم) |
+| 282  | [چطوری بدون استفاده از ES6 کلاس کامپوننت بسازیم؟](#چطوری-بدون-استفاده-از-ES6-کلاس-کامپوننت-بسازیم)                                                                                                       |
+| 283  | [استفاده از ری‌اکت بدون JSX ممکن است؟](#استفاده-از-ریاکت-بدون-JSX-ممکن-است)                                                                                                                              |
+| 284  | [الگوریتم‌های diffing ری‌اکت چی هستن؟](#الگوریتمهای-diffing-ریاکت-چی-هستن)                                                                                                                               |
+| 285  | [قوانینی که توسط الگوریتم‌های diffing پوشش داده می‌شوند کدام هستن؟](#قوانینی-که-توسط-الگوریتمهای-diffing-پوشش-داده-میشوند-کدام-هستن)                                                                   |
+| 286  | [چه موقعی نیاز هست که از refها استفاده کنیم؟](#چه-موقعی-نیاز-هست-که-از-refها-استفاده-کنیم)                                                                                                               |
+| 287  | [برای استفاده از render propها لازمه که اسم prop رو render بزاریم؟](#برای-استفاده-از-render-propها-لازمه-که-اسم-prop-رو-render-بزاریم)                                                                   |
+| 288  | [مشکل استفاده از render props با pure componentها چیه؟](#مشکل-استفاده-از-render-props-با-pure-componentها-چیه)                                                                                           |
+| 289  | [چطوری با استفاده از render props می‌تونیم HOC ایجاد کنیم؟](#چطوری-با-استفاده-از-render-props-می‌تونیم-HOC-ایجاد-کنیم)                                                                                    |
+| 290  | [تکنیک windowing چیه؟](#تکنیک-windowing-چیه)                                                                                                                                                             |
+| 291  | [توی JSX یه مقدار falsy رو چطوری چاپ کنیم؟](#توی-JSX-یه-مقدار-falsy-رو-چطوری-چاپ-کنیم)                                                                                                                   |
+| 292  | [یه مورد استفاده معمول از portals مثال میزنی؟](#یه-مورد-استفاده-معمول-از-portals-مثال-میزنی)                                                                                                             |
+| 293  | [توی کامپوننت‌های کنترل نشده چطوری مقداری پیش فرض اضافه کنیم؟](#توی-کامپوننتهای-کنترل-نشده-چطوری-مقداری-پیش-فرض-اضافه-کنیم)                                                                              |
+| 294  | [stack موردعلاقه شما برای کانفیگ پروژه ری‌اکت چیه؟](#stack-موردعلاقه-شما-برای-کانفیگ-پروژه-ریاکت-چیه)                                                                                                    |
+| 295  | [تفاوت‌ DOM واقعی و Virtual DOM چیه؟](#تفاوت-DOM-واقعی-و-Virtual-DOM-چیه)                                                                                                                                |
+| 296  | [چطوری Bootstrap رو به یه برنامه ری‌اکتی اضافه کنیم؟](#چطوری-Bootstrap-رو-به-یه-برنامه-ریاکتی-اضافه-کنیم)                                                                                                |
+| 297  | [می‌تونی یه لیستی از معروف‌ترین وب‌سایت‌هایی که از ری‌اکت استفاده می‌کنن رو بگی؟](#میتونی-یه-لیسستی-از-معروفترین-وبسایتهایی-که-از-ریاکت-استفاده-می‌کنن-رو-بگی)                                           |
+| 298  | [استفاده از تکنیک CSS In JS تو ری‌اکت توصیه میشه؟](#استفاده-از-تکنیک-CSS-In-JS-تو-ریاکت-توصیه-میشه)                                                                                                      |
+| 299  | [لازمه همه کلاس کامپوننت‌ها رو تبدیل کنیم به هوک؟](#لازمه-همه-کلاس-کامپوننتها-رو-تبدیل-کنیم-به-هوک)                                                                                                      |
+| 300  | [چطوری میشه با هوک‌های ری‌اکت دیتا fetch کرد؟](#چطوری-میشه-با-هوکهای-ریاکت-دیتا-fetch-کرد)                                                                                                               |
+| 301  | [هوک‌ها همه موارد کاربرد کلاس‌ها رو پوشش میده؟](#هوکها-همه-موارد-کاربرد-کلاسها-رو-پوشش-میده)                                                                                                             |
+| 302  | [نسخه پایدار ری‌اکت که از هوک پشتیبانی می‌کنه کدومه؟](#نسخه-پایدار-ریاکت-که-از-هوک-پشتیبانی-میکنه-کدومه)                                                                                                 |
+| 303  | [چرا از حالت destructuring آرایه برای useState استفاده می‌کنیم؟](#چرا-از-حالت-destructuring-آرایه-برای-useState-استفاده-می‌کنیم)                                                                          |
+| 304  | [منابعی که باعث معرفی ایده هوک‌ها شدن کدوما بودن؟](#منابعی-که-باعث-معرفی-هوکها-شدن-چیا-بودن)                                                                                                               |
+| 305  | [چطوری به APIهای ضروری اجزای وب دسترسی پیدا کنیم؟](#چطوری-به-APIهای-ضروری-اجزای-وب-دسترسی-پیدا-کنیم)                                                                                                     |
+| 306  | [formik چیه؟](#formik-چیه)                                                                                                                                                                               |
+| 307  | [middlewareهای مرسوم برای مدیریت ارتباط‌های asynchronous توی Redux کدوما هستن؟](#middlewareهای-مرسوم-برای-مدیریت-ارتباطهای-asynchronous-توی-Redux-چیا-هستن)                                                |
+| 308  | [مرورگرها کد JSX رو متوجه میشن؟](#مرورگرها-کد-JSX-رو-متوجه-میشن)                                                                                                                                         |
+| 309  | [Data flow یا جریان داده ری‌اکت رو توضیح میدی؟](#Data-flow-یا-جریان-داده-ریاکت-رو-توضیح-میدی)                                                                                                            |
+| 310  | [react scripts چیه؟](#react-scripts-چیه)                                                                                                                                                                 |
+| 311  | [ویژگی‌های create react app چیه؟](#ویژگیهای-create-react-app-چیه)                                                                                                                                        |
+| 312  | [هدف از متد renderToNodeStream چیه؟](#هدف-از-متد-renderToNodeStream-چیه)                                                                                                                                 |
+| 313  | [MobX چیه؟](#MobX-چیه)                                                                                                                                                                                   |
+| 314  | [تفاوت‌های بین Redux و MobX کدوما هستن؟](#تفاوتهای-بین-Redux-و-MobX-چیا-هستن)                                                                                                                              |
+| 315  | [لازمه قبل از شروع ری‌اکت ES6 رو یاد گرفت؟](#لازمه-قبل-از-شروع-ریاکت-ES6-رو-یاد-گرفت)                                                                                                                    |
+| 316  | [Concurrent Rendering چیه؟](#Concurrent-Rendering-چیه)                                                                                                                                                   |
+| 317  | [تفاوت بین حالت async و concurrent چیه؟](#تفاوت-بین-حالت-async-و-concurrent-چیه)                                                                                                                         |
+| 318  | [می‌تونیم از آدرس‌های دارای url جاواسکریپت در ری‌اکت 16.9 استفاده کنیم؟](#می-تونیم-از-آدرسهای-دارای-url-جاواسکریپت-در-ریاکت-16.9-استفاده-کنیم)                                                             |
+| 319  | [هدف از پلاگین eslint برای هوک‌ها چیه؟](#هدف-از-پلاگین-eslint-برای-هوکها-چیه)                                                                                                                            |
+| 320  | [تفاوت‌های Imperative و Declarative توی ری‌اکت چیه؟](#تفاوتهای-Imperative-و-Declarative-توی-ریاکت-چیه)                                                                                                   |
+| 321  | [مزایای استفاده از تایپ اسکریپت با ری‌اکت چیه؟](#مزایای-استفاده-از-تایپ-اسکریپت-با-ریاکت-چیه)                                                                                                            |
 
 
 {Pishgoftar}
@@ -649,6 +648,12 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+
+<div class="show-in-print">
+  <br />
+</div>
+
+
 11. ### چرا نباید state رو مستقیما آپدیت کنیم؟
 
     اگه یه بار تلاش کنید که مستقیما state رو آپدیت کنید متوجه می‌شین که کامپوننت شما مجددا render نمیشه.
@@ -746,6 +751,10 @@ puppeteer:
 
 
     **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 13. ### تفاوت بین نحوه مدیریت رویداد HTML و React چیه؟
 
@@ -942,6 +951,10 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 19. ### کاربرد refها چیه؟
 
     _ref_ به عنوان یه مرجع برای دسترسی مستقیم به اِلمان موردنظرمون استفاده میشه. تا حد امکان و توی اکثر مواقع بهتره از اونا استفاده _نکنیم_، البته خیلی می‌تونن کمک کننده باشن چون دسترسی مستقیمی به DOM element یا instance اصلی component بهمون میدن.
@@ -1049,6 +1062,10 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 23. ### چرا Refهای متنی منقضی محسوب می‌شوند؟
 
     اگه قبلا با ری‌اکت کار کرده باشین، احتملا با یه API قدیمی تر آشنا هستین که توی اون ویژگی ref یه رشته‌ست، مثل `ref='textInput'` و DOM به صورت `refs.textInput` قابل دسترسی‌ـه. البته این ویژگی توی نسخه ۱۶ ری‌اکت **حذف** شده و توصیه نمیشه استفاده بشه، فقط برای یادگیری هست.
@@ -1116,13 +1133,15 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 28. ### هدف اصلی React Fiber چیه؟
 
     هدف پیاده‌سازی ReactFiber برای بهبود کارکرد توی ناحیه‌هایی مثل انیمیشن، layout، کار با gestureها بود. میشه گفت مهم‌ترین ویژگی **incremental-rendering** بوده که قابلیت بخش‌بندی(chunk کردن) عملیات اجرایی و متوقف و اجرا کردن اون توی فریم‌های مختلف هست.
 
     **[فهرست](#فهرست)**
-
-<br />
 
 29. ### کامپوننت‌های کنترل شده چی هستن؟
 
@@ -1371,6 +1390,10 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 40. ### چرا توی کامپوننت‌های کلاس باید توی constructor تابع super رو با مقدار props صدا بزنیم؟
 
     کلاس constructor تا زمانی که متد `super` صدا زده نشده نمی‌تونه از `this` استفاده کنه. همین مورد در رابطه با کلاس‌های ES6 هم صدق می‌کنه. دلیل اصلی انتقال پارامتر‌های props به متد فراخوان `super` دسترسی داشتن به `this.props` توی constructor هستش.
@@ -1418,6 +1441,10 @@ puppeteer:
     کد بالا نشون میده که `this.props` فقط توی constructor متفاوت عمل می‌کنه و بیرون از constructor عملکردش عادیه، دلیلش هم اینه که توی متد سازنده کلاس، هنوز instance کامل ساخته نشده و در حال ساخته شدنه.
 
     **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 41. ### reconciliation چیه؟
 
@@ -1662,10 +1689,12 @@ puppeteer:
     8. **PropTypes.bool**
     9. **PropTypes.symbol**
     10. **PropTypes.any**
+    
+    <br />
 
     `PropType`ها رو برای یه کامپوننت تستی به اسم `User` اینطوری میشه تعریف کرد:
 
-     <span align="left" dir="ltr">
+    <span align="left" dir="ltr">
 
     ```jsx harmony
     import React from "react";
@@ -1701,6 +1730,10 @@ puppeteer:
     5. امکان نوشتن تست‌های واحد یا ادغام شده از طریق ابزارهایی مثل Jest.
 
     **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 53. ### محدودیت‌های React چیه؟
 
@@ -1765,7 +1798,7 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
-55. ###چطوری از error boundaryها توی نسخه 15 ری‌اکت استفاده کنیم؟
+55. ### چطوری از error boundaryها توی نسخه 15 ری‌اکت استفاده کنیم؟
 
     ری‌اکت توی نسخه 15 با استفاده از متد `unstabled_handleError` *error boundary*ها رو مدیریت کرده.
     این متد توی نسخه 16 به ‍‍`componentDidCatch` تغییر کرده.
@@ -1890,6 +1923,10 @@ puppeteer:
     2. با JSX ما یه تابع رو به جای رشته به عنوان event handler پاس میدیم.
 
     **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 63. ### اگه توی constructor بیاییم و setState کنیم چی میشه؟
 
@@ -2273,9 +2310,7 @@ puppeteer:
 
 79. ### روش توصیه شده برای نام‌گذاری کامپوننت‌ها چیه؟
 
-    برای نام گذاری کامپوننت‌ها توصیه میشه که از اسم هنگام export گرفتن به جای `displayName` استفاده کنیم.
-
-    استفاده از `displayName` برای نام گذاری کامپوننت:
+    برای نام گذاری کامپوننت‌ها توصیه میشه که از نام‌گذاری هنگام export گرفتن به جای `displayName` استفاده کنیم. استفاده از `displayName` برای نام گذاری کامپوننت:
 
     <span align="left" dir="ltr">
 
@@ -2286,7 +2321,7 @@ puppeteer:
     });
     ```
 
-     </span>
+    </span>
 
     روش **توصیه شده**:
 
@@ -2836,6 +2871,11 @@ puppeteer:
 
     **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
+
 96. ### تفاوت‌های React و ReactDOM چیه؟
 
     **پکیج ری‌اکت** شامل `React.createElement`، `React.Component`، `React.Children` و helperهای دیگه که مربوطه به کلاس کامپوننت‌ها و المنت‌ها هستش. می‌تونیم اینا رو به عنوان isomorphic یا universal helpers که واسه ساختن کامپوننت‌ها نیاز داریم, در نظر بگیریم.
@@ -3120,6 +3160,10 @@ puppeteer:
 
       **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 107.  ### چطوری می‌تونیم موقع لود صفحه روی یه input فوکوس کنیم؟
 
       میشه با ایجاد یه _ref_ برای المنت `input` و استفاده از اون توی `componentDidMount` یا `useEffect` این‌کار رو کرد:
@@ -3300,6 +3344,11 @@ puppeteer:
 
       **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
+
 112.  ### توی CRA چطوری از https به‌جای http استفاده کنیم؟
 
       برای این‌کار لازمه که کانفیگ `HTTPS=true` رو برای env جاری ‌ست کنیم، برای این‌کار حتی لازم هم نیست فایل .env بسازیم و می‌تونیم توی فایل `package.json` بخش scripts رو به شکل پایین تغییر بدیم:
@@ -3404,6 +3453,10 @@ puppeteer:
 
       **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 116.  ### برای استایل‌دهی‌های درون خطی چطوری باید پیشوند‌های مخصوص مرورگرها رو اضافه کرد؟
 
       ری‌اکت به شکل اتوماتیک پیشوند‌های مخصوص مرورگرها روی css رو اعمال **نمی‌کنه**. لازمه که تغییرات رو به شکل دستی اضافه کنیم.
@@ -3447,6 +3500,11 @@ puppeteer:
 
       **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
+
 118.  ### استثنایی که برای نام‌گذاری کامپوننت اجازه استفاده از حرف کوچک رو میده چیه؟
 
       همه کامپوننت‌های ری‌اکت لازمه که با حرف بزرگ شروع بشن، ولی توی این مورد هم یه سری استثناها وجود داره. تگ‌هایی که با property و عملگر dot کار می‌کنن رو میشه به عنوان کامپوننت‌هایی با حرف کوچک تلقی کرد. برای مثال این تگ می‌تونه syntax معتبری برای ری‌اکت باشه که با حروف کوچیک شروع میشه:
@@ -3488,6 +3546,10 @@ puppeteer:
       فیلدهای استاتیک بخشی از فیلدهای کلاس(class properties) هستن که توی پروپوزال stage 3 معرفی شدن.
 
       **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 121.  ### چطوری توی برنامه event کلیک شدن رو trigger کنیم؟
 
@@ -3582,6 +3644,11 @@ puppeteer:
       </span>
 
       **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
 
 124.  ### پکیج‌های مشهور برای انیمیشن کدوما هستن؟
 
@@ -3722,6 +3789,11 @@ puppeteer:
 
       **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
+
 128.  ### render props چیه؟
 
       **Render Props** یه تکنیک ساده برای به اشتراک گذاری کامپوننت بین کامپوننت‌های دیگه‌ـست که با استفاده از یه prop که یه تابع یا یه کامپوننت رو بهش دادیم انجام میشه. کامپوننت زیر از همین روش برای پاس دادن یه React element استفاده می‌کنه و توی کامپوننت پایین این prop رو یه شکل یه تابع فراخوانی می‌کنیم و چون یه تابع هست، میتونیم بهش هر مقداری که میخواییم بیاریم این سمت رو پاس بدیم.
@@ -3736,7 +3808,13 @@ puppeteer:
 
       کتابخونه‌هایی مثل React Router و DownShift از این پترن استفاده می‌کنن.
 
+
+<br />
+<br />
+
 ## React Router
+
+<br/>
 
 129. ### React Router چیه؟
 
@@ -3988,6 +4066,10 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 138. ### توی ری‌اکت روتر نسخه۴ چطوری میشه history رو گرفت؟
 
      1. می‌تونیم یه ماژول درست کنیم که object `history` رو میده و هرجایی خواستیم از این فایل استفاده کنیم.
@@ -4063,7 +4145,12 @@ puppeteer:
 
      </span>
 
+<br />
+<br />
+
 ## چندزبانگی ری‌اکت
+
+<br />
 
 140. ### React-Intl چیه؟
 
@@ -4193,7 +4280,13 @@ puppeteer:
 
      </span>
 
+<br />
+<br />
+<br />
+
 ## تست ری‌اکت
+
+<br />
 
 146. ### توی تست ری‌اکت Shallow Renderer چیه؟
 
@@ -4345,13 +4438,19 @@ puppeteer:
 
      </span>
 
+<br />
+<br />
+<br />
+
 ## React Redux
+
+<br />
 
 152. ### Flux چیه؟
 
      _Flux_ یه الگوی طراحی برنامه‌ـست که به عنوان جایگزینی برای اکثر پترن‌های MVC سنتی به کار میره. در حقیقت یه کتابخونه یا فریم‌ورک نیست و یه معماری برای تکمیل کارکرد ری‌اکت با مفهوم جریان داده یک طرفه(Unidirectional Data Flow) به کار میره. فیس‌بوک از این پترن به شکل داخلی برای توسعه ری‌اکت بهره می‌گیره.
 
-     جریان کار بین dispatcher، store‌ها و viewهای کامپوننت‌ها با ورودی و خروجی مشخص به شکل زیر خواهد بود:
+     جریان کار بین dispatcher، store‌ها و viewهای کامپوننت‌ها با ورودی و خروجی مشخص به شکل صفحه بعد خواهد بود:
 
      ![flux](images/flux.png)
 
@@ -4372,6 +4471,10 @@ puppeteer:
      3. **تغییرات با یه سری تابع pure انجام میشن:** برای مشخص کردن نحوه انجام تغییرات در store باید reducer بنویسیم. Reducerها فقط یه سری توابع pure هستن که حالت قبلی و action رو به عنوان پارامتر می‌گیرن و حالت بعدی رو برگشت میدن.
 
      **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 155. ### کاستی‌های redux نسبت به flux کدوما هستن؟
 
@@ -4904,6 +5007,10 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 176. ### مدل ذهنی redux-saga چطوریه؟
 
      Saga مثل یه thread جداگانه برای برنامه عمل می‌کنه و فقط برای مدیریت ساید افکت کارایی داره. `redux-saga` یه میان‌افزار(middlewaer) برای ریداکس‌ـه، که به معنی اینه که می‌تونه به صورت اتوماتیک توسط actionهای ریداکس شروع بشه، متوقف بشه و یا کار خاصی انجام بده. این میان‌افزار به کل store ریداکس و actionهایی که کار می‌کنن دسترسی داره و می‌تونه هر action دیگه‌ای رو dispatch کنه.
@@ -4963,6 +5070,11 @@ puppeteer:
      5. با `persistState` می‌تونین دیباگ روی موقع reloadهای مختلف ذخیره کنید.
 
      **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
 
 182. ### سلکتورهای ریداکس چی هستن و چرا باید ازشون استفاده کنیم؟
 
@@ -5041,7 +5153,13 @@ puppeteer:
 
      Relay و Redux توی این مورد که دوتاشونم از یه store استفاده می‌کنن شبیه بهم هستن. تفاوت اصلی این دو اینه که relay فقط stateهایی رو مدیریت می‌کنه که از سرور تاثیر گرفتن و همه دسترسی‌هایی که به state مربوطه رو با کوئری‌های GraphQL(برای خوندن داده‌ها) و mutationها (برای تغییرات داده) انجام میده. Relay داده‌ها برای شما رو cache می‌کنه و گرفتن داده از سرور رو برای شما بهینه می‌کنه. چون فقط تغییرات رو دریافت میکرد و نه چیز دیگه‌ای.
 
+<br />
+<br />
+<br />
+
 ## React Native
+
+<br />
 
 188. ### تفاوت‌های React Native و React کدوما هستن؟
 
@@ -5082,7 +5200,11 @@ puppeteer:
      4. دکمه‌های `Command + Option + I` رو برای اجرای developer-tools کروم فشار میدیم یا از طریق منوهای `View` و `Developer` و `DeveloperTools` باز می‌کنیم‌ـش.
      5. حالا می‌تونیم برنامه مورد نظر خودمون رو به راحتی تست کنیم.
 
-## کتابخونه‌های پشتیبانی شده ری‌اکتی و Integrationهاش
+<br />
+
+## کتابخونه‌های ری‌اکت و Integrationهاشون
+
+<br />
 
 192.  ### کتابخونه reselect چیه و چطوری کار می‌کنه؟
 
@@ -5274,6 +5396,10 @@ puppeteer:
 
      این دو تا متغیر، `Title` و `Wrapper`، کامپوننت‌هایی هستن که می‌تونیم مثل هر کامپوننت دیگه ای رندرشون کنیم.
 
+     <div class="show-in-print">
+       <br />
+     </div>
+
      <span align="left" dir="ltr">
 
      ```jsx harmony
@@ -5285,6 +5411,10 @@ puppeteer:
      </span>
 
      **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 204. ### Relay چیه؟
 
@@ -5333,7 +5463,13 @@ puppeteer:
      
      **[فهرست](#فهرست)**
 
-## متفرقه
+<br /> 
+<br /> 
+
+## مطالب متفرقه
+
+<br />
+<br />
 
 206. ### اصلی‌ترین ویژگی‌های کتابخونه reselect کدوما هستن؟
 
@@ -5364,8 +5500,15 @@ puppeteer:
        subtotalSelector,
        taxPercentSelector,
        (subtotal, taxPercent) => subtotal * (taxPercent / 100)
-     )
+     );
+     ```
+     
+     </span>
 
+
+     <span align="left" dir="ltr">
+
+     ```javascript
      export const totalSelector = createSelector(
        subtotalSelector,
        taxSelector,
@@ -5675,6 +5818,10 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 219. ### لازمه همه stateها رو توی ریداکس مدیریت کنیم؟ لزومی به استفاده از state داخلی داریم؟
 
      این به تصمیم توسعه دهنده بستگی داره ولی بهتره که از عمومی سازی داده‌های غیرضروری خودداری کنین. این وظیفه توسعه دهنده‌ست که بررسی کنه چه نوعی از state‌ها برنامه رو تشکیل بده و هر state کجا باید قرار بگیره. به شکل کلی این شرط‌ها رو قبل از انتقال state لوکال به state عمومی بررسی کنین:
@@ -5708,7 +5855,11 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
-223. ### چطوری با استفاده از تابع setState از رندر غیرضروری جلوگیری کنیم؟
+<div class="show-in-print">
+  <br />
+</div>
+
+221. ### چطوری با استفاده از تابع setState از رندر غیرضروری جلوگیری کنیم؟
 
      می‌تونیم مقدار فعلی یه state رو با مقدار موجود مقایسه کنیم و تصمیم بگیریم که state رو تغییر بدیم یا نه. میدونیم اگه یه setState غیر ضروری انجام بدیم، کامپوننت‌مون ری‌رندر میشه پس اگه مقادیر یکسان بود برای جلوگیری از رندر مجدد نباید استیت رو مجددا ست کنیم. برای مثال، اطلاعات پروفایل کاربر توی مثال زیر به صورت شرطی رندر شده: 
 
@@ -5785,6 +5936,10 @@ puppeteer:
      </span>
 
      **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 226. ### hookها چی هستن؟
 
@@ -5913,6 +6068,11 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
+
 233. ### چرا نیازی به error boundaries برای event handlerها نیست؟
 
      Error boundary‌‌ها خطاها رو توی event handler‌ها نمی گیرن. Event handler‌ها بر خلاف متد رندر یا lifecycle موقع رندر کردن اتفاق نمی‌افته یا فراخوانی نمیشه. بنابراین ری اکت میدونه که این مدل خطا‌ها رو توی event handler‌ها چطوری بازیابی کنه.
@@ -6024,6 +6184,10 @@ puppeteer:
 
      **[فهرست](#فهرست)**
 
+<div class="show-in-print">
+  <br />
+</div>
+
 240. ### هدف اصلی از متد constructor چیه؟
 
      constructor به طور عمده برای دو منظور استفاده میشه:
@@ -6116,15 +6280,12 @@ puppeteer:
          super(props);
          this.state = { hasError: false };
        }
-
        static getDerivedStateFromError(error) {
-         // Update state so the next render will show the fallback UI.
+         // Update state, next render will show the fallback UI
          return { hasError: true };
        }
-
        render() {
          if (this.state.hasError) {
-           // You can render any custom fallback UI
            return <h1>Something went wrong.</h1>;
          }
 
@@ -6259,6 +6420,10 @@ puppeteer:
      </span>
 
      **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+</div>
 
 251. ### مزایای حالت strict چیه؟
 
@@ -7207,6 +7372,11 @@ puppeteer:
      </span>
 
      **[فهرست](#فهرست)**
+
+<div class="show-in-print">
+  <br />
+  <br />
+</div>
 
 287. ### الگوریتم‌های diffing ری‌اکت چی هستن؟
 
