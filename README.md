@@ -22,8 +22,7 @@
 
 ## 🛍 خرید نسخه فیزیکی 
 
-خب واقعیتش اینه که هنوز ویراستاری کتاب هم انجام نشده، چه برسه به نسخه فیزیکی ولی اگه تمایل داشتین، میتونین از طریق لینک زیر توی پیش خرید کتاب شرکت کنید و ما تا یکی دو ماه بعد کتاب رو به صورت فیزیکی تحویلتون میدیم.
-
+از طریق لینک پایین می‌تونین خرید کتاب رو انجام بدین، تمام درآمد حاصل از فروش هم به خیریه داده میشه‌:)
 https://zarinp.al/370791
 
 </div>
@@ -50,8 +49,8 @@ Also you can download all these together from our repo release secion.([this lin
 
 ## 🛍 Buy print version 
 
-You can pre-order our book from this link:
-https://zarinp.al/370791
+You can order our book from this link, all income from selling this book will be paid to charities:
+ https://zarinp.al/370791
 
 </div>
 
